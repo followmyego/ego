@@ -87,6 +87,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        }
 //    }
 
+    //This is a test
+    //This is another test
+
     /**
      * Initializes the sign-in and sign-out buttons.
      */
