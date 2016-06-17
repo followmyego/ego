@@ -50,9 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /** Class name for log messages. */
     private final static String LOG_TAG = MainActivity.class.getSimpleName();
 
-    /** Bundle key for saving/restoring the toolbar title. */
-    private final static String BUNDLE_KEY_TOOLBAR_TITLE = "title";
-
     /** The identity manager used to keep track of the current user account. */
     private IdentityManager identityManager;
 
@@ -116,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final ListView drawerItems = (ListView) findViewById(R.id.nav_drawer_items);
 
         // Create the navigation drawer.
-        navigationDrawer = new NavigationDrawer(this, toolbar, drawerLayout, drawerItems,
+        navigationDrawer = new NavigationDrawer(this, drawerLayout, drawerItems,
             R.id.main_fragment_container);
 
         // Add navigation drawer menu items.

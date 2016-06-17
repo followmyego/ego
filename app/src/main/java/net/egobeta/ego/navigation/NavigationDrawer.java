@@ -46,6 +46,7 @@ public class NavigationDrawer {
     /** The id of the fragment container. */
     private int fragmentContainerId;
 
+    Toolbar toolbar = null;
     /**
      * Constructs the Navigation Drawer.
      * @param activity the activity that will contain this navigation drawer.
@@ -54,7 +55,6 @@ public class NavigationDrawer {
      * @param drawerItemsContainer the parent view group for the navigation drawer items.
      */
     public NavigationDrawer(final AppCompatActivity activity,
-                            final Toolbar toolbar,
                             final DrawerLayout layout,
                             final ListView drawerItemsContainer,
                             final int fragmentContainerId) {
