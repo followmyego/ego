@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "243254945401",
+    "project_id": "boreal-airway-121902"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243254945401:android:fe3183f927bb2441",
+        "android_client_info": {
+          "package_name": "net.egobeta.ego"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243254945401-pl0b2qqm4j78vj9e4vk3bjn5n1u9abgh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.egobeta.ego",
+            "certificate_hash": "D2F657712E90E9D8290B80096CF388936D49905A"
+          }
+        },
+        {
+          "client_id": "243254945401-com04eiu9r7qr2elnftg7itraa72sefu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbUiXvCkAyKKjwIgQpJR3H-cK4_V9SLqE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
