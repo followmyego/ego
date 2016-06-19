@@ -156,16 +156,16 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.8.0\\res\\drawable-hdpi\\common_signin_btn_text_normal_dark.9.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_signin_btn_icon_disabled_light.9.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.8.0\\res\\drawable-hdpi\\common_signin_btn_icon_disabled_light.9.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_signin_btn_text_disabled_dark.9.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.8.0\\res\\drawable-hdpi\\common_signin_btn_text_disabled_dark.9.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_ic_googleplayservices.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.8.0\\res\\drawable-hdpi\\common_ic_googleplayservices.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_signin_btn_icon_disabled_light.9.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.8.0\\res\\drawable-hdpi\\common_signin_btn_icon_disabled_light.9.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_moreoverflow_mtrl_alpha.png",

@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/loginLayout"
     android:background="#272727"
-    >
+    tools:context="net.egobeta.ego.SignInActivity">
+
+
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/friendsBackground"
-        android:src="@drawable/friends_background"
+        android:src="@drawable/background_image"
         android:scaleType="centerCrop"
-        android:alpha=".10"/>
+        android:alpha=".10"
+        />
 
     <ImageView
-        android:layout_width="225dp"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageLogoView"
-        android:src="@drawable/n_complete_logo_slogan"
+        android:src="@drawable/logo_without_tagline"
         android:scaleType="fitCenter"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="65dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -30,11 +32,10 @@
         android:src="@drawable/selector_button_facebook"
         android:layout_width="@dimen/sign_in_button_width"
         android:layout_height="@dimen/sign_in_button_height"
-        android:layout_marginTop="@dimen/sign_in_button_margin"
-        android:layout_marginBottom="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:padding="0dp"/>
+        android:layout_marginTop="52dp"
+        android:padding="0dp"
+        android:layout_below="@+id/imageLogoView"
+        android:layout_centerHorizontal="true" />
 
 
 

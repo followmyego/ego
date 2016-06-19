@@ -80,6 +80,10 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\logo_without_tagline.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\drawable\\logo_without_tagline.png"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_folder.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\drawable\\selector_button_folder.xml"
     },
@@ -138,6 +142,10 @@
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_image.jpg",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\drawable\\background_image.jpg"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_white_bg_selector.xml",
