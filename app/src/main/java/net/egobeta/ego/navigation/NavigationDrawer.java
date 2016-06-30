@@ -61,6 +61,8 @@ public class NavigationDrawer {
         // Keep a reference to the activity containing this navigation drawer.
         this.containingActivity = activity;
         this.drawerItems = drawerItemsContainer;
+
+        //Initialize the ArrayAdapter for the ListView
         adapter = new ArrayAdapter<DemoConfiguration.DemoFeature>(activity, R.layout.nav_drawer_item) {
             @Override
             public View getView(final int position, final View convertView,
@@ -75,6 +77,7 @@ public class NavigationDrawer {
                 return view;
             }
         };
+
         drawerItems.setAdapter(adapter);
         drawerItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -142,29 +145,41 @@ public class NavigationDrawer {
         drawerToggle.syncState();
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
     private void updateUserName(final AppCompatActivity activity) {
         final IdentityManager identityManager =
                 AWSMobileClient.defaultMobileClient().getIdentityManager();
         final IdentityProvider identityProvider =
                 identityManager.getCurrentIdentityProvider();
 
-        final TextView userNameView = (TextView) activity.findViewById(R.id.userName);
+//        final TextView userNameView = (TextView) activity.findViewById(R.id.userName);
 
-        if (identityProvider == null) {
-            // Not signed in
-            userNameView.setText(activity.getString(R.string.main_nav_menu_default_user_text));
-            userNameView.setBackgroundColor(activity.getResources().getColor(R.color.nav_drawer_no_user_background));
-            return;
-        }
-
-        final String userName =
-                identityProvider.getUserName();
-
-        if (userName != null) {
-            userNameView.setText(userName);
-            userNameView.setBackgroundColor(
-                    activity.getResources().getColor(R.color.nav_drawer_top_background));
-        }
+//        if (identityProvider == null) {
+//            // Not signed in
+//            userNameView.setText(activity.getString(R.string.main_nav_menu_default_user_text));
+//            userNameView.setBackgroundColor(activity.getResources().getColor(R.color.nav_drawer_no_user_background));
+//            return;
+//        }
+//
+//        final String userName =
+//                identityProvider.getUserName();
+//
+//        if (userName != null) {
+//            userNameView.setText(userName);
+//            userNameView.setBackgroundColor(
+//                    activity.getResources().getColor(R.color.nav_drawer_top_background));
+//        }
     }
 
     private void updateUserImage(final AppCompatActivity activity) {
@@ -174,29 +189,29 @@ public class NavigationDrawer {
         final IdentityProvider identityProvider =
                 identityManager.getCurrentIdentityProvider();
 
-        final ImageView imageView =
-            (ImageView)activity.findViewById(R.id.userImage);
+//        final ImageView imageView =
+//            (ImageView)activity.findViewById(R.id.userImage);
 
-        if (identityProvider == null) {
-            // Not signed in
-            if (Build.VERSION.SDK_INT < 22) {
-                imageView.setImageBitmap(BitmapFactory.decodeResource(activity.getResources(), R.mipmap.user));
-            }
-            else {
-                imageView.setImageDrawable(activity.getDrawable(R.mipmap.user));
-            }
-
-            return;
-        }
-
-        final Bitmap userImage = identityManager.getUserImage();
-        if (userImage != null) {
-            imageView.setImageBitmap(userImage);
-        }
+//        if (identityProvider == null) {
+//            // Not signed in
+//            if (Build.VERSION.SDK_INT < 22) {
+//                imageView.setImageBitmap(BitmapFactory.decodeResource(activity.getResources(), R.mipmap.user));
+//            }
+//            else {
+//                imageView.setImageDrawable(activity.getDrawable(R.mipmap.user));
+//            }
+//
+//            return;
+//        }
+//
+//        final Bitmap userImage = identityManager.getUserImage();
+//        if (userImage != null) {
+//            imageView.setImageBitmap(userImage);
+//        }
     }
 
     public void showHome() {
-        final Fragment fragment = new HomeDemoFragment();
+        /*final Fragment fragment = new HomeDemoFragment();
 
         containingActivity.getSupportFragmentManager()
                 .beginTransaction()
@@ -205,9 +220,9 @@ public class NavigationDrawer {
                 .commit();
 
         // Set the title for the fragment.
-        /*final ActionBar actionBar = containingActivity.getSupportActionBar();
-        actionBar.setTitle(R.string.app_name);*/
-        closeDrawer();
+        *//*final ActionBar actionBar = containingActivity.getSupportActionBar();
+        actionBar.setTitle(R.string.app_name);*//*
+        closeDrawer();*/
     }
 
     public void addDemoFeatureToMenu(DemoConfiguration.DemoFeature demoFeature) {

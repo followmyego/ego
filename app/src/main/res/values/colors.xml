@@ -11,4 +11,6 @@
     <color name="nav_drawer_no_user_background">#AAAAAA</color>
     <color name="dark_content_text">#333333</color>
     <color name="instructions_list_border_color">#FFDDDDDD</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="transparentBackground">#00ffffff</color>
 </resources>

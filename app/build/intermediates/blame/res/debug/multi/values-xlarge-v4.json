@@ -11,13 +11,13 @@
                     "endOffset": 127
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\values-xlarge\\values-xlarge.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-xlarge\\values-xlarge.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 289,
+                        "startOffset": 231,
                         "endColumn": 76,
-                        "endOffset": 361
+                        "endOffset": 303
                     }
                 }
             },
@@ -30,13 +30,13 @@
                     "endOffset": 198
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\values-xlarge\\values-xlarge.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-xlarge\\values-xlarge.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 601,
+                        "startOffset": 485,
                         "endColumn": 70,
-                        "endOffset": 667
+                        "endOffset": 551
                     }
                 }
             },
@@ -49,13 +49,13 @@
                     "endOffset": 269
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\values-xlarge\\values-xlarge.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-xlarge\\values-xlarge.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 672,
+                        "startOffset": 556,
                         "endColumn": 70,
-                        "endOffset": 738
+                        "endOffset": 622
                     }
                 }
             },
@@ -68,13 +68,13 @@
                     "endOffset": 339
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\values-xlarge\\values-xlarge.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-xlarge\\values-xlarge.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 743,
+                        "startOffset": 627,
                         "endColumn": 69,
-                        "endOffset": 808
+                        "endOffset": 692
                     }
                 }
             },
@@ -87,13 +87,13 @@
                     "endOffset": 409
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\values-xlarge\\values-xlarge.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-xlarge\\values-xlarge.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 813,
+                        "startOffset": 697,
                         "endColumn": 69,
-                        "endOffset": 878
+                        "endOffset": 762
                     }
                 }
             },
@@ -106,13 +106,13 @@
                     "endOffset": 477
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\values-xlarge\\values-xlarge.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-xlarge\\values-xlarge.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 883,
+                        "startOffset": 767,
                         "endColumn": 67,
-                        "endOffset": 946
+                        "endOffset": 830
                     }
                 }
             },
@@ -125,13 +125,13 @@
                     "endOffset": 545
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\values-xlarge\\values-xlarge.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-xlarge\\values-xlarge.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 951,
+                        "startOffset": 835,
                         "endColumn": 67,
-                        "endOffset": 1014
+                        "endOffset": 898
                     }
                 }
             },
@@ -144,13 +144,13 @@
                     "endOffset": 609
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\values-xlarge\\values-xlarge.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-xlarge\\values-xlarge.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 1019,
+                        "startOffset": 903,
                         "endColumn": 63,
-                        "endOffset": 1078
+                        "endOffset": 962
                     }
                 }
             },
@@ -163,13 +163,13 @@
                     "endOffset": 664
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\values-xlarge\\values-xlarge.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-xlarge\\values-xlarge.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 1083,
+                        "startOffset": 967,
                         "endColumn": 54,
-                        "endOffset": 1133
+                        "endOffset": 1017
                     }
                 }
             }

@@ -5,4 +5,11 @@
     <dimen name="sign_in_button_width">240dp</dimen>
     <dimen name="sign_in_button_height">40dp</dimen>
     <dimen name="demo_mobile_analytics_button_text_size">12sp</dimen>
+
+    <!--<dimen name="header_height">616dp</dimen> this is full screen-->
+    <!--<dimen name="min_header_height">568dp</dimen> this is full screen-->
+    <dimen name="header_height">562dp</dimen>
+    <dimen name="min_header_height">514dp</dimen>
+    <dimen name="header_logo_size">240dp</dimen>
+    <dimen name="behindOffSetRes">70dp</dimen>
 </resources>

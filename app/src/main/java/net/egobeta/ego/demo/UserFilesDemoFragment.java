@@ -78,10 +78,10 @@ public class UserFilesDemoFragment extends DemoFragmentBase {
         args.putString(UserFilesBrowserFragment.BUNDLE_ARGS_S3_BUCKET, bucket);
         args.putString(UserFilesBrowserFragment.BUNDLE_ARGS_S3_PREFIX, prefix);
         fragment.setArguments(args);
-        getActivity().getSupportFragmentManager()
+        /*getActivity().getSupportFragmentManager()
             .beginTransaction()
             .replace(R.id.main_fragment_container, fragment)
             .addToBackStack(null)
-            .commit();
+            .commit();*/
     }
 }

@@ -10,284 +10,262 @@ package net.egobeta.ego;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.LocalBroadcastManager;
+import android.support.v4.util.SparseArrayCompat;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.AbsListView;
 import android.widget.Button;
-import android.widget.ListView;
+
 
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
-import net.egobeta.ego.demo.DemoConfiguration;
-import net.egobeta.ego.demo.HomeDemoFragment;
+import net.astuetz.PagerSlidingTabStrip;
 import net.egobeta.ego.demo.UserSettings;
-import net.egobeta.ego.navigation.NavigationDrawer;
+import net.egobeta.ego.demo.nosql.Book;
+import net.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 
 import com.amazonaws.mobileconnectors.cognito.Dataset;
 import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
 import com.amazonaws.mobileconnectors.cognito.Record;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.jeremyfeinstein.slidingmenu.lib.MyListener;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.viewpagerindicator.CirclePageIndicator;
+
 
 import android.app.AlertDialog;
 import android.content.IntentFilter;
 import android.content.BroadcastReceiver;
-import android.support.v4.content.LocalBroadcastManager;
-
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    /** Class name for log messages. */
-    private final static String LOG_TAG = MainActivity.class.getSimpleName();
+public class MainActivity extends AppCompatActivity implements ScrollTabHolder, ViewPager.OnPageChangeListener, View.OnClickListener {
 
-    /** The identity manager used to keep track of the current user account. */
-    private IdentityManager identityManager;
+    //AWS Variables
+    AWSMobileClient awsMobileClient;
+    DynamoDBMapper mapper;
+    private IdentityManager identityManager; //The identity manager used to keep track of the current user account.
 
-    /** The toolbar view control. */
-    private Toolbar toolbar = null;
+    //Main Fragments
+    EgoStreamFragment egoStreamFragment; // Sliding View 0
+    EgoFriendsFragment egoFriendsFragment; // Sliding View 0
 
-    /** Our navigation drawer class for handling navigation drawer logic. */
-    private NavigationDrawer navigationDrawer;
+    //Other variables
+    private final static String LOG_TAG = MainActivity.class.getSimpleName(); //Class name for log messages.
+    ViewPager mPager;
+    Typeface typeface;
+    private TypedValue mTypedValue = new TypedValue();
+    private PagerAdapter mPagerAdapter; //The pager adapter, which provides the pages to the view pager widget.
+    ScrollTabHolderFragment fragment;
+    private static AccelerateDecelerateInterpolator sSmoothInterpolator = new AccelerateDecelerateInterpolator();
 
-    /** The helper class used to toggle the left navigation drawer open and closed. */
-    private ActionBarDrawerToggle drawerToggle;
+    //Number Variables
+    private static int mMinHeaderTranslation;
+    private int mActionBarHeight;
+    public int mMinHeaderHeight;
+    private int mHeaderHeight;
+    private final int PICK_IMAGE_REQUEST = 1;
+    private static final float BLUR_RADIUS = 25F;
+    private static RectF mRect1 = new RectF();
+    private static RectF mRect2 = new RectF();
 
-    private Button   signOutButton;
-    private Button   signInButton;
+    //View item variables
+    private Button signOutButton;
+    private Button signInButton;
+    private static View mHeader;
+    private static RelativeLayout userInfoLayout;
+    private TextView profilePageViews;
+    private TextView name;
+    private static ImageView home_menu_image;
+    private static ImageView home_menu_image2;
+    private ImageView mHeaderPicture;
+    public Drawable upArrow;
+    //    private static ImageView profilePicture;
+    private static FacebookPictureViewRound profilePicture;
+    public ImageButton tapToEdit;
+    public static ScrollView scrollView;
+    private SlidingMenu slidingMenu;
+    private ViewPager mViewPager;
+    private static Toolbar toolbar;
+    public PagerSlidingTabStrip mPagerSlidingTabStrip;
+    private static TextView toolbarTitle;
+    private AbsListView absListView;
+    private DrawerArrowDrawable drawerArrowDrawable;
+    private Resources resources;
+    Context context;
+    private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
+
+
+
+
+
+
+
+//    /** The toolbar view control. */
+//    private Toolbar toolbar = null;
+//
+//    /** Our navigation drawer class for handling navigation drawer logic. */
+//    private NavigationDrawer navigationDrawer;
+//
+//    /** The helper class used to toggle the left navigation drawer open and closed. */
+//    private ActionBarDrawerToggle drawerToggle;
+//    /**
+//     * Initializes the sign-in and sign-out buttons.
+//     */
+//    private void setupSignInButtons() {
+//
+//        signOutButton = (Button) findViewById(R.id.button_signout);
+//        signOutButton.setOnClickListener(this);
+//
+//        signInButton = (Button) findViewById(R.id.button_signin);
+//        signInButton.setOnClickListener(this);
+//
+//        final boolean isUserSignedIn = identityManager.isUserSignedIn();
+//        signOutButton.setVisibility(isUserSignedIn ? View.VISIBLE : View.INVISIBLE);
+//        signInButton.setVisibility(!isUserSignedIn ? View.VISIBLE : View.INVISIBLE);
+//
+//    }
 
 //    /**
-//     * Initializes the Toolbar for use with the activity.
+//     * Initializes the navigation drawer menu to allow toggling via the toolbar or swipe from the
+//     * side of the screen.
 //     */
-//    private void setupToolbar(final Bundle savedInstanceState) {
-//        toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        // Set up the activity to use this toolbar. As a side effect this sets the Toolbar's title
-//        // to the activity's title.
-//        setSupportActionBar(toolbar);
+//    private void setupNavigationMenu(final Bundle savedInstanceState) {
+//        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        final ListView drawerItems = (ListView) findViewById(R.id.nav_drawer_items);
 //
-//        if (savedInstanceState != null) {
-//            // Some IDEs such as Android Studio complain about possible NPE without this check.
-//            assert getSupportActionBar() != null;
+//        // Create the navigation drawer.
+//        navigationDrawer = new NavigationDrawer(this, drawerLayout, drawerItems,
+//            R.id.main_fragment_container);
 //
-//            // Restore the Toolbar's title.
-//            getSupportActionBar().setTitle(
-//                savedInstanceState.getCharSequence(BUNDLE_KEY_TOOLBAR_TITLE));
+//        // Add navigation drawer menu items.
+//        // Home isn't a demo, but is fake as a demo.
+//        DemoConfiguration.DemoFeature home = new DemoConfiguration.DemoFeature();
+//        home.iconResId = R.mipmap.icon_home;
+//        home.titleResId = R.string.main_nav_menu_item_home;
+//        navigationDrawer.addDemoFeatureToMenu(home);
+//
+//        for (DemoConfiguration.DemoFeature demoFeature : DemoConfiguration.getDemoFeatureList()) {
+//            navigationDrawer.addDemoFeatureToMenu(demoFeature);
+//        }
+//        setupSignInButtons();
+//
+//        if (savedInstanceState == null) {
+//            // Add the home fragment to be displayed initially.
+//            navigationDrawer.showHome();
 //        }
 //    }
 
-    //This is a test
-    //This is another test
-
-    /**
-     * Initializes the sign-in and sign-out buttons.
-     */
-    private void setupSignInButtons() {
-
-        signOutButton = (Button) findViewById(R.id.button_signout);
-        signOutButton.setOnClickListener(this);
-
-        signInButton = (Button) findViewById(R.id.button_signin);
-        signInButton.setOnClickListener(this);
-
-        final boolean isUserSignedIn = identityManager.isUserSignedIn();
-        signOutButton.setVisibility(isUserSignedIn ? View.VISIBLE : View.INVISIBLE);
-        signInButton.setVisibility(!isUserSignedIn ? View.VISIBLE : View.INVISIBLE);
-
-    }
-
-    /**
-     * Initializes the navigation drawer menu to allow toggling via the toolbar or swipe from the
-     * side of the screen.
-     */
-    private void setupNavigationMenu(final Bundle savedInstanceState) {
-        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        final ListView drawerItems = (ListView) findViewById(R.id.nav_drawer_items);
-
-        // Create the navigation drawer.
-        navigationDrawer = new NavigationDrawer(this, drawerLayout, drawerItems,
-            R.id.main_fragment_container);
-
-        // Add navigation drawer menu items.
-        // Home isn't a demo, but is fake as a demo.
-        DemoConfiguration.DemoFeature home = new DemoConfiguration.DemoFeature();
-        home.iconResId = R.mipmap.icon_home;
-        home.titleResId = R.string.main_nav_menu_item_home;
-        navigationDrawer.addDemoFeatureToMenu(home);
-
-        for (DemoConfiguration.DemoFeature demoFeature : DemoConfiguration.getDemoFeatureList()) {
-            navigationDrawer.addDemoFeatureToMenu(demoFeature);
-        }
-        setupSignInButtons();
-
-        if (savedInstanceState == null) {
-            // Add the home fragment to be displayed initially.
-            navigationDrawer.showHome();
-        }
-    }
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        /** AWS Stuffs **/
         // Obtain a reference to the mobile client. It is created in the Application class,
         // but in case a custom Application class is not used, we initialize it here if necessary.
         AWSMobileClient.initializeMobileClientIfNecessary(this);
-
         // Obtain a reference to the mobile client. It is created in the Application class.
-        final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
-
+        awsMobileClient = AWSMobileClient.defaultMobileClient();
         // Obtain a reference to the identity manager.
         identityManager = awsMobileClient.getIdentityManager();
-
+        /****************/
         setContentView(R.layout.activity_main);
+        context = getApplicationContext();
+        resources = getResources();
 
-//        setupToolbar(savedInstanceState);
+        /**Initialize font*/
+        typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
 
-        setupNavigationMenu(savedInstanceState);
-    }
+        /**Initialize dimension variables for the animations*/
+        initializeDimensionItems();
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+        /**Initialize view item variables*/
+        initializeViewItems();
 
-
-        final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
-
-        // pause/resume Mobile Analytics collection
-        awsMobileClient.handleOnResume();
-
-        // register notification receiver
-        LocalBroadcastManager.getInstance(this).registerReceiver(notificationReceiver,
-            new IntentFilter(PushListenerService.ACTION_SNS_NOTIFICATION));
-        // register settings changed receiver.
-        LocalBroadcastManager.getInstance(this).registerReceiver(settingsChangedReceiver,
-            new IntentFilter(UserSettings.ACTION_SETTINGS_CHANGED));
-        updateColor();
-        syncUserSettings();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(final MenuItem item) {
-        // Handle action bar item clicks here excluding the home button.
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onSaveInstanceState(final Bundle bundle) {
-        super.onSaveInstanceState(bundle);
-        // Save the title so it will be restored properly to match the view loaded when rotation
-        // was changed or in case the activity was destroyed.
-        /*if (toolbar != null) {
-            bundle.putCharSequence(BUNDLE_KEY_TOOLBAR_TITLE, toolbar.getTitle());
-        }*/
-    }
-
-    @Override
-    public void onClick(final View view) {
-        if (view == signOutButton) {
-            // The user is currently signed in with a provider. Sign out of that provider.
-            identityManager.signOut();
-            // Show the sign-in button and hide the sign-out button.
-            signOutButton.setVisibility(View.INVISIBLE);
-            signInButton.setVisibility(View.VISIBLE);
-
-            // Close the navigation drawer.
-            navigationDrawer.closeDrawer();
-            return;
-        }
-        if (view == signInButton) {
-            // Start the sign-in activity. Do not finish this activity to allow the user to navigate back.
-            startActivity(new Intent(this, SignInActivity.class));
-            // Close the navigation drawer.
-            navigationDrawer.closeDrawer();
-            return;
+        /**Create the pull out Sliding menu*/
+        if(slidingMenu == null){
+            createMenuDrawer();
         }
 
-        // ... add any other button handling code here ...
+        /**Set up the ViewPager and PagerAdapter*/
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setOffscreenPageLimit(5);
+//        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        mPagerAdapter.setTabHolderScrollingContent(this);
+        mViewPager.setAdapter(mPagerAdapter);
 
+        /**Set up the SlidingTabStrip*/
+        initializeSlidingTabStrip();
+
+        /**Images for the sliding tab strip*/
+        setSlidingTabImages();
+
+        /**Create top toolbar/menu bar*/
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setOnClickListener(this);
+
+        /**Get rid of the default arrow image*/
+        removeDefaultMenuButton();
+
+
+        /*Bind the Page indicator to the adapter*/
+//        CirclePageIndicator pageIndicator = (CirclePageIndicator)findViewById(R.id.titles);
+//        pageIndicator.setViewPager(mPager);
+
+        //Initialize the mapper for DynamoDB
+        mapper = AWSMobileClient.defaultMobileClient().getDynamoDBMapper();
+
+//        book = new Book();
+//        book.setTitle("Great Expectations");
+//        book.setAuthor("Charles Dickens");
+//        book.setPrice(1299);
+//        book.setIsbn("12335678904");
+//        book.setHardCover(false);
+//        book.setAwesome(true);
     }
 
-    private final BroadcastReceiver notificationReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.d(LOG_TAG, "Received notification from local broadcast. Display it in a dialog.");
 
-            Bundle data = intent.getBundleExtra(PushListenerService.INTENT_SNS_NOTIFICATION_DATA);
-            String message = PushListenerService.getMessage(data);
 
-            new AlertDialog.Builder(MainActivity.this)
-                    .setTitle(R.string.push_demo_title)
-                    .setMessage(message)
-                    .setPositiveButton(android.R.string.ok, null)
-                    .show();
-        }
-    };
-    
-    private final BroadcastReceiver settingsChangedReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.d(LOG_TAG, "Received settings changed local broadcast. Update theme colors.");
-            updateColor();
-        }
-    };
 
-    @Override
-    protected void onPause() {
-        super.onPause();
 
-        // Obtain a reference to the mobile client.
-        final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
-
-        // pause/resume Mobile Analytics collection
-        awsMobileClient.handleOnPause();
-
-        // unregister notification receiver
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(notificationReceiver);
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(settingsChangedReceiver);
-    }
-
-    @Override
-    public void onBackPressed() {
-        final FragmentManager fragmentManager = this.getSupportFragmentManager();
-        
-        if (navigationDrawer.isDrawerOpen()) {
-            navigationDrawer.closeDrawer();
-            return;
-        }
-
-        if (fragmentManager.getBackStackEntryCount() == 0) {
-            if (fragmentManager.findFragmentByTag(HomeDemoFragment.class.getSimpleName()) == null) {
-                final Class fragmentClass = HomeDemoFragment.class;
-                // if we aren't on the home fragment, navigate home.
-                final Fragment fragment = Fragment.instantiate(this, fragmentClass.getName());
-
-                fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.main_fragment_container, fragment, fragmentClass.getSimpleName())
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .commit();
-
-                // Set the title for the fragment.
-                /*final ActionBar actionBar = this.getSupportActionBar();
-                if (actionBar != null) {
-                    actionBar.setTitle(getString(R.string.app_name));
-                }*/
-                return;
-            }
-        }
-        super.onBackPressed();
-    }
-
+    /**Created from the AWS demo app**/
+    /** Sync user's preferences only if user is signed in **/
     private void syncUserSettings() {
         // sync only if user is signed in
         if (AWSMobileClient.defaultMobileClient().getIdentityManager().isUserSignedIn()) {
@@ -308,6 +286,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**Created from the AWS demo app**/
+    /**Update users preferred colors*/
     public void updateColor() {
         final UserSettings userSettings = UserSettings.getInstance(getApplicationContext());
         new AsyncTask<Void, Void, Void>() {
@@ -321,7 +301,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             protected void onPostExecute(final Void aVoid) {
                 /*toolbar.setTitleTextColor(userSettings.getTitleTextColor());
                 toolbar.setBackgroundColor(userSettings.getTitleBarColor());*/
-                final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
+//                final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
+                final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.addBookButton); //This wont work but it got rid of the error from above this
                 if (fragment != null) {
                     final View fragmentView = fragment.getView();
                     if (fragmentView != null) {
@@ -331,4 +312,494 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }.execute();
     }
+
+    //Create the pull out Sliding menu
+    private void createMenuDrawer() {
+
+        slidingMenu = new SlidingMenu(MainActivity.this);
+        slidingMenu.attachToActivity(MainActivity.this, SlidingMenu.SLIDING_CONTENT, true);
+        slidingMenu.setFadeDegree(1f);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+        slidingMenu.setBehindOffsetRes(R.dimen.behindOffSetRes);
+        slidingMenu.setMenu(R.layout.sliding_menu_frame);
+
+        View view = slidingMenu.getRootView();
+
+
+        TextView viewingYou = (TextView) view.findViewById(R.id.viewing_you_text);
+        TextView version = (TextView) view.findViewById(R.id.version);
+        TextView year = (TextView) view.findViewById(R.id.year);
+        ImageView imageView = (ImageView) view.findViewById(R.id.settingsButton);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                settings();
+            }
+        });
+
+        viewingYou.setTypeface(typeface);
+        version.setTypeface(typeface);
+        year.setTypeface(typeface);
+
+    }
+
+    //Method to go to user settings
+    public void settings() {
+        slidingMenu.toggle();
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+//        this.finish();
+    }
+
+    //Initialize dimension variables for the animations
+    private void initializeDimensionItems() {
+        mMinHeaderHeight = getResources().getDimensionPixelSize(R.dimen.min_header_height);
+        mHeaderHeight = getResources().getDimensionPixelSize(R.dimen.header_height);
+        mMinHeaderTranslation = -mMinHeaderHeight + getActionBarHeight();
+    }
+
+    //Initialize view item variables
+    private void initializeViewItems(){
+        mHeader = findViewById(R.id.header); /**ENTIRE HEADER**/
+        home_menu_image = (ImageView) findViewById(R.id.toolbar_icon); /**HEADER - HOME MENU IMAGE**/
+        home_menu_image2 = (ImageView) findViewById(R.id.toolbar_icon2); /**HEADER - HOME MENU IMAGE**/
+        mHeaderPicture = (ImageView) findViewById(R.id.header_picture); /**HEADER - BLURRED BACKGROUND**/
+//        profilePicture = (ImageView) findViewById(R.id.profile_picture); /**HEADER - PROFILE PICTURE**/
+        profilePicture = (FacebookPictureViewRound) findViewById(R.id.profile_picture); /**HEADER - PROFILE PICTURE**/
+        toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+    }
+
+    //Method for header animation
+    public int getActionBarHeight() {
+        if (mActionBarHeight != 0) {
+            return mActionBarHeight;
+        }
+        getTheme().resolveAttribute(android.R.attr.actionBarSize, mTypedValue, true);
+        mActionBarHeight = TypedValue.complexToDimensionPixelSize(mTypedValue.data, getResources().getDisplayMetrics());
+        return mActionBarHeight;
+    }
+
+    //Set up the SlidingTabStrip
+    private void initializeSlidingTabStrip() {
+        mPagerSlidingTabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        mPagerSlidingTabStrip.setViewPager(mViewPager);
+        mPagerSlidingTabStrip.getTabBackground();
+        mPagerSlidingTabStrip.setOnPageChangeListener(this);
+//        mSpannableString = new SpannableString(capitalizeFirstCharacter(firstName) + " " + capitalizeFirstCharacter(lastName));
+        mAlphaForegroundColorSpan = new AlphaForegroundColorSpan(0xffffffff);
+    }
+
+    //Images for the sliding tab strip
+    private void setSlidingTabImages() {
+        ImageView slide1 = (ImageView) findViewById(R.id.instagram_logo);
+        ImageView slide2 = (ImageView) findViewById(R.id.instagram_logo2);
+        ImageView slide3 = (ImageView) findViewById(R.id.instagram_logo3);
+        ImageView slide4 = (ImageView) findViewById(R.id.instagram_logo4);
+        slide1.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_photos_button));
+        slide2.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_info_button));
+        slide3.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_social_button));
+        slide4.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_chat_button));
+    }
+
+    //Method to scale down image bitmaps
+    private Drawable getScaledDrawables(int resource) {
+        // Read drawable from one of my stored images.
+        Drawable dra = getResources().getDrawable(resource);
+        Bitmap bitmapa = ((BitmapDrawable) dra).getBitmap();
+        // Create a scaled drawable from bitmap
+        Drawable scaledDrawable = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmapa, 75, 75, true));
+        // Set menu icon to new scaled down drawable
+
+
+        return scaledDrawable;
+    }
+
+    //Using custom image view as home as up indicator, this gets rid of the default arrow image
+    private void removeDefaultMenuButton(){
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            upArrow = getDrawable(R.drawable.back_arrow_transparent);
+        } else {
+            upArrow = getResources().getDrawable(R.drawable.back_arrow_transparent);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            upArrow.setColorFilter(getColor(R.color.transparentBackground), PorterDuff.Mode.SRC_ATOP);
+        }
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);
+    }
+
+    //Method to detect the scroll value of the Y axis
+    public int getScrollY(AbsListView view) {
+        View c = view.getChildAt(0);
+        if (c == null) {
+            return 0;
+        }
+        int firstVisiblePosition = view.getFirstVisiblePosition();
+        int top = c.getTop();
+        int headerHeight = 0;
+        if (firstVisiblePosition >= 1) {
+            headerHeight = mHeaderHeight;
+        }
+        return -top + firstVisiblePosition * c.getHeight() + headerHeight;
+    }
+
+    //Method for header animation
+    public static float clamp(float value, float max, float min) {
+        return Math.max(Math.min(value, min), max);
+    }
+
+    //Method for header animation
+    private static void interpolate(View view1, View view2, float interpolation) {
+        getOnScreenRect(mRect1, view1);
+        getOnScreenRect(mRect2, view2);
+
+        float scaleX = 1.0F + interpolation * (mRect2.width() / mRect1.width() - 1.0F);
+        float scaleY = 1.0F + interpolation * (mRect2.height() / mRect1.height() - 1.0F);
+        float translationX = 0.5F * (interpolation * (mRect2.left + mRect2.right - mRect1.left - mRect1.right));
+        float translationY = 0.5F * (interpolation * (mRect2.top + mRect2.bottom - mRect1.top - mRect1.bottom));
+
+        view1.setTranslationX(translationX);
+        view1.setTranslationY(translationY - mHeader.getTranslationY());
+        view1.setScaleX(scaleX);
+        view1.setScaleY(scaleY);
+    }
+
+    //Method for header animation
+    private static RectF getOnScreenRect(RectF rect, View view) {
+        rect.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+        return rect;
+    }
+
+    //Return the home menu button view
+    private View getHomeMenuImageIconView() {
+//        Drawable dra = getResources().getDrawable(R.drawable.side_arrow);
+//        home_menu_image2.setImageDrawable(d);
+//        home_menu_image2.setImageDrawable(dra);
+
+        home_menu_image2.setImageDrawable(drawerArrowDrawable);
+        return home_menu_image;
+    }
+
+    //Method to animate the title fade in/out
+    private static void setTitleAlpha(float alpha) {
+//        mAlphaForegroundColorSpan.setAlpha(alpha);
+//        mSpannableString.setSpan(mAlphaForegroundColorSpan, 0, mSpannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        toolbar.setTitle(" ");
+        toolbarTitle.setAlpha(alpha * 1);
+    }
+
+    //Method to animate the homeAsUp indicator fade in/out
+    private static void setHomeAsUpAlpha(float alpha) {
+        home_menu_image.setAlpha(alpha * 1);
+//        home_menu_image2.setAlpha(alpha * 1);
+        userInfoLayout.setAlpha(alpha * 1);
+    }
+
+
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        // Handle action bar item clicks here excluding the home button.
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                slidingMenu.toggle();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(final Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        // Save the title so it will be restored properly to match the view loaded when rotation
+        // was changed or in case the activity was destroyed.
+        /*if (toolbar != null) {
+            bundle.putCharSequence(BUNDLE_KEY_TOOLBAR_TITLE, toolbar.getTitle());
+        }*/
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // Obtain a reference to the mobile client.
+        final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
+
+        // pause/resume Mobile Analytics collection
+        awsMobileClient.handleOnPause();
+
+        // unregister notification receiver
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(notificationReceiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(settingsChangedReceiver);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+        final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
+
+        // pause/resume Mobile Analytics collection
+        awsMobileClient.handleOnResume();
+
+        // register notification receiver
+        LocalBroadcastManager.getInstance(this).registerReceiver(notificationReceiver,
+                new IntentFilter(PushListenerService.ACTION_SNS_NOTIFICATION));
+        // register settings changed receiver.
+        LocalBroadcastManager.getInstance(this).registerReceiver(settingsChangedReceiver,
+                new IntentFilter(UserSettings.ACTION_SETTINGS_CHANGED));
+        updateColor();
+        syncUserSettings();
+    }
+
+    @Override
+    public void onBackPressed() {
+        final FragmentManager fragmentManager = this.getSupportFragmentManager();
+
+//        if (navigationDrawer.isDrawerOpen()) {
+//            navigationDrawer.closeDrawer();
+//            return;
+//        }
+
+        /*if (fragmentManager.getBackStackEntryCount() == 0) {
+            if (fragmentManager.findFragmentByTag(HomeDemoFragment.class.getSimpleName()) == null) {
+                final Class fragmentClass = HomeDemoFragment.class;
+                // if we aren't on the home fragment, navigate home.
+                final Fragment fragment = Fragment.instantiate(this, fragmentClass.getName());
+
+                fragmentManager
+                    .beginTransaction()
+                    .replace(R.id.main_fragment_container, fragment, fragmentClass.getSimpleName())
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit();
+
+                // Set the title for the fragment.
+                *//*final ActionBar actionBar = this.getSupportActionBar();
+                if (actionBar != null) {
+                    actionBar.setTitle(getString(R.string.app_name));
+                }*//*
+                return;
+            }
+        }*/
+        super.onBackPressed();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+//		return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_main1, menu);
+        return true;
+    }
+
+    /************************************** IMPLEMENTED METHODS ******************************************/
+    /***********************************************************************************************/
+
+    @Override
+    public void onClick(final View v) {
+        switch(v.getId()){
+            case R.id.toolbar:
+                absListView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        absListView.smoothScrollToPosition(0);
+                    }
+                });
+                Toast.makeText(this, "toolbar clicked mainActivity", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+
+
+
+
+
+        /*if (v == signOutButton) {
+            // The user is currently signed in with a provider. Sign out of that provider.
+            identityManager.signOut();
+            // Show the sign-in button and hide the sign-out button.
+            signOutButton.setVisibility(View.INVISIBLE);
+            signInButton.setVisibility(View.VISIBLE);
+
+//            // Close the navigation drawer.
+//            navigationDrawer.closeDrawer();
+            return;
+        }
+        if (v == signInButton) {
+            // Start the sign-in activity. Do not finish this activity to allow the user to navigate back.
+            startActivity(new Intent(this, SignInActivity.class));
+//            // Close the navigation drawer.
+//            navigationDrawer.closeDrawer();
+            return;
+        }*/
+
+        // ... add any other button handling code here ...
+
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        SparseArrayCompat<ScrollTabHolder> scrollTabHolders = mPagerAdapter.getScrollTabHolders();
+        ScrollTabHolder currentHolder = scrollTabHolders.valueAt(position);
+
+        currentHolder.adjustScroll((int) (mHeader.getHeight() + mHeader.getTranslationY()));
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
+    @Override
+    public void adjustScroll(int scrollHeight) {
+
+    }
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount, int pagePosition) {
+        if (mViewPager.getCurrentItem() == pagePosition) {
+            absListView = view;
+            int scrollY = getScrollY(view);
+
+            mHeader.setTranslationY(Math.max(-scrollY, mMinHeaderTranslation));
+            float ratio = clamp(mHeader.getTranslationY() / mMinHeaderTranslation, 0.0f, 1.0f);
+
+            interpolate(profilePicture, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
+            interpolate(userInfoLayout, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
+            setTitleAlpha(clamp(5.0F * ratio - 4.0F, 0.0F, 1.0F));
+            setHomeAsUpAlpha(clamp((5.0F * ratio - 4.0F) * -1, 0.0F, 1.0F));
+        }
+    }
+
+
+
+
+
+
+
+
+    /************************************** INNER CLASSES ******************************************/
+    /***********************************************************************************************/
+
+//    //A Pager adapter that represents 2 ScreenSlidePageFragment objects, in sequence.
+//    public class ScreenSlidePagerAdapter extends FragmentPagerAdapter {
+//        int count = 0;
+//        public ScreenSlidePagerAdapter(FragmentManager fm) {
+//            super(fm);
+//        }
+//
+//        //        What happens when page is swiped?
+//        @Override
+//        public Fragment getItem(int position) {
+//            switch(position){
+//                case 1:
+//                    egoFriendsFragment = new EgoFriendsFragment();
+//                    return egoFriendsFragment;
+//                default: break;
+//            }
+//            egoStreamFragment = new EgoStreamFragment();
+//            return egoStreamFragment;
+//        }
+//
+//        @Override
+//        public int getCount() {
+//            return 2;
+//        }
+//    }
+
+    //PagerAdapter for the sliding pages under user profile
+    public class PagerAdapter extends FragmentPagerAdapter {
+
+        private SparseArrayCompat<ScrollTabHolder> mScrollTabHolders;
+        private final String[] TITLES = {" ", " ", " ", " "};
+
+        private ScrollTabHolder mListener;
+
+        public PagerAdapter(FragmentManager fm) {
+            super(fm);
+            mScrollTabHolders = new SparseArrayCompat<ScrollTabHolder>();
+        }
+
+        public void setTabHolderScrollingContent(ScrollTabHolder listener) {
+            mListener = listener;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return TITLES[position];
+        }
+
+
+        @Override
+        public int getCount() {
+            return TITLES.length;
+        }
+
+
+        @Override
+        public Fragment getItem(int position) {
+
+            fragment = (ScrollTabHolderFragment) SampleListFragment.newInstance(context, position, toolbar);
+
+            mScrollTabHolders.put(position, fragment);
+            if (mListener != null) {
+                fragment.setScrollTabHolder(mListener);
+
+            }
+
+            return fragment;
+
+        }
+
+        public SparseArrayCompat<ScrollTabHolder> getScrollTabHolders() {
+            return mScrollTabHolders;
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /************************************** FINAL METHODS ******************************************/
+    /***********************************************************************************************/
+
+    private final BroadcastReceiver notificationReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d(LOG_TAG, "Received notification from local broadcast. Display it in a dialog.");
+
+            Bundle data = intent.getBundleExtra(PushListenerService.INTENT_SNS_NOTIFICATION_DATA);
+            String message = PushListenerService.getMessage(data);
+
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle(R.string.push_demo_title)
+                    .setMessage(message)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show();
+        }
+    };
+
+    private final BroadcastReceiver settingsChangedReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d(LOG_TAG, "Received settings changed local broadcast. Update theme colors.");
+            updateColor();
+        }
+    };
+    /***********************************************************************************************/
 }

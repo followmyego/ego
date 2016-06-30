@@ -37,7 +37,7 @@ public class HomeDemoFragment extends DemoFragmentBase {
 
         ListView listView = (ListView) view.findViewById(android.R.id.list);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(final AdapterView<?> parent, final View view,
                                     final int position, final long id) {
@@ -53,13 +53,13 @@ public class HomeDemoFragment extends DemoFragmentBase {
                         .commit();
 
                     // Set the title for the fragment.
-                    /*final ActionBar actionBar = activity.getSupportActionBar();
+                    *//*final ActionBar actionBar = activity.getSupportActionBar();
                     if (actionBar != null) {
                         actionBar.setTitle(item.titleResId);
-                    }*/
+                    }*//*
                 }
             }
-        });
+        });*/
     }
 
     private static final class DemoListAdapter extends ArrayAdapter<DemoConfiguration.DemoFeature> {

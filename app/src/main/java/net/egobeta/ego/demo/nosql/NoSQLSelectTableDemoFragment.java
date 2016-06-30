@@ -133,11 +133,11 @@ public class NoSQLSelectTableDemoFragment extends DemoFragmentBase {
                     tablesAdapter.getItem(position).getTableName());
                 fragment.setArguments(args);
 
-                getActivity().getSupportFragmentManager()
+                /*getActivity().getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.main_fragment_container, fragment)
                     .addToBackStack(null)
-                    .commit();
+                    .commit();*/
             }
         });
     }

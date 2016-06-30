@@ -46,16 +46,17 @@ public class DemoInstructionFragment extends DemoFragmentBase {
         super.onViewCreated(view, savedInstanceState);
         final Bundle args = getArguments();
         final String demoFeatureName = args.getString(ARGUMENT_DEMO_FEATURE_NAME);
+
         final DemoConfiguration.DemoFeature demoFeature = DemoConfiguration.getDemoFeatureByName(
                 demoFeatureName);
 
         final TextView tvOverview = (TextView) view.findViewById(R.id.text_demo_feature_overview);
         tvOverview.setText(demoFeature.overviewResId);
-        final TextView tvDescription = (TextView) view.findViewById(
-                R.id.text_demo_feature_description);
+
+        final TextView tvDescription = (TextView) view.findViewById(R.id.text_demo_feature_description);
         tvDescription.setText(demoFeature.descriptionResId);
-        final TextView tvPoweredBy = (TextView) view.findViewById(
-                R.id.text_demo_feature_powered_by);
+
+        final TextView tvPoweredBy = (TextView) view.findViewById(R.id.text_demo_feature_powered_by);
         tvPoweredBy.setText(demoFeature.poweredByResId);
 
         final ArrayAdapter<DemoConfiguration.DemoItem> adapter = new ArrayAdapter<DemoConfiguration.DemoItem>(
@@ -76,10 +77,12 @@ public class DemoInstructionFragment extends DemoFragmentBase {
                 return view;
             }
         };
+
         adapter.addAll(demoFeature.demos);
+
         final ListView listView = (ListView) view.findViewById(android.R.id.list);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(final AdapterView<?> parent, final View view,
                                     final int position, final long id) {
@@ -96,7 +99,7 @@ public class DemoInstructionFragment extends DemoFragmentBase {
 //                    activity.getSupportActionBar().setTitle(item.titleResId);
                 }
             }
-        });
+        });*/
 
         listView.setBackgroundColor(Color.WHITE);
 

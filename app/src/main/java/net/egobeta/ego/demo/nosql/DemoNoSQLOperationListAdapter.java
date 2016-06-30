@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 
 public class DemoNoSQLOperationListAdapter extends ArrayAdapter<DemoNoSQLOperationListItem> {
 
-    public enum ViewType {
+    public enum EnumViewType {
         HEADER, OPERATION
     }
 
@@ -23,7 +23,7 @@ public class DemoNoSQLOperationListAdapter extends ArrayAdapter<DemoNoSQLOperati
 
     @Override
     public int getViewTypeCount() {
-        return ViewType.values().length;
+        return EnumViewType.values().length;
     }
 
     @Override

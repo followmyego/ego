@@ -16,7 +16,7 @@ public class DemoNoSQLOperationListHeader implements DemoNoSQLOperationListItem 
 
     @Override
     public int getViewType() {
-        return DemoNoSQLOperationListAdapter.ViewType.HEADER.ordinal();
+        return DemoNoSQLOperationListAdapter.EnumViewType.HEADER.ordinal();
     }
 
     @Override

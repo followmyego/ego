@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#202020"
+    tools:context="com.myegotest.ego_17012016.Main.MainActivity2">
+
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:id="@+id/viewing_you_image"
+        android:src="@drawable/glasses_viewing_you"
+        android:tint="#444444"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:id="@+id/viewing_you_text"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="viewing you now"
+        android:textColor="#444444"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignBottom="@+id/viewing_you_image"
+        android:layout_toRightOf="@+id/viewing_you_image"
+        android:layout_toEndOf="@+id/viewing_you_image" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="370dp"
+        android:layout_marginLeft="35dp"
+        android:id="@+id/viewingYouList"
+        android:layout_below="@+id/viewing_you_image"
+        >
+    </ListView>
+
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:id="@+id/settingsButton"
+        android:src="@drawable/settings_button"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:layout_above="@+id/egoLogo1"
+        android:layout_alignLeft="@+id/viewing_you_image"
+        android:layout_alignStart="@+id/viewing_you_image"
+        android:layout_marginBottom="35dp"/>
+
+    <ImageView
+        android:layout_width="55dp"
+        android:layout_height="30dp"
+        android:id="@+id/egoLogo1"
+        android:src="@drawable/n_ego_logo"
+        android:tint="#8e8d89"
+        android:layout_above="@+id/version"
+        android:layout_alignLeft="@+id/version"
+        android:layout_alignStart="@+id/version" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sliding_menu_version"
+        android:textColor="#444444"
+        android:textSize="20sp"
+        android:layout_above="@+id/year"
+        android:layout_alignLeft="@+id/year"
+        android:layout_alignStart="@+id/year" />
+
+    <TextView
+        android:id="@+id/year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="©2015 - 2016"
+        android:textColor="#444444"
+        android:textSize="10sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="25dp"/>
+
+</RelativeLayout>

@@ -9,7 +9,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +39,7 @@ public class NoSQLSelectOperationDemoFragment extends DemoFragmentBase implement
     /** The List View containing the NoSQL Operations that may be selected */
     private ListView operationsListView;
 
-    /** The Adapter for the NoSQL Operations List. */
+    /** The Custom Adapter for the NoSQL Operations List. */
     private ArrayAdapter<DemoNoSQLOperationListItem> operationsListAdapter;
 
     /** The Application context. */
@@ -201,6 +200,7 @@ public class NoSQLSelectOperationDemoFragment extends DemoFragmentBase implement
         });
     }
 
+    /** This method is called to show the results from the successful operation **/
     private void showResultsForOperation(final DemoNoSQLOperation operation) {
         // On execution complete, open the NoSQLShowResultsDemoFragment.
         final NoSQLShowResultsDemoFragment resultsDemoFragment = new NoSQLShowResultsDemoFragment();
@@ -208,13 +208,13 @@ public class NoSQLSelectOperationDemoFragment extends DemoFragmentBase implement
 
         final FragmentActivity fragmentActivity = getActivity();
 
-        if (fragmentActivity != null) {
+        /*if (fragmentActivity != null) {
             fragmentActivity.getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.main_fragment_container, resultsDemoFragment)
                 .addToBackStack(null)
                 .commitAllowingStateLoss();
-        }
+        }*/
     }
 
     private class SpinnerRunner implements Runnable {
@@ -273,16 +273,22 @@ public class NoSQLSelectOperationDemoFragment extends DemoFragmentBase implement
 
     @Override
     public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
+        int clicked_OperationItem_ViewType = operationsListAdapter.getItem(position).getViewType();
 
-        if (operationsListAdapter.getItem(position).getViewType() == DemoNoSQLOperationListAdapter.ViewType.OPERATION.ordinal()) {
+        /** Check if the item clicked is an operation and not just one of the headers **/
+        if (  clicked_OperationItem_ViewType == DemoNoSQLOperationListAdapter.EnumViewType.OPERATION.ordinal() )
+        {
             final DemoNoSQLOperation operation = (DemoNoSQLOperation) operationsListAdapter.getItem(position);
 
+            /** Show the spinner to let the user know the app is getting/sending data **/
             showSpinner();
-
+            /** Create a new thread to run the operation in so we dont interupt the main ui thread**/
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     boolean foundResults = false;
+
+                    /************** try to execute the operation ***************/
                     try {
                         foundResults = operation.executeOperation();
                     } catch (final AmazonClientException ex) {
@@ -302,6 +308,7 @@ public class NoSQLSelectOperationDemoFragment extends DemoFragmentBase implement
                         dismissSpinner();
                     }
 
+                    /********** Check if the operation is scan type ************/
                     ThreadUtils.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -314,14 +321,23 @@ public class NoSQLSelectOperationDemoFragment extends DemoFragmentBase implement
                             }
                         }
                     });
-
+                    /*********** Check if there were any results ****************/
                     if (!foundResults) {
                         handleNoResultsFound();
                     } else {
+                        /** Update ui if there were results **/
                         showResultsForOperation(operation);
                     }
+                    /************************************************************/
                 }
             }).start();
         }
     }
+
+
+
+
+
+
+
 }

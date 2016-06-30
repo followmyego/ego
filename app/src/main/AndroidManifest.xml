@@ -46,12 +46,16 @@
         <activity
             android:name=".SignInActivity"
             android:label="@string/title_activity_sign_in"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             >
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main">
+            android:label="@string/title_activity_main"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:windowSoftInputMode="adjustPan">
         </activity>
 
         <!-- BEGIN - APP CONTENT DELIVERY AND USER DATA STORAGE -->
@@ -130,4 +134,6 @@
         <!-- END - PUSH NOTIFICATIONS WITH GOOGLE CLOUD MESSAGING (GCM) -->
 
     </application>
+
+
 </manifest>

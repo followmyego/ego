@@ -12,7 +12,7 @@ import net.egobeta.ego.R;
 public abstract class DemoNoSQLOperationBase implements DemoNoSQLOperation {
     protected final String title, example;
 
-    DemoNoSQLOperationBase(final String title, final String example) {
+    public DemoNoSQLOperationBase(final String title, final String example) {
         this.title = title;
         this.example = example;
     }
@@ -24,7 +24,7 @@ public abstract class DemoNoSQLOperationBase implements DemoNoSQLOperation {
 
     @Override
     public int getViewType() {
-        return DemoNoSQLOperationListAdapter.ViewType.OPERATION.ordinal();
+        return DemoNoSQLOperationListAdapter.EnumViewType.OPERATION.ordinal();
     }
 
     private class SelectOpViewHolder {

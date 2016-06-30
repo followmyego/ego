@@ -192,10 +192,10 @@
   <string name="nosql_dialog_title_remove_confirmation">Confirm Removal of Sample Items</string>
   <string name="nosql_dialog_message_remove_confirmation">This will remove all your sample items.  Are you sure?</string>
 
-  <string name="nosql_dialog_title_added_sample_data_text">Added Sample Data</string>
-  <string name="nosql_dialog_message_added_sample_data_text">20 Sample Items with random data were added to your table.</string>
-  <string name="nosql_dialog_title_removed_sample_data_text">Removed Sample Data</string>
-  <string name="nosql_dialog_message_removed_sample_data_text">All Sample Items have been removed from your table.</string>
+  <string name="nosql_dialog_title_added_sample_data_text">Added Your Book</string>
+  <string name="nosql_dialog_message_added_sample_data_text">Your new book was added to your table.</string>
+  <string name="nosql_dialog_title_removed_sample_data_text">Removed Your Book</string>
+  <string name="nosql_dialog_message_removed_sample_data_text">Your book has been removed from your table.</string>
   <string name="nosql_dialog_ok_text">OK</string>
 
   <!-- NoSQL Demo Operations Headers -->
@@ -259,5 +259,10 @@
   <string name="nosql_dialog_message_confirm_update_item_text">Are you sure you want to update the selected item?</string>
   <string name="nosql_dialog_title_confirm_delete_item_text">Confirm Delete</string>
   <string name="nosql_dialog_message_confirm_delete_item_text">Are you sure you want to delete the selected item?</string>
+
+  <string name="sliding_menu_version">Version 1.0.1</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
