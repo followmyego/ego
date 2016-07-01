@@ -37,7 +37,7 @@ public class SettingsActivity extends AppCompatActivity {
     //Method to Logout the user. Clear user data and set loggedIn = to false on the LocalDataBase
     public void disconnectInstagramImages(View v) {
         Toast.makeText(SettingsActivity.this, "disconnect instagram images", Toast.LENGTH_SHORT).show();
-//        SampleListFragment.clickConnectButton(SettingsActivity.this, context);
+//        Fragment_Main.clickConnectButton(SettingsActivity.this, context);
 
 //        builder = new AlertDialog.Builder(context);
 //        builder.setMessage("Disconnect from Instagram?")
@@ -47,7 +47,7 @@ public class SettingsActivity extends AppCompatActivity {
 //                            public void onClick(DialogInterface dialog, int id) {
 //                                //TODO find out why the last execute argument is being passed through via mLocalDataBase
 //                                new UpdateUserInstagramInfo(context, "no").execute(user.facebookId, mLocalDataBase.getInstagramID(), mLocalDataBase.getInstagramUsername());
-//                                SampleListFragment.disconnectInstagramImages();
+//                                Fragment_Main.disconnectInstagramImages();
 //                                finishActivity();
 //                            }
 //                        })

@@ -1,54 +1,32 @@
 package net.egobeta.ego;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.InputType;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBQueryExpression;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.PaginatedQueryList;
-import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
 import net.amazonaws.mobile.AWSMobileClient;
-import net.amazonaws.mobile.util.ThreadUtils;
 import net.egobeta.ego.demo.nosql.Book;
-import net.egobeta.ego.demo.nosql.DemoNoSQLBooksResult;
-import net.egobeta.ego.demo.nosql.DemoNoSQLOperationBase;
-import net.egobeta.ego.demo.nosql.DemoNoSQLResult;
-import net.egobeta.ego.demo.nosql.DynamoDBUtils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 import java.util.TreeSet;
 
 /**
@@ -198,7 +176,7 @@ public class EgoStreamFragment extends ScrollTabHolderFragment implements AbsLis
 
 
         /*if (mPosition == 0) {
-            InstagramTabAdapter myCustomAdapter = new InstagramTabAdapter();
+            EgoStreamTabAdapter myCustomAdapter = new EgoStreamTabAdapter();
             for(int i = 0; i < 10; i++){
                 myCustomAdapter.addItem("item " + i);
             }
@@ -422,7 +400,7 @@ public class EgoStreamFragment extends ScrollTabHolderFragment implements AbsLis
 
             if(convertView == null){
                 viewHolder = new ViewHolder();
-                convertView = mInflater.inflate(R.layout.list_item_instagram, null);
+                convertView = mInflater.inflate(R.layout.list_item_stream, null);
 
 
                 //Initialize the gridview

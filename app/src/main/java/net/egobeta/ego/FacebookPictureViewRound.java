@@ -209,7 +209,7 @@ public class FacebookPictureViewRound extends FrameLayout {
     public final void setProfileId(String profileId) {
         boolean force = false;
         if (Utility.isNullOrEmpty(this.profileId) || !this.profileId.equalsIgnoreCase(profileId)) {
-            // Clear out the old profilePicture before requesting for the new one.
+            // Clear out the old egoLogo before requesting for the new one.
             setBlankProfilePicture();
             force = true;
         }
