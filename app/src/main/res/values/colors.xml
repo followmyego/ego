@@ -13,4 +13,6 @@
     <color name="instructions_list_border_color">#FFDDDDDD</color>
     <color name="background_tab_pressed">#6633B5E5</color>
     <color name="transparentBackground">#00ffffff</color>
+
+    <color name="menuDrawerColor">#8e8d89</color>
 </resources>

@@ -12,12 +12,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,12 +27,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.util.SparseArrayCompat;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.support.v7.widget.Toolbar;
-import android.text.SpannableString;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
@@ -46,14 +44,12 @@ import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
 import net.astuetz.PagerSlidingTabStrip;
 import net.egobeta.ego.demo.UserSettings;
-import net.egobeta.ego.demo.nosql.Book;
 import net.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 
 import com.amazonaws.mobileconnectors.cognito.Dataset;
 import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
 import com.amazonaws.mobileconnectors.cognito.Record;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
-import com.jeremyfeinstein.slidingmenu.lib.MyListener;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.viewpagerindicator.CirclePageIndicator;
 
@@ -112,8 +108,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     private static ImageView home_menu_image2;
     private ImageView mHeaderPicture;
     public Drawable upArrow;
-    //    private static ImageView profilePicture;
-    private static FacebookPictureViewRound profilePicture;
+    //    private static ImageView egoLogo;
+    public static ImageView egoLogo;
     public ImageButton tapToEdit;
     public static ScrollView scrollView;
     private SlidingMenu slidingMenu;
@@ -122,11 +118,11 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     public PagerSlidingTabStrip mPagerSlidingTabStrip;
     private static TextView toolbarTitle;
     private AbsListView absListView;
-    private DrawerArrowDrawable drawerArrowDrawable;
+    DrawerArrowDrawable drawerArrowDrawable;
     private Resources resources;
     Context context;
     private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
-
+    static CirclePageIndicator pageIndicator;
 
 
 
@@ -203,7 +199,11 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         /****************/
         setContentView(R.layout.activity_main);
         context = getApplicationContext();
+
         resources = getResources();
+        drawerArrowDrawable = new DrawerArrowDrawable(resources);
+//        drawerArrowDrawable.setStrokeColor(resources.getColor(R.color.menuDrawerColor));
+        drawerArrowDrawable.setStrokeColor(resources.getColor(R.color.menuDrawerColor));
 
         /**Initialize font*/
         typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         /**Set up the ViewPager and PagerAdapter*/
         mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setOffscreenPageLimit(5);
+        mViewPager.setOffscreenPageLimit(2);
 //        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mPagerAdapter.setTabHolderScrollingContent(this);
@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         initializeSlidingTabStrip();
 
         /**Images for the sliding tab strip*/
-        setSlidingTabImages();
+//        setSlidingTabImages();
 
         /**Create top toolbar/menu bar*/
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -245,8 +245,14 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
 
         /*Bind the Page indicator to the adapter*/
-//        CirclePageIndicator pageIndicator = (CirclePageIndicator)findViewById(R.id.titles);
-//        pageIndicator.setViewPager(mPager);
+        pageIndicator = (CirclePageIndicator)findViewById(R.id.titles);
+        int tabPageColor = Color.parseColor("#5055C1AD");
+        int tabFillColor = Color.parseColor("#55C1AD");
+        pageIndicator.setStrokeColor(tabPageColor);
+        pageIndicator.setFillColor(tabFillColor);
+        pageIndicator.setPageColor(tabPageColor);
+        pageIndicator.setExtraSpacing(15f);
+        pageIndicator.setViewPager(mViewPager);
 
         //Initialize the mapper for DynamoDB
         mapper = AWSMobileClient.defaultMobileClient().getDynamoDBMapper();
@@ -364,8 +370,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         home_menu_image = (ImageView) findViewById(R.id.toolbar_icon); /**HEADER - HOME MENU IMAGE**/
         home_menu_image2 = (ImageView) findViewById(R.id.toolbar_icon2); /**HEADER - HOME MENU IMAGE**/
         mHeaderPicture = (ImageView) findViewById(R.id.header_picture); /**HEADER - BLURRED BACKGROUND**/
-//        profilePicture = (ImageView) findViewById(R.id.profile_picture); /**HEADER - PROFILE PICTURE**/
-        profilePicture = (FacebookPictureViewRound) findViewById(R.id.profile_picture); /**HEADER - PROFILE PICTURE**/
+//        egoLogo = (ImageView) findViewById(R.id.profile_picture); /**HEADER - PROFILE PICTURE**/
+        egoLogo = (ImageView) findViewById(R.id.ego_logo); /**HEADER - PROFILE PICTURE**/
         toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
     }
 
@@ -391,14 +397,10 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Images for the sliding tab strip
     private void setSlidingTabImages() {
-        ImageView slide1 = (ImageView) findViewById(R.id.instagram_logo);
+        /*ImageView slide1 = (ImageView) findViewById(R.id.instagram_logo);
         ImageView slide2 = (ImageView) findViewById(R.id.instagram_logo2);
-        ImageView slide3 = (ImageView) findViewById(R.id.instagram_logo3);
-        ImageView slide4 = (ImageView) findViewById(R.id.instagram_logo4);
         slide1.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_photos_button));
-        slide2.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_info_button));
-        slide3.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_social_button));
-        slide4.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_chat_button));
+        slide2.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_info_button));*/
     }
 
     //Method to scale down image bitmaps
@@ -449,6 +451,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     }
 
     //Method for header animation
+    private static RectF getOnScreenRect(RectF rect, View view) {
+        rect.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+        return rect;
+    }
+
+    //Method for header animation
     private static void interpolate(View view1, View view2, float interpolation) {
         getOnScreenRect(mRect1, view1);
         getOnScreenRect(mRect2, view2);
@@ -464,19 +472,31 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         view1.setScaleY(scaleY);
     }
 
-    //Method for header animation
-    private static RectF getOnScreenRect(RectF rect, View view) {
-        rect.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-        return rect;
+
+
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount, int pagePosition) {
+        if (mViewPager.getCurrentItem() == pagePosition) {
+            absListView = view;
+            int scrollY = getScrollY(view);
+
+            mHeader.setTranslationY(Math.max(-scrollY, mMinHeaderTranslation));
+            float ratio = clamp(mHeader.getTranslationY() / mMinHeaderTranslation, 0.0f, 1.0f);
+
+//            interpolate(egoLogo, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
+            setTitleAlpha(clamp(5.0F * ratio - 4.0F, 0.0F, 1.0F));
+            setHomeAsUpAlpha(clamp((5.0F * ratio - 4.0F) * -1, 0.0F, 1.0F));
+        }
     }
 
     //Return the home menu button view
     private View getHomeMenuImageIconView() {
-//        Drawable dra = getResources().getDrawable(R.drawable.side_arrow);
+        Drawable dra = getResources().getDrawable(R.drawable.back_arrow_transparent);
 //        home_menu_image2.setImageDrawable(d);
 //        home_menu_image2.setImageDrawable(dra);
 
-        home_menu_image2.setImageDrawable(drawerArrowDrawable);
+        home_menu_image2.setImageDrawable(dra);
         return home_menu_image;
     }
 
@@ -485,14 +505,15 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 //        mAlphaForegroundColorSpan.setAlpha(alpha);
 //        mSpannableString.setSpan(mAlphaForegroundColorSpan, 0, mSpannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         toolbar.setTitle(" ");
-        toolbarTitle.setAlpha(alpha * 1);
+//        egoLogo.setAlpha(alpha * 1);
     }
 
     //Method to animate the homeAsUp indicator fade in/out
     private static void setHomeAsUpAlpha(float alpha) {
-        home_menu_image.setAlpha(alpha * 1);
-//        home_menu_image2.setAlpha(alpha * 1);
-        userInfoLayout.setAlpha(alpha * 1);
+        egoLogo.setAlpha(alpha * 1);
+        toolbar.setAlpha(alpha * 1);
+        pageIndicator.setAlpha(alpha * 1);
+        mHeader.setAlpha(alpha * 1);
     }
 
 
@@ -663,21 +684,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     }
 
-    @Override
-    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount, int pagePosition) {
-        if (mViewPager.getCurrentItem() == pagePosition) {
-            absListView = view;
-            int scrollY = getScrollY(view);
 
-            mHeader.setTranslationY(Math.max(-scrollY, mMinHeaderTranslation));
-            float ratio = clamp(mHeader.getTranslationY() / mMinHeaderTranslation, 0.0f, 1.0f);
-
-            interpolate(profilePicture, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
-            interpolate(userInfoLayout, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
-            setTitleAlpha(clamp(5.0F * ratio - 4.0F, 0.0F, 1.0F));
-            setHomeAsUpAlpha(clamp((5.0F * ratio - 4.0F) * -1, 0.0F, 1.0F));
-        }
-    }
 
 
 
@@ -719,7 +726,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     public class PagerAdapter extends FragmentPagerAdapter {
 
         private SparseArrayCompat<ScrollTabHolder> mScrollTabHolders;
-        private final String[] TITLES = {" ", " ", " ", " "};
+        private final String[] TITLES = {" ", " "};
 
         private ScrollTabHolder mListener;
 
@@ -747,7 +754,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         @Override
         public Fragment getItem(int position) {
 
-            fragment = (ScrollTabHolderFragment) SampleListFragment.newInstance(context, position, toolbar);
+            fragment = (ScrollTabHolderFragment) Fragment_Main.newInstance(context, position, toolbar);
 
             mScrollTabHolders.put(position, fragment);
             if (mListener != null) {

@@ -114,6 +114,7 @@ android/support/v4/app/FragmentTransaction.class
 android/support/v7/widget/ViewUtils.class
 com/amazonaws/mobileconnectors/lambdainvoker/LambdaFunction.class
 android/support/v4/media/session/PlaybackStateCompat$Actions.class
+com/viewpagerindicator/CirclePageIndicator.class
 android/support/design/widget/AnimationUtils.class
 com/google/android/gms/gcm/GoogleCloudMessaging.class
 android/support/v4/app/BaseFragmentActivityDonut.class
@@ -180,8 +181,8 @@ com/google/android/gms/measurement/internal/zzv.class
 com/google/android/gms/measurement/internal/zzm.class
 net/amazonaws/mobile/user/IdentityProvider.class
 android/support/v4/media/session/PlaybackStateCompat$State.class
-android/support/v4/view/ViewCompatJB.class
 android/support/design/widget/Snackbar$SnackbarLayout$OnAttachStateChangeListener.class
+android/support/v4/view/ViewCompatJB.class
 net/egobeta/ego/MainActivity$2.class
 com/amazonaws/services/s3/AmazonS3Client.class
 android/support/v4/media/session/MediaSessionCompat$MediaSessionImpl.class
@@ -413,6 +414,7 @@ android/support/design/widget/CoordinatorLayout$DefaultBehavior.class
 android/support/multidex/MultiDexExtractor$1.class
 net/egobeta/ego/MainActivity$3.class
 android/support/design/widget/Snackbar$SnackbarLayout.class
+net/egobeta/ego/DrawerArrowDrawable.class
 android/support/v4/util/DebugUtils.class
 android/support/v7/widget/RecyclerView$6.class
 android/support/v4/view/accessibility/AccessibilityEventCompat.class
@@ -443,7 +445,6 @@ android/support/annotation/FloatRange.class
 android/support/multidex/MultiDex$V19.class
 com/google/android/gms/common/SignInButton$ButtonSize.class
 android/support/v4/view/ViewConfigurationCompat.class
-net/egobeta/ego/FacebookPictureViewRound.class
 android/support/design/widget/Snackbar$Callback$DismissEvent.class
 com/amazonaws/internal/SdkFilterOutputStream.class
 android/support/v4/app/FragmentManagerState.class
@@ -564,6 +565,7 @@ android/support/v4/media/RatingCompatApi21.class
 android/support/multidex/ZipUtil.class
 android/support/v4/view/ViewPropertyAnimatorListener.class
 android/support/design/widget/ThemeUtils.class
+com/viewpagerindicator/PageIndicator.class
 android/support/v4/widget/SwipeRefreshLayout.class
 android/support/annotation/WorkerThread.class
 android/support/v4/view/ViewPager.class

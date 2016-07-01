@@ -6,10 +6,17 @@
     <dimen name="sign_in_button_height">40dp</dimen>
     <dimen name="demo_mobile_analytics_button_text_size">12sp</dimen>
 
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="behindoffsetRes">100dp</dimen>
+    <dimen name="shadow_width">30dp</dimen>
+
+
     <!--<dimen name="header_height">616dp</dimen> this is full screen-->
     <!--<dimen name="min_header_height">568dp</dimen> this is full screen-->
-    <dimen name="header_height">562dp</dimen>
-    <dimen name="min_header_height">514dp</dimen>
+    <dimen name="header_height">202dp</dimen>
+    <dimen name="min_header_height">202dp</dimen>
     <dimen name="header_logo_size">240dp</dimen>
     <dimen name="behindOffSetRes">70dp</dimen>
 </resources>
