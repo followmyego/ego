@@ -47,7 +47,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
     private String facebookId;
 
     //Other variables
-    String[] web = new String[10];
+    String[] web = new String[4];
     private ListView mListView;
     private ArrayList<String> mListItems;
     private static final String TAG = "DEBUGGING MESSAGE";
@@ -69,7 +69,8 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
     private static Toolbar toolbar;
 
     private int scrollHeight;
-    EgoStreamViewAdapter adapter;
+//    EgoStreamViewAdapter adapter;
+    EgoStreamViewAdapter2 adapter;
 
 
     //Instagram stuffs
@@ -117,7 +118,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
         }
 
         //Create adapter for instagram images and horizontal image sliding view
-        adapter = new EgoStreamViewAdapter(getActivity(), web, facebookProfileIds);
+        adapter = new EgoStreamViewAdapter2(getActivity(), web, facebookProfileIds);
     }
 
 
@@ -141,17 +142,16 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
 
         if (mPosition == 0) {
+
             EgoStreamTabAdapter myCustomAdapter = new EgoStreamTabAdapter();
             myCustomAdapter.addSeparatorItem("separator " + 1);
 
             mListView.setAdapter(myCustomAdapter);
             mListView.setOnScrollListener(this);
 
-
-
         } else if (mPosition == 1) {
 
-            EgoFriendsTabAdapter myCustomAdapter = new EgoFriendsTabAdapter();
+            EgoStreamTabAdapter myCustomAdapter = new EgoStreamTabAdapter();
             myCustomAdapter.addSeparatorItem("separator " + 1);
 
             mListView.setAdapter(myCustomAdapter);
@@ -172,9 +172,8 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
             return;
         }
         mListView.setSelectionFromTop(1, scrollHeight);
-
-
     }
+
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
@@ -347,98 +346,4 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
     }
 
 
-
-
-
-
-
-
-
-
-
-
-    /** ADAPTER INSTAGRAM TAB **/
-    public class EgoFriendsTabAdapter extends BaseAdapter {
-
-        private static final int TYPE_ITEM = 0;
-        private static final int TYPE_SEPARATOR = 1;
-        private static final int TYPE_MAX_COUNT = TYPE_SEPARATOR + 1;
-
-        private ArrayList<String> mData = new ArrayList<String>();
-        private LayoutInflater mInflater;
-
-        private TreeSet mSeparatorsSet = new TreeSet();
-
-        public EgoFriendsTabAdapter(){
-            mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        }
-
-        public void addItem(final String item){
-            mData.add(item);
-            notifyDataSetChanged();
-        }
-
-        public void addSeparatorItem(final String item){
-
-            mData.add(item);
-            // save separator position
-            mSeparatorsSet.add(mData.size() - 1);
-            notifyDataSetChanged();
-        }
-
-        @Override
-        public int getItemViewType(int position) {
-//			return mSeparatorsSet.contains(position) ? TYPE_SEPARATOR : TYPE_ITEM;
-            if(mSeparatorsSet.contains(position)){
-                return TYPE_SEPARATOR;
-            } else {
-                return TYPE_ITEM;
-            }
-        }
-
-        @Override
-        public int getViewTypeCount() {
-            return TYPE_MAX_COUNT;
-        }
-
-        @Override
-        public int getCount() {
-            return mData.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return mData.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            System.out.println("getView" + position + " " + convertView);
-
-            ViewHolder viewHolder = null;
-
-            if(convertView == null){
-                viewHolder = new ViewHolder();
-                convertView = mInflater.inflate(R.layout.list_item_stream, null);
-
-                //Initialize the gridview
-                gridView = (NonScrollableGridView) convertView.findViewById(R.id.myGridView);
-                displayStreamImageList();
-                convertView.setTag(viewHolder);
-            } else {
-                viewHolder = (ViewHolder)convertView.getTag();
-
-            }
-            return convertView;
-        }
-
-        public class ViewHolder{
-            NonScrollableGridView gridView;
-        }
-    }
 }

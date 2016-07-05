@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         /**Set up the ViewPager and PagerAdapter*/
         mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setOffscreenPageLimit(2);
+        mViewPager.setOffscreenPageLimit(3);
 //        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mPagerAdapter.setTabHolderScrollingContent(this);
@@ -532,15 +532,15 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+   /* @Override
     protected void onSaveInstanceState(final Bundle bundle) {
         super.onSaveInstanceState(bundle);
         // Save the title so it will be restored properly to match the view loaded when rotation
         // was changed or in case the activity was destroyed.
-        /*if (toolbar != null) {
+        *//*if (toolbar != null) {
             bundle.putCharSequence(BUNDLE_KEY_TOOLBAR_TITLE, toolbar.getTitle());
-        }*/
-    }
+        }*//*
+    }*/
 
     @Override
     protected void onPause() {
@@ -560,6 +560,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     @Override
     protected void onResume() {
         super.onResume();
+        mHeaderPicture = (ImageView) findViewById(R.id.header_picture); /**HEADER - BLURRED BACKGROUND**/
 
 
         final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
@@ -575,6 +576,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 new IntentFilter(UserSettings.ACTION_SETTINGS_CHANGED));
         updateColor();
         syncUserSettings();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mHeaderPicture = (ImageView) findViewById(R.id.header_picture);
     }
 
     @Override

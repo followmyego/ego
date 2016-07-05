@@ -40,20 +40,20 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\button_facebook_pressed.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\button_sendgraph.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\button_sendgraph.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_1.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_1.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_2_selected.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_2_selected.png"
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\button_sendgraph.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\button_sendgraph.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\splash_icon.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\splash_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_2_selected.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_2_selected.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_1_selected.png",
@@ -96,12 +96,12 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon_delay.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_3_selected.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_3_selected.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_4.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_4.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_3_selected.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_3_selected.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\icon_check_dated.png",
@@ -116,12 +116,12 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\user_files.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\cloud_logic.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\cloud_logic.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\push.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\push.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\cloud_logic.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\cloud_logic.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_1_pressed.png",
