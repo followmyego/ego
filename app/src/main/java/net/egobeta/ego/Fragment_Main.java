@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 
 import android.widget.AbsListView;
 
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 
@@ -27,6 +28,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -194,14 +196,20 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
     }
 
     //Method to show users instagram photos
-    public void displayStreamImageList(){
+    public void gridViewInitializer(View convertView){
+        //Initialize the gridview
+        gridView = (NonScrollableGridView) convertView.findViewById(R.id.myGridView);
 
 
-        //Set the adapter for the horizontal image sliding view
-        if(gridView != null){
-            gridView.setVisibility(View.VISIBLE);
-            gridView.setAdapter(adapter);
-        }
+        gridView.setVisibility(View.VISIBLE);
+        gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getActivity(), "item number: " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     /**Adapter for the interests, social network and chat page */
@@ -330,8 +338,8 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
                 convertView = mInflater.inflate(R.layout.list_item_stream, null);
 
                 //Initialize the gridview
-                gridView = (NonScrollableGridView) convertView.findViewById(R.id.myGridView);
-                displayStreamImageList();
+                gridViewInitializer(convertView);
+
                 convertView.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder)convertView.getTag();

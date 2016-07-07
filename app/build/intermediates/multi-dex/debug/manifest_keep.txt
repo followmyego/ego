@@ -14,9 +14,6 @@
 -keep class com.facebook.FacebookActivity { <init>(); }
 -keep class com.google.android.gms.gcm.GcmReceiver { <init>(); }
 -keep class net.egobeta.ego.PushListenerService { <init>(); }
--keep class com.google.android.gms.measurement.AppMeasurementContentProvider { <init>(); }
--keep class com.google.android.gms.measurement.AppMeasurementReceiver { <init>(); }
--keep class com.google.android.gms.measurement.AppMeasurementService { <init>(); }
 -keep public class * extends android.app.backup.BackupAgent {
     <init>();
 }

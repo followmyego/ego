@@ -1,12 +1,10 @@
 
-com/google/android/gms/measurement/internal/zzx.class
 android/support/v4/app/FragmentManagerImpl$5.class
 com/google/android/gms/gcm/GcmListenerService$1.class
 android/support/v4/media/session/MediaSessionCompat$OnActiveChangeListener.class
 android/support/v4/view/ViewCompat$ICSViewCompatImpl.class
 com/amazonaws/mobileconnectors/s3/transferutility/TransferTable.class
 android/support/v7/app/AppCompatDelegate.class
-com/google/android/gms/common/GoogleApiAvailability.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBNativeBoolean.class
 android/support/v4/view/GravityCompat.class
 android/support/v7/widget/RecyclerView$3.class
@@ -39,7 +37,6 @@ com/amazonaws/ClientConfiguration.class
 android/support/v7/widget/AdapterHelper$Callback.class
 android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 android/support/v4/app/Fragment.class
-com/google/android/gms/dynamic/zzg.class
 android/support/v4/view/ViewCompatICSMr1.class
 android/support/annotation/XmlRes.class
 android/support/v7/view/ActionMode.class
@@ -52,9 +49,10 @@ android/support/v7/widget/RecyclerView$ItemAnimatorRestoreListener.class
 android/support/v4/widget/MaterialProgressDrawable$ProgressDrawableSize.class
 android/support/annotation/DrawableRes.class
 com/amazonaws/util/AwsHostNameUtils.class
+com/google/android/gms/internal/zzpl.class
 android/support/v7/widget/ViewInfoStore.class
-android/support/v7/widget/RecyclerView$RecyclerListener.class
 android/support/design/widget/Snackbar$Callback.class
+android/support/v7/widget/RecyclerView$RecyclerListener.class
 android/support/v7/recyclerview/R.class
 com/amazonaws/services/mobileanalytics/AmazonMobileAnalyticsClient.class
 net/egobeta/ego/MainActivity$6.class
@@ -68,7 +66,6 @@ net/amazonaws/mobile/downloader/service/DownloadService$ServiceHandler.class
 com/amazonaws/internal/SdkInputStream.class
 android/support/v4/util/ArrayMap.class
 android/support/v7/widget/RecyclerView$OnScrollListener.class
-com/google/android/gms/measurement/internal/zzw.class
 com/amazonaws/mobileconnectors/s3/transferutility/TransferType.class
 android/support/annotation/StringRes.class
 com/google/android/gms/common/data/AbstractDataBuffer.class
@@ -84,7 +81,6 @@ android/support/design/widget/CoordinatorLayout$LayoutParams.class
 android/support/v4/view/ViewCompat$ViewCompatImpl.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBIndexRangeKey.class
 android/support/v4/app/FragmentController.class
-com/google/android/gms/common/internal/safeparcel/SafeParcelable.class
 com/amazonaws/AmazonWebServiceClient.class
 com/facebook/share/model/ShareMedia.class
 net/egobeta/ego/Application.class
@@ -120,9 +116,7 @@ com/google/android/gms/gcm/GoogleCloudMessaging.class
 android/support/v4/app/BaseFragmentActivityDonut.class
 com/facebook/R$layout.class
 android/support/v4/media/session/PlaybackStateCompat$1.class
-com/google/android/gms/internal/zzqt.class
 com/amazonaws/auth/AWSAbstractCognitoIdentityProvider.class
-com/google/android/gms/internal/zzqu.class
 com/amazonaws/mobileconnectors/s3/transfermanager/MultipleFileDownload.class
 net/amazonaws/mobile/downloader/policy/DownloadPolicyProvider.class
 android/support/v4/app/FragmentPagerAdapter.class
@@ -136,7 +130,6 @@ android/support/v4/app/SuperNotCalledException.class
 android/support/design/widget/CoordinatorLayout$HierarchyChangeListener.class
 android/support/v7/widget/RecyclerView$AdapterDataObservable.class
 com/amazonaws/mobileconnectors/cognito/Dataset.class
-com/google/android/gms/internal/zzrp.class
 android/support/v7/widget/RecyclerView.class
 android/support/v7/widget/LinearLayoutCompat$LayoutParams.class
 com/amazonaws/AmazonWebServiceRequest.class
@@ -146,15 +139,13 @@ android/support/v7/widget/RecyclerView$Adapter.class
 com/amazonaws/mobileconnectors/s3/transferutility/TransferThreadPool.class
 android/support/v7/app/ActionBar$OnMenuVisibilityListener.class
 android/support/v7/app/AppCompatCallback.class
-com/google/android/gms/common/api/Scope.class
-com/google/android/gms/measurement/internal/zzd.class
 android/support/design/widget/ViewGroupUtils.class
 android/support/v4/view/VelocityTrackerCompat.class
 android/support/v4/app/FragmentActivity$HostCallbacks.class
 com/google/android/gms/common/data/DataBuffer.class
 net/egobeta/ego/SplashActivity$2.class
-com/amazonaws/mobileconnectors/s3/transferutility/TransferService$NetworkInfoReceiver.class
 android/support/design/widget/AppBarLayout$OnOffsetChangedListener.class
+com/amazonaws/mobileconnectors/s3/transferutility/TransferService$NetworkInfoReceiver.class
 android/support/design/widget/AppBarLayout$1.class
 android/support/v4/view/accessibility/AccessibilityNodeInfoCompat.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/ParallelScanTask.class
@@ -166,7 +157,6 @@ android/support/v4/app/LoaderManager.class
 net/egobeta/ego/demo/nosql/Book.class
 com/amazonaws/internal/MetricAware.class
 com/amazonaws/mobileconnectors/s3/transfermanager/model/package-info.class
-com/google/android/gms/common/internal/zzx.class
 android/support/v7/widget/RecyclerView$ViewCacheExtension.class
 android/support/v4/app/FragmentManager.class
 net/amazonaws/mobile/user/signin/SignInManager.class
@@ -177,12 +167,11 @@ android/support/annotation/RawRes.class
 android/support/v4/view/ViewCompatEclairMr1.class
 bolts/WebViewAppLinkResolver$2$2.class
 android/support/v7/app/AppCompatActivity.class
-com/google/android/gms/measurement/internal/zzv.class
-com/google/android/gms/measurement/internal/zzm.class
 net/amazonaws/mobile/user/IdentityProvider.class
+com/google/android/gms/common/api/GoogleApiClient.class
 android/support/v4/media/session/PlaybackStateCompat$State.class
-android/support/design/widget/Snackbar$SnackbarLayout$OnAttachStateChangeListener.class
 android/support/v4/view/ViewCompatJB.class
+android/support/design/widget/Snackbar$SnackbarLayout$OnAttachStateChangeListener.class
 net/egobeta/ego/MainActivity$2.class
 com/amazonaws/services/s3/AmazonS3Client.class
 android/support/v4/media/session/MediaSessionCompat$MediaSessionImpl.class
@@ -201,7 +190,6 @@ com/amazonaws/services/s3/AmazonS3.class
 android/support/design/widget/AppBarLayout.class
 com/amazonaws/services/sqs/AmazonSQSClient.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBIgnore.class
-com/google/android/gms/R$styleable.class
 android/support/v4/media/session/MediaSessionCompat.class
 android/support/annotation/IdRes.class
 com/amazonaws/services/s3/model/PutObjectRequest.class
@@ -226,12 +214,10 @@ com/amazonaws/services/s3/internal/SSEResultBase.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMapper.class
 com/amazonaws/util/AWSRequestMetricsFullSupport.class
 android/support/v7/recyclerview/R$styleable.class
-com/google/android/gms/measurement/AppMeasurementReceiver.class
 com/amazonaws/mobileconnectors/amazonmobileanalytics/internal/core/util/Nullable.class
 android/support/v4/view/MenuCompat.class
 com/amazonaws/auth/AWSAbstractCognitoDeveloperIdentityProvider.class
 android/support/v4/media/session/MediaSessionCompat$SessionFlags.class
-com/google/android/gms/common/api/CommonStatusCodes.class
 com/facebook/FacebookActivity.class
 com/google/gson/annotations/Until.class
 android/support/v4/widget/MaterialProgressDrawable$1.class
@@ -247,6 +233,7 @@ android/support/annotation/Nullable.class
 net/egobeta/ego/SplashActivity.class
 android/support/design/widget/Snackbar$Duration.class
 com/amazonaws/services/dynamodbv2/AmazonDynamoDBAsyncClient.class
+com/google/android/gms/internal/zzkc.class
 android/support/v7/app/ActionBarActivity.class
 android/support/v4/app/FragmentContainer.class
 com/amazonaws/mobileconnectors/s3/transfermanager/ObjectMetadataProvider.class
@@ -255,9 +242,7 @@ android/support/v4/view/ViewCompatMarshmallow.class
 android/support/design/widget/ViewUtils.class
 com/amazonaws/services/cognitosync/AmazonCognitoSyncClient.class
 android/support/design/widget/CoordinatorLayout$OnPreDrawListener.class
-com/google/android/gms/internal/zzne.class
 android/support/annotation/DimenRes.class
-com/google/android/gms/measurement/internal/zzaj.class
 android/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase.class
 android/support/v7/widget/RecyclerView$5.class
 android/support/v7/widget/LinearLayoutCompat.class
@@ -269,20 +254,16 @@ android/support/design/widget/CoordinatorLayout$ApplyInsetsListener.class
 com/amazonaws/services/s3/model/UploadPartRequest.class
 android/support/v4/media/MediaBrowserCompat$ConnectionCallback.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMapperConfig.class
-com/google/android/gms/measurement/AppMeasurementService.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBRangeKey.class
 android/support/v4/media/MediaBrowserCompat$MediaItem$1.class
 android/support/v7/widget/RecyclerView$ItemAnimator.class
 android/support/v4/app/FragmentManagerImpl$FragmentTag.class
 android/support/v4/app/TaskStackBuilder$SupportParentable.class
 android/support/annotation/RequiresPermission$Read.class
-com/google/android/gms/common/internal/ValidateAccountRequest.class
 android/support/v4/media/session/PlaybackStateCompat.class
-com/google/android/gms/measurement/internal/zzp.class
 android/support/design/widget/CoordinatorLayoutInsetsHelperLollipop.class
 android/support/v4/media/MediaMetadataCompat$LongKey.class
 android/support/design/widget/Snackbar$3.class
-com/google/android/gms/measurement/internal/zzm$zza.class
 android/support/design/R$dimen.class
 com/google/android/gms/gcm/zza.class
 net/amazonaws/mobile/user/IdentityManager$SignInResultsHandler.class
@@ -293,7 +274,6 @@ android/support/v7/widget/OpReorderer$Callback.class
 android/support/design/R$style.class
 android/support/v4/media/session/PlaybackStateCompat$CustomAction.class
 com/amazonaws/services/s3/model/ObjectMetadata.class
-com/google/android/gms/common/SignInButton.class
 com/google/android/gms/gcm/PeriodicTask.class
 android/support/v4/content/FileProvider$PathStrategy.class
 android/support/v7/widget/TintTypedArray.class
@@ -303,11 +283,10 @@ com/amazonaws/DefaultRequest.class
 android/support/v4/media/RatingCompat.class
 android/support/design/widget/TabLayout.class
 android/support/v7/widget/RecyclerView$AdapterDataObserver.class
-com/amazonaws/services/s3/internal/ProgressReportingInputStream.class
 android/support/v7/widget/RecyclerView$LayoutParams.class
+com/amazonaws/services/s3/internal/ProgressReportingInputStream.class
 android/support/v4/app/FragmentHostCallback.class
 android/support/v4/content/PermissionChecker.class
-com/google/android/gms/clearcut/zzb.class
 com/amazonaws/services/s3/model/ProgressEvent.class
 com/google/android/gms/common/ConnectionResult.class
 android/support/v4/media/MediaBrowserCompat$SubscriptionCallback.class
@@ -333,14 +312,11 @@ android/support/v4/app/Fragment$SavedState.class
 android/support/v4/view/NestedScrollingParent.class
 android/support/v4/app/NoSaveStateFrameLayout.class
 android/support/design/R.class
-com/google/android/gms/common/internal/zzab.class
-com/google/android/gms/measurement/internal/zzz.class
 android/support/v4/app/BackStackRecord$TransitionState.class
 net/amazonaws/mobile/downloader/request/DownloadRemoveRequest.class
 net/amazonaws/mobile/user/signin/FacebookSignInProvider.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMarshalling.class
 android/support/v4/app/SharedElementCallback.class
-com/google/android/gms/measurement/AppMeasurementService$1.class
 android/support/v4/view/ViewCompatHC.class
 android/support/v4/app/ActionBarDrawerToggle.class
 android/support/multidex/MultiDexApplication.class
@@ -352,6 +328,7 @@ com/facebook/internal/NativeProtocol.class
 android/support/v4/view/ViewCompat$JbMr1ViewCompatImpl.class
 android/support/design/widget/HeaderScrollingViewBehavior.class
 android/support/design/widget/Snackbar$4.class
+com/google/android/gms/internal/zzpm.class
 android/support/v7/widget/ChildHelper$Callback.class
 android/support/v7/widget/Toolbar.class
 android/support/v4/view/ViewCompat$GBViewCompatImpl.class
@@ -394,7 +371,6 @@ android/support/v4/media/session/MediaSessionCompat$1.class
 com/amazonaws/mobileconnectors/cognito/CognitoSyncManager.class
 com/amazonaws/services/securitytoken/AWSSecurityTokenServiceClient.class
 android/support/v4/view/LayoutInflaterFactory.class
-com/google/android/gms/common/api/internal/zzv.class
 com/facebook/internal/FacebookDialogFragment.class
 android/support/v4/widget/MaterialProgressDrawable$3.class
 android/support/v4/media/session/MediaSessionCompat$Token.class
@@ -402,12 +378,10 @@ com/amazonaws/mobileconnectors/s3/transfermanager/package-info.class
 android/support/design/widget/TabLayout$2.class
 android/support/v4/media/VolumeProviderCompat$1.class
 com/amazonaws/util/TimingInfo.class
-com/google/android/gms/R.class
 com/amazonaws/mobileconnectors/s3/transfermanager/PersistableDownload.class
 com/amazonaws/mobileconnectors/s3/transfermanager/PersistableTransfer.class
 android/support/v4/content/LocalBroadcastManager.class
 android/support/v7/appcompat/R.class
-com/google/android/gms/gcm/zzb.class
 android/support/v7/widget/RecyclerView$ItemDecoration.class
 android/support/v7/widget/RecyclerView$State.class
 android/support/design/widget/CoordinatorLayout$DefaultBehavior.class
@@ -432,18 +406,15 @@ android/support/v7/app/ActionBarDrawerToggle$Delegate.class
 android/support/v4/media/MediaMetadataCompat$Builder.class
 net/amazonaws/mobile/downloader/query/DownloadQueueProvider$DatabaseHelper.class
 android/support/design/widget/TabLayout$TabView.class
-com/google/android/gms/common/internal/zzac.class
 android/support/v4/content/FileProvider.class
 com/google/android/gms/gcm/OneoffTask.class
 android/support/v4/widget/ScrollerCompat.class
 android/support/v4/media/RatingCompat$1.class
 com/amazonaws/mobileconnectors/s3/transfermanager/PauseStatus.class
 com/google/android/gms/gcm/Task.class
-com/google/android/gms/auth/firstparty/shared/zzd.class
 android/support/design/widget/MathUtils.class
 android/support/annotation/FloatRange.class
 android/support/multidex/MultiDex$V19.class
-com/google/android/gms/common/SignInButton$ButtonSize.class
 android/support/v4/view/ViewConfigurationCompat.class
 android/support/design/widget/Snackbar$Callback$DismissEvent.class
 com/amazonaws/internal/SdkFilterOutputStream.class
@@ -451,6 +422,7 @@ android/support/v4/app/FragmentManagerState.class
 com/amazonaws/services/sns/AmazonSNSAsyncClient.class
 android/support/design/widget/SnackbarManager$Callback.class
 com/facebook/login/LoginFragment.class
+com/google/android/gms/internal/zzrs.class
 android/support/v7/widget/ActionMenuView$LayoutParams.class
 android/support/v7/widget/LinearLayoutCompat$OrientationMode.class
 android/support/annotation/Size.class
@@ -462,8 +434,8 @@ com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBVersionAttribut
 com/amazonaws/services/s3/internal/ServiceUtils.class
 android/support/annotation/MenuRes.class
 net/amazonaws/mobile/downloader/query/QueryHelper.class
-android/support/v4/view/ScrollingView.class
 android/support/design/widget/TabLayout$1.class
+android/support/v4/view/ScrollingView.class
 android/support/v7/widget/RecyclerView$ItemAnimator$ItemAnimatorListener.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBIndexHashKey.class
 android/support/v4/app/NotificationCompat.class
@@ -481,7 +453,6 @@ android/support/design/R$anim.class
 com/amazonaws/mobileconnectors/s3/transferutility/TransferState.class
 net/egobeta/ego/MainActivity$5.class
 android/support/design/widget/TabLayout$TabGravity.class
-com/google/android/gms/measurement/internal/zzy.class
 com/google/android/gms/gcm/GcmReceiver.class
 android/support/v7/app/ActionBar$TabListener.class
 com/amazonaws/auth/SystemPropertiesCredentialsProvider.class
@@ -499,7 +470,6 @@ android/support/v4/app/ActivityCompatApi23$RequestPermissionsRequestCodeValidato
 android/support/v7/widget/RecyclerView$2.class
 android/support/design/widget/AppBarLayout$LayoutParams$ScrollFlags.class
 android/support/v4/media/MediaBrowserCompat.class
-com/google/android/gms/common/zze.class
 com/amazonaws/mobileconnectors/cognito/DefaultSyncCallback.class
 android/support/v4/view/ViewCompatICS.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBDocument.class
@@ -512,7 +482,6 @@ com/facebook/R.class
 android/support/annotation/StyleableRes.class
 com/amazonaws/services/s3/model/S3ObjectInputStream.class
 android/support/v4/media/RatingCompat$Style.class
-com/google/android/gms/common/api/internal/zzb.class
 android/support/annotation/BinderThread.class
 net/amazonaws/mobile/downloader/service/DownloadService.class
 android/support/v4/app/AppOpsManagerCompat.class
@@ -537,10 +506,8 @@ android/support/design/widget/AppBarLayout$LayoutParams.class
 com/facebook/FacebookException.class
 com/amazonaws/mobileconnectors/s3/transfermanager/Copy.class
 android/support/v4/content/ContextCompat.class
-com/google/android/gms/dynamic/zzg$zza.class
 android/support/design/widget/AppBarLayout$Behavior.class
 net/amazonaws/mobile/downloader/service/DownloadStatusUpdater.class
-com/google/android/gms/common/SignInButton$ColorScheme.class
 android/support/v7/widget/RecyclerView$ItemAnimator$ItemAnimatorFinishedListener.class
 net/egobeta/ego/Application$1.class
 android/support/v7/widget/ChildHelper.class
@@ -549,7 +516,6 @@ android/support/annotation/CallSuper.class
 android/support/v4/media/MediaDescriptionCompat$Builder.class
 android/support/design/widget/AppBarLayout$Behavior$SavedState.class
 net/egobeta/ego/SignInActivity$SignInResultsHandler.class
-com/google/android/gms/measurement/AppMeasurementContentProvider.class
 com/google/android/gms/playlog/internal/PlayLoggerContext.class
 android/support/v4/app/BaseFragmentActivityHoneycomb.class
 net/egobeta/ego/SignInActivity$1.class
@@ -573,6 +539,7 @@ android/support/design/widget/Snackbar.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable.class
 android/support/v7/widget/AdapterHelper.class
 android/support/v4/view/ViewPropertyAnimatorCompat.class
+com/google/android/gms/internal/zzlv.class
 android/support/v7/app/ActionBar$DisplayOptions.class
 android/support/v4/app/LoaderManagerImpl.class
 net/egobeta/ego/MainActivity$PagerAdapter.class
@@ -590,7 +557,6 @@ android/support/v7/widget/SimpleItemAnimator.class
 android/support/v4/view/ViewPropertyAnimatorListenerAdapter.class
 android/support/v4/widget/DrawerLayout$DrawerListener.class
 com/amazonaws/mobileconnectors/s3/transfermanager/TransferProgress.class
-com/google/android/gms/auth/zzd.class
 net/flavienlaurent/notboringactionbar/AlphaForegroundColorSpan.class
 android/support/design/widget/ValueAnimatorCompat.class
 android/support/annotation/IntegerRes.class
@@ -619,7 +585,6 @@ android/support/design/widget/HeaderBehavior$FlingRunnable.class
 android/support/v4/media/VolumeProviderCompat$Callback.class
 android/support/v4/media/session/MediaControllerCompat.class
 android/support/v4/app/ActivityCompatHoneycomb.class
-com/google/android/gms/measurement/internal/zzp$zza.class
 com/amazonaws/util/CountingInputStream.class
 android/support/v4/app/FragmentActivity$NonConfigurationInstances.class
 android/support/design/widget/ViewOffsetBehavior.class
@@ -629,4 +594,3 @@ android/support/v4/util/MapCollections.class
 android/support/v4/app/FragmentManagerImpl$2.class
 android/support/annotation/ColorRes.class
 android/support/v7/widget/RecyclerViewAccessibilityDelegate.class
-com/google/android/gms/common/zzc.class

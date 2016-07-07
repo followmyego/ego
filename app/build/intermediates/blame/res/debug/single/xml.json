@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\xml\\content_delivery_paths.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\xml\\content_delivery_paths.xml"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\xml\\content_delivery_paths.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\xml\\content_delivery_paths.xml"
     }

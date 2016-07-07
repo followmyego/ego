@@ -1,5 +1,13 @@
 [
     {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\splash_icon.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\mipmap-xxhdpi\\splash_icon.png"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\splash_icon.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego\\Ego\\app\\src\\main\\res\\mipmap-xxhdpi\\splash_icon.png"
     },

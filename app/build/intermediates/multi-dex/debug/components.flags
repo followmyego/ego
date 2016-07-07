@@ -1,5 +1,5 @@
--injars 'C:\Users\Lucas\Desktop\Ego\Ego\app\build\intermediates\transforms\jarMerging\debug\jars\1\1f\combined.jar'
--outjars 'C:\Users\Lucas\Desktop\Ego\Ego\app\build\intermediates\multi-dex\debug\componentClasses.jar'
+-injars 'C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\jarMerging\debug\jars\1\1f\combined.jar'
+-outjars 'C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\multi-dex\debug\componentClasses.jar'
 
 -libraryjars 'C:\Users\Lucas\AppData\Local\Android\sdk\build-tools\23.0.3\lib\shrinkedAndroid.jar'
 
@@ -9,7 +9,7 @@
 -dontusemixedcaseclassnames
 -dontpreverify
 -dontwarn
--printconfiguration 'C:\Users\Lucas\Desktop\Ego\Ego\app\build\intermediates\multi-dex\debug\components.flags'
+-printconfiguration 'C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\multi-dex\debug\components.flags'
 
 
 -keep class net.egobeta.ego.Application {
@@ -62,18 +62,6 @@
 }
 
 -keep class net.egobeta.ego.PushListenerService {
-    <init>();
-}
-
--keep class com.google.android.gms.measurement.AppMeasurementContentProvider {
-    <init>();
-}
-
--keep class com.google.android.gms.measurement.AppMeasurementReceiver {
-    <init>();
-}
-
--keep class com.google.android.gms.measurement.AppMeasurementService {
     <init>();
 }
 

@@ -7,7 +7,9 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:background="#2d2d2d"
 	>
+
 	<net.egobeta.ego.NonScrollableGridView
+		xmlns:android="http://schemas.android.com/apk/res/android"
 		android:id="@+id/myGridView"
 		android:gravity="center"
 		android:numColumns="2"
@@ -17,8 +19,7 @@
 		android:padding ="35dp"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-
-		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:listSelector="#00000000"
 		/>
 
 	<Space

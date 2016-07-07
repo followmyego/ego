@@ -112,7 +112,7 @@ public class SplashActivity extends Activity {
                         provider, new SignInResultsHandler());
                 } else {
                     // Asyncronously go to the main activity (after the splash delay has expired).
-                    goMain();
+                    goSignIn();
                 }
 
                 // Wait for the splash timeout.
