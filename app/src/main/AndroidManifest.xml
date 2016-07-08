@@ -65,7 +65,8 @@
         </activity>
         <activity
             android:name=".ProfileActivity"
-            android:windowSoftInputMode="adjustPan" >
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/Theme.Transparent">
         </activity>
 
         <!-- BEGIN - APP CONTENT DELIVERY AND USER DATA STORAGE -->
