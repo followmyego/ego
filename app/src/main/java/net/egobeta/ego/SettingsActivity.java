@@ -22,62 +22,47 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
     Context context;
     private static AlertDialog.Builder builder;
-    Button logoutButton;
     IdentityManager identityManager;
+
+    //View Item Variables
+    Button logoutButton;
+    Button blockedButton;
+    Button helpCenterButton;
+    Button feedbackButton;
+    Button generalButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // Obtain a reference to the mobile client. It is created in the Application class.
         final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
-
         // Obtain a reference to the identity manager.
         identityManager = awsMobileClient.getIdentityManager();
-
         setContentView(R.layout.activity_settings);
         context = this;
+
+        initializeButtons();
+        setButtonClickListeners();
+    }
+
+
+
+    private void initializeButtons() {
         logoutButton = (Button) findViewById(R.id.logout_button);
+        blockedButton = (Button) findViewById(R.id.blocked_button);
+        helpCenterButton = (Button) findViewById(R.id.help_center_button);
+        feedbackButton = (Button) findViewById(R.id.feedback_button);
+        generalButton = (Button) findViewById(R.id.general_button);
+    }
+
+    private void setButtonClickListeners() {
         logoutButton.setOnClickListener(this);
-    }
-
-
-    //Method to Logout the user. Clear user data and set loggedIn = to false on the LocalDataBase
-    public void logout(View v) {
-        Toast.makeText(SettingsActivity.this, "logout user", Toast.LENGTH_SHORT).show();
-    }
-
-
-    //Method to Logout the user. Clear user data and set loggedIn = to false on the LocalDataBase
-    public void disconnectInstagramImages(View v) {
-        Toast.makeText(SettingsActivity.this, "disconnect instagram images", Toast.LENGTH_SHORT).show();
-//        Fragment_Main.clickConnectButton(SettingsActivity.this, context);
-
-//        builder = new AlertDialog.Builder(context);
-//        builder.setMessage("Disconnect from Instagram?")
-//                .setCancelable(false)
-//                .setPositiveButton("Yes",
-//                        new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int id) {
-//                                //TODO find out why the last execute argument is being passed through via mLocalDataBase
-//                                new UpdateUserInstagramInfo(context, "no").execute(user.facebookId, mLocalDataBase.getInstagramID(), mLocalDataBase.getInstagramUsername());
-//                                Fragment_Main.disconnectInstagramImages();
-//                                finishActivity();
-//                            }
-//                        })
-//                .setNegativeButton("No",
-//                        new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int id) {
-//                                dialog.cancel();
-//                            }
-//                        });
-//        final AlertDialog alert = builder.create();
-//        alert.show();
-    }
-
-
-    public void finishActivity(){
-        this.finish();
+        blockedButton.setOnClickListener(this);
+        helpCenterButton.setOnClickListener(this);
+        feedbackButton.setOnClickListener(this);
+        generalButton.setOnClickListener(this);
     }
 
     @Override
@@ -85,6 +70,23 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         if(view == logoutButton){
             identityManager.signOut();
             startActivity(new Intent(this, SignInActivity.class));
+            finish();
+        }
+
+        if(view == blockedButton){
+            Toast.makeText(SettingsActivity.this, "Your Blocked People", Toast.LENGTH_SHORT).show();
+        }
+
+        if(view == helpCenterButton){
+            Toast.makeText(SettingsActivity.this, "The Help Center", Toast.LENGTH_SHORT).show();
+        }
+
+        if(view == feedbackButton){
+            Toast.makeText(SettingsActivity.this, "Leave some feedback", Toast.LENGTH_SHORT).show();
+        }
+
+        if(view == generalButton){
+            startActivity(new Intent(this, GeneralSettingsActivity.class));
             finish();
         }
     }

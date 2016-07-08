@@ -341,11 +341,14 @@
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
+    <dimen name="profile_activity_header_height">616dp</dimen>
+    <dimen name="profile_activity_min_header_height">568dp</dimen>
     <dimen name="shadow_width">30dp</dimen>
     <dimen name="sign_in_button_height">40dp</dimen>
     <dimen name="sign_in_button_margin">10dp</dimen>
     <dimen name="sign_in_button_width">240dp</dimen>
     <dimen name="text_size_small_medium">16sp</dimen>
+    <dimen name="user_info_scroll_fade">90dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>

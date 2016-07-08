@@ -11,13 +11,12 @@ package net.egobeta.ego;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
+
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.RectF;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
+
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -202,7 +201,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         resources = getResources();
         drawerArrowDrawable = new DrawerArrowDrawable(resources);
-//        drawerArrowDrawable.setStrokeColor(resources.getColor(R.color.menuDrawerColor));
         drawerArrowDrawable.setStrokeColor(resources.getColor(R.color.menuDrawerColor));
 
         /**Initialize font*/
@@ -222,7 +220,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         /**Set up the ViewPager and PagerAdapter*/
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setOffscreenPageLimit(3);
-//        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mPagerAdapter.setTabHolderScrollingContent(this);
         mViewPager.setAdapter(mPagerAdapter);
@@ -230,8 +227,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         /**Set up the SlidingTabStrip*/
         initializeSlidingTabStrip();
 
-        /**Images for the sliding tab strip*/
-//        setSlidingTabImages();
+
 
         /**Create top toolbar/menu bar*/
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -319,6 +315,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         }.execute();
     }
 
+
+
     //Create the pull out Sliding menu
     private void createMenuDrawer() {
 
@@ -370,7 +368,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         home_menu_image = (ImageView) findViewById(R.id.toolbar_icon); /**HEADER - HOME MENU IMAGE**/
         home_menu_image2 = (ImageView) findViewById(R.id.toolbar_icon2); /**HEADER - HOME MENU IMAGE**/
         mHeaderPicture = (ImageView) findViewById(R.id.header_picture); /**HEADER - BLURRED BACKGROUND**/
-//        egoLogo = (ImageView) findViewById(R.id.profile_picture); /**HEADER - PROFILE PICTURE**/
+
         egoLogo = (ImageView) findViewById(R.id.ego_logo); /**HEADER - PROFILE PICTURE**/
         toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
     }
@@ -391,29 +389,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         mPagerSlidingTabStrip.setViewPager(mViewPager);
         mPagerSlidingTabStrip.getTabBackground();
         mPagerSlidingTabStrip.setOnPageChangeListener(this);
-//        mSpannableString = new SpannableString(capitalizeFirstCharacter(firstName) + " " + capitalizeFirstCharacter(lastName));
         mAlphaForegroundColorSpan = new AlphaForegroundColorSpan(0xffffffff);
-    }
-
-    //Images for the sliding tab strip
-    private void setSlidingTabImages() {
-        /*ImageView slide1 = (ImageView) findViewById(R.id.instagram_logo);
-        ImageView slide2 = (ImageView) findViewById(R.id.instagram_logo2);
-        slide1.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_photos_button));
-        slide2.setImageDrawable(getScaledDrawables(R.drawable.sliding_tab_info_button));*/
-    }
-
-    //Method to scale down image bitmaps
-    private Drawable getScaledDrawables(int resource) {
-        // Read drawable from one of my stored images.
-        Drawable dra = getResources().getDrawable(resource);
-        Bitmap bitmapa = ((BitmapDrawable) dra).getBitmap();
-        // Create a scaled drawable from bitmap
-        Drawable scaledDrawable = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmapa, 75, 75, true));
-        // Set menu icon to new scaled down drawable
-
-
-        return scaledDrawable;
     }
 
     //Using custom image view as home as up indicator, this gets rid of the default arrow image
@@ -473,8 +449,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     }
 
 
-
-
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount, int pagePosition) {
         if (mViewPager.getCurrentItem() == pagePosition) {
@@ -510,14 +484,11 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Method to animate the homeAsUp indicator fade in/out
     private static void setHomeAsUpAlpha(float alpha) {
-        egoLogo.setAlpha(alpha * 1);
         toolbar.setAlpha(alpha * 1);
+        egoLogo.setAlpha(alpha * 1);
         pageIndicator.setAlpha(alpha * 1);
         mHeader.setAlpha(alpha * 1);
     }
-
-
-
 
 
     @Override
@@ -639,32 +610,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 Toast.makeText(this, "toolbar clicked mainActivity", Toast.LENGTH_SHORT).show();
                 break;
         }
-
-
-
-
-
-
-        /*if (v == signOutButton) {
-            // The user is currently signed in with a provider. Sign out of that provider.
-            identityManager.signOut();
-            // Show the sign-in button and hide the sign-out button.
-            signOutButton.setVisibility(View.INVISIBLE);
-            signInButton.setVisibility(View.VISIBLE);
-
-//            // Close the navigation drawer.
-//            navigationDrawer.closeDrawer();
-            return;
-        }
-        if (v == signInButton) {
-            // Start the sign-in activity. Do not finish this activity to allow the user to navigate back.
-            startActivity(new Intent(this, SignInActivity.class));
-//            // Close the navigation drawer.
-//            navigationDrawer.closeDrawer();
-            return;
-        }*/
-
-        // ... add any other button handling code here ...
 
     }
 

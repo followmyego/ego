@@ -19,6 +19,9 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled = true
+
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
     }
 
     buildTypes {
@@ -53,8 +56,13 @@ dependencies {
     compile 'com.amazonaws:aws-android-sdk-mobileanalytics:2.2.11'
     compile 'com.amazonaws:aws-android-sdk-lambda:2.2.11'
     compile 'com.amazonaws:aws-android-sdk-sns:2.2.11'
+
     compile 'com.google.android.gms:play-services-gcm:7.8.0'
     compile 'com.facebook.android:facebook-android-sdk:4.6.0'
     compile 'com.android.support:recyclerview-v7:23.1.1'//not this
     compile 'com.android.support:design:23.1.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:palette-v7:23.1.1'
+
+
 }

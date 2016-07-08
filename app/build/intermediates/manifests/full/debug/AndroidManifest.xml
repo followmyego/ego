@@ -69,6 +69,10 @@
             android:name="net.egobeta.ego.SettingsActivity"
             android:windowSoftInputMode="adjustPan" >
         </activity>
+        <activity
+            android:name="net.egobeta.ego.ProfileActivity"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
 
         <!-- BEGIN - APP CONTENT DELIVERY AND USER DATA STORAGE -->
 
@@ -151,6 +155,9 @@
         </service>
 
         <!-- END - PUSH NOTIFICATIONS WITH GOOGLE CLOUD MESSAGING (GCM) -->
+
+        <activity android:name="net.egobeta.ego.GeneralSettingsActivity" >
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"

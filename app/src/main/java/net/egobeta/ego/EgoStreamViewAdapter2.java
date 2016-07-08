@@ -18,12 +18,13 @@ public class EgoStreamViewAdapter2 extends ArrayAdapter<String> {
 
     private final Activity context;
     private ArrayList<String> arrList;
+    private String[] facebookIds;
 
-
-    public EgoStreamViewAdapter2(Activity context, String[] web, ArrayList<String> arrList) {
-        super(context, R.layout.stream_gridviewitem, web);
+    public EgoStreamViewAdapter2(Activity context, String[] facebookIds, ArrayList<String> arrList) {
+        super(context, R.layout.stream_gridviewitem, facebookIds);
         this.context = context;
         this.arrList = arrList;
+        this.facebookIds = facebookIds;
     }
 
 
@@ -35,7 +36,7 @@ public class EgoStreamViewAdapter2 extends ArrayAdapter<String> {
 
         FacebookPictureViewRound userProfilePic = (FacebookPictureViewRound) rowView.findViewById(R.id.img);
 //        userProfilePic.setPresetSize(FacebookPictureViewRound.NORMAL);
-        userProfilePic.setProfileId("699211431");
+        userProfilePic.setProfileId(facebookIds[position]);
         return rowView;
     }
 

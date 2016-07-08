@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -30,6 +31,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -44,12 +47,15 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
 
     private static final String ARG_POSITION = "position";
+    int egoStreamPosition = 0;
+    int egoFriendsPosition = 1;
+
 
     //User profile info variables
     private String facebookId;
 
     //Other variables
-    String[] web = new String[4];
+    String[] facebook_Ids;
     private ListView mListView;
     private ArrayList<String> mListItems;
     private static final String TAG = "DEBUGGING MESSAGE";
@@ -73,7 +79,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
     private int scrollHeight;
 //    EgoStreamViewAdapter adapter;
     EgoStreamViewAdapter2 adapter;
-
+    SlidingMenu slidingMenu;
 
     //Instagram stuffs
     private static String instagramProfileLinked;
@@ -119,12 +125,57 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
             facebookProfileIds.add("facebookProfileId " + i);
         }
 
+        getUsersAroundUs();
+
         //Create adapter for instagram images and horizontal image sliding view
-        adapter = new EgoStreamViewAdapter2(getActivity(), web, facebookProfileIds);
+        adapter = new EgoStreamViewAdapter2(getActivity(), facebook_Ids, facebookProfileIds);
+
     }
 
+    //This function send our location and pull the users that are around us from the database
+    public void getUsersAroundUs(){
+        /**Fake array of facebook ids that are around us to mimic loading users from the database
+        //based on location **/
+        String[] user_facebookIds = {
+                "699211431",
+                "531370423",
+                "100008170621778",
+                "509186356",
+                "763769255",
+                "100004583984873",
+                "557942513",
+                "1452584020",
+                "574273123",
+                "100000153220058",
+                "100000910525701",
+                "1765792246"
+        };
+        String[] user_friendsFacebookIds = {
+                "699211431",
+                "574273123",
+                "100004583984873",
+                "531370423",
+                "1765792246"
+        };
 
+        if(mPosition == egoStreamPosition){
+            int lengthOfUsers = user_facebookIds.length;
+            facebook_Ids = new String[lengthOfUsers];
 
+            for (int i = 0; i < lengthOfUsers; i++) {
+                facebook_Ids[i] = user_facebookIds[i];
+            }
+        }
+
+        if(mPosition == egoFriendsPosition){
+            int lengthOfUsers = user_friendsFacebookIds.length;
+            facebook_Ids = new String[lengthOfUsers];
+
+            for (int i = 0; i < lengthOfUsers; i++) {
+                facebook_Ids[i] = user_friendsFacebookIds[i];
+            }
+        }
+    }
 
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
@@ -188,13 +239,6 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
         // nothing
     }
 
-    //Method to capitalize 1st letter of the String that's using this method.
-    private String capitalizeFirstCharacter(String textInput) {
-        String input = textInput.toLowerCase();
-        String output = input.substring(0, 1).toUpperCase() + input.substring(1);
-        return output;
-    }
-
     //Method to show users instagram photos
     public void gridViewInitializer(View convertView){
         //Initialize the gridview
@@ -206,66 +250,15 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "item number: " + position, Toast.LENGTH_SHORT).show();
+                Bundle bundle = new Bundle();
+                bundle.putString("facebook_id", facebook_Ids[position]);
+                Intent intent = new Intent(getActivity(), ProfileActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+//                Toast.makeText(getActivity(), "item number: " + position, Toast.LENGTH_SHORT).show();
             }
         });
 
-    }
-
-    /**Adapter for the interests, social network and chat page */
-    public class MyCustomAdapterSlide3And4 extends BaseAdapter {
-
-        private ArrayList<String> mData = new ArrayList<String>();
-        private LayoutInflater mInflater;
-
-        public MyCustomAdapterSlide3And4(){
-            mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        }
-
-        public void addItem(final String item){
-            mData.add(item);
-            notifyDataSetChanged();
-        }
-
-        @Override
-        public int getCount() {
-            return mData.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return mData.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            System.out.println("getView" + position + " " + convertView);
-            ViewHolder viewHolder = null;
-
-            if(convertView == null){
-
-                viewHolder = new ViewHolder();
-                convertView = mInflater.inflate(R.layout.list_item, null);
-                viewHolder.textView = (TextView) convertView.findViewById(R.id.text1);
-
-                convertView.setTag(viewHolder);
-
-            } else {
-                viewHolder = (ViewHolder)convertView.getTag();
-
-            }
-            viewHolder.textView.setText(mData.get(position) + " ");
-            return convertView;
-        }
-
-        public class ViewHolder{
-            TextView textView;
-        }
     }
 
     /** ADAPTER INSTAGRAM TAB **/
@@ -352,6 +345,8 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
             NonScrollableGridView gridView;
         }
     }
+
+
 
 
 }

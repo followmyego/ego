@@ -33,6 +33,10 @@
     <init>();
 }
 
+-keep class net.egobeta.ego.ProfileActivity {
+    <init>();
+}
+
 -keep class com.amazonaws.mobileconnectors.s3.transferutility.TransferService {
     <init>();
 }
@@ -62,6 +66,10 @@
 }
 
 -keep class net.egobeta.ego.PushListenerService {
+    <init>();
+}
+
+-keep class net.egobeta.ego.GeneralSettingsActivity {
     <init>();
 }
 

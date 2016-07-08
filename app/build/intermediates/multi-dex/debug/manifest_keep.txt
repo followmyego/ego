@@ -6,6 +6,7 @@
 -keep class net.egobeta.ego.SignInActivity { <init>(); }
 -keep class net.egobeta.ego.MainActivity { <init>(); }
 -keep class net.egobeta.ego.SettingsActivity { <init>(); }
+-keep class net.egobeta.ego.ProfileActivity { <init>(); }
 -keep class com.amazonaws.mobileconnectors.s3.transferutility.TransferService { <init>(); }
 -keep class net.amazonaws.mobile.downloader.service.DownloadService { <init>(); }
 -keep class net.amazonaws.mobile.downloader.service.NetworkStateListener { <init>(); }
@@ -14,6 +15,7 @@
 -keep class com.facebook.FacebookActivity { <init>(); }
 -keep class com.google.android.gms.gcm.GcmReceiver { <init>(); }
 -keep class net.egobeta.ego.PushListenerService { <init>(); }
+-keep class net.egobeta.ego.GeneralSettingsActivity { <init>(); }
 -keep public class * extends android.app.backup.BackupAgent {
     <init>();
 }
