@@ -54,6 +54,9 @@ public class FacebookSignInProvider implements SignInProvider {
     /** User's image Url. */
     private String userImageUrl;
 
+    /** User's facebook id. */
+    private String facebook_id;
+
     /** Timeout for refreshing the Facebook Token. */
     private final long REFRESH_TOKEN_TIMEOUT_SECONDS = 15;
 
@@ -248,12 +251,19 @@ public class FacebookSignInProvider implements SignInProvider {
     private void clearUserInfo() {
         userName = null;
         userImageUrl = null;
+        facebook_id = null;
     }
 
     /** {@inheritDoc} */
     @Override
     public String getUserName() {
         return userName;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public String getUserFacebookId() {
+        return facebook_id;
     }
 
     /** {@inheritDoc} */
@@ -279,6 +289,7 @@ public class FacebookSignInProvider implements SignInProvider {
 
         JSONObject json = response.getJSONObject();
         try {
+            facebook_id = json.getString("id");
             userName = json.getString("name");
             userImageUrl = json.getJSONObject("picture")
                     .getJSONObject("data")

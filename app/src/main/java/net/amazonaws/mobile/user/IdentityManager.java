@@ -470,6 +470,14 @@ public class IdentityManager {
     }
 
     /**
+     * Convenient method to get the user id from the current identity provider.
+     * @return user name from the current identity provider, or null if not signed in
+     */
+    public String getUserFacebookId() {
+        return currentIdentityProvider == null ? null : currentIdentityProvider.getUserFacebookId();
+    }
+
+    /**
      * Convenient method to get the user name from the current identity provider.
      * @return user name from the current identity provider, or null if not signed in
      */

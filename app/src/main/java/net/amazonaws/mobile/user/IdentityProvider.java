@@ -56,6 +56,12 @@ public interface IdentityProvider {
     String getUserName();
 
     /**
+     * Gets the user's facebook id, assuming user is signed in.
+     * @return user name or null if not signed-in.
+     */
+    String getUserFacebookId();
+
+    /**
      * Gets the user's image url, assuming user is signed in.
      * @return image or null if not signed-in or has no image.
      */

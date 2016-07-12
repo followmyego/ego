@@ -218,13 +218,16 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
 
 
+
+
     @Override
     public void adjustScroll(int scrollHeight) {
         this.scrollHeight = scrollHeight;
         if (scrollHeight == 0 && mListView.getFirstVisiblePosition() >= 1) {
             return;
         }
-        mListView.setSelectionFromTop(1, scrollHeight);
+//        mListView.setSelectionFromTop(1, scrollHeight);
+        mListView.setSelectionFromTop(1, 0);
     }
 
 

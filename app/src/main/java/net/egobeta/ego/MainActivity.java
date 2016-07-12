@@ -8,6 +8,7 @@
 //
 package net.egobeta.ego;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -34,17 +35,19 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.AbsListView;
-import android.widget.Button;
 
 
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
+import net.amazonaws.mobile.util.ThreadUtils;
 import net.astuetz.PagerSlidingTabStrip;
 import net.egobeta.ego.demo.UserSettings;
+import net.egobeta.ego.demo.nosql.DynamoDBUtils;
+import net.egobeta.ego.demo.nosql.UserLocation;
 import net.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.mobileconnectors.cognito.Dataset;
 import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
 import com.amazonaws.mobileconnectors.cognito.Record;
@@ -56,9 +59,7 @@ import com.viewpagerindicator.CirclePageIndicator;
 import android.app.AlertDialog;
 import android.content.IntentFilter;
 import android.content.BroadcastReceiver;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,46 +71,38 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //AWS Variables
     AWSMobileClient awsMobileClient;
-    DynamoDBMapper mapper;
-    private IdentityManager identityManager; //The identity manager used to keep track of the current user account.
-
-    //Main Fragments
-    EgoStreamFragment egoStreamFragment; // Sliding View 0
-    EgoFriendsFragment egoFriendsFragment; // Sliding View 0
+    static DynamoDBMapper mapper;
+    static IdentityManager identityManager; //The identity manager used to keep track of the current user account.
 
     //Other variables
     private final static String LOG_TAG = MainActivity.class.getSimpleName(); //Class name for log messages.
-    ViewPager mPager;
     Typeface typeface;
     private TypedValue mTypedValue = new TypedValue();
     private PagerAdapter mPagerAdapter; //The pager adapter, which provides the pages to the view pager widget.
     ScrollTabHolderFragment fragment;
-    private static AccelerateDecelerateInterpolator sSmoothInterpolator = new AccelerateDecelerateInterpolator();
+    DrawerArrowDrawable drawerArrowDrawable;
+    private Resources resources;
+    static Context context;
+    private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
+    static EgoMap egoMap;
+    static UserLocation userLocation;
+    static Thread thread;
 
     //Number Variables
     private static int mMinHeaderTranslation;
     private int mActionBarHeight;
     public int mMinHeaderHeight;
     private int mHeaderHeight;
-    private final int PICK_IMAGE_REQUEST = 1;
-    private static final float BLUR_RADIUS = 25F;
     private static RectF mRect1 = new RectF();
     private static RectF mRect2 = new RectF();
 
     //View item variables
-    private Button signOutButton;
-    private Button signInButton;
     private static View mHeader;
-    private static RelativeLayout userInfoLayout;
-    private TextView profilePageViews;
-    private TextView name;
     private static ImageView home_menu_image;
     private static ImageView home_menu_image2;
     private ImageView mHeaderPicture;
     public Drawable upArrow;
-    //    private static ImageView egoLogo;
     public static ImageView egoLogo;
-    public ImageButton tapToEdit;
     public static ScrollView scrollView;
     private SlidingMenu slidingMenu;
     private ViewPager mViewPager;
@@ -117,10 +110,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     public PagerSlidingTabStrip mPagerSlidingTabStrip;
     private static TextView toolbarTitle;
     private AbsListView absListView;
-    DrawerArrowDrawable drawerArrowDrawable;
-    private Resources resources;
-    Context context;
-    private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
     static CirclePageIndicator pageIndicator;
 
 
@@ -253,15 +242,51 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         //Initialize the mapper for DynamoDB
         mapper = AWSMobileClient.defaultMobileClient().getDynamoDBMapper();
 
-//        book = new Book();
-//        book.setTitle("Great Expectations");
-//        book.setAuthor("Charles Dickens");
-//        book.setPrice(1299);
-//        book.setIsbn("12335678904");
-//        book.setHardCover(false);
-//        book.setAwesome(true);
+        theMapOnCreateMethod();
     }
 
+    public static void createUpdateUserLocation(){
+        AmazonClientException lastException = null;
+        IdentityManager identityManager2 = AWSMobileClient.defaultMobileClient()
+                .getIdentityManager();
+
+
+
+        try {
+            mapper.save(userLocation);
+        } catch (final AmazonClientException ex) {
+            Log.e("AMAZON EXCEPTION", "Failed saving item : " + ex.getMessage(), ex);
+            lastException = ex;
+        }
+
+        if (lastException != null) {
+            // Re-throw the last exception encountered to alert the user.
+            throw lastException;
+        }
+
+    }
+
+
+//     public class SaveToDB extends AsyncTask<Void, Void, Void> {
+//
+//
+//        @Override
+//        protected Void doInBackground(Void... params) {
+//            try{
+//                mapper.save(bookToSave);
+//            } catch (AmazonClientException ex){
+//                ex.printStackTrace();
+//            }
+//
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Void aVoid) {
+//            super.onPostExecute(aVoid);
+//            Toast.makeText(getActivity(), "Successfully saved book to db", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
 
 
@@ -301,9 +326,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
             @Override
             protected void onPostExecute(final Void aVoid) {
-                /*toolbar.setTitleTextColor(userSettings.getTitleTextColor());
-                toolbar.setBackgroundColor(userSettings.getTitleBarColor());*/
-//                final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.main_fragment_container);
                 final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.addBookButton); //This wont work but it got rid of the error from above this
                 if (fragment != null) {
                     final View fragmentView = fragment.getView();
@@ -426,54 +448,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         return Math.max(Math.min(value, min), max);
     }
 
-    //Method for header animation
-    private static RectF getOnScreenRect(RectF rect, View view) {
-        rect.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-        return rect;
-    }
-
-    //Method for header animation
-    private static void interpolate(View view1, View view2, float interpolation) {
-        getOnScreenRect(mRect1, view1);
-        getOnScreenRect(mRect2, view2);
-
-        float scaleX = 1.0F + interpolation * (mRect2.width() / mRect1.width() - 1.0F);
-        float scaleY = 1.0F + interpolation * (mRect2.height() / mRect1.height() - 1.0F);
-        float translationX = 0.5F * (interpolation * (mRect2.left + mRect2.right - mRect1.left - mRect1.right));
-        float translationY = 0.5F * (interpolation * (mRect2.top + mRect2.bottom - mRect1.top - mRect1.bottom));
-
-        view1.setTranslationX(translationX);
-        view1.setTranslationY(translationY - mHeader.getTranslationY());
-        view1.setScaleX(scaleX);
-        view1.setScaleY(scaleY);
-    }
-
-
-    @Override
-    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount, int pagePosition) {
-        if (mViewPager.getCurrentItem() == pagePosition) {
-            absListView = view;
-            int scrollY = getScrollY(view);
-
-            mHeader.setTranslationY(Math.max(-scrollY, mMinHeaderTranslation));
-            float ratio = clamp(mHeader.getTranslationY() / mMinHeaderTranslation, 0.0f, 1.0f);
-
-//            interpolate(egoLogo, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
-            setTitleAlpha(clamp(5.0F * ratio - 4.0F, 0.0F, 1.0F));
-            setHomeAsUpAlpha(clamp((5.0F * ratio - 4.0F) * -1, 0.0F, 1.0F));
-        }
-    }
-
-    //Return the home menu button view
-    private View getHomeMenuImageIconView() {
-        Drawable dra = getResources().getDrawable(R.drawable.back_arrow_transparent);
-//        home_menu_image2.setImageDrawable(d);
-//        home_menu_image2.setImageDrawable(dra);
-
-        home_menu_image2.setImageDrawable(dra);
-        return home_menu_image;
-    }
-
     //Method to animate the title fade in/out
     private static void setTitleAlpha(float alpha) {
 //        mAlphaForegroundColorSpan.setAlpha(alpha);
@@ -491,27 +465,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     }
 
 
-    @Override
-    public boolean onOptionsItemSelected(final MenuItem item) {
-        // Handle action bar item clicks here excluding the home button.
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                slidingMenu.toggle();
-                return true;
-        }
 
-        return super.onOptionsItemSelected(item);
-    }
-
-   /* @Override
-    protected void onSaveInstanceState(final Bundle bundle) {
-        super.onSaveInstanceState(bundle);
-        // Save the title so it will be restored properly to match the view loaded when rotation
-        // was changed or in case the activity was destroyed.
-        *//*if (toolbar != null) {
-            bundle.putCharSequence(BUNDLE_KEY_TOOLBAR_TITLE, toolbar.getTitle());
-        }*//*
-    }*/
 
     @Override
     protected void onPause() {
@@ -547,12 +501,15 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 new IntentFilter(UserSettings.ACTION_SETTINGS_CHANGED));
         updateColor();
         syncUserSettings();
+
+        theMapOnResumeMethod();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         mHeaderPicture = (ImageView) findViewById(R.id.header_picture);
+        theMapOnStartMethod();
     }
 
     @Override
@@ -624,6 +581,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         ScrollTabHolder currentHolder = scrollTabHolders.valueAt(position);
 
         currentHolder.adjustScroll((int) (mHeader.getHeight() + mHeader.getTranslationY()));
+
     }
 
     @Override
@@ -636,9 +594,32 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        // Handle action bar item clicks here excluding the home button.
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                slidingMenu.toggle();
+                return true;
+        }
 
+        return super.onOptionsItemSelected(item);
+    }
 
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount, int pagePosition) {
+        if (mViewPager.getCurrentItem() == pagePosition) {
+            absListView = view;
+            int scrollY = getScrollY(view);
 
+            mHeader.setTranslationY(Math.max(-scrollY, mMinHeaderTranslation));
+            float ratio = clamp(mHeader.getTranslationY() / mMinHeaderTranslation, 0.0f, 1.0f);
+
+//            interpolate(egoLogo, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
+            setTitleAlpha(clamp(5.0F * ratio - 4.0F, 0.0F, 1.0F));
+            setHomeAsUpAlpha(clamp((5.0F * ratio - 4.0F) * -1, 0.0F, 1.0F));
+        }
+    }
 
 
 
@@ -760,5 +741,31 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
             updateColor();
         }
     };
+    /***********************************************************************************************/
+
+    /********************************** Google Maps Methods ****************************************/
+    /************************************************************************************************/
+    public void theMapOnCreateMethod(){
+        egoMap = new EgoMap(MainActivity.this, identityManager, mapper);
+        egoMap.theOnCreateMethod();
+    }
+
+    public void theMapOnStartMethod(){
+        egoMap.theOnStartMethod();
+    }
+
+    public void theMapOnResumeMethod(){
+        egoMap.theOnResumeMethod();
+    }
+
+
+
+
+
+
+
+
+
+
     /***********************************************************************************************/
 }
