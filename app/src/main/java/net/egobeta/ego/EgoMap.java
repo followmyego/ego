@@ -10,7 +10,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBDeleteExpression;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBQueryExpression;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.PaginatedQueryList;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
+import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -20,7 +26,9 @@ import com.google.android.gms.location.LocationServices;
 
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
+import net.egobeta.ego.demo.nosql.Book;
 import net.egobeta.ego.demo.nosql.UserLocation;
+import net.egobeta.ego.demo.nosql.User_Locations;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -57,7 +65,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     //Other variables
     private List<String> usersImages;
     private List<String> usernames;
-    private String serverURL = "http://www.myegotest.com/android_user_api/index.php";
+    private String serverURL = "http://ebjavasampleapp-env.us-east-1.elasticbeanstalk.com/dynamodb-geo";
     private String googleAPI = "AIzaSyAyMXHOJdJg6Jjj64SZnmyxIaY2lWvKDC0";
     private Activity context;
     private String username = "username";
@@ -66,6 +74,9 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     UserLocation userLocation;
     IdentityManager identityManager;
     DynamoDBMapper mapper;
+
+
+
 
     public EgoMap(Activity context, IdentityManager identityManager, DynamoDBMapper mapper){
         this.context = context;
@@ -166,10 +177,15 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
             latitude = mLastLocation.getLatitude();
             //lblLocation.setText(latitude + " " + longitude);
 
-            new PushUserLocationToDataBase().execute(serverURL, username, latitude + "", longitude + "");
+
+
+
+
+            new PushUserLocationToDataBase().execute(serverURL);
             //new PushUserLocationToDataBase().execute(serverURL, username);
-            saveToDB();
+//            saveToDB();
             Toast.makeText(context, "Long: " + longitude + " Lat: " + latitude, Toast.LENGTH_SHORT).show();
+            System.out.println("Long: " + longitude + " Lat: " + latitude + " facebookId: " + identityManager.getUserFacebookId());
         } else {
             //lblLocation.setText("Couldn't get the location. Make sure location is enabled on the device");
         }
@@ -186,7 +202,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
     protected void createLocationRequest(){
         mLocationRequest = new LocationRequest();
-        int UPDATE_INTERVAL = 10000;
+        int UPDATE_INTERVAL = 20000;
         mLocationRequest.setInterval(UPDATE_INTERVAL);
         int FASTEST_INTERVAL = 5000;
         mLocationRequest.setFastestInterval(FASTEST_INTERVAL);
@@ -270,16 +286,35 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
                 LucasHttpURLConnection.setDoInput(true);
                 LucasHttpURLConnection.setConnectTimeout(1000 * 6);
                 LucasHttpURLConnection.setReadTimeout(1000 * 6);
+                LucasHttpURLConnection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+                LucasHttpURLConnection.setRequestProperty("Accept", "application/json");
                 //OutputStream to get response
                 OutputStream outputStream = LucasHttpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
 
-                String data =
+                /*String data =
                         URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(params[1], "UTF-8")+"&"+
                                 URLEncoder.encode("latitude", "UTF-8")+"="+URLEncoder.encode(params[2], "UTF-8")+"&"+
-                                URLEncoder.encode("longitude", "UTF-8")+"="+URLEncoder.encode(params[3], "UTF-8");
+                                URLEncoder.encode("longitude", "UTF-8")+"="+URLEncoder.encode(params[3], "UTF-8");*/
 
-                bufferedWriter.write(data);
+
+
+                JSONObject requestParams   = new JSONObject();
+                JSONObject parent = new JSONObject();
+
+                requestParams.put("lat", getLatitude());
+                requestParams.put("lng", getLongitude());
+                requestParams.put("count", 0);
+                requestParams.put("radiusInMeter", "200");
+                requestParams.put("debug", "androidApp");
+                requestParams.put("rangeKey", identityManager.getUserFacebookId());
+
+
+                parent.put("action", "put-point");
+                parent.put("request", requestParams);
+
+                System.out.println(parent.toString());
+                bufferedWriter.write(parent.toString());
                 bufferedWriter.flush();
                 bufferedWriter.close();
                 outputStream.close();
@@ -300,6 +335,8 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
             return null;
         }
@@ -311,63 +348,150 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
             //Print server AsyncTask response
             System.out.println("Resulted Value: " + result);
 
-            //If null Response
+
+
+//            If null Response
             if (result != null && !result.equals("")) {
                 if(!mRequestLocationUpdates){
                     usernames = new ArrayList<>();
                     usersImages = new ArrayList<>();
-                    //startLocationUpdates();
-                    //Toast.makeText(EgoMap.this, "Location updated to server successfully", Toast.LENGTH_SHORT).show();
+                    startLocationUpdates();
                     mRequestLocationUpdates = true;
+//                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
 //                    returnParsedJsonArray(result);
+//                    adapter = new EgoStreamViewAdapter2(context, returnArrayOfFacebookIds(result));
+                    Fragment_Main.notfiyAdapterHasChanged(returnArrayOfFacebookIds(result));
                 } else {
                     usernames = new ArrayList<>();
                     usersImages = new ArrayList<>();
-                    //Toast.makeText(EgoMap.this, "Location updated to server successfully", Toast.LENGTH_SHORT).show();
+//                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
 //                    returnParsedJsonArray(result);
+//                    adapter.setUsers(returnArrayOfFacebookIds(result));
+                    Fragment_Main.notfiyAdapterHasChanged(returnArrayOfFacebookIds(result));
                 }
             } else {
                 if(!mRequestLocationUpdates){
                     //startLocationUpdates();
-                    //Toast.makeText(EgoMap.this, "Sorry, there was an error. Please try again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Uh oh, looks like there was an error", Toast.LENGTH_LONG).show();
                     mRequestLocationUpdates = true;
-                } else {
-                    //Toast.makeText(EgoMap.this, "Sorry, there was an error. Please try again", Toast.LENGTH_SHORT).show();
                 }
             }
         }
 
         //Method to parse json result and get the value of the key "image"
-        private int returnParsedJsonInt(String result){
+        private String[] returnArrayOfFacebookIds(String result){
             JSONObject resultObject = null;
-            int returnedResult = 0;
+            JSONArray arrayOfUsers = null;
+            String[] facebookIds = null;
             try {
+
                 resultObject = new JSONObject(result);
-                returnedResult = resultObject.getInt("success");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return returnedResult;
-        }
+                arrayOfUsers = resultObject.getJSONArray("result");
 
-        //Method to parse json result and get the value of the key "image"
-        private void returnParsedJsonArray(String result){
-            List<String> list = null;
-            try {
-                JSONArray arr = new JSONArray(result);
-
-                for(int i = 0; i < arr.length(); i++){
-                    usersImages.add(arr.getJSONObject(i).getString("images"));
-                    usernames.add(arr.getJSONObject(i).getString("usernames"));
-
-                    Log.d("USERNAMES", usernames.get(i));
-                    Log.d("USERIMAGES", usersImages.get(i));
+                facebookIds = new String[arrayOfUsers.length()];
+                for(int i = 0; i < arrayOfUsers.length(); ++i){
+                    JSONObject user = arrayOfUsers.getJSONObject(i);
+                    String id = user.getString("rangeKey");
+                    facebookIds[i] = id;
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+            return facebookIds;
         }
     }
+
+
+
+
+
+
+
+
+
+    //AsyncTask to get profile pic url string from server
+    private class DeleteCurrentLocationOnDB extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+
+
+            User_Locations userToFind = new User_Locations();
+            userToFind.setFacebookId(identityManager.getUserFacebookId());
+
+            String queryString = identityManager.getUserFacebookId();
+
+            Condition rangeKeyCondition = new Condition()
+                    .withComparisonOperator(ComparisonOperator.EQ.toString())
+                    .withAttributeValueList(new AttributeValue().withS(queryString.toString()));
+
+            DynamoDBQueryExpression queryExpression = new DynamoDBQueryExpression()
+                    .withRangeKeyCondition("rangeKey", rangeKeyCondition)
+                    .withConsistentRead(false);
+
+            PaginatedQueryList result = mapper.query(User_Locations.class, queryExpression);
+// Do something with result.
+
+            System.out.println("Returned GEOHASH" + result.get(0).toString());
+
+
+
+
+
+
+
+//            User_Locations userToDelete = new User_Locations();
+//            userToDelete.setFacebookId(identityManager.getUserFacebookId());
+//
+//            mapper.delete(userToDelete);
+
+
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            //Print server AsyncTask response
+            System.out.println("Delete method Resulted Value: " + result);
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     class Userinfo{

@@ -52,6 +52,7 @@ import com.amazonaws.mobileconnectors.cognito.Dataset;
 import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
 import com.amazonaws.mobileconnectors.cognito.Record;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.viewpagerindicator.CirclePageIndicator;
 
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     static EgoMap egoMap;
     static UserLocation userLocation;
     static Thread thread;
+    static EgoStreamViewAdapter2 adapter;
 
     //Number Variables
     private static int mMinHeaderTranslation;
@@ -112,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     private AbsListView absListView;
     static CirclePageIndicator pageIndicator;
 
-
+    static String[] facebookIds = {"699211431"};
 
 
 
@@ -184,9 +186,16 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         awsMobileClient = AWSMobileClient.defaultMobileClient();
         // Obtain a reference to the identity manager.
         identityManager = awsMobileClient.getIdentityManager();
+
+        //Initialize the mapper for DynamoDB
+        mapper = AWSMobileClient.defaultMobileClient().getDynamoDBMapper();
+
         /****************/
         setContentView(R.layout.activity_main);
         context = getApplicationContext();
+
+        adapter = new EgoStreamViewAdapter2(this, facebookIds);
+        egoMap = new EgoMap(MainActivity.this, identityManager, mapper);
 
         resources = getResources();
         drawerArrowDrawable = new DrawerArrowDrawable(resources);
@@ -239,10 +248,13 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         pageIndicator.setExtraSpacing(15f);
         pageIndicator.setViewPager(mViewPager);
 
-        //Initialize the mapper for DynamoDB
-        mapper = AWSMobileClient.defaultMobileClient().getDynamoDBMapper();
+
 
         theMapOnCreateMethod();
+
+        DeleteItemRequest deleteItemRequest = new DeleteItemRequest();
+
+
     }
 
     public static void createUpdateUserLocation(){
@@ -660,6 +672,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         private SparseArrayCompat<ScrollTabHolder> mScrollTabHolders;
         private final String[] TITLES = {" ", " "};
+//        private final String[] TITLES = {" "};
 
         private ScrollTabHolder mListener;
 
@@ -686,8 +699,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         @Override
         public Fragment getItem(int position) {
+            if(position == 0){
+                fragment = (ScrollTabHolderFragment) Fragment_Main.newInstance(MainActivity.this, context, position, toolbar);
+            } else {
+                fragment = (ScrollTabHolderFragment) Fragment_Main_Friends.newInstance(MainActivity.this, context, position, toolbar);
+            }
 
-            fragment = (ScrollTabHolderFragment) Fragment_Main.newInstance(context, position, toolbar);
 
             mScrollTabHolders.put(position, fragment);
             if (mListener != null) {
@@ -704,7 +721,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         }
 
     }
-
 
 
 
@@ -746,7 +762,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     /********************************** Google Maps Methods ****************************************/
     /************************************************************************************************/
     public void theMapOnCreateMethod(){
-        egoMap = new EgoMap(MainActivity.this, identityManager, mapper);
+
         egoMap.theOnCreateMethod();
     }
 

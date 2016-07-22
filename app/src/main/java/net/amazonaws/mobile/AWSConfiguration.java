@@ -14,6 +14,7 @@ import com.amazonaws.regions.Regions;
  * This class defines constants for the developer's resource
  * identifiers and API keys. It should be kept private.
  */
+
 public class AWSConfiguration {
 
     // AWS MobileHub user agent string

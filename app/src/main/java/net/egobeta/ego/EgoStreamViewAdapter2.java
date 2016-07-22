@@ -10,6 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Lucas on 30/06/2016.
@@ -20,11 +22,23 @@ public class EgoStreamViewAdapter2 extends ArrayAdapter<String> {
     private ArrayList<String> arrList;
     private String[] facebookIds;
 
-    public EgoStreamViewAdapter2(Activity context, String[] facebookIds, ArrayList<String> arrList) {
+
+    public EgoStreamViewAdapter2(Activity context, String[] facebookIds) {
         super(context, R.layout.stream_gridviewitem, facebookIds);
         this.context = context;
-        this.arrList = arrList;
         this.facebookIds = facebookIds;
+        List<String> list = Arrays.asList(facebookIds);
+        arrList = new ArrayList<String>();
+
+        arrList.addAll(list);
+    }
+
+    public void setUsers(String[] facebookIds){
+
+        List<String> list = Arrays.asList(facebookIds);
+        arrList = new ArrayList<String>();
+
+        arrList.addAll(list);
     }
 
 
@@ -36,7 +50,10 @@ public class EgoStreamViewAdapter2 extends ArrayAdapter<String> {
 
         FacebookPictureViewRound userProfilePic = (FacebookPictureViewRound) rowView.findViewById(R.id.img);
 //        userProfilePic.setPresetSize(FacebookPictureViewRound.NORMAL);
-        userProfilePic.setProfileId(facebookIds[position]);
+        if(arrList.get(position) != null){
+            userProfilePic.setProfileId(arrList.get(position));
+        }
+
         return rowView;
     }
 

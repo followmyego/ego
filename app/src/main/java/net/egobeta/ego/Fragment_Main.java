@@ -1,5 +1,6 @@
 package net.egobeta.ego;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 
 import android.app.ProgressDialog;
@@ -47,15 +48,17 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
 
     private static final String ARG_POSITION = "position";
-    int egoStreamPosition = 0;
-    int egoFriendsPosition = 1;
+    static int egoStreamPosition = 0;
+    static int egoFriendsPosition = 1;
 
 
     //User profile info variables
     private String facebookId;
 
     //Other variables
-    String[] facebook_Ids;
+    static String[] facebook_Ids = null;
+
+
     private ListView mListView;
     private ArrayList<String> mListItems;
     private static final String TAG = "DEBUGGING MESSAGE";
@@ -63,14 +66,12 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
     private String getUserInterestsUrlAddress =  "http://www.myegotest.com/android_user_api/getUserInterests.php";
     public ScrollView scrollView;
 
-    private int mPosition;
+    private static int mPosition;
     static Context context;
+    static Activity activity;
     private Typeface typeface;
 
     //Instagram GridView view Variables
-    private static AlertDialog.Builder builder;
-    private static TextView connectButtonText;
-    private static ImageButton connectButton;
     private static NonScrollableGridView gridView;
 
     public static View v;
@@ -78,14 +79,17 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
     private int scrollHeight;
 //    EgoStreamViewAdapter adapter;
-    EgoStreamViewAdapter2 adapter;
+
+    static EgoStreamViewAdapter2 adapter;
+
+
     SlidingMenu slidingMenu;
 
     //Instagram stuffs
     private static String instagramProfileLinked;
     private static String instagramId;
     private static String instagramUsername;
-    private ArrayList<String> facebookProfileIds = new ArrayList<String>();
+    private static ArrayList<String> facebookProfileIds = new ArrayList<String>();
     private int WHAT_FINALIZE = 0;
     private static int WHAT_ERROR = 1;
     private ProgressDialog pd;
@@ -99,7 +103,8 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
     private HashMap<String, String> instagramUserInfoHashmap = new HashMap<String, String>();
 
 
-    public static Fragment newInstance(Context context1, int position, Toolbar toolbar1) {
+    public static Fragment newInstance(Activity activtiy, Context context1, int position, Toolbar toolbar1) {
+        activity = activtiy;
         Fragment_Main f = new Fragment_Main();
         Bundle b = new Bundle();
         b.putInt(ARG_POSITION, position);
@@ -125,12 +130,13 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
             facebookProfileIds.add("facebookProfileId " + i);
         }
 
+
+
         getUsersAroundUs();
-
         //Create adapter for instagram images and horizontal image sliding view
-        adapter = new EgoStreamViewAdapter2(getActivity(), facebook_Ids, facebookProfileIds);
-
+        adapter = new EgoStreamViewAdapter2(getActivity(), facebook_Ids);
     }
+
 
     //This function send our location and pull the users that are around us from the database
     public void getUsersAroundUs(){
@@ -139,42 +145,16 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
         String[] user_facebookIds = {
                 "699211431",
                 "531370423",
-                "100008170621778",
-                "509186356",
-                "763769255",
-                "100004583984873",
-                "557942513",
-                "1452584020",
-                "574273123",
-                "100000153220058",
-                "100000910525701",
-                "1765792246"
-        };
-        String[] user_friendsFacebookIds = {
-                "699211431",
-                "574273123",
-                "100004583984873",
-                "531370423",
-                "1765792246"
+                "100008170621778"
+
         };
 
-        if(mPosition == egoStreamPosition){
             int lengthOfUsers = user_facebookIds.length;
             facebook_Ids = new String[lengthOfUsers];
 
             for (int i = 0; i < lengthOfUsers; i++) {
                 facebook_Ids[i] = user_facebookIds[i];
             }
-        }
-
-        if(mPosition == egoFriendsPosition){
-            int lengthOfUsers = user_friendsFacebookIds.length;
-            facebook_Ids = new String[lengthOfUsers];
-
-            for (int i = 0; i < lengthOfUsers; i++) {
-                facebook_Ids[i] = user_friendsFacebookIds[i];
-            }
-        }
     }
 
     private boolean isNetworkAvailable() {
@@ -193,27 +173,13 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
         mListView.setDivider(null);
         mListView.setDividerHeight(0);
 
+        EgoStreamTabAdapter myCustomAdapter = new EgoStreamTabAdapter();
+        myCustomAdapter.addSeparatorItem("separator " + 1);
+        mListView.setAdapter(myCustomAdapter);
+        mListView.setOnScrollListener(this);
 
-        if (mPosition == 0) {
-
-            EgoStreamTabAdapter myCustomAdapter = new EgoStreamTabAdapter();
-            myCustomAdapter.addSeparatorItem("separator " + 1);
-
-            mListView.setAdapter(myCustomAdapter);
-            mListView.setOnScrollListener(this);
-
-        } else if (mPosition == 1) {
-
-            EgoStreamTabAdapter myCustomAdapter = new EgoStreamTabAdapter();
-            myCustomAdapter.addSeparatorItem("separator " + 1);
-
-            mListView.setAdapter(myCustomAdapter);
-            mListView.setOnScrollListener(this);
-
-        }
 
         return v;
-
     }
 
 
@@ -244,12 +210,12 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
     //Method to show users instagram photos
     public void gridViewInitializer(View convertView){
+//        setUsersForFriendsTab();
         //Initialize the gridview
         gridView = (NonScrollableGridView) convertView.findViewById(R.id.myGridView);
-
-
         gridView.setVisibility(View.VISIBLE);
         gridView.setAdapter(adapter);
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -261,6 +227,39 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 //                Toast.makeText(getActivity(), "item number: " + position, Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+
+    //Method to set height of the interests ListView
+    public static void setGridViewHeightBasedOnChildren(NonScrollableGridView gridView) {
+        EgoStreamViewAdapter2 listAdapter = (EgoStreamViewAdapter2) gridView.getAdapter();
+        if (listAdapter == null) {
+            // pre-condition
+            return;
+        }
+
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, gridView);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = gridView.getLayoutParams();
+        params.height = totalHeight + ((listAdapter.getCount() - 1));
+        gridView.setLayoutParams(params);
+        gridView.requestLayout();
+    }
+
+    public static void notfiyAdapterHasChanged(String[] facebook_Ids1){
+        adapter = new EgoStreamViewAdapter2(activity, facebook_Ids1);
+        facebook_Ids = facebook_Ids1;
+        gridView.setAdapter(adapter);
+//        facebook_Ids = facebook_Ids1;
+//        setGridViewHeightBasedOnChildren(gridView);
+//        adapter.setUsers(facebook_Ids1);
+//        adapter.notifyDataSetChanged();
+        gridView.invalidateViews();
 
     }
 
@@ -336,6 +335,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
                 //Initialize the gridview
                 gridViewInitializer(convertView);
 
+
                 convertView.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder)convertView.getTag();
@@ -346,6 +346,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
         public class ViewHolder{
             NonScrollableGridView gridView;
+
         }
     }
 
