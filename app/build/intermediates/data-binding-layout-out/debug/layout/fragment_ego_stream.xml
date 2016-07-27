@@ -1,0 +1,66 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="net.egobeta.ego.EgoStreamFragment"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/bookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Title"
+        android:textSize="32sp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/Author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Author"
+        android:textSize="32sp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Price"
+        android:textSize="32sp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/ISBN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="ISBN"
+        android:textSize="32sp"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        tools:text="HardCover"
+        android:id="@+id/HardCover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:layout_margin="10dp" />
+
+    <TextView
+        tools:text="Awesome"
+        android:id="@+id/awesome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:id="@+id/mButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SHOW ME THE BOOK WITH THIS ISBN"
+        android:layout_marginTop="100dp"/>
+
+</LinearLayout>

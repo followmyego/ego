@@ -29,10 +29,11 @@
 		android:layout_centerHorizontal="true" />
 
 	<TextView
+		android:id="@+id/loading_message"
 		android:layout_width="match_parent"
 		android:layout_height="50dp"
 		android:layout_centerInParent="true"
-		android:text="Loading more people"
+		android:text="Getting the egos around you"
 		android:textColor="#fff"
 		android:textSize="26sp"
 		android:gravity="center"

@@ -7,15 +7,20 @@ import android.app.ProgressDialog;
 import android.content.Context;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import android.os.Bundle;
 
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.Toolbar;
 
+import android.support.v8.renderscript.ScriptGroup;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,10 +38,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout;
+import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
+
+
+//import net.egobeta.ego.databinding.FragmentListBinding;
 
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.TreeSet;
 
@@ -44,22 +55,26 @@ import java.util.TreeSet;
 /**
  * Created by Lucas on 29/06/2016.
  */
-public class Fragment_Main extends ScrollTabHolderFragment implements AbsListView.OnScrollListener {
+public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefreshLayout.OnRefreshListener, AbsListView.OnScrollListener {
 
 
     private static final String ARG_POSITION = "position";
     static int egoStreamPosition = 0;
     static int egoFriendsPosition = 1;
+    public static final int DISMISS_TIMEOUT = 2000;
 
-
+    static SwipyRefreshLayout swipeRefreshLayout;
+    private EgoStreamTabAdapter myListAdapter;
     //User profile info variables
     private String facebookId;
-
+    private int count = 0;
     //Other variables
-    static String[] facebook_Ids = null;
-
+    static ArrayList<String> facebook_Ids = new ArrayList<String>();
+//    SwipyRefreshLayout swipyRefreshLayout;
+//    private ActivityMainBinding mBinding;
 
     private ListView mListView;
+    private static TextView loadingMessage;
     private ArrayList<String> mListItems;
     private static final String TAG = "DEBUGGING MESSAGE";
     private String interestSuggestionsUrlAddress = "http://www.myegotest.com/android_user_api/searcher.php";
@@ -67,7 +82,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
     public ScrollView scrollView;
 
     private static int mPosition;
-    static Context context;
+    public static Context context;
     static Activity activity;
     private Typeface typeface;
 
@@ -79,8 +94,9 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
     private int scrollHeight;
 //    EgoStreamViewAdapter adapter;
+//    private static FragmentListBinding mBinding;
 
-    static EgoStreamViewAdapter2 adapter;
+    static EgoStreamViewAdapter adapter;
 
 
     SlidingMenu slidingMenu;
@@ -111,6 +127,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
         context = context1;
         toolbar = toolbar1;
         f.setArguments(b);
+//        mBinding = mBindingg;
         return f;
     }
 
@@ -132,9 +149,10 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
 
 
-        getUsersAroundUs();
+//        getUsersAroundUs();
         //Create adapter for instagram images and horizontal image sliding view
-        adapter = new EgoStreamViewAdapter2(getActivity(), facebook_Ids);
+        adapter = new EgoStreamViewAdapter(context, facebook_Ids);
+
     }
 
 
@@ -150,10 +168,10 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
         };
 
             int lengthOfUsers = user_facebookIds.length;
-            facebook_Ids = new String[lengthOfUsers];
+
 
             for (int i = 0; i < lengthOfUsers; i++) {
-                facebook_Ids[i] = user_facebookIds[i];
+                facebook_Ids.add(user_facebookIds[i]);
             }
     }
 
@@ -173,12 +191,40 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
         mListView.setDivider(null);
         mListView.setDividerHeight(0);
 
-        EgoStreamTabAdapter myCustomAdapter = new EgoStreamTabAdapter();
-        myCustomAdapter.addSeparatorItem("separator " + 1);
-        mListView.setAdapter(myCustomAdapter);
+        loadingMessage = (TextView) v.findViewById(R.id.loading_message);
+
+        myListAdapter = new EgoStreamTabAdapter();
+        myListAdapter.addSeparatorItem("separator " + 1);
+        mListView.setAdapter(myListAdapter);
         mListView.setOnScrollListener(this);
+        //        mListView.setOnScrollListener(new EndlessScrollerListener() {
+//            @Override
+//            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+//                if (mScrollTabHolder != null)
+//                    mScrollTabHolder.onScroll(view, firstVisibleItem, visibleItemCount, totalItemCount, mPosition);
+//            }
+//
+//            @Override
+//            public void onScrollStateChanged(AbsListView view, int scrollState) {
+//                // nothing
+//            }
+//
+//            @Override
+//            public boolean onLoadMore(int page, int totalItemsCount) {
+//                // Triggered only when new data needs to be appended to the list
+//                // Add whatever code is needed to append new items to your AdapterView
+//                MainActivity.getNearbyUsers(count);
+//                count += 1;
+//                Toast.makeText(getActivity(), "LoadMore is triggered", Toast.LENGTH_SHORT).show();
+//                // or customLoadMoreDataFromApi(totalItemsCount);
+//                return true; // ONLY if more data is actually being loaded; false otherwise.
+//            }
+//        });
 
-
+        swipeRefreshLayout = (SwipyRefreshLayout) v.findViewById(R.id.swipyrefreshlayout);
+//        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+//        mBinding = DataBindingUtil.setContentView(activity, R.layout.fragment_list);
+        swipeRefreshLayout.setOnRefreshListener(this);
         return v;
     }
 
@@ -208,6 +254,8 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
         // nothing
     }
 
+    public void runthismethod(){}
+
     //Method to show users instagram photos
     public void gridViewInitializer(View convertView){
 //        setUsersForFriendsTab();
@@ -220,7 +268,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Bundle bundle = new Bundle();
-                bundle.putString("facebook_id", facebook_Ids[position]);
+                bundle.putString("facebook_id", facebook_Ids.get(position));
                 Intent intent = new Intent(getActivity(), ProfileActivity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -252,16 +300,68 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
     }
 
     public static void notfiyAdapterHasChanged(String[] facebook_Ids1){
-        adapter = new EgoStreamViewAdapter2(activity, facebook_Ids1);
-        facebook_Ids = facebook_Ids1;
-        gridView.setAdapter(adapter);
+
+        facebook_Ids = new ArrayList<>(Arrays.asList(facebook_Ids1));
+//        adapter = new EgoStreamViewAdapter(context, facebook_Ids);
+        adapter.setItems(facebook_Ids);
+//        gridView.setAdapter(adapter);
 //        facebook_Ids = facebook_Ids1;
 //        setGridViewHeightBasedOnChildren(gridView);
 //        adapter.setUsers(facebook_Ids1);
 //        adapter.notifyDataSetChanged();
         gridView.invalidateViews();
+    }
+
+    public static void addNewItems(String[] facebook_Ids1) {
+        ArrayList<String> newList = new ArrayList<>(Arrays.asList(facebook_Ids1));
+        for (int i = 0; i < 12; i++) {
+            facebook_Ids.add(newList.get(i));
+//            adapter.addItem(newList.get(i));
+        }
+
+        adapter.notifyDataSetChanged();
+        gridView.invalidateViews();
+    }
+
+    public static void stopRefreshing(){
+
+                //Hide the refresh after 2sec
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                });
+
 
     }
+
+    @Override
+    public void onRefresh(SwipyRefreshLayoutDirection direction) {
+        Log.d("MainActivity", "Refresh triggered at "
+                + (direction == SwipyRefreshLayoutDirection.TOP ? "top" : "bottom"));
+        if(direction == SwipyRefreshLayoutDirection.TOP){
+            count = 0;
+        } else if(direction == SwipyRefreshLayoutDirection.BOTTOM ){
+            count += 1;
+        }
+        MainActivity.getNearbyUsers(count);
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                //Hide the refresh after 2sec
+//                getActivity().runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        swipeRefreshLayout.setRefreshing(false);
+//                    }
+//                });
+//            }
+//        }, DISMISS_TIMEOUT);
+    }
+
+
 
     /** ADAPTER INSTAGRAM TAB **/
     public class EgoStreamTabAdapter extends BaseAdapter {
@@ -276,7 +376,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
         private TreeSet mSeparatorsSet = new TreeSet();
 
         public EgoStreamTabAdapter(){
-            mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
         public void addItem(final String item){
@@ -334,8 +434,9 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
                 //Initialize the gridview
                 gridViewInitializer(convertView);
-
-
+                viewHolder.loadingMessage = (TextView) convertView.findViewById(R.id.loading_message);
+                viewHolder.loadingMessage.setText("Pull up to load more egos");
+                viewHolder.loadingMessage.setTypeface(typeface);
                 convertView.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder)convertView.getTag();
@@ -346,11 +447,11 @@ public class Fragment_Main extends ScrollTabHolderFragment implements AbsListVie
 
         public class ViewHolder{
             NonScrollableGridView gridView;
-
+            TextView loadingMessage;
         }
     }
 
-
-
-
 }
+
+
+

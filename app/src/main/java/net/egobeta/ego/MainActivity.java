@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 
+import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.RectF;
@@ -42,6 +43,7 @@ import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
 import net.amazonaws.mobile.util.ThreadUtils;
 import net.astuetz.PagerSlidingTabStrip;
+//import net.egobeta.ego.databinding.FragmentListBinding;
 import net.egobeta.ego.demo.UserSettings;
 import net.egobeta.ego.demo.nosql.DynamoDBUtils;
 import net.egobeta.ego.demo.nosql.UserLocation;
@@ -54,6 +56,8 @@ import com.amazonaws.mobileconnectors.cognito.Record;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout;
+import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
 import com.viewpagerindicator.CirclePageIndicator;
 
 
@@ -74,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     AWSMobileClient awsMobileClient;
     static DynamoDBMapper mapper;
     static IdentityManager identityManager; //The identity manager used to keep track of the current user account.
+
 
     //Other variables
     private final static String LOG_TAG = MainActivity.class.getSimpleName(); //Class name for log messages.
@@ -178,6 +183,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         /** AWS Stuffs **/
         // Obtain a reference to the mobile client. It is created in the Application class,
         // but in case a custom Application class is not used, we initialize it here if necessary.
@@ -254,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         DeleteItemRequest deleteItemRequest = new DeleteItemRequest();
 
-
+        getNearbyUsers(0);
     }
 
     public static void createUpdateUserLocation(){
@@ -514,7 +520,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         updateColor();
         syncUserSettings();
 
-        theMapOnResumeMethod();
+//        theMapOnResumeMethod();
+        getNearbyUsers(0);
     }
 
     @Override
@@ -522,6 +529,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         super.onStart();
         mHeaderPicture = (ImageView) findViewById(R.id.header_picture);
         theMapOnStartMethod();
+
     }
 
     @Override
@@ -632,10 +640,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
             setHomeAsUpAlpha(clamp((5.0F * ratio - 4.0F) * -1, 0.0F, 1.0F));
         }
     }
-
-
-
-
 
 
     /************************************** INNER CLASSES ******************************************/
@@ -770,8 +774,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         egoMap.theOnStartMethod();
     }
 
-    public void theMapOnResumeMethod(){
-        egoMap.theOnResumeMethod();
+//    public void theMapOnResumeMethod(){
+//        egoMap.theOnResumeMethod();
+//    }
+
+    public static void getNearbyUsers(int count){
+        egoMap.PushLocation(count);
     }
 
 

@@ -79,6 +79,8 @@ ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:
 		ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:35:22-75
 application
 ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:37:5-156:19
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
@@ -108,6 +110,13 @@ MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_T
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:palette-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\palette-v7\23.1.1\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [ego:lib:unspecified] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\Ego\lib\unspecified\AndroidManifest.xml:11:5-12:19
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:41:9-41
@@ -264,6 +273,11 @@ ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:
 uses-sdk
 INJECTED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:multidex:1.0.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
+MERGED from [com.android.databinding:library:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.0-rc3\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.databinding:adapters:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\adapters\1.0-rc3\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.databinding:library:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.0-rc3\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
 MERGED from [ego:SlidingMenuLib-master:unspecified] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\Ego\SlidingMenuLib-master\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
@@ -301,6 +315,17 @@ MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\Lucas\Desktop\
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:palette-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\palette-v7\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [ego:lib:unspecified] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\Ego\lib\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [ego:SlidingMenuLib-master:unspecified] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\Ego\SlidingMenuLib-master\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.databinding:library:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.0-rc3\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.databinding:adapters:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\adapters\1.0-rc3\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.databinding:library:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.0-rc3\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml

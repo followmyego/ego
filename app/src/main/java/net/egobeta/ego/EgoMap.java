@@ -61,11 +61,12 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     private GoogleApiClient mGoogleApiClient;
     private boolean mRequestLocationUpdates = false;
     private LocationRequest mLocationRequest;
+    int firstTime = 0;
 
     //Other variables
     private List<String> usersImages;
     private List<String> usernames;
-    private String serverURL = "http://ebjavasampleapp-env.us-east-1.elasticbeanstalk.com/dynamodb-geo";
+    private static String serverURL = "http://ebjavasampleapp-env.us-east-1.elasticbeanstalk.com/dynamodb-geo";
     private String googleAPI = "AIzaSyAyMXHOJdJg6Jjj64SZnmyxIaY2lWvKDC0";
     private Activity context;
     private String username = "username";
@@ -181,14 +182,21 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
 
 
-            new PushUserLocationToDataBase().execute(serverURL);
-            //new PushUserLocationToDataBase().execute(serverURL, username);
+            if(firstTime == 0){
+                new PushUserLocationToDataBase(0).execute(serverURL, username);
+                firstTime = 1;
+            }
+
 //            saveToDB();
             Toast.makeText(context, "Long: " + longitude + " Lat: " + latitude, Toast.LENGTH_SHORT).show();
             System.out.println("Long: " + longitude + " Lat: " + latitude + " facebookId: " + identityManager.getUserFacebookId());
         } else {
             //lblLocation.setText("Couldn't get the location. Make sure location is enabled on the device");
         }
+    }
+
+    public void PushLocation(int count){
+        new PushUserLocationToDataBase(count).execute(serverURL);
     }
 
 
@@ -271,6 +279,12 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     //AsyncTask to get profile pic url string from server
     private class PushUserLocationToDataBase extends AsyncTask<String, Void, String> {
 
+        int count;
+
+        public PushUserLocationToDataBase(int count){
+            this.count = count;
+        }
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -304,7 +318,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
                 requestParams.put("lat", getLatitude());
                 requestParams.put("lng", getLongitude());
-                requestParams.put("count", 0);
+                requestParams.put("count", count);
                 requestParams.put("radiusInMeter", "200");
                 requestParams.put("debug", "androidApp");
                 requestParams.put("rangeKey", identityManager.getUserFacebookId());
@@ -360,19 +374,30 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 //                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
 //                    returnParsedJsonArray(result);
 //                    adapter = new EgoStreamViewAdapter2(context, returnArrayOfFacebookIds(result));
-                    Fragment_Main.notfiyAdapterHasChanged(returnArrayOfFacebookIds(result));
+                    if(count == 0){
+                        Fragment_Main.notfiyAdapterHasChanged(returnArrayOfFacebookIds(result));
+                    } else {
+                        Fragment_Main.addNewItems(returnArrayOfFacebookIds(result));
+                    }
+                    Fragment_Main.stopRefreshing();
                 } else {
                     usernames = new ArrayList<>();
                     usersImages = new ArrayList<>();
 //                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
 //                    returnParsedJsonArray(result);
 //                    adapter.setUsers(returnArrayOfFacebookIds(result));
-                    Fragment_Main.notfiyAdapterHasChanged(returnArrayOfFacebookIds(result));
+                    if(count == 0){
+                        Fragment_Main.notfiyAdapterHasChanged(returnArrayOfFacebookIds(result));
+                    } else {
+                        Fragment_Main.addNewItems(returnArrayOfFacebookIds(result));
+                    }
+
+                    Fragment_Main.stopRefreshing();
                 }
             } else {
                 if(!mRequestLocationUpdates){
                     //startLocationUpdates();
-                    Toast.makeText(context, "Uh oh, looks like there was an error", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(context, "Uh oh, looks like there was an error", Toast.LENGTH_LONG).show();
                     mRequestLocationUpdates = true;
                 }
             }

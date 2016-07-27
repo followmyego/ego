@@ -13,9 +13,11 @@ android/support/v4/media/session/MediaSessionCompat$MediaSessionImpl.class
 android/support/v7/widget/TintTypedArray.class
 android/support/v4/view/accessibility/AccessibilityEventCompat.class
 android/support/v7/app/AppCompatActivity.class
+com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$Ring.class
 com/google/gson/annotations/SerializedName.class
 com/amazonaws/services/s3/model/SetBucketNotificationConfigurationRequest.class
 android/support/v7/app/ActionBar$NavigationMode.class
+com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable.class
 com/google/android/gms/location/GeofencingApi.class
 android/support/v4/app/BaseFragmentActivityDonut.class
 android/support/v4/media/MediaDescriptionCompat.class
@@ -73,6 +75,7 @@ com/amazonaws/mobileconnectors/s3/transferutility/TransferStatusUpdater.class
 com/amazonaws/services/s3/model/PutObjectRequest.class
 android/support/v4/app/FragmentHostCallback.class
 net/egobeta/ego/demo/nosql/UserLocation.class
+android/databinding/Untaggable.class
 android/support/v4/media/RatingCompat$StarStyle.class
 android/support/v4/app/NoSaveStateFrameLayout.class
 android/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21.class
@@ -85,6 +88,7 @@ com/amazonaws/mobileconnectors/s3/transferutility/TransferState.class
 android/support/v7/widget/AdapterHelper.class
 com/amazonaws/services/mobileanalytics/AmazonMobileAnalyticsClient.class
 android/support/design/widget/SnackbarManager.class
+com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$EndCurveInterpolator.class
 android/support/v4/content/ContextCompat.class
 android/support/v7/widget/RecyclerView$ItemAnimator$ItemAnimatorListener.class
 android/support/v4/app/TaskStackBuilder.class
@@ -122,6 +126,7 @@ com/amazonaws/mobileconnectors/s3/transferutility/TransferService.class
 android/support/v4/view/ViewCompat$ViewCompatImpl.class
 android/support/v7/widget/RecyclerView$ViewHolder.class
 android/support/v4/app/ActionBarDrawerToggle.class
+com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$StartCurveInterpolator.class
 android/support/v4/app/ActivityCompatHoneycomb.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBRangeKey.class
 android/support/v4/view/ViewCompatICSMr1.class
@@ -142,6 +147,7 @@ com/amazonaws/services/securitytoken/AWSSecurityTokenServiceClient.class
 android/support/design/widget/TabLayout.class
 android/support/v4/app/BackStackState.class
 com/amazonaws/http/AmazonHttpClient.class
+com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$4.class
 android/support/v7/widget/RecyclerView$RecycledViewPool.class
 com/amazonaws/services/s3/AmazonS3Client.class
 android/support/v4/widget/SwipeRefreshLayout.class
@@ -184,6 +190,7 @@ android/support/design/widget/HeaderBehavior$FlingRunnable.class
 com/amazonaws/mobileconnectors/s3/transfermanager/TransferProgress.class
 android/support/v7/widget/Toolbar.class
 android/support/design/R$style.class
+android/databinding/BindingAdapter.class
 android/support/design/widget/AppBarLayout$LayoutParams.class
 android/support/v4/view/ViewCompat$GBViewCompatImpl.class
 android/support/design/widget/CoordinatorLayout$SavedState.class
@@ -235,6 +242,7 @@ android/support/design/widget/Snackbar.class
 android/support/v7/app/ActionBarActivity.class
 android/support/design/widget/MathUtils.class
 android/support/v4/media/session/MediaControllerCompat.class
+com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$2.class
 com/google/android/gms/auth/AccountChangeEventsRequest.class
 android/support/multidex/MultiDex$V14.class
 com/amazonaws/internal/SdkInputStream.class
@@ -269,6 +277,7 @@ com/google/android/gms/location/places/NearbyAlertRequest.class
 android/support/v4/view/ViewCompat$BaseViewCompatImpl.class
 net/egobeta/ego/R$color.class
 android/support/v4/util/SimpleArrayMap.class
+com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$3.class
 net/egobeta/ego/R$drawable.class
 android/support/v4/view/VelocityTrackerCompat.class
 com/google/android/gms/gcm/zza.class
@@ -314,6 +323,7 @@ android/support/v7/widget/RecyclerView$RecyclerViewDataObserver.class
 com/google/android/gms/auth/api/credentials/CredentialRequest.class
 com/amazonaws/handlers/RequestHandler.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBTable.class
+com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$ProgressDrawableSize.class
 android/support/v4/view/ViewCompat.class
 com/amazonaws/internal/SdkDigestInputStream.class
 android/support/v4/view/ViewCompatMarshmallow.class
@@ -442,6 +452,7 @@ android/support/annotation/RequiresPermission$Write.class
 android/support/v4/media/RatingCompatApi21.class
 android/support/v4/media/RatingCompat$1.class
 com/amazonaws/http/ExecutionContext.class
+com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$1.class
 com/amazonaws/services/dynamodbv2/model/DeleteItemRequest.class
 android/support/v4/view/ViewCompat$JBViewCompatImpl.class
 net/amazonaws/mobile/user/signin/FacebookSignInProvider.class
@@ -492,6 +503,7 @@ com/amazonaws/SDKGlobalConfiguration.class
 com/google/android/gms/auth/api/signin/zzd.class
 android/support/v4/media/session/PlaybackStateCompat$Builder.class
 net/egobeta/ego/SplashActivity$2.class
+android/databinding/Bindable.class
 net/egobeta/ego/EgoMap.class
 com/google/android/gms/common/api/Status.class
 android/support/v4/view/GravityCompat.class
@@ -518,6 +530,7 @@ android/support/v4/widget/CursorAdapter.class
 android/support/v4/util/DebugUtils.class
 com/google/android/gms/gcm/Task.class
 android/support/v8/renderscript/RSIllegalArgumentException.class
+android/databinding/BindingMethods.class
 net/egobeta/ego/SignInActivity$SignInResultsHandler.class
 com/amazonaws/mobileconnectors/cognito/Dataset.class
 com/google/android/gms/internal/zzlf.class
@@ -573,6 +586,7 @@ com/google/android/gms/maps/GoogleMap.class
 android/support/v4/app/NotificationCompat$Builder.class
 android/support/v7/widget/LinearLayoutCompat.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBHashKey.class
+android/databinding/BindingConversion.class
 android/support/v7/widget/RecyclerView$ItemDecoration.class
 com/google/android/gms/common/api/Result.class
 android/support/v4/view/ViewCompat$LollipopViewCompatImpl.class
@@ -580,6 +594,7 @@ android/support/v4/media/session/MediaSessionCompat$SessionFlags.class
 android/support/v8/renderscript/ScriptIntrinsicBLAS$Transpose.class
 com/amazonaws/mobileconnectors/s3/transfermanager/MultipleFileUpload.class
 com/amazonaws/services/sqs/AmazonSQSClient.class
+android/databinding/BindingBuildInfo.class
 com/google/android/gms/common/data/DataBuffer.class
 com/google/android/gms/gcm/GcmListenerService$2.class
 net/amazonaws/mobile/downloader/service/DownloadFlags.class
@@ -629,6 +644,7 @@ android/support/v4/view/ViewCompat$ScrollIndicators.class
 android/support/design/R.class
 com/amazonaws/services/s3/model/ProgressListener.class
 com/google/android/gms/auth/api/signin/internal/zzf.class
+android/databinding/BindingMethod.class
 com/google/android/gms/auth/api/signin/internal/SignInConfiguration.class
 net/amazonaws/mobile/push/PushManager.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBIndexHashKey.class
@@ -659,6 +675,7 @@ android/support/v7/widget/RecyclerView$5.class
 com/google/android/gms/internal/zzqu.class
 android/support/annotation/Size.class
 android/support/v7/widget/SimpleItemAnimator.class
+com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$5.class
 net/egobeta/ego/MainActivity$PagerAdapter.class
 net/egobeta/ego/EgoStreamViewAdapter2.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable.class
@@ -671,6 +688,7 @@ net/egobeta/ego/SplashActivity$SignInResultsHandler.class
 android/support/v7/app/ActionBar$LayoutParams.class
 android/support/v4/view/ViewCompatHC.class
 android/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener.class
+com/orangegangsters/github/swipyrefreshlayout/library/SwipyRefreshLayout.class
 com/amazonaws/mobileconnectors/s3/transferutility/TransferService$NetworkInfoReceiver.class
 com/google/android/gms/auth/api/signin/internal/zzq.class
 net/amazonaws/mobile/downloader/service/DownloadService.class

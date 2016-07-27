@@ -22,17 +22,32 @@ import java.util.List;
  */
 public class EgoStreamViewAdapter extends BaseAdapter {
 
-    private final Activity context;
-    private final String[] web;
+    private final Context context;
     private ArrayList<String> arrList;
-    private LayoutInflater mInflater;
 
-    public EgoStreamViewAdapter(Activity context, String[] web, ArrayList<String> arrList) {
-        mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+    public EgoStreamViewAdapter(Context context, ArrayList<String> arrList) {
         this.context = context;
-        this.web = web;
         this.arrList = arrList; /**This should hold be the facebook id's*/
     }
+
+    public void setItems(ArrayList<String> arrList){
+        this.arrList = arrList;
+        notifyDataSetChanged();
+    }
+
+    public void addAllItems(ArrayList<String> addThisList){
+        arrList.addAll(addThisList);
+        notifyDataSetChanged();
+    }
+
+    public void addItem(String item){
+        arrList.add(item);
+        notifyDataSetChanged();
+    }
+
+
+
 
     @Override
     public int getCount() {
@@ -57,20 +72,17 @@ public class EgoStreamViewAdapter extends BaseAdapter {
 
 
         if(convertView == null){
-
-            viewHolder = new ViewHolder();
+            LayoutInflater mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = mInflater.inflate(R.layout.stream_gridviewitem, null);
+            viewHolder = new ViewHolder();
             viewHolder.userProfilePic = (FacebookPictureViewRound) convertView.findViewById(R.id.img);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder)convertView.getTag();
         }
-            try{
-                viewHolder.userProfilePic.setPresetSize(FacebookPictureViewRound.NORMAL);
-                viewHolder.userProfilePic.setProfileId("699211431");
-            } catch(OutOfMemoryError e) {
-                throw e;
-    }
+
+//        viewHolder.userProfilePic.setPresetSize(FacebookPictureViewRound.NORMAL);
+        viewHolder.userProfilePic.setProfileId(arrList.get(position));
 
         return convertView;
     }
