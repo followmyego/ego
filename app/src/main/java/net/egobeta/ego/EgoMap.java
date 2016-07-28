@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBDeleteExpression;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBQueryExpression;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.PaginatedQueryList;
@@ -26,7 +25,6 @@ import com.google.android.gms.location.LocationServices;
 
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
-import net.egobeta.ego.demo.nosql.Book;
 import net.egobeta.ego.demo.nosql.UserLocation;
 import net.egobeta.ego.demo.nosql.User_Locations;
 
@@ -43,7 +41,6 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.nio.charset.MalformedInputException;
 import java.util.ArrayList;
 import java.util.List;
@@ -375,7 +372,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 //                    returnParsedJsonArray(result);
 //                    adapter = new EgoStreamViewAdapter2(context, returnArrayOfFacebookIds(result));
                     if(count == 0){
-                        Fragment_Main.notfiyAdapterHasChanged(returnArrayOfFacebookIds(result));
+                        Fragment_Main.notifiyAdapterHasChanged(returnArrayOfFacebookIds(result));
                     } else {
                         Fragment_Main.addNewItems(returnArrayOfFacebookIds(result));
                     }
@@ -387,7 +384,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 //                    returnParsedJsonArray(result);
 //                    adapter.setUsers(returnArrayOfFacebookIds(result));
                     if(count == 0){
-                        Fragment_Main.notfiyAdapterHasChanged(returnArrayOfFacebookIds(result));
+                        Fragment_Main.notifiyAdapterHasChanged(returnArrayOfFacebookIds(result));
                     } else {
                         Fragment_Main.addNewItems(returnArrayOfFacebookIds(result));
                     }

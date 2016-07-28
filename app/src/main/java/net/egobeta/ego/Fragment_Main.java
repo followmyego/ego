@@ -299,7 +299,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         gridView.requestLayout();
     }
 
-    public static void notfiyAdapterHasChanged(String[] facebook_Ids1){
+    public static void notifiyAdapterHasChanged(String[] facebook_Ids1){
 
         facebook_Ids = new ArrayList<>(Arrays.asList(facebook_Ids1));
 //        adapter = new EgoStreamViewAdapter(context, facebook_Ids);
@@ -314,7 +314,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 
     public static void addNewItems(String[] facebook_Ids1) {
         ArrayList<String> newList = new ArrayList<>(Arrays.asList(facebook_Ids1));
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 16; i++) {
             facebook_Ids.add(newList.get(i));
 //            adapter.addItem(newList.get(i));
         }
