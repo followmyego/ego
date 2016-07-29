@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     private static Toolbar toolbar;
     public PagerSlidingTabStrip mPagerSlidingTabStrip;
     private static TextView toolbarTitle;
-    private AbsListView absListView;
+    private static AbsListView absListView;
     static CirclePageIndicator pageIndicator;
 
     static String[] facebookIds = {"699211431"};
@@ -588,6 +588,16 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 break;
         }
 
+    }
+
+    public static void backToTop(){
+        absListView.post(new Runnable() {
+            @Override
+            public void run() {
+                absListView.smoothScrollToPosition(0);
+
+            }
+        });
     }
 
     @Override

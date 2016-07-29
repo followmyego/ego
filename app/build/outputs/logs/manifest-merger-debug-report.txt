@@ -116,6 +116,7 @@ MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [ego:dobList:unspecified] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\Ego\dobList\unspecified\AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 	android:label
@@ -322,6 +323,7 @@ MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_T
 MERGED from [ego:SlidingMenuLib-master:unspecified] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\Ego\SlidingMenuLib-master\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [ego:dobList:unspecified] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\Ego\dobList\unspecified\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.databinding:library:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.0-rc3\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.databinding:adapters:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\adapters\1.0-rc3\AndroidManifest.xml:22:5-24:41

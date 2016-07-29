@@ -22,23 +22,23 @@
 		android:listSelector="#00000000"
 		/>
 
-	<Space
-		android:layout_width="match_parent"
-		android:layout_height="200dp"
-		android:layout_below="@+id/myGridView"
-		android:layout_centerHorizontal="true" />
+	<!--<Space-->
+		<!--android:layout_width="match_parent"-->
+		<!--android:layout_height="200dp"-->
+		<!--android:layout_below="@+id/myGridView"-->
+		<!--android:layout_centerHorizontal="true" />-->
 
-	<TextView
-		android:id="@+id/loading_message"
-		android:layout_width="match_parent"
-		android:layout_height="50dp"
-		android:layout_centerInParent="true"
-		android:text="Getting the egos around you"
-		android:textColor="#fff"
-		android:textSize="26sp"
-		android:gravity="center"
-		android:layout_below="@+id/myGridView"
-		android:layout_centerHorizontal="true" />
+	<!--<TextView-->
+		<!--android:id="@+id/loading_message"-->
+		<!--android:layout_width="match_parent"-->
+		<!--android:layout_height="50dp"-->
+		<!--android:layout_centerInParent="true"-->
+		<!--android:text="Getting the egos around you"-->
+		<!--android:textColor="#fff"-->
+		<!--android:textSize="26sp"-->
+		<!--android:gravity="center"-->
+		<!--android:layout_below="@+id/myGridView"-->
+		<!--android:layout_centerHorizontal="true" />-->
 
 
 

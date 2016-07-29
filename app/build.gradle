@@ -72,4 +72,5 @@ dependencies {
     compile 'com.android.support:palette-v7:23.1.1'
     //    compile 'com.github.orangegangsters:swipy:1.2.3@aar'//SwipyRefreshLayout
     compile project(':lib')
+    compile project(':dobList')
 }

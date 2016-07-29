@@ -82,7 +82,13 @@ public class EgoStreamViewAdapter extends BaseAdapter {
         }
 
 //        viewHolder.userProfilePic.setPresetSize(FacebookPictureViewRound.NORMAL);
-        viewHolder.userProfilePic.setProfileId(arrList.get(position));
+        try{
+            viewHolder.userProfilePic.setProfileId(arrList.get(position));
+        } catch (OutOfMemoryError e){
+            System.out.println("SOUT" + " backToTop e");
+            Fragment_Main.backToTop();
+        }
+
 
         return convertView;
     }

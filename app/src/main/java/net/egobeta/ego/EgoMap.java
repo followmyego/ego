@@ -371,11 +371,8 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 //                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
 //                    returnParsedJsonArray(result);
 //                    adapter = new EgoStreamViewAdapter2(context, returnArrayOfFacebookIds(result));
-                    if(count == 0){
-                        Fragment_Main.notifiyAdapterHasChanged(returnArrayOfFacebookIds(result));
-                    } else {
-                        Fragment_Main.addNewItems(returnArrayOfFacebookIds(result));
-                    }
+                    notifyOfNewUsers(returnArrayOfFacebookIds(result));
+
                     Fragment_Main.stopRefreshing();
                 } else {
                     usernames = new ArrayList<>();
@@ -383,11 +380,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 //                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
 //                    returnParsedJsonArray(result);
 //                    adapter.setUsers(returnArrayOfFacebookIds(result));
-                    if(count == 0){
-                        Fragment_Main.notifiyAdapterHasChanged(returnArrayOfFacebookIds(result));
-                    } else {
-                        Fragment_Main.addNewItems(returnArrayOfFacebookIds(result));
-                    }
+                    notifyOfNewUsers(returnArrayOfFacebookIds(result));
 
                     Fragment_Main.stopRefreshing();
                 }
@@ -397,6 +390,14 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 //                    Toast.makeText(context, "Uh oh, looks like there was an error", Toast.LENGTH_LONG).show();
                     mRequestLocationUpdates = true;
                 }
+            }
+        }
+
+        public void notifyOfNewUsers(String[] result){
+            if(count == 0){
+                Fragment_Main.notifiyAdapterHasChanged(result);
+            } else {
+                Fragment_Main.addNewItems(result);
             }
         }
 

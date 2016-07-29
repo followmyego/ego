@@ -321,6 +321,7 @@ com/amazonaws/mobileconnectors/s3/transfermanager/Transfer.class
 net/amazonaws/mobile/downloader/service/DownloadStatusUpdater.class
 android/support/v7/widget/RecyclerView$RecyclerViewDataObserver.class
 com/google/android/gms/auth/api/credentials/CredentialRequest.class
+net/egobeta/ego/MainActivity$7.class
 com/amazonaws/handlers/RequestHandler.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBTable.class
 com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$ProgressDrawableSize.class
