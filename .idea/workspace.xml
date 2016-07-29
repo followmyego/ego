@@ -17,107 +17,148 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4acdf839-0633-4aeb-a455-231032b9019d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/android/databinding/library/R$id.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/android/databinding/library/R.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/compileReleaseAidl/dependency.store" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/net.egobeta.ego-br.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/net.egobeta.ego-layoutinfo.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/net.egobeta.ego-setter_store.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/vpi__tab_unselected_holo.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/aapt/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/android/databinding/library/baseAdapters/BR.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/BR.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/databinding/DataBinderMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/databinding/DataBindingComponent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/dataBindingInfo/androidTest/debug/android/databinding/layouts/DataBindingInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/dataBindingInfo/debug/android/databinding/layouts/DataBindingInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/databinding/DynamicUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/android/databinding/library/R.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/android/databinding/library/baseAdapters/R.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/orangegangsters/github/swipyrefreshlayout/library/R.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/R.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/abc_action_bar_title_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/abc_btn_default_mtrl_shape.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/abc_btn_radio_material.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/abc_cab_background_top_material.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/abc_dialog_material_background_dark.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/abc_seekbar_track_material.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/abc_tab_indicator_material.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/abc_textfield_search_material.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/activity_general_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/src/main/res/values/attrs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/com_facebook_activity_layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/com_facebook_button_login_silver_background.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/com_facebook_login_fragment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/common_plus_signin_btn_text_dark.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/demo_nosql_select_operation_list_header.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/design_menu_item_action_area.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/fragment_demo_identity.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/fragment_demo_nosql_select_operation.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/fragment_demo_nosql_select_table.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/fragment_demo_nosql_show_results.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/fragment_demo_user_files_browser.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/instagram_gridviewitem.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/list_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/list_item_demo_button_icon_text.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/list_item_stream.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/list_item_text_with_checkbox.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeReleaseAssets/merger.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeReleaseResources/merger.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/packageReleaseResources/merger.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/messenger_button_blue_bg_selector.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/notification_template_part_chronometer.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/selector_button_folder.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-en-rGB/values-en-rGB.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-en-rIN/values-en-rIN.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-es-rES/values-es-rES.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-es-rUS/values-es-rUS.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-et-rEE/values-et-rEE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-eu-rES/values-eu-rES.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-fr-rCA/values-fr-rCA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-gl-rES/values-gl-rES.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-gu-rIN/values-gu-rIN.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-hy-rAM/values-hy-rAM.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-is-rIS/values-is-rIS.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-ka-rGE/values-ka-rGE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-kk-rKZ/values-kk-rKZ.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-km-rKH/values-km-rKH.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-kn-rIN/values-kn-rIN.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-ky-rKG/values-ky-rKG.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-lo-rLA/values-lo-rLA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-mk-rMK/values-mk-rMK.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-ml-rIN/values-ml-rIN.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-mn-rMN/values-mn-rMN.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-mr-rIN/values-mr-rIN.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-ms-rMY/values-ms-rMY.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-my-rMM/values-my-rMM.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-ne-rNP/values-ne-rNP.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values-pa-rIN/values-pa-rIN.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/values/values.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/res/values/values.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/build/intermediates/res/merged/release/values/values.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/GenericAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dobList/src/main/java/com/dobmob/doblist/NonScrollableGridView.java" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\aws_android_sdk_cognito_2_2_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\aws_android_sdk_core_2_2_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\aws_android_sdk_ddb_2_2_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\aws_android_sdk_ddb_mapper_2_2_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\aws_android_sdk_lambda_2_2_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\aws_android_sdk_mobileanalytics_2_2_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\aws_android_sdk_s3_2_2_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\aws_android_sdk_sns_2_2_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\aws_android_sdk_sqs_2_2_11.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\bolts_android_1_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\facebook_android_sdk_4_6_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\gson_2_2_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\multidex_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\.idea\libraries\multidex_instrumentation_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\classes\debug\net\egobeta\ego\Fragment_Main$EgoStreamTabAdapter$ViewHolder.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\classes\debug\net\egobeta\ego\Fragment_Main$EgoStreamTabAdapter.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/demo/DemoInstructionFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/demo/DemoInstructionFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap$DeleteCurrentLocationOnDB.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap$DeleteCurrentLocationOnDB.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap$PushUserLocationToDataBase.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap$PushUserLocationToDataBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap$Userinfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap$Userinfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoMap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamFragment$InstagramTabAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamFragment$InstagramTabAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamFragment$MyCustomAdapterSlide3And4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamFragment$MyCustomAdapterSlide3And4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamViewAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamViewAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamViewAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamViewAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamViewAdapter2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/EgoStreamViewAdapter2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/Fragment_Main$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/Fragment_Main$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/Fragment_Main.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/Fragment_Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/Fragment_Main_Friends.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/Fragment_Main_Friends.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/demo/HomeDemoFragment$DemoListAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/demo/HomeDemoFragment$DemoListAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/InstagramClasses/ImageViewAdapterInstagram.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/InstagramClasses/ImageViewAdapterInstagram.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/flavienlaurent/notboringactionbar/KenBurnsView.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/flavienlaurent/notboringactionbar/KenBurnsView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/MainActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/MainActivity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/MainActivity$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/MainActivity$PagerAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/MainActivity$PagerAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/navigation/NavigationDrawer$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/navigation/NavigationDrawer$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/navigation/NavigationDrawer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/navigation/NavigationDrawer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/ProfileActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/ProfileActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/ProfileFragment$MyCustomAdapterSlide3And4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/ProfileFragment$MyCustomAdapterSlide3And4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/ProfileFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/ProfileFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/demo/PushDemoFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/demo/PushDemoFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/facebook/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/facebook/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/auth/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/auth/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/base/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/base/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/gcm/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/gcm/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/location/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/location/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/maps/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/maps/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/jeremyfeinstein/slidingmenu/lib/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/jeremyfeinstein/slidingmenu/lib/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/facebook/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/facebook/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/auth/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/auth/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/base/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/base/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/location/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/location/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/maps/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/maps/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/jeremyfeinstein/slidingmenu/lib/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/jeremyfeinstein/slidingmenu/lib/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/facebook/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/facebook/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/auth/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/auth/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/base/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/base/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/location/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/location/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/maps/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/google/android/gms/maps/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/jeremyfeinstein/slidingmenu/lib/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/jeremyfeinstein/slidingmenu/lib/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$mipmap.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$mipmap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$xml.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/net/egobeta/ego/R$xml.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/multi-dex/debug/componentClasses.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/multi-dex/debug/componentClasses.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/dataBindingInfo/androidTest/debug/android/databinding/layouts/DataBindingInfo.java" afterPath="$PROJECT_DIR$/app/build/intermediates/dataBindingInfo/androidTest/debug/android/databinding/layouts/DataBindingInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/dataBindingInfo/debug/android/databinding/layouts/DataBindingInfo.java" afterPath="$PROJECT_DIR$/app/build/intermediates/dataBindingInfo/debug/android/databinding/layouts/DataBindingInfo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoMap.java" afterPath="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamViewAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/Fragment_Main.java" afterPath="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/Fragment_Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/facebook/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/facebook/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/auth/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/auth/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/base/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/base/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/gcm/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/gcm/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/location/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/location/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/maps/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/android/gms/maps/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/jeremyfeinstein/slidingmenu/lib/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/jeremyfeinstein/slidingmenu/lib/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/orangegangsters/github/swipyrefreshlayout/library/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/orangegangsters/github/swipyrefreshlayout/library/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/net/egobeta/ego/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/net/egobeta/ego/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/fragment_list.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/fragment_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/fragment_list.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/fragment_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/list_item_stream.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/list_item_stream.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/list_item_stream.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/list_item_stream.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_stream.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_stream.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/multi-dex/debug/maindexlist.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/multi-dex/debug/maindexlist.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-xxxhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/mipmap-xxxhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ego.iws" />
@@ -132,6 +173,59 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="EgoMap.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoMap.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.3735119">
+                    <caret line="375" column="51" selection-start-line="375" selection-start-column="20" selection-end-line="375" selection-end-column="51" />
+                    <folding>
+                      <element signature="e#4356#4416#0" expanded="false" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/MainActivity.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="597" column="0" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="docComment;method#updateColor#0;class#MainActivity#0" expanded="false" />
+                      <element signature="class#12379:13151" expanded="false" />
+                      <element signature="method#doInBackground#0;class#12379:13151" expanded="false" />
+                      <element signature="method#onPostExecute#0;class#12379:13151" expanded="false" />
+                      <element signature="method#initializeViewItems#0;class#MainActivity#0" expanded="false" />
+                      <element signature="method#getActionBarHeight#0;class#MainActivity#0" expanded="false" />
+                      <element signature="method#getScrollY#0;class#MainActivity#0" expanded="false" />
+                      <element signature="method#setTitleAlpha#0;class#MainActivity#0" expanded="false" />
+                      <element signature="e#17701#17753#0" expanded="false" />
+                      <element signature="method#setHomeAsUpAlpha#0;class#MainActivity#0" expanded="false" />
+                      <element signature="e#19992#20040#0" expanded="false" />
+                      <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+                      <element signature="docComment;method#onClick#0;class#MainActivity#0" expanded="false" />
+                      <element signature="e#22094#22244#0" expanded="true" />
+                      <element signature="method#onPageScrolled#0;class#MainActivity#0" expanded="false" />
+                      <element signature="method#onPageSelected#0;class#MainActivity#0" expanded="false" />
+                      <element signature="method#onPageScrollStateChanged#0;class#MainActivity#0" expanded="false" />
+                      <element signature="docComment;class#PagerAdapter#0;class#MainActivity#0" expanded="false" />
+                      <element signature="docComment;field#notificationReceiver#0;class#MainActivity#0" expanded="false" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsManager">
@@ -151,98 +245,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="322" column="34" selection-start-line="322" selection-start-column="34" selection-end-line="322" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#11917#12102#0" expanded="true" />
-                <element signature="e#12101#12102#0" expanded="true" />
-                <element signature="docComment;method#updateColor#0;class#MainActivity#0" expanded="false" />
-                <element signature="class#12372:13144" expanded="false" />
-                <element signature="method#doInBackground#0;class#12372:13144" expanded="false" />
-                <element signature="method#onPostExecute#0;class#12372:13144" expanded="false" />
-                <element signature="method#initializeViewItems#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#getActionBarHeight#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#getScrollY#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#setTitleAlpha#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#17694#17746#0" expanded="false" />
-                <element signature="method#setHomeAsUpAlpha#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onBackPressed#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#19985#20033#0" expanded="false" />
-                <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-                <element signature="docComment;method#onClick#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onClick#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onPageScrolled#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onPageSelected#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onPageScrollStateChanged#0;class#MainActivity#0" expanded="false" />
-                <element signature="docComment;class#PagerAdapter#0;class#MainActivity#0" expanded="false" />
-                <element signature="class#PagerAdapter#0;class#MainActivity#0" expanded="true" />
-                <element signature="docComment;field#notificationReceiver#0;class#MainActivity#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EgoMap.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35664335">
-              <caret line="320" column="76" selection-start-line="320" selection-start-column="76" selection-end-line="320" selection-end-column="76" />
-              <folding>
-                <element signature="e#4356#4416#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fragment_Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Fragment_Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/Fragment_Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="294" column="0" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33570158">
+              <caret line="499" column="20" selection-start-line="499" selection-start-column="20" selection-end-line="499" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#EgoStreamTabAdapter#0;class#Fragment_Main#0" expanded="true" />
-                <element signature="class#ViewHolder#0;class#EgoStreamTabAdapter#0;class#Fragment_Main#0" expanded="true" />
+                <element signature="e#13298#13449#0" expanded="true" />
+                <element signature="e#13448#13449#0" expanded="true" />
+                <element signature="class#ViewHolder#0;class#ItemAdapter#0;class#Fragment_Main#0" expanded="true" />
+                <element signature="class#ViewHolder2#0;class#ItemAdapter#0;class#Fragment_Main#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <file leaf-file-name="GenericAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/GenericAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list_item_stream.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_stream.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EgoStreamViewAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamViewAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+              <caret line="83" column="35" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -253,8 +276,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -268,7 +291,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="tesBranch" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -295,6 +318,10 @@
               <ExternalProjectPojo>
                 <option name="name" value=":lib" />
                 <option name="path" value="$PROJECT_DIR$/lib" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value=":dobList" />
+                <option name="path" value="$PROJECT_DIR$/dobList" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
                 <option name="name" value="ego" />
@@ -1036,6 +1063,11 @@
                 <option name="description" value="Prepare com.google.android.gms:play-services-maps:8.4.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComGoogleAndroidGmsPlayServicesMaps840Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare ego:dobList:unspecified" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareEgoDobListUnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare ego:lib:unspecified" />
@@ -2194,6 +2226,11 @@
                 <option name="name" value="prepareDebugUnitTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare ego:dobList:unspecified" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareEgoDobListUnspecifiedLibrary" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare ego:lib:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareEgoLibUnspecifiedLibrary" />
@@ -2390,6 +2427,569 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="zipalignDebug" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dobList">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the Android dependencies of the project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="androidDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all variants of all applications and secondary packages." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all the Test applications." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="assembleAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all Debug builds." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="assembleDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="assembleDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="assembleDebugUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="assembleDefault" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles all Release builds." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="assembleRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="assembleReleaseUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a bundle containing the library in debug." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="bundleDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a bundle containing the library in release." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="bundleRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="checkDebugManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="checkReleaseManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugAndroidTestAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugAndroidTestJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugAndroidTestNdk" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugAndroidTestRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugAndroidTestSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugNdk" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugUnitTestJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileDebugUnitTestSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileLint" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileReleaseAidl" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileReleaseJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileReleaseNdk" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileReleaseRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileReleaseSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileReleaseUnitTestJavaWithJavac" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="compileReleaseUnitTestSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by project ':dobList'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs and runs instrumentation tests for all flavors on connected devices." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="connectedAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all device checks on currently connected devices." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="connectedCheck" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs and runs the tests for debug on connected devices." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="connectedDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="copyDebugLint" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="copyReleaseLint" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in project ':dobList'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in project ':dobList'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs and runs instrumentation tests using all Device Providers." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="deviceAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all device checks using Device Providers and Test Servers." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="deviceCheck" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateDebugAndroidTestAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateDebugAndroidTestBuildConfig" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateDebugAndroidTestResValues" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateDebugAndroidTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateDebugAndroidTestSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateDebugAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateDebugBuildConfig" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateDebugResValues" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateDebugSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateReleaseAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateReleaseBuildConfig" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateReleaseResValues" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="generateReleaseSources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs the android (on device) tests for the Debug build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="installDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs lint on all variants." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="lint" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs lint on the Debug build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="lintDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs lint on the Release build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="lintRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="mergeDebugAndroidTestAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="mergeDebugAndroidTestJniLibFolders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="mergeDebugAndroidTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="mergeDebugAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="mergeDebugJniLibFolders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="mergeDebugProguardFiles" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="mergeReleaseAssets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="mergeReleaseJniLibFolders" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="mergeReleaseProguardFiles" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Creates a version of android.jar that's suitable for unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="mockableAndroidJar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of project ':dobList'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="packageDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="packageDebugRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="packageDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="packageReleaseRenderscript" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="packageReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="preBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="preDebugAndroidTestBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="preDebugBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="preDebugUnitTestBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="preReleaseBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="preReleaseUnitTestBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="prepareDebugAndroidTestDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="prepareDebugDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="prepareDebugUnitTestDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="prepareReleaseDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="prepareReleaseUnitTestDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processDebugAndroidTestJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processDebugAndroidTestManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processDebugAndroidTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processDebugJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processDebugManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processDebugUnitTestJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processReleaseJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processReleaseManifest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="processReleaseUnitTestJavaRes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of project ':dobList'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of project ':dobList'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the signing info for each variant." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="signingReport" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prints out all the source sets defined in this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="sourceSets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from project ':dobList'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run unit tests for all variants." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run unit tests for the debug build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="testDebugUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run unit tests for the release build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="testReleaseUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformClassesAndResourcesWithSyncLibJarsForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformClassesAndResourcesWithSyncLibJarsForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformClassesWithDexForDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformNative_libsWithMergeJniLibsForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformNative_libsWithMergeJniLibsForDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformNative_libsWithMergeJniLibsForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformNative_libsWithSyncJniLibsForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformNative_libsWithSyncJniLibsForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformResourcesWithMergeJavaResForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformResourcesWithMergeJavaResForDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformResourcesWithMergeJavaResForDebugUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformResourcesWithMergeJavaResForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="transformResourcesWithMergeJavaResForReleaseUnitTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Uninstall all applications." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="uninstallAll" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Uninstalls the android (on device) tests for the Debug build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="uninstallDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/dobList" />
+                <option name="name" value="validateDebugSigning" />
               </ExternalTaskPojo>
             </list>
           </value>
@@ -2995,7 +3595,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="C:\Users\Lucas\Desktop\Ego\Ego" value="5868079815227" />
-        <entry key="C:\Users\Lucas\Desktop\Ego_Test\ego" value="7346087419184" />
+        <entry key="C:\Users\Lucas\Desktop\Ego_Test\ego" value="8816024314844" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -3421,6 +4021,124 @@
                       </ExternalModuleBuildClasspathPojo>
                     </value>
                   </entry>
+                  <entry key="$PROJECT_DIR$/dobList">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/1.5.0/c09c2bb916e2ae3d77da707f8b8ede15596603de/gradle-1.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/1.5.0/ca6476d93e374e70d0b7ca45ddc86151da840aa6/gradle-1.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.databinding/dataBinder/1.0-rc1/db04d96a92093f2c726b5606940429fea301e9cd/dataBinder-1.0-rc1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/1.5.0/21320fa1ddc73d9ea3a8a3c6be6f53f91d203f4e/gradle-core-1.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle-core/1.5.0/70915a3f0ef4243d4630ea23219f5445fac82700/gradle-core-1.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/d2a489573c0ed2c4942b3660decad5d65087b406/commons-lang3-3.3.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/90a3822c38ec8c996e84c16a3477ef632cbc87a3/commons-lang3-3.3.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tunnelvisionlabs/antlr4/4.5/d61f0b719751a2823a1d4e2d206406488d52276d/antlr4-4.5-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tunnelvisionlabs/antlr4/4.5/a0e860e317147848e69ac145bc5196901a9993bf/antlr4-4.5.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/f2d8698c46d1167ff24b06a840a87d91a02db891/commons-io-2.4-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tunnelvisionlabs/antlr4-runtime/4.5/61495cea98c9c63b16b87ae4e79b7e478405e40b/antlr4-runtime-4.5-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tunnelvisionlabs/antlr4-runtime/4.5/5067478827a98f5ab77d9fc577903edc57af3da4/antlr4-runtime-4.5.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tunnelvisionlabs/antlr4-annotations/4.5/8d24c9255a970c3c85fc5c88dfe9d4e8627d56e2/antlr4-annotations-4.5-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tunnelvisionlabs/antlr4-annotations/4.5/2c5996120a0ac690de575bd8ac36250e6720a6b8/antlr4-annotations-4.5.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.2/5214ea45dd20d3a2e4caa6f1ad2248ad107e0daf/antlr-runtime-3.5.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.2/cd9cd41361c155f3af0f653009dcecb08d8b4afd/antlr-runtime-3.5.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/ST4/4.0.8/6f23134f1c98dfce77f85defda31bfbce3e2a4ac/ST4-4.0.8-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/ST4/4.0.8/a1c55e974f8a94d78e2348fa6ff63f4fa1fae64/ST4-4.0.8.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.1/6e1dd6f6efdb453c7b8ba35726c63fbf50cd7142/org.abego.treelayout.core-1.0.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.1/e31e79cba7a5414cf18fa69f3f0a2cf9ee997b61/org.abego.treelayout.core-1.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/1.5.0/3dc589ce9662a5757f31888fa31374596d0fe6d6/builder-1.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/1.5.0/1dcd59f6f3c90b2a8bc7156d091ad1b87a41beed/builder-1.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint/24.5.0/d21d111e8024f8daea02966d764e00f190fccbce/lint-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint/24.5.0/461d7d801b822cbeb7daf001924fe1c616ce9535/lint-24.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/1.5.0/8779ed1aac30111f70cd8b431301edbf709b7562/transform-api-1.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/transform-api/1.5.0/90f914a7972579a4cc726c9e0022878f6c675e2/transform-api-1.5.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-gradle/5.2.1/proguard-gradle-5.2.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-gradle/5.2.1/proguard-gradle-5.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jacoco/org.jacoco.core/0.7.4.201502262128/b6356a696e396a348a673237eee1f496ef75b4b1/org.jacoco.core-0.7.4.201502262128-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jacoco/org.jacoco.core/0.7.4.201502262128/31482f50411a3a5769b6c78fa9b97ba731c205e7/org.jacoco.core-0.7.4.201502262128.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/1.5.0/ea5e6589157b4ea69055c079ed1ae07ece906b0e/builder-model-1.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/1.5.0/51a48a2f4c1da923b0b8bb174e57bc68ee040889/builder-model-1.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/1.5.0/870991f8c2c76e2fba26a0bb23adf1a5211926d9/builder-test-api-1.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/1.5.0/d9240c30b1bb243b4f57c48f734df2635fbd07e/builder-test-api-1.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdklib/24.5.0/8b8bf6b868e3b37e1d477366ab109570b532030e/sdklib-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdklib/24.5.0/473c60ca5786363b6b3ea944446cf41676207ca7/sdklib-24.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/24.5.0/a17e5dbd20801a0406a066be2efb01f1ecc2beaa/sdk-common-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/24.5.0/e9b9c057d8df82ee7bc682558fe21b2110b3e40a/sdk-common-24.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/common/24.5.0/de1b03779d5e91777885d8e77520d647aeb9e66/common-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/common/24.5.0/55436737b893bac95c978b184dd35c76002d2eef/common-24.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/manifest-merger/24.5.0/7186423ffeef47083910f9b811e814d7ca72544/manifest-merger-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/manifest-merger/24.5.0/dc521cf0bc3565f990d4da7fac4aabc73b6d62cf/manifest-merger-24.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/24.5.0/802eac78feed72e017dfea289e557c5179111335/ddmlib-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/24.5.0/d45670b5511da60d2939a1eece4c7c4407fee95b/ddmlib-24.5.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/jack/jack-api/0.9.0/jack-api-0.9.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/jack/jack-api/0.9.0/jack-api-0.9.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/jill/jill-api/0.9.0/jill-api-0.9.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/jill/jill-api/0.9.0/jill-api-0.9.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/squareup/javawriter/2.5.0/javawriter-2.5.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/squareup/javawriter/2.5.0/javawriter-2.5.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm/5.0.3/asm-5.0.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/antlr/3.5.2/92c9bde32f0b1092507701b2b302af84534eb9b8/antlr-3.5.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/antlr/3.5.2/c4a65c950bfc3e7d04309c515b2177c00baf7764/antlr-3.5.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-checks/24.5.0/fba7dd989b13a2bd293585f729665b0d62a7968b/lint-checks-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-checks/24.5.0/dbdca0447c2333481823e088a356393e653276b4/lint-checks-24.5.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/annotations/24.5.0/f875c147378bd4c4a15cec061cb90928aca5a500/annotations-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/annotations/24.5.0/7f2bcdf40b008f15481324327b7f9e377b0b1697/annotations-24.5.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/guava/guava/17.0/guava-17.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/guava/guava/17.0/guava-17.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-base/5.2.1/proguard-base-5.2.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-base/5.2.1/proguard-base-5.2.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-debug-all/5.0.1/78ebb2694324283f3120aa3ed52465b22fab8a4a/asm-debug-all-5.0.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-debug-all/5.0.1/f69b5f7d96cec0d448acf1c1a266584170c9643b/asm-debug-all-5.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.layoutlib/layoutlib-api/24.5.0/fdf53ecb8df079a0de5caad85d9e8ce39eecf380/layoutlib-api-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.layoutlib/layoutlib-api/24.5.0/387949832720a36855711d2033cd4122e945f36e/layoutlib-api-24.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/dvlib/24.5.0/195a7ca9238fa73a6aae8af586decb4d33d51fe1/dvlib-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/dvlib/24.5.0/bb3cda7db1fa6c9543e887a8c451d0449e76fa4/dvlib-24.5.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/code/gson/gson/2.2.4/gson-2.2.4-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpclient/4.1.1/httpclient-4.1.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpclient/4.1.1/httpclient-4.1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpmime/4.1/httpmime-4.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpmime/4.1/httpmime-4.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-api/24.5.0/92e8494ee816573299c1d46e58e3a492a35b244e/lint-api-24.5.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-api/24.5.0/7d93eb96a2f07860ab8d9ae761ebe5c416777fcf/lint-api-24.5.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/intellij/annotations/12.0/annotations-12.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/intellij/annotations/12.0/annotations-12.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpcore/4.1/httpcore-4.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpcore/4.1/httpcore-4.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.4/commons-codec-1.4-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.4/commons-codec-1.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.databinding/compilerCommon/1.0-rc5/5c59f043dcc2abf51416c04f34ec0b661e370270/compilerCommon-1.0-rc5-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.databinding/compilerCommon/1.0-rc5/3152caf6b493a20e5b0d63bb36f5322dbce6d10f/compilerCommon-1.0-rc5.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.googlecode.juniversalchardet/juniversalchardet/1.0.3/77979eaa98f90806f984155f44f63cc1fb60ac25/juniversalchardet-1.0.3-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.googlecode.juniversalchardet/juniversalchardet/1.0.3/cd49678784c46aa8789c060538e0154013bb421b/juniversalchardet-1.0.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.databinding/baseLibrary/1.0-rc5/297f975b63900bff85835c17e0882f074eb7e8af/baseLibrary-1.0-rc5-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.databinding/baseLibrary/1.0-rc5/4d15bfec5956b906a26527dbde26a4fc84326611/baseLibrary-1.0-rc5.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$/dobList" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
                   <entry key="$PROJECT_DIR$/lib">
                     <value>
                       <ExternalModuleBuildClasspathPojo>
@@ -3676,11 +4394,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.6.0/res/values/values.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/SplashActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/stream_gridviewitem.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/AutoResizeTextView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/ImageViewAdapterInstagram.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/BlurTransformation.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/InstagramClasses/ApplicationData.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/InstagramClasses/FileCache.java" />
@@ -3718,13 +4431,18 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/fragment_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamViewAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EndlessScrollerListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/endScroller.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" />
+        <option value="$PROJECT_DIR$/dobList/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/dobList/src/main/java/com/dobmob/doblist/NonScrollableGridView.java" />
+        <option value="$PROJECT_DIR$/dobList/src/main/java/com/dobmob/doblist/controllers/DobListController.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_stream.xml" />
+        <option value="$PROJECT_DIR$/dobList/src/main/java/com/dobmob/doblist/DobList.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamViewAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/GenericAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoMap.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/Fragment_Main.java" />
       </list>
@@ -3769,36 +4487,26 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ego" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Ego" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ego" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ego" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -3853,24 +4561,6 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ego" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
@@ -3917,7 +4607,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3946,6 +4635,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="dobList" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ego" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ego" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -4064,21 +4767,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ego" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -4088,7 +4778,7 @@
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="5476b4d2" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_23_x86" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MySampleApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DobList-master" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="android.project.structure.last.selected" value="app" />
@@ -4098,6 +4788,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dobmob.doblist" />
       <recent name="net.egobeta.ego" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -4441,34 +5132,34 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18910742" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15605095" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09294872" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0477707" sideWeight="0.49092284" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.044585988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0589172" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23298033" sideWeight="0.50592214" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="1.0" sideWeight="0.50907713" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.055732485" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12660256" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17197452" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961783" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21558245" sideWeight="0.49407783" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.49407783" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="1.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18910742" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8742038" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -4514,99 +5205,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19195612">
-          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/SplashActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="121" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/viewpagerindicator/CirclePageIndicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="442" column="39" selection-start-line="442" selection-start-column="16" selection-end-line="442" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/amazonaws/mobile/user/IdentityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="460" column="11" selection-start-line="460" selection-start-column="11" selection-end-line="460" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0740743">
-          <caret line="181" column="58" selection-start-line="181" selection-start-column="58" selection-end-line="181" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/amazonaws/mobile/user/IdentityProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/amazonaws/mobile/user/signin/FacebookSignInProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5842491">
-          <caret line="266" column="5" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-core/2.2.11/9a5636c465ef0d05ecb00b593b0062bf87be56c0/aws-android-sdk-core-2.2.11-sources.jar!/com/amazonaws/regions/Regions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/InstagramClasses/ApplicationData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19833334">
-          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/amazonaws/mobile/AWSConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12166667">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37362638">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7435898">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/app.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21875">
@@ -4700,30 +5298,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/Fragment_Main_Friends.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.827586">
-          <caret line="261" column="53" selection-start-line="261" selection-start-column="53" selection-end-line="261" selection-end-column="53" />
-          <folding>
-            <element signature="e#7155#7721#0" expanded="false" />
-            <element signature="e#7720#7721#0" expanded="false" />
-            <element signature="class#ViewHolder#0;class#EgoStreamTabAdapter#0;class#Fragment_Main_Friends#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoFriendsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -4733,13 +5311,6 @@
         <state vertical-scroll-proportion="0.33333334">
           <caret line="5138" column="16" selection-start-line="5138" selection-start-column="16" selection-end-line="5138" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamViewAdapter2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -4761,6 +5332,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4810,7 +5382,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24908425">
           <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4818,7 +5389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4826,6 +5396,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4834,46 +5405,6 @@
         <state vertical-scroll-proportion="0.4547325">
           <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/stream_gridviewitem.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12569316">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EndlessScrollerListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.858885">
-          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7174312">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_stream.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
@@ -4887,65 +5418,234 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/view_header_placeholder.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10920771">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/stream_gridviewitem.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9310346">
+          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/Fragment_Main_Friends.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33272728">
+          <caret line="171" column="61" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="61" />
+          <folding>
+            <element signature="class#EgoStreamTabAdapter#0;class#Fragment_Main_Friends#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31454545">
+          <caret line="129" column="61" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EndlessScrollerListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="322" column="34" selection-start-line="322" selection-start-column="34" selection-end-line="322" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#11917#12102#0" expanded="true" />
-            <element signature="e#12101#12102#0" expanded="true" />
-            <element signature="docComment;method#updateColor#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#12372:13144" expanded="false" />
-            <element signature="method#doInBackground#0;class#12372:13144" expanded="false" />
-            <element signature="method#onPostExecute#0;class#12372:13144" expanded="false" />
-            <element signature="method#initializeViewItems#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#getActionBarHeight#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#getScrollY#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setTitleAlpha#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#17694#17746#0" expanded="false" />
-            <element signature="method#setHomeAsUpAlpha#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onBackPressed#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#19985#20033#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#onClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onClick#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onPageScrolled#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onPageSelected#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onPageScrollStateChanged#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;class#PagerAdapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#PagerAdapter#0;class#MainActivity#0" expanded="true" />
-            <element signature="docComment;field#notificationReceiver#0;class#MainActivity#0" expanded="false" />
-          </folding>
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/import-summary.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dobList/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/NonScrollableGridView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dobList/src/main/java/com/dobmob/doblist/NonScrollableGridView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/widget/ListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33273056">
+          <caret line="80" column="13" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-19/android/widget/AbsListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="19.231464">
+          <caret line="698" column="21" selection-start-line="698" selection-start-column="21" selection-end-line="698" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dobList/src/main/java/com/dobmob/doblist/events/OnLoadMoreListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06215722">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dobList/src/main/java/com/dobmob/doblist/DobList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.471875">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamViewAdapter2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2231986">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="398" column="23" selection-start-line="398" selection-start-column="23" selection-end-line="398" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dobList/src/main/java/com/dobmob/doblist/controllers/DobListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19391635">
+          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoStreamViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.9101124">
+          <caret line="75" column="58" selection-start-line="75" selection-start-column="58" selection-end-line="75" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/Fragment_Main.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="294" column="0" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_stream.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26930693">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.11089109">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="597" column="0" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#EgoStreamTabAdapter#0;class#Fragment_Main#0" expanded="true" />
-            <element signature="class#ViewHolder#0;class#EgoStreamTabAdapter#0;class#Fragment_Main#0" expanded="true" />
+            <element signature="docComment;method#updateColor#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#12379:13151" expanded="false" />
+            <element signature="method#doInBackground#0;class#12379:13151" expanded="false" />
+            <element signature="method#onPostExecute#0;class#12379:13151" expanded="false" />
+            <element signature="method#initializeViewItems#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getActionBarHeight#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#getScrollY#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#setTitleAlpha#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#17701#17753#0" expanded="false" />
+            <element signature="method#setHomeAsUpAlpha#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#19992#20040#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;method#onClick#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#22094#22244#0" expanded="true" />
+            <element signature="method#onPageScrolled#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPageSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPageScrollStateChanged#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;class#PagerAdapter#0;class#MainActivity#0" expanded="false" />
+            <element signature="docComment;field#notificationReceiver#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/EgoMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35664335">
-          <caret line="320" column="76" selection-start-line="320" selection-start-column="76" selection-end-line="320" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.3735119">
+          <caret line="375" column="51" selection-start-line="375" selection-start-column="20" selection-end-line="375" selection-end-column="51" />
           <folding>
             <element signature="e#4356#4416#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/GenericAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="35" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/net/egobeta/ego/Fragment_Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33570158">
+          <caret line="499" column="20" selection-start-line="499" selection-start-column="20" selection-end-line="499" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#13298#13449#0" expanded="true" />
+            <element signature="e#13448#13449#0" expanded="true" />
+            <element signature="class#ViewHolder#0;class#ItemAdapter#0;class#Fragment_Main#0" expanded="true" />
+            <element signature="class#ViewHolder2#0;class#ItemAdapter#0;class#Fragment_Main#0" expanded="true" />
           </folding>
         </state>
       </provider>
