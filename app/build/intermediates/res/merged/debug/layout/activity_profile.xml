@@ -72,7 +72,7 @@
                     android:layout_centerHorizontal="true"
                     tools:text="637 VIEWS" />
 
-                <net.egobeta.ego.AutoResizeTextView
+                <net.egobeta.ego.ImportedClasses.AutoResizeTextView
                     android:id="@+id/etStatus"
                     android:layout_width="325dp"
                     android:layout_height="70dp"
@@ -98,7 +98,7 @@
 
             </RelativeLayout>
 
-            <net.egobeta.ego.FacebookPictureViewRound
+            <net.egobeta.ego.ImportedClasses.FacebookPictureViewRound
                 android:id="@+id/profile_picture"
                 android:layout_width="@dimen/header_logo_size"
                 android:layout_height="@dimen/header_logo_size"

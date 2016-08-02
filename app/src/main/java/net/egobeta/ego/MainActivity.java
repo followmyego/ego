@@ -9,11 +9,11 @@
 package net.egobeta.ego;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 
-import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.RectF;
@@ -39,13 +39,18 @@ import android.view.View;
 import android.widget.AbsListView;
 
 
+
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
-import net.amazonaws.mobile.util.ThreadUtils;
 import net.astuetz.PagerSlidingTabStrip;
 //import net.egobeta.ego.databinding.FragmentListBinding;
+import net.egobeta.ego.Fragments.Fragment_Main;
+import net.egobeta.ego.Fragments.Fragment_Main_Friends;
+import net.egobeta.ego.Fragments.ScrollTabHolderFragment;
+import net.egobeta.ego.Interfaces.ScrollTabHolder;
+import net.egobeta.ego.OnBoarding.Main_OnBoarding;
+import net.egobeta.ego.Settings.SettingsActivity;
 import net.egobeta.ego.demo.UserSettings;
-import net.egobeta.ego.demo.nosql.DynamoDBUtils;
 import net.egobeta.ego.demo.nosql.UserLocation;
 import net.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 
@@ -53,11 +58,10 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.mobileconnectors.cognito.Dataset;
 import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
 import com.amazonaws.mobileconnectors.cognito.Record;
+import com.amazonaws.mobileconnectors.cognito.SyncConflict;
+import com.amazonaws.mobileconnectors.cognito.exceptions.DataStorageException;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
-import com.amazonaws.services.dynamodbv2.model.DeleteItemRequest;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout;
-import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
 import com.viewpagerindicator.CirclePageIndicator;
 
 
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     //AWS Variables
     AWSMobileClient awsMobileClient;
     static DynamoDBMapper mapper;
-    static IdentityManager identityManager; //The identity manager used to keep track of the current user account.
+    public static IdentityManager identityManager; //The identity manager used to keep track of the current user account.
 
 
     //Other variables
@@ -86,14 +90,15 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     private TypedValue mTypedValue = new TypedValue();
     private PagerAdapter mPagerAdapter; //The pager adapter, which provides the pages to the view pager widget.
     ScrollTabHolderFragment fragment;
-    DrawerArrowDrawable drawerArrowDrawable;
+
     private Resources resources;
     static Context context;
     private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
     static EgoMap egoMap;
     static UserLocation userLocation;
     static Thread thread;
-    static EgoStreamViewAdapter2 adapter;
+    private static Activity activity;
+//    static EgoStreamViewAdapter2 adapter;
 
     //Number Variables
     private static int mMinHeaderTranslation;
@@ -183,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        activity = this;
         /** AWS Stuffs **/
         // Obtain a reference to the mobile client. It is created in the Application class,
         // but in case a custom Application class is not used, we initialize it here if necessary.
@@ -195,17 +200,17 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         //Initialize the mapper for DynamoDB
         mapper = AWSMobileClient.defaultMobileClient().getDynamoDBMapper();
-
+        syncUserSettings();
         /****************/
         setContentView(R.layout.activity_main);
         context = getApplicationContext();
 
-        adapter = new EgoStreamViewAdapter2(this, facebookIds);
+
+
+//        adapter = new EgoStreamViewAdapter2(this, facebookIds);
         egoMap = new EgoMap(MainActivity.this, identityManager, mapper);
 
         resources = getResources();
-        drawerArrowDrawable = new DrawerArrowDrawable(resources);
-        drawerArrowDrawable.setStrokeColor(resources.getColor(R.color.menuDrawerColor));
 
         /**Initialize font*/
         typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
@@ -256,10 +261,13 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
 
 
+
+
+
+        //Fire the ego map on create method
         theMapOnCreateMethod();
 
-        DeleteItemRequest deleteItemRequest = new DeleteItemRequest();
-
+        //GetThe first batch of nearby users
         getNearbyUsers(0);
     }
 
@@ -320,40 +328,165 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
                     super.onSuccess(dataset, updatedRecords);
                     Log.d(LOG_TAG, "successfully synced user settings");
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            updateColor();
+                            loadUserSettings();
+
                         }
                     });
+
+
+                    //If firstTimeUser = 0
+                    // go to OnBoardingActivity
+                    //else
+                    // stay on current activity and
+
                 }
             });
         }
     }
 
-    /**Created from the AWS demo app**/
-    /**Update users preferred colors*/
-    public void updateColor() {
-        final UserSettings userSettings = UserSettings.getInstance(getApplicationContext());
+    private void loadUserSettings() {
+        final UserSettings userSettings = UserSettings.getInstance(context);
+        final Dataset dataset = userSettings.getDataset();
+        final ProgressDialog dialog = ProgressDialog.show(activity,
+                getString(R.string.settings_fragment_dialog_title),
+                getString(R.string.settings_fragment_dialog_message));
+        Log.d(LOG_TAG, "Loading user settings from remote");
+        dataset.synchronize(new DefaultSyncCallback() {
+            @Override
+            public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
+                super.onSuccess(dataset, updatedRecords);
+                userSettings.loadFromDataset();
+                if(userSettings.getNewUser() == 0){
+                    updateUI(dialog, 0);
+                } else {
+                    updateUI(dialog, 1);
+                };
+            }
+
+            @Override
+            public void onFailure(final DataStorageException dse) {
+                Log.w(LOG_TAG, "Failed to load user settings from remote, using default.", dse);
+                updateUI(dialog, 3);
+            }
+
+            @Override
+            public boolean onDatasetsMerged(final Dataset dataset,
+                                            final List<String> datasetNames) {
+                // Handle dataset merge. One can selectively copy records from merged datasets
+                // if needed. Here, simply discard merged datasets
+                for (String name : datasetNames) {
+                    Log.d(LOG_TAG, "found merged datasets: " + name);
+                    AWSMobileClient.defaultMobileClient().getSyncManager().openOrCreateDataset(name).delete();
+                }
+                return true;
+            }
+        });
+    }
+
+    private void updateUI(final ProgressDialog dialog, final int isFirstTimeUSer) {
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+                if(isFirstTimeUSer == 1){
+                    Toast.makeText(activity, "not FirstTimeUser", Toast.LENGTH_SHORT).show();
+                    setFirstTimeUser(isFirstTimeUSer);
+                } else if (isFirstTimeUSer == 0) {
+                    Toast.makeText(activity, "FirstTimeUser", Toast.LENGTH_SHORT).show();
+                    setFirstTimeUser(isFirstTimeUSer);
+                    Intent intent = new Intent(MainActivity.this, Main_OnBoarding.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(activity, "Failure updating", Toast.LENGTH_SHORT).show();
+                    setFirstTimeUser(0);
+                }
+
+            }
+        });
+    }
+
+    private void setFirstTimeUser(int firstTime) {
+        final UserSettings userSettings = UserSettings.getInstance(context);
+        userSettings.setNewUser(firstTime);
+
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(final Void... params) {
-                userSettings.loadFromDataset();
+                userSettings.saveToDataset();
                 return null;
             }
 
             @Override
             protected void onPostExecute(final Void aVoid) {
-                final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.addBookButton); //This wont work but it got rid of the error from above this
-                if (fragment != null) {
-                    final View fragmentView = fragment.getView();
-                    if (fragmentView != null) {
-                        fragmentView.setBackgroundColor(userSettings.getBackgroudColor());
+
+                // update color
+//                ((MainActivity) getActivity()).updateColor();
+
+                // save user settings to remote on background thread
+                userSettings.getDataset().synchronize(new Dataset.SyncCallback() {
+                    @Override
+                    public void onSuccess(Dataset dataset, List<Record> updatedRecords) {
+                        Log.d(LOG_TAG, "onSuccess - dataset updated");
+
                     }
-                }
+
+                    @Override
+                    public boolean onConflict(Dataset dataset, List<SyncConflict> conflicts) {
+                        Log.d(LOG_TAG, "onConflict - dataset conflict");
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onDatasetDeleted(Dataset dataset, String datasetName) {
+                        Log.d(LOG_TAG, "onDatasetDeleted - dataset deleted");
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onDatasetsMerged(Dataset dataset, List<String> datasetNames) {
+                        Log.d(LOG_TAG, "onDatasetsMerged - datasets merged");
+                        return false;
+                    }
+
+                    @Override
+                    public void onFailure(DataStorageException dse) {
+                        Log.e(LOG_TAG, "onFailure - " + dse.getMessage(), dse);
+                    }
+                });
             }
         }.execute();
     }
+
+    /**Created from the AWS demo app**/
+    /**Update users preferred colors*/
+//    public void updateColor() {
+//        final UserSettings userSettings = UserSettings.getInstance(getApplicationContext());
+//        new AsyncTask<Void, Void, Void>() {
+//            @Override
+//            protected Void doInBackground(final Void... params) {
+//                userSettings.loadFromDataset();
+//                return null;
+//            }
+//
+//            @Override
+//            protected void onPostExecute(final Void aVoid) {
+//                final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.addBookButton); //This wont work but it got rid of the error from above this
+//                if (fragment != null) {
+//                    final View fragmentView = fragment.getView();
+//                    if (fragmentView != null) {
+//                        fragmentView.setBackgroundColor(userSettings.getBackgroudColor());
+//                    }
+//                }
+//            }
+//        }.execute();
+//    }
 
 
 
@@ -362,13 +495,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         slidingMenu = new SlidingMenu(MainActivity.this);
         slidingMenu.attachToActivity(MainActivity.this, SlidingMenu.SLIDING_CONTENT, true);
-        slidingMenu.setFadeDegree(1f);
+        slidingMenu.setFadeDegree(0f);
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
         slidingMenu.setBehindOffsetRes(R.dimen.behindOffSetRes);
         slidingMenu.setMenu(R.layout.sliding_menu_frame);
 
         View view = slidingMenu.getRootView();
-
 
         TextView viewingYou = (TextView) view.findViewById(R.id.viewing_you_text);
         TextView version = (TextView) view.findViewById(R.id.version);
@@ -517,8 +649,11 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         // register settings changed receiver.
         LocalBroadcastManager.getInstance(this).registerReceiver(settingsChangedReceiver,
                 new IntentFilter(UserSettings.ACTION_SETTINGS_CHANGED));
-        updateColor();
-        syncUserSettings();
+//        updateColor();
+
+//Sync the user's privacy settings and detect if the user is first time.
+//        syncUserSettings();
+
 
 //        theMapOnResumeMethod();
         getNearbyUsers(0);
@@ -768,7 +903,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         @Override
         public void onReceive(Context context, Intent intent) {
             Log.d(LOG_TAG, "Received settings changed local broadcast. Update theme colors.");
-            updateColor();
+//            updateColor();
         }
     };
     /***********************************************************************************************/

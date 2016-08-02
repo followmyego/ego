@@ -27,13 +27,13 @@ com/amazonaws/services/s3/internal/SSEResultBase.class
 net/egobeta/ego/ProfileActivity$GetProfilePicUrl.class
 android/support/v4/view/ScrollingView.class
 android/support/v7/app/ActionBar$Tab.class
+net/egobeta/ego/ImportedClasses/AutoResizeTextView.class
 android/support/design/R$styleable.class
 com/google/android/gms/common/api/Scope.class
 android/support/v4/app/AppOpsManagerCompat.class
 com/amazonaws/mobileconnectors/s3/transfermanager/Upload.class
 android/support/v7/view/ActionMode$Callback.class
 android/support/v4/graphics/drawable/DrawableCompat.class
-net/egobeta/ego/BlurTransformation.class
 android/support/design/widget/ValueAnimatorCompat$AnimatorUpdateListener.class
 com/google/android/gms/maps/GoogleMap$OnMyLocationChangeListener.class
 com/amazonaws/mobileconnectors/s3/transfermanager/TransferManager.class
@@ -55,10 +55,10 @@ android/support/v4/widget/DrawerLayout$DrawerListener.class
 android/support/v7/widget/RecyclerView$State.class
 net/egobeta/ego/MainActivity$1.class
 net/egobeta/ego/MainActivity$5.class
+net/egobeta/ego/MainActivity$9.class
 com/google/android/gms/location/places/internal/PlaceImpl.class
 com/amazonaws/mobileconnectors/s3/transfermanager/PauseResult.class
 android/support/design/widget/ViewOffsetBehavior.class
-net/egobeta/ego/ScrollTabHolder.class
 android/support/v4/app/FragmentManagerImpl$FragmentTag.class
 com/google/gson/annotations/Until.class
 android/support/annotation/StringDef.class
@@ -151,6 +151,7 @@ com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$4
 android/support/v7/widget/RecyclerView$RecycledViewPool.class
 com/amazonaws/services/s3/AmazonS3Client.class
 android/support/v4/widget/SwipeRefreshLayout.class
+net/egobeta/ego/ImportedClasses/FacebookPictureViewRound.class
 android/support/v4/media/MediaMetadataCompat$LongKey.class
 com/amazonaws/mobileconnectors/s3/transfermanager/model/UploadResult.class
 android/support/v4/app/TaskStackBuilder$SupportParentable.class
@@ -196,6 +197,7 @@ android/support/v4/view/ViewCompat$GBViewCompatImpl.class
 android/support/design/widget/CoordinatorLayout$SavedState.class
 android/support/v4/app/FragmentManager$BackStackEntry.class
 android/support/v4/view/ViewCompat$JbMr2ViewCompatImpl.class
+net/egobeta/ego/ImportedClasses/BlurTransformation.class
 net/amazonaws/mobile/downloader/request/DownloadAddRequest.class
 android/support/v8/renderscript/ScriptIntrinsic.class
 net/egobeta/ego/ProfileActivity$4.class
@@ -228,10 +230,12 @@ com/google/android/gms/common/annotation/KeepName.class
 android/support/annotation/StyleableRes.class
 com/facebook/internal/NativeProtocol.class
 android/support/v4/util/MapCollections.class
+net/egobeta/ego/Settings/GeneralSettingsActivity.class
 com/amazonaws/mobileconnectors/s3/transfermanager/PersistableDownload.class
 android/support/design/widget/TabLayout$TabView.class
 com/google/android/gms/common/GooglePlayServicesUtil.class
 com/amazonaws/services/cognitosync/AmazonCognitoSyncClient.class
+net/egobeta/ego/MainActivity$8.class
 android/support/design/widget/AppBarLayout$Behavior$SavedState.class
 android/support/v4/view/ViewConfigurationCompat.class
 android/support/design/widget/FloatingActionButton.class
@@ -254,7 +258,6 @@ com/amazonaws/mobileconnectors/cognito/internal/storage/CognitoSyncStorage.class
 android/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper.class
 com/amazonaws/mobileconnectors/s3/transferutility/TransferRecord.class
 android/support/annotation/BoolRes.class
-net/egobeta/ego/GeneralSettingsActivity.class
 android/support/v4/view/ViewCompatEclairMr1.class
 com/google/android/gms/location/internal/LocationRequestInternal.class
 android/support/v4/widget/MaterialProgressDrawable$ProgressDrawableSize.class
@@ -267,6 +270,7 @@ android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 com/amazonaws/auth/STSSessionCredentials.class
 android/support/v7/widget/RecyclerView$2.class
 android/support/v4/widget/MaterialProgressDrawable$3.class
+net/egobeta/ego/OnBoarding/Main_OnBoarding$PagerAdapter.class
 com/amazonaws/services/s3/model/UploadPartRequest.class
 android/support/v8/renderscript/Script.class
 com/google/gson/annotations/Since.class
@@ -279,6 +283,7 @@ net/egobeta/ego/R$color.class
 android/support/v4/util/SimpleArrayMap.class
 com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$3.class
 net/egobeta/ego/R$drawable.class
+net/egobeta/ego/OnBoarding/Main_OnBoarding.class
 android/support/v4/view/VelocityTrackerCompat.class
 com/google/android/gms/gcm/zza.class
 com/google/android/gms/common/api/Api$ApiOptions.class
@@ -305,6 +310,7 @@ android/support/v4/view/ViewCompatJB.class
 android/support/v7/widget/StaggeredGridLayoutManager.class
 android/support/design/widget/ThemeUtils.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/ParallelScanTask.class
+net/egobeta/ego/SignInActivity$3.class
 com/facebook/R$id.class
 net/egobeta/ego/MainActivity$2.class
 net/egobeta/ego/R$id.class
@@ -384,7 +390,6 @@ com/amazonaws/internal/SdkFilterOutputStream.class
 android/support/design/widget/Snackbar$Behavior.class
 com/amazonaws/mobileconnectors/s3/transfermanager/model/CopyResult.class
 com/amazonaws/mobileconnectors/s3/transfermanager/PauseStatus.class
-net/egobeta/ego/DrawerArrowDrawable.class
 android/support/v7/widget/RecyclerView$SimpleOnItemTouchListener.class
 android/support/v4/app/FragmentContainer.class
 com/google/android/gms/common/internal/zzab.class
@@ -393,7 +398,7 @@ android/support/v7/app/ActionBar$TabListener.class
 net/egobeta/ego/R.class
 android/support/design/widget/CoordinatorLayout$HierarchyChangeListener.class
 net/egobeta/ego/SignInActivity$1.class
-net/egobeta/ego/FacebookPictureViewRound.class
+net/egobeta/ego/Interfaces/ScrollTabHolder.class
 android/support/design/widget/SwipeDismissBehavior$OnDismissListener.class
 net/amazonaws/mobile/user/IdentityManager$SignInResultsHandler.class
 com/amazonaws/mobileconnectors/s3/transferutility/TransferTable.class
@@ -438,6 +443,7 @@ android/support/v4/content/PermissionChecker.class
 android/support/v4/content/WakefulBroadcastReceiver.class
 com/google/android/gms/internal/zzqt.class
 android/support/v4/app/BackStackRecord$TransitionState.class
+net/egobeta/ego/Settings/SettingsActivity.class
 android/support/annotation/AnimRes.class
 android/support/v4/app/FragmentActivity$NonConfigurationInstances.class
 android/support/v7/widget/LinearLayoutCompat$LayoutParams.class
@@ -454,7 +460,6 @@ android/support/v4/media/RatingCompatApi21.class
 android/support/v4/media/RatingCompat$1.class
 com/amazonaws/http/ExecutionContext.class
 com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$1.class
-com/amazonaws/services/dynamodbv2/model/DeleteItemRequest.class
 android/support/v4/view/ViewCompat$JBViewCompatImpl.class
 net/amazonaws/mobile/user/signin/FacebookSignInProvider.class
 android/support/v7/view/ActionMode.class
@@ -487,6 +492,7 @@ com/amazonaws/mobileconnectors/amazonmobileanalytics/internal/core/util/Nullable
 android/support/design/widget/AppBarLayout$Behavior$DragCallback.class
 android/support/annotation/FloatRange.class
 com/amazonaws/internal/MetricAware.class
+net/egobeta/ego/SignInActivity$2.class
 com/amazonaws/metrics/package-info.class
 net/egobeta/ego/MainActivity$3.class
 com/facebook/R.class
@@ -515,7 +521,6 @@ android/support/v4/media/session/PlaybackStateCompatApi22.class
 android/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase.class
 android/support/v8/renderscript/ScriptIntrinsicBLAS$Side.class
 net/egobeta/ego/ProfileActivity$3.class
-net/egobeta/ego/SettingsActivity.class
 android/support/design/R$layout.class
 com/amazonaws/util/AwsHostNameUtils.class
 android/support/v4/view/ViewCompatICS.class
@@ -554,7 +559,6 @@ android/support/v8/renderscript/Allocation.class
 android/support/v4/media/VolumeProviderCompat$Callback.class
 net/amazonaws/mobile/downloader/request/DownloadRemoveRequest.class
 android/support/v4/media/MediaMetadataCompat$Builder.class
-net/egobeta/ego/AutoResizeTextView.class
 android/support/annotation/Nullable.class
 android/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBAutoGeneratedKey.class
@@ -678,7 +682,6 @@ android/support/annotation/Size.class
 android/support/v7/widget/SimpleItemAnimator.class
 com/orangegangsters/github/swipyrefreshlayout/library/MaterialProgressDrawable$5.class
 net/egobeta/ego/MainActivity$PagerAdapter.class
-net/egobeta/ego/EgoStreamViewAdapter2.class
 android/support/v7/graphics/drawable/DrawerArrowDrawable.class
 android/support/v4/view/ViewCompatGingerbread.class
 com/google/android/gms/location/FusedLocationProviderApi.class

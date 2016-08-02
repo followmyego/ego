@@ -25,16 +25,37 @@ public class UserSettings {
     private static final String USER_SETTINGS_KEY_TITLE_TEXT_COLOR = "title_text_color";
     private static final String USER_SETTINGS_KEY_TITLE_BAR_COLOR = "title_bar_color";
     private static final String USER_SETTINGS_KEY_BACKGROUND_COLOR = "background_color";
+    private static final String USER_SETTINGS_KEY_NEW_USER = "new_user";
 
     // default color
     private static int DEFAULT_TITLE_TEXT_COLOR = 0xFFFFFFFF; // white
     private static int DEFAULT_TITLE_BAR_COLOR = 0xFFF58535; // orange
     private static int DEFAULT_TITLE_BACKGROUND_COLOR = 0xFFFFFFFF; // white
+    private static int DEFAULT_NEW_USER = 0; // white
+
     private int titleTextColor = DEFAULT_TITLE_TEXT_COLOR;
     private int titleBarColor = DEFAULT_TITLE_BAR_COLOR;
     private int backgroudColor = DEFAULT_TITLE_BACKGROUND_COLOR;
+    private int newUser = DEFAULT_NEW_USER;
 
     private static UserSettings instance;
+
+    /**
+     * Sets if the user is a new user.
+     *
+     */
+    public void setNewUser(final int newUser) {
+        this.newUser = newUser;
+    }
+
+    /**
+     * Gets if the user is a new user or not.
+     *
+     */
+    public int getNewUser() {
+        return newUser;
+    }
+
 
     /**
      * Sets the text color in title bar.
@@ -108,6 +129,12 @@ public class UserSettings {
         if (dataBackgroundColor != null) {
             backgroudColor = Integer.valueOf(dataBackgroundColor);
         }
+
+        //Load New User Boolean
+        final String dataNewUser = dataset.get(USER_SETTINGS_KEY_NEW_USER);
+        if (dataNewUser != null) {
+            newUser = Integer.valueOf(dataNewUser);
+        }
     }
 
     /**
@@ -118,6 +145,9 @@ public class UserSettings {
         dataset.put(USER_SETTINGS_KEY_TITLE_TEXT_COLOR, String.valueOf(titleTextColor));
         dataset.put(USER_SETTINGS_KEY_TITLE_BAR_COLOR, String.valueOf(titleBarColor));
         dataset.put(USER_SETTINGS_KEY_BACKGROUND_COLOR, String.valueOf(backgroudColor));
+
+        //Save newUser boolean
+        dataset.put(USER_SETTINGS_KEY_NEW_USER, String.valueOf(newUser));
     }
 
     /**
@@ -158,6 +188,10 @@ public class UserSettings {
                         instance.setTitleTextColor(DEFAULT_TITLE_TEXT_COLOR);
                         instance.setTitleBarColor(DEFAULT_TITLE_BAR_COLOR);
                         instance.setBackgroundColor(DEFAULT_TITLE_BACKGROUND_COLOR);
+
+                        //Set the default newUser variable for this instance if user signs out
+                        instance.setNewUser(DEFAULT_NEW_USER);
+
                         instance.saveToDataset();
                         final Intent intent = new Intent(ACTION_SETTINGS_CHANGED);
                         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);

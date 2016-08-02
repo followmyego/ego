@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#202020"
+    android:background="#232323"
     tools:context="com.myegotest.ego_17012016.Main.MainActivity2">
 
 

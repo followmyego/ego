@@ -132,7 +132,7 @@ public class UserSettingsDemoFragment extends Fragment {
             protected void onPostExecute(final Void aVoid) {
 
                 // update color
-                ((MainActivity) getActivity()).updateColor();
+//                ((MainActivity) getActivity()).updateColor();
 
                 // save user settings to remote on background thread
                 userSettings.getDataset().synchronize(new Dataset.SyncCallback() {
@@ -211,7 +211,7 @@ public class UserSettingsDemoFragment extends Fragment {
                     dialog.dismiss();
                 }
 
-                ((MainActivity) getActivity()).updateColor();
+//                ((MainActivity) getActivity()).updateColor();
             }
         });
     }

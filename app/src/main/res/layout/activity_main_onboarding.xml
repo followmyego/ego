@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".OnBoarding.Main_OnBoarding"
+    android:background="#000"
+    >
+
+    <FrameLayout
+        android:id="@+id/slides"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/titles"
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:padding="10dp"
+            android:layout_below="@+id/ego_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="40dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+        <FrameLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            >
+
+            <net.astuetz.PagerSlidingTabStrip
+                android:id="@+id/tabs"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="bottom"
+                android:background="@null"
+                />
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+
+
+
+
+
+</RelativeLayout>

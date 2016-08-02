@@ -3,6 +3,7 @@ package net.egobeta.ego;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -12,12 +13,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.amazonaws.mobileconnectors.cognito.Dataset;
+import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
+import com.amazonaws.mobileconnectors.cognito.Record;
+import com.amazonaws.mobileconnectors.cognito.exceptions.DataStorageException;
+
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.signin.SignInManager;
 import net.amazonaws.mobile.user.IdentityManager;
 import net.amazonaws.mobile.user.IdentityProvider;
 
 import net.amazonaws.mobile.user.signin.FacebookSignInProvider;
+import net.egobeta.ego.OnBoarding.Main_OnBoarding;
+import net.egobeta.ego.demo.UserSettings;
+
+import java.util.List;
 
 public class SignInActivity extends Activity {
     private final static String LOG_TAG = SignInActivity.class.getSimpleName();
@@ -54,11 +64,7 @@ public class SignInActivity extends Activity {
                 .getIdentityManager().loadUserInfoAndImage(provider, new Runnable() {
                 @Override
                 public void run() {
-                    Log.d(LOG_TAG, "Launching Main Activity...");
-                    startActivity(new Intent(SignInActivity.this, MainActivity.class)
-                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                    // finish should always be called on the main thread.
-                    finish();
+                    syncUserSettings();
                 }
             });
         }
@@ -93,6 +99,104 @@ public class SignInActivity extends Activity {
             errorDialogBuilder.setNeutralButton("Ok", null);
             errorDialogBuilder.show();
         }
+    }
+
+
+    /**Created from the AWS demo app**/
+    /** Sync user's preferences only if user is signed in **/
+    private void syncUserSettings() {
+        // sync only if user is signed in
+        if (AWSMobileClient.defaultMobileClient().getIdentityManager().isUserSignedIn()) {
+            final UserSettings userSettings = UserSettings.getInstance(getApplicationContext());
+            userSettings.getDataset().synchronize(new DefaultSyncCallback() {
+                @Override
+                public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
+                    super.onSuccess(dataset, updatedRecords);
+                    Log.d(LOG_TAG, "successfully synced user settings");
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadUserSettings();
+
+                        }
+                    });
+
+
+                    //If firstTimeUser = 0
+                    // go to OnBoardingActivity
+                    //else
+                    // stay on current activity and
+
+                }
+            });
+        }
+    }
+
+    private void loadUserSettings() {
+        final UserSettings userSettings = UserSettings.getInstance(this);
+        final Dataset dataset = userSettings.getDataset();
+        final ProgressDialog dialog = ProgressDialog.show(this,
+                getString(R.string.settings_fragment_dialog_title),
+                getString(R.string.settings_fragment_dialog_message));
+        Log.d(LOG_TAG, "Loading user settings from remote");
+        dataset.synchronize(new DefaultSyncCallback() {
+            @Override
+            public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
+                super.onSuccess(dataset, updatedRecords);
+                userSettings.loadFromDataset();
+                if(userSettings.getNewUser() == 0){
+                    updateUI(dialog, 0);
+                } else {
+                    updateUI(dialog, 1);
+                }
+            }
+
+            @Override
+            public void onFailure(final DataStorageException dse) {
+                Log.w(LOG_TAG, "Failed to load user settings from remote, using default.", dse);
+                updateUI(dialog, 3);
+            }
+
+            @Override
+            public boolean onDatasetsMerged(final Dataset dataset,
+                                            final List<String> datasetNames) {
+                // Handle dataset merge. One can selectively copy records from merged datasets
+                // if needed. Here, simply discard merged datasets
+                for (String name : datasetNames) {
+                    Log.d(LOG_TAG, "found merged datasets: " + name);
+                    AWSMobileClient.defaultMobileClient().getSyncManager().openOrCreateDataset(name).delete();
+                }
+                return true;
+            }
+        });
+    }
+
+    private void updateUI(final ProgressDialog dialog, final int isFirstTimeUSer) {
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+                if (isFirstTimeUSer == 1) {
+                    Log.d(LOG_TAG, "Launching Main Activity...");
+                    startActivity(new Intent(SignInActivity.this, MainActivity.class)
+                            .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                    // finish should always be called on the main thread.
+//                    finish();
+                } else if (isFirstTimeUSer == 0) {
+                    Log.d(LOG_TAG, "Launching OnBoarding Process...");
+                    startActivity(new Intent(SignInActivity.this, Main_OnBoarding.class)
+                            .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                    // finish should always be called on the main thread.
+//                    finish();
+                } else {
+                    Toast.makeText(SignInActivity.this, "Failure updating", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
     }
 
     @Override

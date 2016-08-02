@@ -65,12 +65,16 @@
             android:label="@string/title_activity_sign_in" >
         </activity>
         <activity
+            android:name="net.egobeta.ego.OnBoarding.Main_OnBoarding"
+            android:label="@string/title_activity_sign_in" >
+        </activity>
+        <activity
             android:name="net.egobeta.ego.MainActivity"
             android:label="@string/title_activity_main"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name="net.egobeta.ego.SettingsActivity"
+            android:name="net.egobeta.ego.Settings.SettingsActivity"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
@@ -161,7 +165,7 @@
 
         <!-- END - PUSH NOTIFICATIONS WITH GOOGLE CLOUD MESSAGING (GCM) -->
 
-        <activity android:name="net.egobeta.ego.GeneralSettingsActivity" >
+        <activity android:name="net.egobeta.ego.Settings.GeneralSettingsActivity" >
         </activity>
 
         <meta-data

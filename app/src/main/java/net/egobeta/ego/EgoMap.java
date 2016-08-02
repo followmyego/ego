@@ -25,6 +25,7 @@ import com.google.android.gms.location.LocationServices;
 
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
+import net.egobeta.ego.Fragments.Fragment_Main;
 import net.egobeta.ego.demo.nosql.UserLocation;
 import net.egobeta.ego.demo.nosql.User_Locations;
 
@@ -185,7 +186,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
             }
 
 //            saveToDB();
-            Toast.makeText(context, "Long: " + longitude + " Lat: " + latitude, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context, "Long: " + longitude + " Lat: " + latitude, Toast.LENGTH_SHORT).show();
             System.out.println("Long: " + longitude + " Lat: " + latitude + " facebookId: " + identityManager.getUserFacebookId());
         } else {
             //lblLocation.setText("Couldn't get the location. Make sure location is enabled on the device");
@@ -425,13 +426,6 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     }
 
 
-
-
-
-
-
-
-
     //AsyncTask to get profile pic url string from server
     private class DeleteCurrentLocationOnDB extends AsyncTask<String, Void, String> {
 
@@ -489,31 +483,6 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

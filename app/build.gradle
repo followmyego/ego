@@ -73,4 +73,5 @@ dependencies {
     //    compile 'com.github.orangegangsters:swipy:1.2.3@aar'//SwipyRefreshLayout
     compile project(':lib')
     compile project(':dobList')
+    compile files('libs/svg-android.jar')
 }

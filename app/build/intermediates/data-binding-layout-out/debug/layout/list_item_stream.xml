@@ -5,10 +5,10 @@
 	android:layout_marginTop="15dp"
 	android:descendantFocusability="blocksDescendants"
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:background="#2d2d2d"
+	android:background="@null"
 	>
 
-	<net.egobeta.ego.NonScrollableGridView
+	<net.egobeta.ego.ImportedClasses.NonScrollableGridView
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		android:id="@+id/myGridView"
 		android:gravity="center"

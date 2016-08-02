@@ -4,8 +4,9 @@
 }
 -keep class net.egobeta.ego.SplashActivity { <init>(); }
 -keep class net.egobeta.ego.SignInActivity { <init>(); }
+-keep class net.egobeta.ego.OnBoarding.Main_OnBoarding { <init>(); }
 -keep class net.egobeta.ego.MainActivity { <init>(); }
--keep class net.egobeta.ego.SettingsActivity { <init>(); }
+-keep class net.egobeta.ego.Settings.SettingsActivity { <init>(); }
 -keep class net.egobeta.ego.ProfileActivity { <init>(); }
 -keep class com.amazonaws.mobileconnectors.s3.transferutility.TransferService { <init>(); }
 -keep class net.amazonaws.mobile.downloader.service.DownloadService { <init>(); }
@@ -15,7 +16,7 @@
 -keep class com.facebook.FacebookActivity { <init>(); }
 -keep class com.google.android.gms.gcm.GcmReceiver { <init>(); }
 -keep class net.egobeta.ego.PushListenerService { <init>(); }
--keep class net.egobeta.ego.GeneralSettingsActivity { <init>(); }
+-keep class net.egobeta.ego.Settings.GeneralSettingsActivity { <init>(); }
 -keep class com.google.android.gms.auth.api.signin.internal.SignInHubActivity { <init>(); }
 -keep class com.google.android.gms.auth.api.signin.RevocationBoundService { <init>(); }
 -keep public class * extends android.app.backup.BackupAgent {

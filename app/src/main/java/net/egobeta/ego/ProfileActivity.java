@@ -3,27 +3,16 @@ package net.egobeta.ego;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.support.v4.content.LocalBroadcastManager;
-import android.graphics.Color;
+import android.support.v7.graphics.drawable.DrawerArrowDrawable;
 import android.text.InputType;
 import android.text.SpannableString;
-import android.util.Log;
 
+import net.egobeta.ego.Fragments.ProfileFragment;
+import net.egobeta.ego.Fragments.ScrollTabHolderFragment;
+import net.egobeta.ego.ImportedClasses.AutoResizeTextView;
+import net.egobeta.ego.ImportedClasses.BlurTransformation;
+import net.egobeta.ego.ImportedClasses.FacebookPictureViewRound;
 import net.egobeta.ego.InstagramClasses.ImageViewAdapterInstagram;
-import net.egobeta.ego.demo.UserSettings;
-import net.amazonaws.mobile.AWSMobileClient;
-import net.amazonaws.mobile.user.IdentityManager;
-import com.amazonaws.mobileconnectors.cognito.Dataset;
-import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
-import com.amazonaws.mobileconnectors.cognito.Record;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
-import com.viewpagerindicator.CirclePageIndicator;
-import android.content.IntentFilter;
-import android.content.BroadcastReceiver;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -38,8 +27,6 @@ import java.net.URLEncoder;
 import java.nio.charset.MalformedInputException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-
 
 
 import android.content.Context;
@@ -77,6 +64,8 @@ import android.widget.Button;
 
 import net.astuetz.PagerSlidingTabStrip;
 
+import net.egobeta.ego.Interfaces.ScrollTabHolder;
+import net.egobeta.ego.Settings.SettingsActivity;
 import net.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 
 
@@ -219,9 +208,9 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
         context = getApplicationContext();
         facebookId = getIntent().getStringExtra("facebook_id");
 
-        resources = getResources();
-        drawerArrowDrawable = new DrawerArrowDrawable(resources);
-        drawerArrowDrawable.setStrokeColor(resources.getColor(R.color.menuDrawerColor));
+//        resources = getResources();
+//        drawerArrowDrawable = new DrawerArrowDrawable(resources);
+//        drawerArrowDrawable.setStrokeColor(resources.getColor(R.color.menuDrawerColor));
 
         /**Initialize font*/
         typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");

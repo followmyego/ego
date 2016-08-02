@@ -25,11 +25,15 @@
     <init>();
 }
 
+-keep class net.egobeta.ego.OnBoarding.Main_OnBoarding {
+    <init>();
+}
+
 -keep class net.egobeta.ego.MainActivity {
     <init>();
 }
 
--keep class net.egobeta.ego.SettingsActivity {
+-keep class net.egobeta.ego.Settings.SettingsActivity {
     <init>();
 }
 
@@ -69,7 +73,7 @@
     <init>();
 }
 
--keep class net.egobeta.ego.GeneralSettingsActivity {
+-keep class net.egobeta.ego.Settings.GeneralSettingsActivity {
     <init>();
 }
 
