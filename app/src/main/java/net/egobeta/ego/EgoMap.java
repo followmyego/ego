@@ -181,8 +181,13 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
 
             if(firstTime == 0){
-                new PushUserLocationToDataBase(0).execute(serverURL, username);
-                firstTime = 1;
+                if(getLongitude() != 0 && getLatitude() != 0){
+                    new PushUserLocationToDataBase(0).execute(serverURL, username);
+                    firstTime = 1;
+                } else {
+                    startLocationUpdates();
+                    mRequestLocationUpdates = true;
+                }
             }
 
 //            saveToDB();

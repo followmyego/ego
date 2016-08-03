@@ -8,14 +8,14 @@
 
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/friendsBackground"
-        android:src="@drawable/background_image"
-        android:scaleType="centerCrop"
-        android:alpha=".10"
-        />
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/friendsBackground"-->
+        <!--android:src="@drawable/background_image"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:alpha=".10"-->
+        <!--/>-->
 
     <ImageView
         android:layout_width="175dp"

@@ -79,25 +79,32 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements ScrollTabHolder, ViewPager.OnPageChangeListener, View.OnClickListener {
 
     //AWS Variables
-    AWSMobileClient awsMobileClient;
-    static DynamoDBMapper mapper;
-    public static IdentityManager identityManager; //The identity manager used to keep track of the current user account.
+    AWSMobileClient awsMobileClient = null;
+    static DynamoDBMapper mapper = null;
+    public static IdentityManager identityManager = null; //The identity manager used to keep track of the current user account.
 
 
     //Other variables
     private final static String LOG_TAG = MainActivity.class.getSimpleName(); //Class name for log messages.
     Typeface typeface;
     private TypedValue mTypedValue = new TypedValue();
-    private PagerAdapter mPagerAdapter; //The pager adapter, which provides the pages to the view pager widget.
-    ScrollTabHolderFragment fragment;
+    private PagerAdapter mPagerAdapter = null; //The pager adapter, which provides the pages to the view pager widget.
+    ScrollTabHolderFragment fragment = null;
 
     private Resources resources;
     static Context context;
     private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
-    static EgoMap egoMap;
-    static UserLocation userLocation;
-    static Thread thread;
-    private static Activity activity;
+    static EgoMap egoMap = null;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("ACT DEBUG", "MainActivity: OnDestroy");
+        android.os.Process.killProcess(android.os.Process.myPid());
+    }
+
+    static UserLocation userLocation = null;
+    public static Activity activity = null;
 //    static EgoStreamViewAdapter2 adapter;
 
     //Number Variables
@@ -117,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     public static ImageView egoLogo;
     public static ScrollView scrollView;
     private SlidingMenu slidingMenu;
-    private ViewPager mViewPager;
+    private ViewPager mViewPager = null;
     private static Toolbar toolbar;
     public PagerSlidingTabStrip mPagerSlidingTabStrip;
     private static TextView toolbarTitle;
@@ -188,6 +195,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("ACT DEBUG", "MainActivity: OnCreate");
+        System.out.println("MAINACTIVITY: onCreate");
         activity = this;
         /** AWS Stuffs **/
         // Obtain a reference to the mobile client. It is created in the Application class,
@@ -260,59 +269,16 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         pageIndicator.setViewPager(mViewPager);
 
 
-
-
-
-
         //Fire the ego map on create method
-        theMapOnCreateMethod();
+
 
         //GetThe first batch of nearby users
-        getNearbyUsers(0);
-    }
-
-    public static void createUpdateUserLocation(){
-        AmazonClientException lastException = null;
-        IdentityManager identityManager2 = AWSMobileClient.defaultMobileClient()
-                .getIdentityManager();
-
-
-
-        try {
-            mapper.save(userLocation);
-        } catch (final AmazonClientException ex) {
-            Log.e("AMAZON EXCEPTION", "Failed saving item : " + ex.getMessage(), ex);
-            lastException = ex;
-        }
-
-        if (lastException != null) {
-            // Re-throw the last exception encountered to alert the user.
-            throw lastException;
-        }
-
+//        getNearbyUsers(0);
     }
 
 
-//     public class SaveToDB extends AsyncTask<Void, Void, Void> {
-//
-//
-//        @Override
-//        protected Void doInBackground(Void... params) {
-//            try{
-//                mapper.save(bookToSave);
-//            } catch (AmazonClientException ex){
-//                ex.printStackTrace();
-//            }
-//
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Void aVoid) {
-//            super.onPostExecute(aVoid);
-//            Toast.makeText(getActivity(), "Successfully saved book to db", Toast.LENGTH_SHORT).show();
-//        }
-//    }
+
+
 
 
 
@@ -320,6 +286,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     /**Created from the AWS demo app**/
     /** Sync user's preferences only if user is signed in **/
     private void syncUserSettings() {
+        System.out.println("MAINACTIVITY: syncUserSettings");
         // sync only if user is signed in
         if (AWSMobileClient.defaultMobileClient().getIdentityManager().isUserSignedIn()) {
             final UserSettings userSettings = UserSettings.getInstance(getApplicationContext());
@@ -349,6 +316,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     }
 
     private void loadUserSettings() {
+        System.out.println("MAINACTIVITY: loadUserSettings");
         final UserSettings userSettings = UserSettings.getInstance(context);
         final Dataset dataset = userSettings.getDataset();
         final ProgressDialog dialog = ProgressDialog.show(activity,
@@ -360,11 +328,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
             public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
                 super.onSuccess(dataset, updatedRecords);
                 userSettings.loadFromDataset();
-                if(userSettings.getNewUser() == 0){
+                if (userSettings.getNewUser() == 0) {
                     updateUI(dialog, 0);
                 } else {
                     updateUI(dialog, 1);
-                };
+                }
+                ;
             }
 
             @Override
@@ -388,21 +357,22 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     }
 
     private void updateUI(final ProgressDialog dialog, final int isFirstTimeUSer) {
+        System.out.println("MAINACTIVITY: updateUI");
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 if (dialog != null) {
                     dialog.dismiss();
                 }
-                if(isFirstTimeUSer == 1){
+                if (isFirstTimeUSer == 1) {
                     Toast.makeText(activity, "not FirstTimeUser", Toast.LENGTH_SHORT).show();
                     setFirstTimeUser(isFirstTimeUSer);
                 } else if (isFirstTimeUSer == 0) {
                     Toast.makeText(activity, "FirstTimeUser", Toast.LENGTH_SHORT).show();
                     setFirstTimeUser(isFirstTimeUSer);
-                    Intent intent = new Intent(MainActivity.this, Main_OnBoarding.class);
-                    startActivity(intent);
-                    finish();
+//                    Intent intent = new Intent(MainActivity.this, Main_OnBoarding.class);
+//                    startActivity(intent);
+//                    MainActivity.this.finish();
                 } else {
                     Toast.makeText(activity, "Failure updating", Toast.LENGTH_SHORT).show();
                     setFirstTimeUser(0);
@@ -413,6 +383,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     }
 
     private void setFirstTimeUser(int firstTime) {
+        System.out.println("MAINACTIVITY: setFirstTimeUser");
         final UserSettings userSettings = UserSettings.getInstance(context);
         userSettings.setNewUser(firstTime);
 
@@ -492,6 +463,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Create the pull out Sliding menu
     private void createMenuDrawer() {
+        System.out.println("MAINACTIVITY: createMenuDrawer");
 
         slidingMenu = new SlidingMenu(MainActivity.this);
         slidingMenu.attachToActivity(MainActivity.this, SlidingMenu.SLIDING_CONTENT, true);
@@ -521,6 +493,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Method to go to user settings
     public void settings() {
+        System.out.println("MAINACTIVITY: settings");
+
         slidingMenu.toggle();
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
@@ -529,6 +503,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Initialize dimension variables for the animations
     private void initializeDimensionItems() {
+        System.out.println("MAINACTIVITY: initializeDimensionItems");
+
         mMinHeaderHeight = getResources().getDimensionPixelSize(R.dimen.min_header_height);
         mHeaderHeight = getResources().getDimensionPixelSize(R.dimen.header_height);
         mMinHeaderTranslation = -mMinHeaderHeight + getActionBarHeight();
@@ -536,6 +512,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Initialize view item variables
     private void initializeViewItems(){
+        System.out.println("MAINACTIVITY: initializeViewItems");
+
         mHeader = findViewById(R.id.header); /**ENTIRE HEADER**/
         home_menu_image = (ImageView) findViewById(R.id.toolbar_icon); /**HEADER - HOME MENU IMAGE**/
         home_menu_image2 = (ImageView) findViewById(R.id.toolbar_icon2); /**HEADER - HOME MENU IMAGE**/
@@ -547,6 +525,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Method for header animation
     public int getActionBarHeight() {
+        System.out.println("MAINACTIVITY: getActionBarHeight");
+
         if (mActionBarHeight != 0) {
             return mActionBarHeight;
         }
@@ -557,6 +537,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Set up the SlidingTabStrip
     private void initializeSlidingTabStrip() {
+        System.out.println("MAINACTIVITY: initializeSlidingTabStrip");
+
         mPagerSlidingTabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         mPagerSlidingTabStrip.setViewPager(mViewPager);
         mPagerSlidingTabStrip.getTabBackground();
@@ -566,6 +548,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Using custom image view as home as up indicator, this gets rid of the default arrow image
     private void removeDefaultMenuButton(){
+        System.out.println("MAINACTIVITY: removeDefaultMenuButton");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             upArrow = getDrawable(R.drawable.back_arrow_transparent);
@@ -580,6 +563,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Method to detect the scroll value of the Y axis
     public int getScrollY(AbsListView view) {
+        System.out.println("MAINACTIVITY: getScrollY");
+
         View c = view.getChildAt(0);
         if (c == null) {
             return 0;
@@ -595,11 +580,15 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Method for header animation
     public static float clamp(float value, float max, float min) {
+        System.out.println("MAINACTIVITY: clamp");
+
         return Math.max(Math.min(value, min), max);
     }
 
     //Method to animate the title fade in/out
     private static void setTitleAlpha(float alpha) {
+        System.out.println("MAINACTIVITY: setTitleAlpha");
+
 //        mAlphaForegroundColorSpan.setAlpha(alpha);
 //        mSpannableString.setSpan(mAlphaForegroundColorSpan, 0, mSpannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         toolbar.setTitle(" ");
@@ -608,6 +597,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //Method to animate the homeAsUp indicator fade in/out
     private static void setHomeAsUpAlpha(float alpha) {
+        System.out.println("MAINACTIVITY: setHomeAsUpAlpha");
+
         toolbar.setAlpha(alpha * 1);
         egoLogo.setAlpha(alpha * 1);
         pageIndicator.setAlpha(alpha * 1);
@@ -619,22 +610,28 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     @Override
     protected void onPause() {
-        super.onPause();
+        System.out.println("MAINACTIVITY: onPause");
 
+        super.onPause();
+        Log.d("ACT DEBUG", "MainActivity: OnPause");
         // Obtain a reference to the mobile client.
         final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
 
         // pause/resume Mobile Analytics collection
         awsMobileClient.handleOnPause();
 
+        egoMap.theOnPauseMethod();
         // unregister notification receiver
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(notificationReceiver);
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(settingsChangedReceiver);
+//        LocalBroadcastManager.getInstance(this).unregisterReceiver(notificationReceiver);
+//        LocalBroadcastManager.getInstance(this).unregisterReceiver(settingsChangedReceiver);
     }
 
     @Override
     protected void onResume() {
+        System.out.println("MAINACTIVITY: onResume");
+
         super.onResume();
+        Log.d("ACT DEBUG", "MainActivity: OnResume");
         mHeaderPicture = (ImageView) findViewById(R.id.header_picture); /**HEADER - BLURRED BACKGROUND**/
 
 
@@ -644,73 +641,50 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         awsMobileClient.handleOnResume();
 
         // register notification receiver
-        LocalBroadcastManager.getInstance(this).registerReceiver(notificationReceiver,
-                new IntentFilter(PushListenerService.ACTION_SNS_NOTIFICATION));
-        // register settings changed receiver.
-        LocalBroadcastManager.getInstance(this).registerReceiver(settingsChangedReceiver,
-                new IntentFilter(UserSettings.ACTION_SETTINGS_CHANGED));
+//        LocalBroadcastManager.getInstance(this).registerReceiver(notificationReceiver,
+//                new IntentFilter(PushListenerService.ACTION_SNS_NOTIFICATION));
+//        // register settings changed receiver.
+//        LocalBroadcastManager.getInstance(this).registerReceiver(settingsChangedReceiver,
+//                new IntentFilter(UserSettings.ACTION_SETTINGS_CHANGED));
 //        updateColor();
 
-//Sync the user's privacy settings and detect if the user is first time.
+//        Sync the user's privacy settings and detect if the user is first time.
 //        syncUserSettings();
 
-
-//        theMapOnResumeMethod();
-        getNearbyUsers(0);
+        theMapOnCreateMethod();
+        theMapOnStartMethod();
+        theMapOnResumeMethod();
+//        getNearbyUsers(0);
     }
 
     @Override
     protected void onStart() {
+        System.out.println("MAINACTIVITY: onStart");
+
         super.onStart();
+        Log.d("ACT DEBUG", "MainActivity: OnStart");
         mHeaderPicture = (ImageView) findViewById(R.id.header_picture);
-        theMapOnStartMethod();
+
 
     }
 
-    @Override
-    public void onBackPressed() {
-        final FragmentManager fragmentManager = this.getSupportFragmentManager();
-
-//        if (navigationDrawer.isDrawerOpen()) {
-//            navigationDrawer.closeDrawer();
-//            return;
-//        }
-
-        /*if (fragmentManager.getBackStackEntryCount() == 0) {
-            if (fragmentManager.findFragmentByTag(HomeDemoFragment.class.getSimpleName()) == null) {
-                final Class fragmentClass = HomeDemoFragment.class;
-                // if we aren't on the home fragment, navigate home.
-                final Fragment fragment = Fragment.instantiate(this, fragmentClass.getName());
-
-                fragmentManager
-                    .beginTransaction()
-                    .replace(R.id.main_fragment_container, fragment, fragmentClass.getSimpleName())
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .commit();
-
-                // Set the title for the fragment.
-                *//*final ActionBar actionBar = this.getSupportActionBar();
-                if (actionBar != null) {
-                    actionBar.setTitle(getString(R.string.app_name));
-                }*//*
-                return;
-            }
-        }*/
-        super.onBackPressed();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        System.out.println("MAINACTIVITY: onCreateOptionsMenu");
+
 //		return super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.menu_main1, menu);
         return true;
     }
 
-    /************************************** IMPLEMENTED METHODS ******************************************/
+    /************************************** IMPLEMENTED METHODS ************************************/
     /***********************************************************************************************/
 
     @Override
     public void onClick(final View v) {
+        System.out.println("MAINACTIVITY: onClick");
+
         switch(v.getId()){
             case R.id.toolbar:
                 absListView.post(new Runnable() {
@@ -726,6 +700,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     }
 
     public static void backToTop(){
+        System.out.println("MAINACTIVITY: backToTop");
+
         absListView.post(new Runnable() {
             @Override
             public void run() {
@@ -742,6 +718,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     @Override
     public void onPageSelected(int position) {
+        System.out.println("MAINACTIVITY: onPageSelected");
         SparseArrayCompat<ScrollTabHolder> scrollTabHolders = mPagerAdapter.getScrollTabHolders();
         ScrollTabHolder currentHolder = scrollTabHolders.valueAt(position);
 
@@ -761,6 +738,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
+        System.out.println("MAINACTIVITY: onOptionsItemSelected");
+
         // Handle action bar item clicks here excluding the home button.
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -818,6 +797,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     //PagerAdapter for the sliding pages under user profile
     public class PagerAdapter extends FragmentPagerAdapter {
+
 
         private SparseArrayCompat<ScrollTabHolder> mScrollTabHolders;
         private final String[] TITLES = {" ", " "};
@@ -883,47 +863,51 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     /************************************** FINAL METHODS ******************************************/
     /***********************************************************************************************/
 
-    private final BroadcastReceiver notificationReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.d(LOG_TAG, "Received notification from local broadcast. Display it in a dialog.");
-
-            Bundle data = intent.getBundleExtra(PushListenerService.INTENT_SNS_NOTIFICATION_DATA);
-            String message = PushListenerService.getMessage(data);
-
-            new AlertDialog.Builder(MainActivity.this)
-                    .setTitle(R.string.push_demo_title)
-                    .setMessage(message)
-                    .setPositiveButton(android.R.string.ok, null)
-                    .show();
-        }
-    };
-
-    private final BroadcastReceiver settingsChangedReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.d(LOG_TAG, "Received settings changed local broadcast. Update theme colors.");
-//            updateColor();
-        }
-    };
+//    private final BroadcastReceiver notificationReceiver = new BroadcastReceiver() {
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//            Log.d(LOG_TAG, "Received notification from local broadcast. Display it in a dialog.");
+//
+//            Bundle data = intent.getBundleExtra(PushListenerService.INTENT_SNS_NOTIFICATION_DATA);
+//            String message = PushListenerService.getMessage(data);
+//
+//            new AlertDialog.Builder(MainActivity.this)
+//                    .setTitle(R.string.push_demo_title)
+//                    .setMessage(message)
+//                    .setPositiveButton(android.R.string.ok, null)
+//                    .show();
+//        }
+//    };
+//
+//    private final BroadcastReceiver settingsChangedReceiver = new BroadcastReceiver() {
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//            Log.d(LOG_TAG, "Received settings changed local broadcast. Update theme colors.");
+////            updateColor();
+//        }
+//    };
     /***********************************************************************************************/
 
     /********************************** Google Maps Methods ****************************************/
-    /************************************************************************************************/
+    /***********************************************************************************************/
     public void theMapOnCreateMethod(){
+        System.out.println("MAINACTIVITY: theMapOnCreateMethod");
 
         egoMap.theOnCreateMethod();
     }
 
     public void theMapOnStartMethod(){
+        System.out.println("MAINACTIVITY: theMapOnStartMethod");
         egoMap.theOnStartMethod();
     }
 
-//    public void theMapOnResumeMethod(){
-//        egoMap.theOnResumeMethod();
-//    }
+    public void theMapOnResumeMethod(){
+        System.out.println("MAINACTIVITY: theMapOnResumeMethod");
+        egoMap.theOnResumeMethod();
+    }
 
     public static void getNearbyUsers(int count){
+        System.out.println("MAINACTIVITY: getNearbyUsers");
         egoMap.PushLocation(count);
     }
 
@@ -937,4 +921,25 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
 
     /***********************************************************************************************/
+
+    //     public class SaveToDB extends AsyncTask<Void, Void, Void> {
+//
+//
+//        @Override
+//        protected Void doInBackground(Void... params) {
+//            try{
+//                mapper.save(bookToSave);
+//            } catch (AmazonClientException ex){
+//                ex.printStackTrace();
+//            }
+//
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Void aVoid) {
+//            super.onPostExecute(aVoid);
+//            Toast.makeText(getActivity(), "Successfully saved book to db", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 }

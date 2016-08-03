@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -29,13 +30,26 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     Button blockedButton;
     Button helpCenterButton;
     Button feedbackButton;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("ACT DEBUG", "SettingsActivity: OnDestroy");
+    }
+
     Button generalButton;
 
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("ACT DEBUG", "SettingsActivity: OnPause");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("ACT DEBUG", "SettingsActivity: OnCreate");
         // Obtain a reference to the mobile client. It is created in the Application class.
         final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
         // Obtain a reference to the identity manager.
@@ -69,9 +83,12 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         if(view == logoutButton){
             identityManager.signOut();
-            startActivity(new Intent(this, SignInActivity.class)
-                    .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-            finish();
+            Intent intent = new Intent(this, SignInActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(new Intent(this, SignInActivity.class));
+//            MainActivity.activity.finish();
+//            this.finish();
+            startActivity(intent);
         }
 
         if(view == blockedButton){

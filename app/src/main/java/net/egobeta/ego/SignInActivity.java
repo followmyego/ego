@@ -172,6 +172,12 @@ public class SignInActivity extends Activity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("ACT DEBUG", "SignInActivity: OnDestroy");
+    }
+
     private void updateUI(final ProgressDialog dialog, final int isFirstTimeUSer) {
         this.runOnUiThread(new Runnable() {
             @Override
@@ -184,13 +190,13 @@ public class SignInActivity extends Activity {
                     startActivity(new Intent(SignInActivity.this, MainActivity.class)
                             .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     // finish should always be called on the main thread.
-//                    finish();
+                    SignInActivity.this.finish();
                 } else if (isFirstTimeUSer == 0) {
                     Log.d(LOG_TAG, "Launching OnBoarding Process...");
                     startActivity(new Intent(SignInActivity.this, Main_OnBoarding.class)
                             .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     // finish should always be called on the main thread.
-//                    finish();
+                    SignInActivity.this.finish();
                 } else {
                     Toast.makeText(SignInActivity.this, "Failure updating", Toast.LENGTH_SHORT).show();
                 }
@@ -202,7 +208,9 @@ public class SignInActivity extends Activity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("ACT DEBUG", "SignInActivity: OnCreate");
         setContentView(R.layout.activity_sign_in);
+
 
         signInManager = SignInManager.getInstance(this);
 
@@ -224,6 +232,7 @@ public class SignInActivity extends Activity {
     protected void onResume() {
         super.onResume();
 
+        Log.d("ACT DEBUG", "SignInActivity: OnResume");
         // pause/resume Mobile Analytics collection
         AWSMobileClient.defaultMobileClient().handleOnResume();
     }
@@ -231,7 +240,7 @@ public class SignInActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-
+        Log.d("ACT DEBUG", "SignInActivity: OnPause");
         // pause/resume Mobile Analytics collection
         AWSMobileClient.defaultMobileClient().handleOnPause();
     }

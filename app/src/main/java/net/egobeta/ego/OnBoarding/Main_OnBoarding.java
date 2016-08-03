@@ -15,6 +15,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ScrollView;
 
 import com.viewpagerindicator.CirclePageIndicator;
@@ -24,6 +25,7 @@ import net.egobeta.ego.Fragments.OnBoarding_Fragment4;
 import net.egobeta.ego.Interfaces.ScrollTabHolder;
 import net.egobeta.ego.MainActivity;
 import net.egobeta.ego.R;
+import net.egobeta.ego.Settings.SettingsActivity;
 
 public class Main_OnBoarding extends AppCompatActivity {
 
@@ -43,12 +45,22 @@ public class Main_OnBoarding extends AppCompatActivity {
     private ViewPager mViewPager;
     static CirclePageIndicator pageIndicator;
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("ACT DEBUG", "Main_OnBoarding: OnDestroy");
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("ACT DEBUG", "Main_OnBoarding: OnPause");
+    }
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.d("ACT DEBUG", "Main_OnBoarding: OnCreate");
         setContentView(R.layout.activity_main_onboarding);
 
         context = getApplicationContext();
@@ -75,8 +87,14 @@ public class Main_OnBoarding extends AppCompatActivity {
     }
 
     public void goToMainActivity(){
+
+//        startActivity(new Intent(Main_OnBoarding.this, MainActivity.class)
+//                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+
         Intent intent = new Intent(Main_OnBoarding.this, MainActivity.class);
         startActivity(intent);
+        this.finish();
+
     }
 
 

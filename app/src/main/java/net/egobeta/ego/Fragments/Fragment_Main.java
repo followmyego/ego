@@ -254,6 +254,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 
     protected static void addDummyData(final int itemsCount, boolean bool) {
         System.out.println("SOUT" + " addDummyData");
+        System.out.println("MAINACTIVITY: getNearbyUsers addDummyData");
         if(!bool){
             if(count > 0){
                 System.out.println("SOUT" + " addDummyData 1");
@@ -363,9 +364,10 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
     }
 
     public static void backToTop(){
-        count = 0;
-        addDummyData(3, true);
-        MainActivity.getNearbyUsers(count);
+//        System.out.println("MAINACTIVITY: getNearbyUsers backToTop");
+//        count = 0;
+//        addDummyData(3, true);
+//        MainActivity.getNearbyUsers(count);
 
     }
 
@@ -398,6 +400,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
             mListView.setAdapter(adapter);
 
         }
+        System.out.println("MAINACTIVITY: getNearbyUsers onRefresh");
         MainActivity.getNearbyUsers(count);
     }
 
