@@ -77,6 +77,10 @@
     <init>();
 }
 
+-keep class net.egobeta.ego.OnBoarding.LoadFacebookPermissions {
+    <init>();
+}
+
 -keep class com.google.android.gms.auth.api.signin.internal.SignInHubActivity {
     <init>();
 }

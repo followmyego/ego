@@ -52,6 +52,14 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_fade_in.xml"
     },
     {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\anim\\right_slide_out.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\anim\\right_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\anim\\right_slide_in.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\anim\\right_slide_in.xml"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_top.xml"
     }

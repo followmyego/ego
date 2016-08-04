@@ -1,5 +1,181 @@
 [
     {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loves_the_same_music.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\loves_the_same_music.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tap_to_edit_button_9c9c9c.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\tap_to_edit_button_9c9c9c.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\slide_arrow_tab.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\slide_arrow_tab.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\finish_button.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\finish_button.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ellipse_ring.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\ellipse_ring.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\round_corners_photos.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\round_corners_photos.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_round.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable\\messenger_button_blue_bg_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sliding_tab_info_button.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\sliding_tab_info_button.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\item_listing.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\item_listing.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_folder.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\selector_button_folder.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ellipse_dot.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\ellipse_dot.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\glasses_viewing_you.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\glasses_viewing_you.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\setting_up_account_screen.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\setting_up_account_screen.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_white_bg_round.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable\\messenger_button_white_bg_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_like.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\common_like.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_facebook.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\selector_button_facebook.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\lucas_profile.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\lucas_profile.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_selected_holo.9.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\vpi__tab_selected_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ego_icon.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\ego_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\logo_without_tagline.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\logo_without_tagline.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_plus_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loves_the_same_movie.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\loves_the_same_movie.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_theme1.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\selector_button_theme1.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sliding_tab_social_button.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\sliding_tab_social_button.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_theme4.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\selector_button_theme4.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_selected_pressed_holo.9.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\vpi__tab_selected_pressed_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\blocked_user.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\blocked_user.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_plus_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\facebook_badge.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\facebook_badge.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_button_login_silver_background.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable\\com_facebook_button_login_silver_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_white_bg_selector.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable\\messenger_button_white_bg_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_image.jpg",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\background_image.jpg"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_google_signin_btn_text_light.xml"
     },
@@ -28,24 +204,8 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_borderless_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loves_the_same_music.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\loves_the_same_music.png"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_ratingbar_full_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_workplace.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\common_workplace.png"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tap_to_edit_button_9c9c9c.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\tap_to_edit_button_9c9c9c.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_indicator.xml",
@@ -56,16 +216,8 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\selector_button_theme2.xml"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\slide_arrow_tab.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\slide_arrow_tab.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\pinned_to_the_stream.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\pinned_to_the_stream.png"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\finish_button.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\finish_button.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\friends_of_friend.png",
@@ -84,84 +236,44 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
     },
     {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\faded_dot_icon.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\faded_dot_icon.png"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_seekbar_thumb_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\round_corners_photos.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\round_corners_photos.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_round.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable\\messenger_button_blue_bg_round.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sliding_tab_info_button.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\sliding_tab_info_button.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_switch_thumb_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\blank_screen.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\blank_screen.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_seekbar_track_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_text_light.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_plus_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\item_listing.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\item_listing.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\settings_button.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\settings_button.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_folder.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\selector_button_folder.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_unselected_pressed_holo.9.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\vpi__tab_unselected_pressed_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_dark.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\radio_button_drawable.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\radio_button_drawable.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_theme3.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\selector_button_theme3.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\glasses_viewing_you.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\glasses_viewing_you.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
@@ -180,52 +292,32 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\n_ego_logo.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_white_bg_round.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable\\messenger_button_white_bg_round.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_icon_dark.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_plus_signin_btn_icon_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_like.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\common_like.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_dialog_material_background_light.xml"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_facebook.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\selector_button_facebook.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\same_school.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\same_school.png"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_unselected_focused_holo.9.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\vpi__tab_unselected_focused_holo.9.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
     },
     {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_unselected_focused_holo.9.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\vpi__tab_unselected_focused_holo.9.png"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\slide_3_phone.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\slide_3_phone.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\lucas_profile.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\lucas_profile.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_colored_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_selected_holo.9.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\vpi__tab_selected_holo.9.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
@@ -236,24 +328,12 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\top_ego_stream.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_selected_focused_holo.9.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\vpi__tab_selected_focused_holo.9.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\logo_without_tagline.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\logo_without_tagline.png"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_text_dark.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_plus_signin_btn_text_dark.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
@@ -268,52 +348,32 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\follower.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sliding_tab_photos_button.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\sliding_tab_photos_button.png"
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\following.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\following.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_blue_bg_selector.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable\\messenger_button_blue_bg_selector.xml"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\following.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\following.png"
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sliding_tab_photos_button.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\sliding_tab_photos_button.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_unselected_holo.9.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\vpi__tab_unselected_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loves_the_same_movie.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\loves_the_same_movie.png"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\drawable\\design_snackbar_background.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_button_like_background.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable\\com_facebook_button_like_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_theme1.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\selector_button_theme1.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\slide_2_phone.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\slide_2_phone.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_google_signin_btn_icon_light.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sliding_tab_chat_button.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\sliding_tab_chat_button.png"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sliding_tab_social_button.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\sliding_tab_social_button.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
@@ -324,24 +384,12 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\drawable\\design_fab_background.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_item_background_holo_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button_theme4.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\selector_button_theme4.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_selected_pressed_holo.9.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\vpi__tab_selected_pressed_holo.9.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\same_hometown.png",
@@ -352,31 +400,7 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\slide_1_phone.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\blocked_user.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\blocked_user.png"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_icon_light.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_plus_signin_btn_icon_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\facebook_badge.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\facebook_badge.png"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\com_facebook_button_login_silver_background.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable\\com_facebook_button_login_silver_background.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\back_arrow_transparent.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\back_arrow_transparent.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\messenger_button_white_bg_selector.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable\\messenger_button_white_bg_selector.xml"
-    },
-    {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_image.jpg",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\drawable\\background_image.jpg"
     }
 ]

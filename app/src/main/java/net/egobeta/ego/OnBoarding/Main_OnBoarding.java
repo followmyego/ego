@@ -1,10 +1,8 @@
 package net.egobeta.ego.OnBoarding;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -16,18 +14,21 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ListView;
 import android.widget.ScrollView;
 
 import com.viewpagerindicator.CirclePageIndicator;
 
+import net.egobeta.ego.Adapters.BadgeItem;
 import net.egobeta.ego.Fragments.OnBoarding_Fragment123;
 import net.egobeta.ego.Fragments.OnBoarding_Fragment4;
 import net.egobeta.ego.Interfaces.ScrollTabHolder;
 import net.egobeta.ego.MainActivity;
 import net.egobeta.ego.R;
-import net.egobeta.ego.Settings.SettingsActivity;
 
-public class Main_OnBoarding extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Main_OnBoarding extends AppCompatActivity   {
 
 
 
@@ -36,10 +37,13 @@ public class Main_OnBoarding extends AppCompatActivity {
 
 
     private PagerAdapter mPagerAdapter; //The pager adapter, which provides the pages to the view pager widget.
+    public ArrayList<BadgeItem> badgeList;
 
+
+    public ArrayList<String> confirmedList = new ArrayList<String>();
 
     static Context context;
-
+    public ListView listView = null;
     public Drawable upArrow;
     public static ScrollView scrollView;
     private ViewPager mViewPager;
@@ -86,16 +90,20 @@ public class Main_OnBoarding extends AppCompatActivity {
         pageIndicator.setViewPager(mViewPager);
     }
 
-    public void goToMainActivity(){
+    public void goToLoadFacebookPermissions(ArrayList<String> list){
 
 //        startActivity(new Intent(Main_OnBoarding.this, MainActivity.class)
 //                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 
-        Intent intent = new Intent(Main_OnBoarding.this, MainActivity.class);
+        Intent intent = new Intent(Main_OnBoarding.this, LoadFacebookPermissions.class);
+        intent.putStringArrayListExtra("privacy_preferences", list);
         startActivity(intent);
+        overridePendingTransition(R.anim.right_slide_in, R.anim.right_slide_in);
         this.finish();
 
     }
+
+
 
 
     //Using custom image view as home as up indicator, this gets rid of the default arrow image
@@ -147,7 +155,8 @@ public class Main_OnBoarding extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             if(position == 3){
-                OnBoarding_Fragment4 fragment = OnBoarding_Fragment4.newInstance(position + "");
+//                OnBoarding_Fragment4 fragment = OnBoarding_Fragment4.newInstance(position + "");
+                OnBoarding_Fragment4 fragment = new OnBoarding_Fragment4();
                 return fragment;
             } else  {
                 OnBoarding_Fragment123 fragment = OnBoarding_Fragment123.newInstance(position + "");
@@ -156,5 +165,22 @@ public class Main_OnBoarding extends AppCompatActivity {
         }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 

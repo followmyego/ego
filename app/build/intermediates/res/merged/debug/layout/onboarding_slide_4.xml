@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/slides"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@null"
-    >
+    android:background="@null">
 
     <FrameLayout
         android:id="@+id/onboarding_space_top"
@@ -30,12 +29,511 @@
     <ListView
         android:id="@+id/privacyListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
         android:paddingTop="100dp"
-        android:paddingBottom="100dp"
-        />
+        android:paddingBottom="100dp">
+
+    </ListView>
+
+    <!--<ScrollView-->
+        <!--android:id="@+id/privacyListView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:paddingTop="100dp"-->
+        <!--android:paddingBottom="100dp"-->
+        <!-->-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!-->-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image1"-->
+                    <!--android:src="@drawable/friend"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Friends"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name1"-->
+                    <!--android:layout_toRightOf="@+id/badge_image1"-->
+                    <!--android:layout_toEndOf="@+id/badge_image1" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox1"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image2"-->
+                    <!--android:src="@drawable/friends_of_friend"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Friends of Friends"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name2"-->
+                    <!--android:layout_toRightOf="@+id/badge_image2"-->
+                    <!--android:layout_toEndOf="@+id/badge_image2" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox2"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image3"-->
+                    <!--android:src="@drawable/follower"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Follower"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name3"-->
+                    <!--android:layout_toRightOf="@+id/badge_image3"-->
+                    <!--android:layout_toEndOf="@+id/badge_image3" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox3"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image4"-->
+                    <!--android:src="@drawable/following"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Following"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name4"-->
+                    <!--android:layout_toRightOf="@+id/badge_image4"-->
+                    <!--android:layout_toEndOf="@+id/badge_image4" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox4"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image5"-->
+                    <!--android:src="@drawable/location_icon"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Where you Live"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name5"-->
+                    <!--android:layout_toRightOf="@+id/badge_image5"-->
+                    <!--android:layout_toEndOf="@+id/badge_image5" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox5"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image6"-->
+                    <!--android:src="@drawable/same_hometown"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Common Hometown"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name6"-->
+                    <!--android:layout_toRightOf="@+id/badge_image6"-->
+                    <!--android:layout_toEndOf="@+id/badge_image6" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox6"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image7"-->
+                    <!--android:src="@drawable/common_like"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Common like"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name7"-->
+                    <!--android:layout_toRightOf="@+id/badge_image7"-->
+                    <!--android:layout_toEndOf="@+id/badge_image7" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox7"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image8"-->
+                    <!--android:src="@drawable/shared_birthday"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Same Birthday"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name8"-->
+                    <!--android:layout_toRightOf="@+id/badge_image8"-->
+                    <!--android:layout_toEndOf="@+id/badge_image8" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox8"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image9"-->
+                    <!--android:src="@drawable/common_workplace"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Common Workplace"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name9"-->
+                    <!--android:layout_toRightOf="@+id/badge_image9"-->
+                    <!--android:layout_toEndOf="@+id/badge_image9" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox9"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image10"-->
+                    <!--android:src="@drawable/same_school"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Common School"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name10"-->
+                    <!--android:layout_toRightOf="@+id/badge_image10"-->
+                    <!--android:layout_toEndOf="@+id/badge_image10" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox10"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image11"-->
+                    <!--android:src="@drawable/loves_the_same_music"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Music you love"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name11"-->
+                    <!--android:layout_toRightOf="@+id/badge_image11"-->
+                    <!--android:layout_toEndOf="@+id/badge_image11" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox11"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image12"-->
+                    <!--android:src="@drawable/loves_the_same_movie"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Movies you love"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name12"-->
+                    <!--android:layout_toRightOf="@+id/badge_image12"-->
+                    <!--android:layout_toEndOf="@+id/badge_image12" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox12"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/badge_image13"-->
+                    <!--android:src="@drawable/loves_the_same_books"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:text="Books you love"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/badge_name"-->
+                    <!--android:layout_toRightOf="@+id/badge_image13"-->
+                    <!--android:layout_toEndOf="@+id/badge_image13" />-->
+
+                <!--<CheckBox-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:id="@+id/checkBox13"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:checked="true"-->
+                    <!--/>-->
+                <!--&lt;!&ndash;android:button="@drawable/radio_button_drawable"&ndash;&gt;-->
+            <!--</RelativeLayout>-->
+
+
+        <!--</RelativeLayout>-->
+
+        <!--</ScrollView>-->
 
     <FrameLayout
         android:id="@+id/onboarding_space_bottom"

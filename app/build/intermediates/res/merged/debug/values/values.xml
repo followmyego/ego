@@ -696,6 +696,7 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_item_detail">Item Detail</string>
     <string name="title_activity_item_list">Item List</string>
+    <string name="title_activity_load_facebook_permissions">LoadFacebookPermissions</string>
     <string name="title_activity_main">@string/app_name</string>
     <string name="title_activity_sign_in">Sign-in</string>
     <string name="unknown_user">Guest User</string>
@@ -729,6 +730,8 @@
         <item name="vpiCirclePageIndicatorStyle">@style/CustomCirclePageIndicator</item>
 
     </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
         <item name="listLayout">@layout/abc_select_dialog_material</item>

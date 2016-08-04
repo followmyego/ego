@@ -191,6 +191,7 @@ android/support/v7/widget/StaggeredGridLayoutManager.class
 com/amazonaws/services/sqs/AmazonSQSAsyncClient.class
 com/google/android/gms/maps/SupportStreetViewPanoramaFragment.class
 android/support/v4/media/session/MediaSessionCompat.class
+net/egobeta/ego/R$anim.class
 com/viewpagerindicator/PageIndicator.class
 com/google/android/gms/common/internal/safeparcel/SafeParcelable.class
 com/amazonaws/util/AWSServiceMetrics.class
@@ -623,6 +624,7 @@ net/egobeta/ego/MainActivity$2.class
 net/egobeta/ego/R$id.class
 android/support/multidex/MultiDexExtractor$1.class
 net/egobeta/ego/EgoMap$DeleteCurrentLocationOnDB.class
+net/egobeta/ego/OnBoarding/LoadFacebookPermissions.class
 android/support/v4/view/PagerAdapter.class
 net/egobeta/ego/ProfileActivity$PagerAdapter.class
 net/amazonaws/mobile/downloader/service/DownloadStatusUpdater.class
