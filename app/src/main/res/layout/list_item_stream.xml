@@ -16,7 +16,7 @@
 		android:columnWidth="220dp"
 		android:verticalSpacing="45dp"
 		android:stretchMode="spacingWidthUniform"
-		android:padding ="15dp"
+		android:padding ="5dp"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:listSelector="#00000000"

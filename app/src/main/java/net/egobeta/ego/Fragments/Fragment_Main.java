@@ -101,27 +101,10 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 //    EgoStreamViewAdapter adapter;
 //    private static FragmentListBinding mBinding;
 
-    static EgoStreamViewAdapter adapter2;
+    static EgoStreamViewAdapter adapter_Grid;
 
     private static ItemAdapter adapter;
     SlidingMenu slidingMenu;
-
-    //Instagram stuffs
-    private static String instagramProfileLinked;
-    private static String instagramId;
-    private static String instagramUsername;
-    private static ArrayList<String> facebookProfileIds = new ArrayList<String>();
-    private int WHAT_FINALIZE = 0;
-    private static int WHAT_ERROR = 1;
-    private ProgressDialog pd;
-    public static final String TAG_DATA = "data";
-    public static final String TAG_IMAGES = "images";
-    public static final String TAG_THUMBNAIL = "standard_resolution";
-    public static final String TAG_URL = "url";
-    public JSONObject jObj = null;
-    Integer[] imageId = new Integer[10];
-    private Button btnConnect;
-    private HashMap<String, String> instagramUserInfoHashmap = new HashMap<String, String>();
 
 
     public static Fragment newInstance(Activity activtiy, Context context1, int position, Toolbar toolbar1) {
@@ -147,19 +130,15 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 //		for (int i = 1; i <= 15; i++) {
 //			mListItems.add(i + ". item - currnet page: " + (mPosition + 1));
 //		}
-        /**Add 30 strings to the ArrayList<Strings> to load 30 fake profiles to the stream for testing **/
-        for(int i = 0; i < 10; i++){
-            facebookProfileIds.add("facebookProfileId " + i);
-        }
+
 
 
 
         //Create adapter for instagram images and horizontal image sliding view
-        adapter2 = new EgoStreamViewAdapter(context, facebook_Ids);
+        adapter_Grid = new EgoStreamViewAdapter(context, facebook_Ids);
         adapter = new ItemAdapter();
 
-        //Make the current user the first person on the EgoStream
-        facebook_Ids.add(facebookId);
+
 
     }
 
@@ -325,7 +304,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         facebook_Ids = new ArrayList<>(Arrays.asList(facebook_Ids1));
 //        adapter = new EgoStreamViewAdapter(context, facebook_Ids);
         facebook_Ids.add(0, facebookId);
-        adapter2.setItems(facebook_Ids);
+        adapter_Grid.setItems(facebook_Ids);
 
 
 
@@ -394,7 +373,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
             count = 0;
             facebook_Ids = new ArrayList<String>();
 //        adapter = new EgoStreamViewAdapter(context, facebook_Ids);
-            adapter2.setItems(facebook_Ids);
+            adapter_Grid.setItems(facebook_Ids);
             gridView.invalidateViews();
             adapter = new ItemAdapter();
             initDobList(v, mListView);
@@ -439,7 +418,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         //Initialize the gridview
         gridView = (NonScrollableGridView) convertView.findViewById(R.id.myGridView);
         gridView.setVisibility(View.VISIBLE);
-        gridView.setAdapter(adapter2);
+        gridView.setAdapter(adapter_Grid);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

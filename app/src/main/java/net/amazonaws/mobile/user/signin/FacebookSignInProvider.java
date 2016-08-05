@@ -139,7 +139,8 @@ public class FacebookSignInProvider implements SignInProvider {
             @Override
             public void onClick(View v) {
                 LoginManager.getInstance().logInWithReadPermissions(signInActivity,
-                    Arrays.asList("public_profile"));
+                    Arrays.asList("public_profile, user_friends, user_actions.books, user_birthday, user_education_history," +
+                            "user_hometown, user_likes, user_location, user_work_history, "));
             }
         };
 
@@ -282,7 +283,9 @@ public class FacebookSignInProvider implements SignInProvider {
         }
 
         final Bundle parameters = new Bundle();
-        parameters.putString("fields", "name,picture.type(large)");
+        parameters.putString("fields", "name,picture.type(large),books, age_range, birthday, context, " +
+                "education, email, favorite_athletes, favorite_teams, hometown, inspirational_people, is_verified, " +
+                "languages, locale, location, work");
         final GraphRequest graphRequest = new GraphRequest(AccessToken.getCurrentAccessToken(), "me");
         graphRequest.setParameters(parameters);
         GraphResponse response = graphRequest.executeAndWait();
