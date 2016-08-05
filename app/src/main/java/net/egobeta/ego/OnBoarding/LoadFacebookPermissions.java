@@ -45,7 +45,8 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
         if(v == finishButton){
             Intent intent = new Intent(LoadFacebookPermissions.this, MainActivity.class);
             startActivity(intent);
-//            overridePendingTransition(R.anim.activity_close_scale_r, R.anim.activity_open_translate_r);
+            overridePendingTransition(R.anim.activity_close_scale_r, R.anim.activity_open_translate_r);
+
         }
     }
 }

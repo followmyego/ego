@@ -107,8 +107,8 @@
     <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="play-services-base-8.4.0" level="project" />
-    <orderEntry type="library" exported="" name="aws-android-sdk-lambda-2.2.11" level="project" />
     <orderEntry type="library" exported="" name="juniversalchardet-1.0.3" level="project" />
+    <orderEntry type="library" exported="" name="aws-android-sdk-lambda-2.2.11" level="project" />
     <orderEntry type="library" exported="" name="design-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="swipy-1.2.3" level="project" />
     <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />

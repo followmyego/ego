@@ -42,6 +42,7 @@ import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutD
 
 //import net.egobeta.ego.databinding.FragmentListBinding;
 
+import net.egobeta.ego.Adapters.BadgeItem;
 import net.egobeta.ego.Adapters.EgoStreamViewAdapter;
 import net.egobeta.ego.Adapters.GenericAdapter;
 import net.egobeta.ego.ImportedClasses.NonScrollableGridView;
@@ -54,6 +55,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -337,21 +339,21 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
     public static void addNewItems(String[] facebook_Ids1) {
         System.out.println("SOUT" + " addNewItems");
         ArrayList<String> newList = new ArrayList<>(Arrays.asList(facebook_Ids1));
-        if(count == 3){
-            System.out.println("SOUT" + " backToTop1");
-            Toast.makeText(activity, "End of your Ego Stream", Toast.LENGTH_SHORT).show();
-        } else {
-            if(facebook_Ids.size() >= 40 ){
-                System.out.println("SOUT" + " removeAnItem");
-                for (int i = 0; i < facebook_Ids1.length - 1; i++) {
-                    facebook_Ids.remove(0);
-                    facebook_Ids.add(newList.get(i));
-                }
-            } else {
+//        if(count == 3){
+//            System.out.println("SOUT" + " backToTop1");
+//            Toast.makeText(activity, "End of your Ego Stream", Toast.LENGTH_SHORT).show();
+//        } else {
+//            if(facebook_Ids.size() >= 40 ){
+//                System.out.println("SOUT" + " removeAnItem");
+//                for (int i = 0; i < facebook_Ids1.length - 1; i++) {
+//                    facebook_Ids.remove(0);
+//                    facebook_Ids.add(newList.get(i));
+//                }
+//            } else {
                 for (int i = 0; i < facebook_Ids1.length; i++) {
                     facebook_Ids.add(newList.get(i));
                 }
-            }
+//            }
 //            adapter.addItem(newList.get(i));
 
 
@@ -360,7 +362,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 //            dobList.finishLoading();
             addDummyData(1, true);
             count ++;
-        }
+//        }
     }
 
     public static void backToTop(){
@@ -459,6 +461,8 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 
 
     public class ItemAdapter extends GenericAdapter<String> {
+
+        private List<BadgeItem> badgeList;
 
         public ItemAdapter() {
             super(context);
