@@ -18,10 +18,10 @@ public final class R {
 		public static final int abc_slide_in_top = 0x7f050007;
 		public static final int abc_slide_out_bottom = 0x7f050008;
 		public static final int abc_slide_out_top = 0x7f050009;
-		public static final int design_fab_in = 0x7f05000a;
-		public static final int design_fab_out = 0x7f05000b;
-		public static final int design_snackbar_in = 0x7f05000c;
-		public static final int design_snackbar_out = 0x7f05000d;
+		public static final int design_fab_in = 0x7f05000e;
+		public static final int design_fab_out = 0x7f05000f;
+		public static final int design_snackbar_in = 0x7f050010;
+		public static final int design_snackbar_out = 0x7f050011;
 	}
 	public static final class attr {
 		public static final int actionBarDivider = 0x7f0100e2;
@@ -569,7 +569,7 @@ public final class R {
 		public static final int notification_template_icon_bg = 0x7f0200cd;
 	}
 	public static final class id {
-		public static final int action0 = 0x7f0e0125;
+		public static final int action0 = 0x7f0e012c;
 		public static final int action_bar = 0x7f0e008a;
 		public static final int action_bar_activity_content = 0x7f0e0000;
 		public static final int action_bar_container = 0x7f0e0089;
@@ -578,7 +578,7 @@ public final class R {
 		public static final int action_bar_subtitle = 0x7f0e006b;
 		public static final int action_bar_title = 0x7f0e006a;
 		public static final int action_context_bar = 0x7f0e008b;
-		public static final int action_divider = 0x7f0e0129;
+		public static final int action_divider = 0x7f0e0130;
 		public static final int action_menu_divider = 0x7f0e0002;
 		public static final int action_menu_presenter = 0x7f0e0003;
 		public static final int action_mode_bar = 0x7f0e0087;
@@ -590,12 +590,12 @@ public final class R {
 		public static final int beginning = 0x7f0e0045;
 		public static final int bottom = 0x7f0e0031;
 		public static final int buttonPanel = 0x7f0e0074;
-		public static final int cancel_action = 0x7f0e0126;
+		public static final int cancel_action = 0x7f0e012d;
 		public static final int center = 0x7f0e0032;
 		public static final int center_horizontal = 0x7f0e0033;
 		public static final int center_vertical = 0x7f0e0034;
 		public static final int checkbox = 0x7f0e0082;
-		public static final int chronometer = 0x7f0e012c;
+		public static final int chronometer = 0x7f0e0133;
 		public static final int clip_horizontal = 0x7f0e0040;
 		public static final int clip_vertical = 0x7f0e0041;
 		public static final int collapseActionView = 0x7f0e004d;
@@ -604,14 +604,14 @@ public final class R {
 		public static final int customPanel = 0x7f0e007f;
 		public static final int decor_content_parent = 0x7f0e0088;
 		public static final int default_activity_button = 0x7f0e0070;
-		public static final int design_menu_item_action_area = 0x7f0e00d7;
-		public static final int design_menu_item_action_area_stub = 0x7f0e00d6;
-		public static final int design_menu_item_text = 0x7f0e00d5;
-		public static final int design_navigation_view = 0x7f0e00d4;
+		public static final int design_menu_item_action_area = 0x7f0e00de;
+		public static final int design_menu_item_action_area_stub = 0x7f0e00dd;
+		public static final int design_menu_item_text = 0x7f0e00dc;
+		public static final int design_navigation_view = 0x7f0e00db;
 		public static final int disableHome = 0x7f0e0023;
 		public static final int edit_query = 0x7f0e008c;
 		public static final int end = 0x7f0e0035;
-		public static final int end_padder = 0x7f0e0131;
+		public static final int end_padder = 0x7f0e0138;
 		public static final int enterAlways = 0x7f0e002a;
 		public static final int enterAlwaysCollapsed = 0x7f0e002b;
 		public static final int exitUntilCollapsed = 0x7f0e002c;
@@ -626,18 +626,18 @@ public final class R {
 		public static final int icon = 0x7f0e0072;
 		public static final int ifRoom = 0x7f0e004e;
 		public static final int image = 0x7f0e006f;
-		public static final int info = 0x7f0e0130;
+		public static final int info = 0x7f0e0137;
 		public static final int item_touch_helper_previous_elevation = 0x7f0e0012;
 		public static final int left = 0x7f0e0037;
-		public static final int line1 = 0x7f0e012a;
-		public static final int line3 = 0x7f0e012e;
+		public static final int line1 = 0x7f0e0131;
+		public static final int line3 = 0x7f0e0135;
 		public static final int listMode = 0x7f0e0020;
 		public static final int list_item = 0x7f0e0071;
-		public static final int media_actions = 0x7f0e0128;
+		public static final int media_actions = 0x7f0e012f;
 		public static final int middle = 0x7f0e0046;
 		public static final int mini = 0x7f0e0044;
 		public static final int multiply = 0x7f0e003b;
-		public static final int navigation_header_container = 0x7f0e00d3;
+		public static final int navigation_header_container = 0x7f0e00da;
 		public static final int never = 0x7f0e004f;
 		public static final int none = 0x7f0e0025;
 		public static final int normal = 0x7f0e0021;
@@ -669,8 +669,8 @@ public final class R {
 		public static final int showCustom = 0x7f0e0026;
 		public static final int showHome = 0x7f0e0027;
 		public static final int showTitle = 0x7f0e0028;
-		public static final int snackbar_action = 0x7f0e00d2;
-		public static final int snackbar_text = 0x7f0e00d1;
+		public static final int snackbar_action = 0x7f0e00d9;
+		public static final int snackbar_text = 0x7f0e00d8;
 		public static final int snap = 0x7f0e002e;
 		public static final int spacer = 0x7f0e0075;
 		public static final int split_action_bar = 0x7f0e0019;
@@ -678,13 +678,13 @@ public final class R {
 		public static final int src_in = 0x7f0e003e;
 		public static final int src_over = 0x7f0e003f;
 		public static final int start = 0x7f0e0039;
-		public static final int status_bar_latest_event_content = 0x7f0e0127;
+		public static final int status_bar_latest_event_content = 0x7f0e012e;
 		public static final int submit_area = 0x7f0e0095;
 		public static final int tabMode = 0x7f0e0022;
-		public static final int text = 0x7f0e012f;
-		public static final int text2 = 0x7f0e012d;
+		public static final int text = 0x7f0e0136;
+		public static final int text2 = 0x7f0e0134;
 		public static final int textSpacerNoButtons = 0x7f0e007d;
-		public static final int time = 0x7f0e012b;
+		public static final int time = 0x7f0e0132;
 		public static final int title = 0x7f0e0073;
 		public static final int title_template = 0x7f0e0078;
 		public static final int top = 0x7f0e003a;

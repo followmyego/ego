@@ -4,6 +4,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="net.egobeta.ego.OnBoarding.LoadFacebookPermissions"
-    android:background="@drawable/setting_up_account_screen">
+    android:background="@drawable/top_ego_stream">
+
+    <ImageView
+        android:id="@+id/background_onBoarding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:background="#dd000000"/>
+
+    <TextView
+        android:id="@+id/onBoarding_text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
+        android:textSize="24sp"
+        android:textColor="#fff"
+        android:text="Setting up your account"
+        android:layout_centerHorizontal="true"
+        android:gravity="center" />
+
+    <ImageView
+        android:id="@+id/onBoarding_phone"
+        android:layout_width="209dp"
+        android:layout_height="415dp"
+        android:src="@drawable/blank_screen"
+        android:padding="10dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/itemListing1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/item_listing"
+        android:layout_above="@+id/itemListing2"
+        android:layout_centerHorizontal="true"
+        android:padding="40dp"
+        />
+
+    <ImageView
+        android:id="@+id/itemListing2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/item_listing"
+        android:layout_centerInParent="true"
+        />
+
+    <ImageView
+        android:id="@+id/itemListing3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/item_listing"
+        android:layout_below="@+id/itemListing2"
+        android:layout_centerHorizontal="true"
+        android:padding="40dp"
+        />
+
+    <ImageButton
+        android:id="@+id/fpFinishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/finish_button"
+        android:layout_below="@+id/onBoarding_phone"
+        android:background="@null"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        />
+
+
 
 </RelativeLayout>

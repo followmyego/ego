@@ -4,8 +4,15 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".OnBoarding.Main_OnBoarding"
-    android:background="#000"
+    android:background="@drawable/top_ego_stream"
     >
+
+    <ImageView
+        android:id="@+id/background_onBoarding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:background="#dd000000"/>
 
     <FrameLayout
         android:id="@+id/slides"
@@ -21,7 +28,7 @@
             android:layout_below="@+id/ego_logo"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="40dp"/>
+            android:layout_marginBottom="20dp"/>
 
     </FrameLayout>
 

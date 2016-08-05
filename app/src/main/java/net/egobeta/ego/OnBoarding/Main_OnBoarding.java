@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ScrollView;
 
@@ -27,6 +28,10 @@ import net.egobeta.ego.MainActivity;
 import net.egobeta.ego.R;
 
 import java.util.ArrayList;
+
+import jp.wasabeef.blurry.Blurry;
+
+//import jp.wasabeef.blurry.Blurry;
 
 public class Main_OnBoarding extends AppCompatActivity   {
 
@@ -67,6 +72,8 @@ public class Main_OnBoarding extends AppCompatActivity   {
         Log.d("ACT DEBUG", "Main_OnBoarding: OnCreate");
         setContentView(R.layout.activity_main_onboarding);
 
+
+
         context = getApplicationContext();
 
         /**Set up the ViewPager and PagerAdapter*/
@@ -98,7 +105,8 @@ public class Main_OnBoarding extends AppCompatActivity   {
         Intent intent = new Intent(Main_OnBoarding.this, LoadFacebookPermissions.class);
         intent.putStringArrayListExtra("privacy_preferences", list);
         startActivity(intent);
-        overridePendingTransition(R.anim.right_slide_in, R.anim.right_slide_in);
+//        overridePendingTransition(R.anim.right_slide_in, R.anim.right_slide_in);
+        overridePendingTransition(R.anim.activity_open_translate, R.anim.activity_close_scale);
         this.finish();
 
     }

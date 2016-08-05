@@ -6,5 +6,5 @@
 //
 // Source code generated from template: aws-my-sample-app-android v0.7
 //
-include ':SlidingMenuLib-master', ':app', ':lib'
-include ':dobList'
+
+include ':SlidingMenuLib-master', ':app', ':dobList'
