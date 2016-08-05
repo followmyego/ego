@@ -294,6 +294,7 @@ public class FacebookSignInProvider implements SignInProvider {
             userImageUrl = json.getJSONObject("picture")
                     .getJSONObject("data")
                     .getString("url");
+            System.out.println("FACEBOOK RESULT:  " + json.toString());
 
         } catch (final JSONException jsonException) {
             Log.e(LOG_TAG,

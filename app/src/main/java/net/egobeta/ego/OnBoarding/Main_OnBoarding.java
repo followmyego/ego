@@ -102,7 +102,8 @@ public class Main_OnBoarding extends AppCompatActivity   {
 //        startActivity(new Intent(Main_OnBoarding.this, MainActivity.class)
 //                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 
-        Intent intent = new Intent(Main_OnBoarding.this, LoadFacebookPermissions.class);
+//        Intent intent = new Intent(Main_OnBoarding.this, LoadFacebookPermissions.class);
+        Intent intent = new Intent(Main_OnBoarding.this, MainActivity.class);
         intent.putStringArrayListExtra("privacy_preferences", list);
         startActivity(intent);
 //        overridePendingTransition(R.anim.right_slide_in, R.anim.right_slide_in);
