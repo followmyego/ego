@@ -89,7 +89,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
     public static Context context;
     static Activity activity;
     private Typeface typeface;
-    private static String facebookId = MainActivity.identityManager.getUserFacebookId();
+    public static String facebookId = MainActivity.identityManager.getUserFacebookId();
 
     //Instagram GridView view Variables
     private static NonScrollableGridView gridView;

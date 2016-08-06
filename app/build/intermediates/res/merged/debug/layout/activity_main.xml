@@ -9,8 +9,8 @@
     <ImageView
         android:id="@+id/sidemenu_arrow"
         android:src="@drawable/slide_arrow_tab"
-        android:layout_width="70dp"
-        android:layout_height="140dp"
+        android:layout_width="60dp"
+        android:layout_height="130dp"
         android:layout_alignParentLeft="true"
         android:scaleType="fitStart"
         android:layout_marginTop="90dp"/>

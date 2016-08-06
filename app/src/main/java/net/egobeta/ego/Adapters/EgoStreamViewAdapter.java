@@ -25,9 +25,11 @@ public class EgoStreamViewAdapter extends BaseAdapter {
     private List<BadgeItem> badgeList;
 
 
+
     public EgoStreamViewAdapter(Context context, ArrayList<String> arrList) {
         this.context = context;
         this.arrList = arrList; /**This should hold be the facebook id's*/
+
     }
 
     public void setItems(ArrayList<String> arrList){
@@ -89,7 +91,6 @@ public class EgoStreamViewAdapter extends BaseAdapter {
 //        }
 
         new LoadUserImageAsyncTask(viewHolder.userProfilePic, context).execute(arrList.get(position));
-
 
         return convertView;
     }

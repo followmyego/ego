@@ -15,6 +15,7 @@ com/amazonaws/auth/AWSBasicCognitoIdentityProvider.class
 android/support/design/R$styleable.class
 android/support/v4/app/AppOpsManagerCompat.class
 com/amazonaws/mobileconnectors/s3/transfermanager/Upload.class
+net/egobeta/ego/OnBoarding/LoadFacebookPermissions$6.class
 android/support/v7/view/ActionMode$Callback.class
 android/support/v4/graphics/drawable/DrawableCompat.class
 android/support/v4/app/FragmentManagerImpl$3.class
@@ -32,7 +33,6 @@ net/egobeta/ego/MainActivity$1.class
 com/google/android/gms/location/places/internal/PlaceImpl.class
 android/support/design/widget/ViewOffsetBehavior.class
 android/support/annotation/StringDef.class
-net/egobeta/ego/demo/UserSettings.class
 com/amazonaws/services/dynamodbv2/model/ScanResult.class
 net/amazonaws/mobile/downloader/query/DownloadQueueProvider$DatabaseHelper.class
 android/support/design/widget/CoordinatorLayout$DefaultBehavior.class
@@ -234,6 +234,7 @@ com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMapperConfig$Co
 com/amazonaws/services/s3/model/S3ObjectInputStream.class
 com/amazonaws/internal/SdkFilterOutputStream.class
 android/support/design/widget/Snackbar$Behavior.class
+net/egobeta/ego/OnBoarding/LoadFacebookPermissions$4.class
 com/google/android/gms/common/internal/zzab.class
 android/support/v4/app/FragmentContainer.class
 com/amazonaws/mobileconnectors/amazonmobileanalytics/EventClient.class
@@ -284,6 +285,7 @@ com/amazonaws/util/TimingInfo.class
 com/google/android/gms/maps/MapView.class
 com/google/android/gms/location/LocationStatusCodes.class
 android/support/design/widget/ViewGroupUtils.class
+net/egobeta/ego/Fragments/OnBoarding_Fragment4.class
 android/support/v4/app/Fragment$SavedState.class
 android/support/v4/media/session/MediaSessionCompat$1.class
 android/support/v8/renderscript/Script$InvokeID.class
@@ -291,7 +293,6 @@ com/amazonaws/auth/DefaultAWSCredentialsProviderChain.class
 android/support/v4/media/session/PlaybackStateCompat$1.class
 com/amazonaws/mobileconnectors/amazonmobileanalytics/MobileAnalyticsManager.class
 com/amazonaws/services/s3/AmazonS3.class
-com/facebook/GraphResponse.class
 android/support/annotation/FloatRange.class
 com/amazonaws/internal/MetricAware.class
 net/egobeta/ego/SignInActivity$2.class
@@ -390,6 +391,7 @@ android/support/design/widget/CoordinatorLayout$Behavior.class
 android/support/annotation/Keep.class
 android/support/v7/widget/RecyclerView$5.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMapper$1.class
+net/egobeta/ego/UserPermissions.class
 android/support/v4/view/ViewCompatGingerbread.class
 com/google/android/gms/location/FusedLocationProviderApi.class
 com/google/android/gms/dynamic/zzg$zza.class
@@ -409,7 +411,6 @@ android/support/v4/media/MediaBrowserCompat$MediaItem$Flags.class
 android/support/annotation/CheckResult.class
 android/support/v4/view/ViewCompat$ICSMr1ViewCompatImpl.class
 com/google/android/gms/gcm/GcmListenerService.class
-com/facebook/AccessToken.class
 com/amazonaws/mobileconnectors/s3/transferutility/TransferThreadPool.class
 net/egobeta/ego/R$mipmap.class
 com/amazonaws/mobileconnectors/lambdainvoker/LambdaFunction.class
@@ -430,6 +431,7 @@ android/support/v4/app/ActivityCompat.class
 android/support/v4/app/FragmentPagerAdapter.class
 com/google/android/gms/location/places/ui/PlacePicker.class
 com/amazonaws/services/dynamodbv2/model/AttributeAction.class
+net/egobeta/ego/OnBoarding/LoadFacebookPermissions$7.class
 android/support/v4/app/FragmentActivity$1.class
 com/google/android/gms/gcm/GcmListenerService$1.class
 com/jeremyfeinstein/slidingmenu/lib/SlidingMenu.class
@@ -461,6 +463,7 @@ android/support/v7/app/ActionBar$Tab.class
 net/amazonaws/mobile/push/GCMTokenHelper.class
 net/egobeta/ego/ImportedClasses/AutoResizeTextView.class
 com/google/android/gms/common/api/Scope.class
+net/egobeta/ego/OnBoarding/LoadFacebookPermissions$2.class
 android/support/design/widget/ValueAnimatorCompat$AnimatorUpdateListener.class
 com/google/android/gms/maps/GoogleMap$OnMyLocationChangeListener.class
 com/amazonaws/mobileconnectors/s3/transfermanager/TransferManager.class
@@ -581,6 +584,7 @@ android/support/design/widget/Snackbar.class
 android/support/v7/app/ActionBarActivity.class
 android/support/multidex/MultiDex$V14.class
 com/amazonaws/internal/SdkInputStream.class
+net/egobeta/ego/OnBoarding/LoadFacebookPermissions$5.class
 net/amazonaws/mobile/content/ContentManager$Builder.class
 com/amazonaws/services/dynamodbv2/model/BatchWriteItemRequest.class
 android/support/v4/view/ViewPager$OnAdapterChangeListener.class
@@ -678,7 +682,6 @@ net/egobeta/ego/R.class
 net/egobeta/ego/SignInActivity$1.class
 android/support/v4/view/ViewPager$PageTransformer.class
 com/amazonaws/services/lambda/AWSLambdaClient.class
-com/facebook/GraphRequest.class
 com/amazonaws/regions/RegionMetadataParser.class
 android/support/v4/content/FileProvider$PathStrategy.class
 android/support/v7/widget/RecyclerView$LayoutParams.class
@@ -753,6 +756,7 @@ com/google/android/gms/common/api/CommonStatusCodes.class
 com/google/gson/reflect/TypeToken.class
 android/support/v8/renderscript/RSIllegalArgumentException.class
 com/google/android/gms/gcm/Task.class
+net/egobeta/ego/OnBoarding/LoadFacebookPermissions$3.class
 net/egobeta/ego/SignInActivity$SignInResultsHandler.class
 com/amazonaws/mobileconnectors/cognito/Dataset.class
 com/google/android/gms/internal/zzlf.class
@@ -832,6 +836,7 @@ android/databinding/BindingMethod.class
 android/support/v4/view/ViewPager$LayoutParams.class
 com/google/android/gms/location/LocationServices.class
 android/support/v7/view/menu/MenuItemImpl.class
+net/egobeta/ego/OnBoarding/LoadFacebookPermissions$1.class
 android/support/v4/content/LocalBroadcastManager.class
 android/support/annotation/NonNull.class
 com/google/android/gms/gcm/PeriodicTask.class

@@ -107,8 +107,8 @@ public class SignInActivity extends Activity {
     private void syncUserSettings() {
         // sync only if user is signed in
         if (AWSMobileClient.defaultMobileClient().getIdentityManager().isUserSignedIn()) {
-            final UserSettings userSettings = UserSettings.getInstance(getApplicationContext());
-            userSettings.getDataset().synchronize(new DefaultSyncCallback() {
+            final UserPermissions userPermissions = UserPermissions.getInstance(getApplicationContext());
+            userPermissions.getDataset().synchronize(new DefaultSyncCallback() {
                 @Override
                 public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
                     super.onSuccess(dataset, updatedRecords);
@@ -134,8 +134,8 @@ public class SignInActivity extends Activity {
     }
 
     private void loadUserSettings() {
-        final UserSettings userSettings = UserSettings.getInstance(this);
-        final Dataset dataset = userSettings.getDataset();
+        final UserPermissions userPermissions = UserPermissions.getInstance(this);
+        final Dataset dataset = userPermissions.getDataset();
         final ProgressDialog dialog = ProgressDialog.show(this,
                 getString(R.string.settings_fragment_dialog_title),
                 getString(R.string.settings_fragment_dialog_message));
@@ -144,8 +144,8 @@ public class SignInActivity extends Activity {
             @Override
             public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
                 super.onSuccess(dataset, updatedRecords);
-                userSettings.loadFromDataset();
-                if(userSettings.getNewUser() == 0){
+                userPermissions.loadFromDataset();
+                if(userPermissions.getNewUser() == 0){
                     updateUI(dialog, 0);
                 } else {
                     updateUI(dialog, 1);

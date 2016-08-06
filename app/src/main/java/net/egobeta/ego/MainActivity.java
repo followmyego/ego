@@ -289,8 +289,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         System.out.println("MAINACTIVITY: syncUserSettings");
         // sync only if user is signed in
         if (AWSMobileClient.defaultMobileClient().getIdentityManager().isUserSignedIn()) {
-            final UserSettings userSettings = UserSettings.getInstance(getApplicationContext());
-            userSettings.getDataset().synchronize(new DefaultSyncCallback() {
+            final UserPermissions userPermissions = UserPermissions.getInstance(getApplicationContext());
+            userPermissions.getDataset().synchronize(new DefaultSyncCallback() {
                 @Override
                 public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
                     super.onSuccess(dataset, updatedRecords);
@@ -317,8 +317,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     private void loadUserSettings() {
         System.out.println("MAINACTIVITY: loadUserSettings");
-        final UserSettings userSettings = UserSettings.getInstance(context);
-        final Dataset dataset = userSettings.getDataset();
+        final UserPermissions userPermissions = UserPermissions.getInstance(context);
+        final Dataset dataset = userPermissions.getDataset();
         final ProgressDialog dialog = ProgressDialog.show(activity,
                 getString(R.string.settings_fragment_dialog_title),
                 getString(R.string.settings_fragment_dialog_message));
@@ -327,8 +327,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
             @Override
             public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
                 super.onSuccess(dataset, updatedRecords);
-                userSettings.loadFromDataset();
-                if (userSettings.getNewUser() == 0) {
+                userPermissions.loadFromDataset();
+                if (userPermissions.getNewUser() == 0) {
                     updateUI(dialog, 0);
                 } else {
                     updateUI(dialog, 1);
@@ -384,13 +384,13 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     private void setFirstTimeUser(int firstTime) {
         System.out.println("MAINACTIVITY: setFirstTimeUser");
-        final UserSettings userSettings = UserSettings.getInstance(context);
-        userSettings.setNewUser(firstTime);
+        final UserPermissions userPermissions = UserPermissions.getInstance(context);
+        userPermissions.setNewUser(firstTime);
 
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(final Void... params) {
-                userSettings.saveToDataset();
+                userPermissions.saveToDataset();
                 return null;
             }
 
@@ -401,7 +401,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 //                ((MainActivity) getActivity()).updateColor();
 
                 // save user settings to remote on background thread
-                userSettings.getDataset().synchronize(new Dataset.SyncCallback() {
+                userPermissions.getDataset().synchronize(new Dataset.SyncCallback() {
                     @Override
                     public void onSuccess(Dataset dataset, List<Record> updatedRecords) {
                         Log.d(LOG_TAG, "onSuccess - dataset updated");

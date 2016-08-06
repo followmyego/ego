@@ -101,52 +101,7 @@ public class FacebookSignInProvider implements SignInProvider {
         facebookCallbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
-    /** {@inheritDoc} */
-    @Override
-    public View.OnClickListener initializeSignInButton(final Activity signInActivity,
-                                                       final View buttonView,
-                                                       final IdentityManager.SignInResultsHandler resultsHandler) {
 
-        FacebookSdk.sdkInitialize(signInActivity);
-
-        if (buttonView == null) {
-            throw new IllegalArgumentException("Facebook login button view not passed in.");
-        }
-
-        facebookCallbackManager = CallbackManager.Factory.create();
-
-        LoginManager.getInstance().registerCallback(facebookCallbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                Log.d(LOG_TAG, "Facebook provider sign-in succeeded.");
-                resultsHandler.onSuccess(FacebookSignInProvider.this);
-            }
-
-            @Override
-            public void onCancel() {
-                Log.d(LOG_TAG, "Facebook provider sign-in canceled.");
-                resultsHandler.onCancel(FacebookSignInProvider.this);
-            }
-
-            @Override
-            public void onError(FacebookException exception) {
-                Log.e(LOG_TAG, "Facebook provider sign-in error: " + exception.getMessage());
-                resultsHandler.onError(FacebookSignInProvider.this, exception);
-            }
-        });
-
-        final View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LoginManager.getInstance().logInWithReadPermissions(signInActivity,
-                    Arrays.asList("public_profile, user_friends, user_actions.books, user_birthday, user_education_history," +
-                            "user_hometown, user_likes, user_location, user_work_history, "));
-            }
-        };
-
-        buttonView.setOnClickListener(listener);
-        return listener;
-    }
 
     /** {@inheritDoc} */
     @Override
@@ -273,6 +228,54 @@ public class FacebookSignInProvider implements SignInProvider {
         return userImageUrl;
     }
 
+
+    /** {@inheritDoc} */
+    @Override
+    public View.OnClickListener initializeSignInButton(final Activity signInActivity,
+                                                       final View buttonView,
+                                                       final IdentityManager.SignInResultsHandler resultsHandler) {
+
+        FacebookSdk.sdkInitialize(signInActivity);
+
+        if (buttonView == null) {
+            throw new IllegalArgumentException("Facebook login button view not passed in.");
+        }
+
+        facebookCallbackManager = CallbackManager.Factory.create();
+
+        LoginManager.getInstance().registerCallback(facebookCallbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                Log.d(LOG_TAG, "Facebook provider sign-in succeeded.");
+                resultsHandler.onSuccess(FacebookSignInProvider.this);
+            }
+
+            @Override
+            public void onCancel() {
+                Log.d(LOG_TAG, "Facebook provider sign-in canceled.");
+                resultsHandler.onCancel(FacebookSignInProvider.this);
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                Log.e(LOG_TAG, "Facebook provider sign-in error: " + exception.getMessage());
+                resultsHandler.onError(FacebookSignInProvider.this, exception);
+            }
+        });
+
+        final View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginManager.getInstance().logInWithReadPermissions(signInActivity,
+                        Arrays.asList("public_profile, user_friends, user_actions.books, user_birthday, user_education_history, " +
+                                "user_hometown, user_likes, user_location, user_work_history, "));
+            }
+        };
+
+        buttonView.setOnClickListener(listener);
+        return listener;
+    }
+
     /** {@inheritDoc} */
     public void reloadUserInfo() {
 
@@ -298,6 +301,7 @@ public class FacebookSignInProvider implements SignInProvider {
                     .getJSONObject("data")
                     .getString("url");
             System.out.println("FACEBOOK RESULT:  " + json.toString());
+
 
         } catch (final JSONException jsonException) {
             Log.e(LOG_TAG,

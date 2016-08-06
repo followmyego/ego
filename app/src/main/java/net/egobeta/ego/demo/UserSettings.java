@@ -26,87 +26,72 @@ public class UserSettings {
     private static final String USER_SETTINGS_KEY_TITLE_BAR_COLOR = "title_bar_color";
     private static final String USER_SETTINGS_KEY_BACKGROUND_COLOR = "background_color";
     private static final String USER_SETTINGS_KEY_NEW_USER = "new_user";
+    private static final String USER_SETTINGS_KEY_USER_PERMISSIONS = "user_permissions";
 
     // default color
     private static int DEFAULT_TITLE_TEXT_COLOR = 0xFFFFFFFF; // white
     private static int DEFAULT_TITLE_BAR_COLOR = 0xFFF58535; // orange
     private static int DEFAULT_TITLE_BACKGROUND_COLOR = 0xFFFFFFFF; // white
     private static int DEFAULT_NEW_USER = 0; // white
+    private static int DEFAULT_PERMISSION = 0; // white
+
 
     private int titleTextColor = DEFAULT_TITLE_TEXT_COLOR;
     private int titleBarColor = DEFAULT_TITLE_BAR_COLOR;
     private int backgroudColor = DEFAULT_TITLE_BACKGROUND_COLOR;
     private int newUser = DEFAULT_NEW_USER;
+    private int[] user_permissions = {DEFAULT_PERMISSION, DEFAULT_PERMISSION, DEFAULT_PERMISSION};
 
     private static UserSettings instance;
 
-    /**
-     * Sets if the user is a new user.
-     *
-     */
+
+    /**Sets if the user is a new user.*/
+    public void setUserPermissions(final int[] user_permissions) {
+        this.user_permissions = user_permissions;
+    }
+
+    /**Gets if the user is a new user or not*/
+    public int[] getUserPermissions() {
+        return user_permissions;
+    }
+
+
+    /**Sets if the user is a new user.*/
     public void setNewUser(final int newUser) {
         this.newUser = newUser;
     }
 
-    /**
-     * Gets if the user is a new user or not.
-     *
-     */
+    /**Gets if the user is a new user or not*/
     public int getNewUser() {
         return newUser;
     }
 
-
-    /**
-     * Sets the text color in title bar.
-     *
-     * @param titleTextColor text color in 0xaabbccdd format
-     */
+    /**NOT CURRENTLY USING THIS**/
     public void setTitleTextColor(final int titleTextColor) {
         this.titleTextColor = titleTextColor;
     }
 
-    /**
-     * Sets the background color of title bar.
-     *
-     * @param color background color of title bar in 0xaabbccdd format
-     */
+    /**NOT CURRENTLY USING THIS**/
     public void setTitleBarColor(int color) {
         this.titleBarColor = color;
     }
 
-    /**
-     * Sets the background color of the main screen.
-     *
-     * @param color background color of the main screen in 0xaabbccdd format
-     */
+    /**NOT CURRENTLY USING THIS**/
     public void setBackgroundColor(int color) {
         this.backgroudColor = color;
     }
 
-    /**
-     * Gets the text color in title bar.
-     *
-     * @return text color in title bar
-     */
+    /**NOT CURRENTLY USING THIS**/
     public int getTitleTextColor() {
         return titleTextColor;
     }
 
-    /**
-     * Gets the background color of title bar.
-     *
-     * @return background color of title bar
-     */
+    /**NOT CURRENTLY USING THIS**/
     public int getTitleBarColor() {
         return titleBarColor;
     }
 
-    /**
-     * Gets the background color of the main screen
-     *
-     * @return background color of the main screen
-     */
+    /**NOT CURRENTLY USING THIS**/
     public int getBackgroudColor() {
         return backgroudColor;
     }
@@ -130,6 +115,13 @@ public class UserSettings {
             backgroudColor = Integer.valueOf(dataBackgroundColor);
         }
 
+
+
+
+
+
+
+
         //Load New User Boolean
         final String dataNewUser = dataset.get(USER_SETTINGS_KEY_NEW_USER);
         if (dataNewUser != null) {
@@ -145,6 +137,8 @@ public class UserSettings {
         dataset.put(USER_SETTINGS_KEY_TITLE_TEXT_COLOR, String.valueOf(titleTextColor));
         dataset.put(USER_SETTINGS_KEY_TITLE_BAR_COLOR, String.valueOf(titleBarColor));
         dataset.put(USER_SETTINGS_KEY_BACKGROUND_COLOR, String.valueOf(backgroudColor));
+
+
 
         //Save newUser boolean
         dataset.put(USER_SETTINGS_KEY_NEW_USER, String.valueOf(newUser));

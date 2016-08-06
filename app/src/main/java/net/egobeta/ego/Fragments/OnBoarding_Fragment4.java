@@ -43,6 +43,26 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
     public static ListView listView;
     private CheckBox friends_Box;
 
+    //Badge Names
+    public final static String KEY_PERMISSION_FRIENDS = "Friends";
+    public final static String KEY_PERMISSION_FRIENDS_OF_FRIENDS = "Friends of Friends";
+    public final static String KEY_PERMISSION_INSTAGRAM_FOLLOWERS = "Follower";
+    public final static String KEY_PERMISSION_INSTAGRAM_FOLLOWING = "Following";
+    public final static String KEY_PERMISSION_LOCATION = "Where you Live";
+    public final static String KEY_PERMISSION_HOMETOWN = "Common Hometown";
+    public final static String KEY_PERMISSION_LIKES = "Common like";
+    public final static String KEY_PERMISSION_BIRTHDAY = "Same Birthday";
+    public final static String KEY_PERMISSION_WORK = "Common Workplace";
+    public final static String KEY_PERMISSION_SCHOOL = "Common School";
+    public final static String KEY_PERMISSION_MUSIC = "Music you love";
+    public final static String KEY_PERMISSION_MOVIES = "Movies you love";
+    public final static String KEY_PERMISSION_BOOKS = "Books you love";
+
+
+
+
+
+
     ArrayList<String> listOfNames = new ArrayList<String>();
 
 
@@ -123,19 +143,19 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
     }
 
     private void InitializeListView() {
-        listOfNames.add("Friends");
-        listOfNames.add("Friends of Friends");
-        listOfNames.add("Follower");
-        listOfNames.add("Following");
-        listOfNames.add("Where you Live");
-        listOfNames.add("Common Hometown");
-        listOfNames.add("Common like");
-        listOfNames.add("Same Birthday");
-        listOfNames.add("Common Workplace");
-        listOfNames.add("Common School");
-        listOfNames.add("Music you love");
-        listOfNames.add("Movies you love");
-        listOfNames.add("Books you love");
+        listOfNames.add(KEY_PERMISSION_FRIENDS);
+        listOfNames.add(KEY_PERMISSION_FRIENDS_OF_FRIENDS);
+        listOfNames.add(KEY_PERMISSION_INSTAGRAM_FOLLOWERS);
+        listOfNames.add(KEY_PERMISSION_INSTAGRAM_FOLLOWING);
+        listOfNames.add(KEY_PERMISSION_LOCATION);
+        listOfNames.add(KEY_PERMISSION_HOMETOWN);
+        listOfNames.add(KEY_PERMISSION_LIKES);
+        listOfNames.add(KEY_PERMISSION_BIRTHDAY);
+        listOfNames.add(KEY_PERMISSION_WORK);
+        listOfNames.add(KEY_PERMISSION_SCHOOL);
+        listOfNames.add(KEY_PERMISSION_MUSIC);
+        listOfNames.add(KEY_PERMISSION_MOVIES);
+        listOfNames.add(KEY_PERMISSION_BOOKS);
 
         int[] badgeImages = {
                 R.drawable.friend,
