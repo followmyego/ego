@@ -67,9 +67,7 @@ import net.egobeta.ego.Fragments.ScrollTabHolderFragment;
 import net.egobeta.ego.Interfaces.ScrollTabHolder;
 import net.egobeta.ego.PushListenerService;
 import net.egobeta.ego.R;
-import net.egobeta.ego.Settings.SettingsActivity;
 import net.egobeta.ego.demo.UserSettings;
-import net.egobeta.ego.demo.nosql.UserLocation;
 import net.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 
 import java.util.List;
@@ -96,7 +94,7 @@ public class Main_Onboarding extends AppCompatActivity implements ScrollTabHolde
     static Context context;
     private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
     static EgoMap egoMap;
-    static UserLocation userLocation;
+//    static UserLocation userLocation;
     static Thread thread;
     private static Activity activity;
 //    static EgoStreamViewAdapter2 adapter;
@@ -211,7 +209,7 @@ public class Main_Onboarding extends AppCompatActivity implements ScrollTabHolde
 
 
         try {
-            mapper.save(userLocation);
+//            mapper.save(userLocation);
         } catch (final AmazonClientException ex) {
             Log.e("AMAZON EXCEPTION", "Failed saving item : " + ex.getMessage(), ex);
             lastException = ex;

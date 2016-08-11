@@ -48,24 +48,18 @@ import net.egobeta.ego.Fragments.Fragment_Main;
 import net.egobeta.ego.Fragments.Fragment_Main_Friends;
 import net.egobeta.ego.Fragments.ScrollTabHolderFragment;
 import net.egobeta.ego.Interfaces.ScrollTabHolder;
-import net.egobeta.ego.OnBoarding.Main_OnBoarding;
 import net.egobeta.ego.Settings.SettingsActivity;
-import net.egobeta.ego.demo.UserSettings;
-import net.egobeta.ego.demo.nosql.UserLocation;
 import net.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.mobileconnectors.cognito.Dataset;
 import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
 import com.amazonaws.mobileconnectors.cognito.Record;
-import com.amazonaws.mobileconnectors.cognito.SyncConflict;
 import com.amazonaws.mobileconnectors.cognito.exceptions.DataStorageException;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.viewpagerindicator.CirclePageIndicator;
 
 
-import android.app.AlertDialog;
 import android.content.IntentFilter;
 import android.content.BroadcastReceiver;
 import android.widget.ImageView;
@@ -103,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         android.os.Process.killProcess(android.os.Process.myPid());
     }
 
-    static UserLocation userLocation = null;
+//    static UserLocation userLocation = null;
     public static Activity activity = null;
 //    static EgoStreamViewAdapter2 adapter;
 
@@ -209,7 +203,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         //Initialize the mapper for DynamoDB
         mapper = AWSMobileClient.defaultMobileClient().getDynamoDBMapper();
-        syncUserSettings();
         /****************/
         setContentView(R.layout.activity_main);
         context = getApplicationContext();
@@ -274,6 +267,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         //GetThe first batch of nearby users
 //        getNearbyUsers(0);
+
+        loadUserSettings2();
     }
 
 
@@ -299,8 +294,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            loadUserSettings();
-
+                            loadUserSettings1();
                         }
                     });
 
@@ -315,11 +309,35 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         }
     }
 
-    private void loadUserSettings() {
+    private void loadUserSettings1() {
         System.out.println("MAINACTIVITY: loadUserSettings");
-        final UserPermissions userPermissions = UserPermissions.getInstance(context);
+        final UserPermissions userPermissions = UserPermissions.getInstance(getApplicationContext());
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(final Void... params) {
+                userPermissions.loadFromDataset();
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(final Void aVoid) {
+                int firstTimeUser = userPermissions.getNewUser();
+                if(firstTimeUser == 1){
+                    Toast.makeText(activity, "not FirstTimeUser", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(activity, "FirstTimeUser", Toast.LENGTH_SHORT).show();
+                }
+
+
+                Toast.makeText(activity, userPermissions.getBirthday() + " ", Toast.LENGTH_LONG).show();
+            }
+        }.execute();
+    }
+
+    private void loadUserSettings2() {
+        final UserPermissions userPermissions = UserPermissions.getInstance(getApplicationContext());
         final Dataset dataset = userPermissions.getDataset();
-        final ProgressDialog dialog = ProgressDialog.show(activity,
+        final ProgressDialog dialog = ProgressDialog.show(this,
                 getString(R.string.settings_fragment_dialog_title),
                 getString(R.string.settings_fragment_dialog_message));
         Log.d(LOG_TAG, "Loading user settings from remote");
@@ -328,18 +346,13 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
             public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
                 super.onSuccess(dataset, updatedRecords);
                 userPermissions.loadFromDataset();
-                if (userPermissions.getNewUser() == 0) {
-                    updateUI(dialog, 0);
-                } else {
-                    updateUI(dialog, 1);
-                }
-                ;
+                updateUI(dialog, userPermissions);
             }
 
             @Override
             public void onFailure(final DataStorageException dse) {
                 Log.w(LOG_TAG, "Failed to load user settings from remote, using default.", dse);
-                updateUI(dialog, 3);
+                updateUI(dialog, userPermissions);
             }
 
             @Override
@@ -356,108 +369,18 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         });
     }
 
-    private void updateUI(final ProgressDialog dialog, final int isFirstTimeUSer) {
-        System.out.println("MAINACTIVITY: updateUI");
-        activity.runOnUiThread(new Runnable() {
+    private void updateUI(final ProgressDialog dialog, final UserPermissions userPermissions) {
+        this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 if (dialog != null) {
                     dialog.dismiss();
                 }
-                if (isFirstTimeUSer == 1) {
-                    Toast.makeText(activity, "not FirstTimeUser", Toast.LENGTH_SHORT).show();
-                    setFirstTimeUser(isFirstTimeUSer);
-                } else if (isFirstTimeUSer == 0) {
-                    Toast.makeText(activity, "FirstTimeUser", Toast.LENGTH_SHORT).show();
-                    setFirstTimeUser(isFirstTimeUSer);
-//                    Intent intent = new Intent(MainActivity.this, Main_OnBoarding.class);
-//                    startActivity(intent);
-//                    MainActivity.this.finish();
-                } else {
-                    Toast.makeText(activity, "Failure updating", Toast.LENGTH_SHORT).show();
-                    setFirstTimeUser(0);
-                }
-
+                Toast.makeText(MainActivity.this, userPermissions.getBooks() + "", Toast.LENGTH_SHORT).show();
+                loadUserSettings1();
             }
         });
     }
-
-    private void setFirstTimeUser(int firstTime) {
-        System.out.println("MAINACTIVITY: setFirstTimeUser");
-        final UserPermissions userPermissions = UserPermissions.getInstance(context);
-        userPermissions.setNewUser(firstTime);
-
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(final Void... params) {
-                userPermissions.saveToDataset();
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(final Void aVoid) {
-
-                // update color
-//                ((MainActivity) getActivity()).updateColor();
-
-                // save user settings to remote on background thread
-                userPermissions.getDataset().synchronize(new Dataset.SyncCallback() {
-                    @Override
-                    public void onSuccess(Dataset dataset, List<Record> updatedRecords) {
-                        Log.d(LOG_TAG, "onSuccess - dataset updated");
-
-                    }
-
-                    @Override
-                    public boolean onConflict(Dataset dataset, List<SyncConflict> conflicts) {
-                        Log.d(LOG_TAG, "onConflict - dataset conflict");
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onDatasetDeleted(Dataset dataset, String datasetName) {
-                        Log.d(LOG_TAG, "onDatasetDeleted - dataset deleted");
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onDatasetsMerged(Dataset dataset, List<String> datasetNames) {
-                        Log.d(LOG_TAG, "onDatasetsMerged - datasets merged");
-                        return false;
-                    }
-
-                    @Override
-                    public void onFailure(DataStorageException dse) {
-                        Log.e(LOG_TAG, "onFailure - " + dse.getMessage(), dse);
-                    }
-                });
-            }
-        }.execute();
-    }
-
-    /**Created from the AWS demo app**/
-    /**Update users preferred colors*/
-//    public void updateColor() {
-//        final UserSettings userSettings = UserSettings.getInstance(getApplicationContext());
-//        new AsyncTask<Void, Void, Void>() {
-//            @Override
-//            protected Void doInBackground(final Void... params) {
-//                userSettings.loadFromDataset();
-//                return null;
-//            }
-//
-//            @Override
-//            protected void onPostExecute(final Void aVoid) {
-//                final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.addBookButton); //This wont work but it got rid of the error from above this
-//                if (fragment != null) {
-//                    final View fragmentView = fragment.getView();
-//                    if (fragmentView != null) {
-//                        fragmentView.setBackgroundColor(userSettings.getBackgroudColor());
-//                    }
-//                }
-//            }
-//        }.execute();
-//    }
 
 
 
@@ -605,7 +528,13 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         mHeader.setAlpha(alpha * 1);
     }
 
-
+    private final BroadcastReceiver settingsChangedReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d(LOG_TAG, "Received settings changed local broadcast. Update theme colors.");
+            loadUserSettings1();
+        }
+    };
 
 
     @Override
@@ -644,12 +573,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 //        LocalBroadcastManager.getInstance(this).registerReceiver(notificationReceiver,
 //                new IntentFilter(PushListenerService.ACTION_SNS_NOTIFICATION));
 //        // register settings changed receiver.
-//        LocalBroadcastManager.getInstance(this).registerReceiver(settingsChangedReceiver,
-//                new IntentFilter(UserSettings.ACTION_SETTINGS_CHANGED));
-//        updateColor();
+        LocalBroadcastManager.getInstance(this).registerReceiver(settingsChangedReceiver,
+                new IntentFilter(UserPermissions.ACTION_PERMISSIONS_CHANGED));
+        loadUserSettings1();
 
 //        Sync the user's privacy settings and detect if the user is first time.
-//        syncUserSettings();
+        syncUserSettings();
 
         theMapOnCreateMethod();
         theMapOnStartMethod();

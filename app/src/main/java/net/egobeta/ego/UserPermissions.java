@@ -17,10 +17,10 @@ public class UserPermissions {
     private static final String LOG_TAG = UserPermissions.class.getSimpleName();
 
     // dataset name to store user permissions
-    private static final String USER_SETTINGS_DATASET_NAME = "user_permissions";
+    private static final String USER_PERMISSIONS_DATASET_NAME = "user_permissions";
 
     // Intent action used in local broadcast
-    public static final String ACTION_SETTINGS_CHANGED = "user-permissions-changed";
+    public static final String ACTION_PERMISSIONS_CHANGED = "user-permissions-changed";
 
     // key names in dataset
     private static final String KEY_NEW_USER = "new_user";
@@ -207,32 +207,71 @@ public class UserPermissions {
      */
     public void loadFromDataset() {
         Dataset dataset = getDataset();
-        int[] variables = {
-                newUser,
-                friends,
-                friendsOfFriends,
-                instagramFollowers,
-                instagramFollowing,
-                location,
-                hometown,
-                commonLikes,
-                birthday,
-                workplace,
-                school,
-                music,
-                movies,
-                books
-        };
 
-        //Load User Booleans
-        for(int i = 0; i <variables.length; i++){
-            final String dataItem = dataset.get(keys[i]);
-            if (dataItem != null) {
-                variables[i] = Integer.valueOf(dataItem);
-            }
+        final String newUserD = dataset.get(KEY_NEW_USER);
+        if (newUserD != null) {
+            newUser = Integer.valueOf(newUserD);
+        }
+        final String friendsD = dataset.get(KEY_PERMISSION_FRIENDS);
+        if (friendsD != null) {
+            friends = Integer.valueOf(friendsD);
+        }
+        final String friendsOfFriendsD = dataset.get(KEY_PERMISSION_FRIENDS_OF_FRIENDS);
+        if (friendsOfFriendsD != null) {
+            friendsOfFriends = Integer.valueOf(friendsOfFriendsD);
+        }
+        final String instagramFollowersD = dataset.get(KEY_PERMISSION_INSTAGRAM_FOLLOWERS);
+        if (instagramFollowersD != null) {
+            instagramFollowers = Integer.valueOf(instagramFollowersD);
+        }
+        final String instagramFollowingD = dataset.get(KEY_PERMISSION_INSTAGRAM_FOLLOWING);
+        if (instagramFollowingD != null) {
+            instagramFollowing = Integer.valueOf(instagramFollowingD);
+        }
+        final String locationD = dataset.get(KEY_PERMISSION_LOCATION);
+        if (locationD != null) {
+            location = Integer.valueOf(locationD);
+        }
+        final String hometownD = dataset.get(KEY_PERMISSION_HOMETOWN);
+        if (hometownD != null) {
+            hometown = Integer.valueOf(hometownD);
+        }
+        final String commonLikesD = dataset.get(KEY_PERMISSION_LIKES);
+        if (commonLikesD != null) {
+            commonLikes = Integer.valueOf(commonLikesD);
+        }
+        final String birthdayD = dataset.get(KEY_PERMISSION_BIRTHDAY);
+        if (birthdayD != null) {
+            birthday = Integer.valueOf(birthdayD);
+        }
+        final String workplaceD = dataset.get(KEY_PERMISSION_WORK);
+        if (workplaceD != null) {
+            workplace = Integer.valueOf(workplaceD);
+        }
+        final String schoolD = dataset.get(KEY_PERMISSION_SCHOOL);
+        if (schoolD != null) {
+            school = Integer.valueOf(schoolD);
+        }
+        final String musicD = dataset.get(KEY_PERMISSION_MUSIC);
+        if (musicD != null) {
+            music = Integer.valueOf(musicD);
+        }
+        final String moviesD = dataset.get(KEY_PERMISSION_MOVIES);
+        if (moviesD != null) {
+            movies = Integer.valueOf(moviesD);
+        }
+        final String booksD = dataset.get(KEY_PERMISSION_BOOKS);
+        if (booksD != null) {
+            books = Integer.valueOf(booksD);
         }
 
+
+
     }
+
+
+
+
 
     /**
      * Saves in memory user settings to local dataset.
@@ -259,7 +298,7 @@ public class UserPermissions {
         //Save item booleans
         for(int i = 0; i <variables.length; i++){
             dataset.put(keys[i], String.valueOf(variables[i]));
-            Log.d(LOG_TAG, "onSuccess - dataset updated");
+            Log.d(LOG_TAG, "onSuccess - dataset updated: " + keys[i] + " " + String.valueOf(variables[i]));
         }
     }
 
@@ -271,7 +310,7 @@ public class UserPermissions {
     public Dataset getDataset() {
         return AWSMobileClient.defaultMobileClient()
                 .getSyncManager()
-                .openOrCreateDataset(USER_SETTINGS_DATASET_NAME);
+                .openOrCreateDataset(USER_PERMISSIONS_DATASET_NAME);
     }
 
     /**
@@ -317,7 +356,7 @@ public class UserPermissions {
 
 
                         instance.saveToDataset();
-                        final Intent intent = new Intent(ACTION_SETTINGS_CHANGED);
+                        final Intent intent = new Intent(ACTION_PERMISSIONS_CHANGED);
                         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
                     }
                 });

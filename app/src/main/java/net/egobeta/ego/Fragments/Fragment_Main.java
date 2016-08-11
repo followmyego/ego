@@ -303,7 +303,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         System.out.println("SOUT" + " notifiyAdapterHasChanged");
         facebook_Ids = new ArrayList<>(Arrays.asList(facebook_Ids1));
 //        adapter = new EgoStreamViewAdapter(context, facebook_Ids);
-        facebook_Ids.add(0, facebookId);
+//        facebook_Ids.add(0, facebookId);
         adapter_Grid.setItems(facebook_Ids);
 
 

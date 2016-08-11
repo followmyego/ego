@@ -16,6 +16,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.PaginatedQueryLi
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.Condition;
+import com.facebook.AccessToken;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -26,8 +27,6 @@ import com.google.android.gms.location.LocationServices;
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
 import net.egobeta.ego.Fragments.Fragment_Main;
-import net.egobeta.ego.demo.nosql.UserLocation;
-import net.egobeta.ego.demo.nosql.User_Locations;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -70,7 +69,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     private String username = "username";
     double longitude;
     double latitude;
-    UserLocation userLocation;
+//    UserLocation userLocation;
     IdentityManager identityManager;
     DynamoDBMapper mapper;
 
@@ -91,14 +90,16 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
                     AmazonClientException lastException = null;
 
 
-                    userLocation = new UserLocation();
-                    userLocation.setUserId(AWSMobileClient.defaultMobileClient().getIdentityManager().getCachedUserID());
-                    userLocation.setFacebookId(identityManager.getUserFacebookId());
-                    userLocation.setLongitude(getLongitude() + "");
-                    userLocation.setLatitude(getLatitude() + "");
+//                    userLocation = new UserLocation();
+//                    userLocation.setUserId(AWSMobileClient.defaultMobileClient().getIdentityManager().getCachedUserID());
+//                    userLocation.setFacebookId(identityManager.getUserFacebookId());
+////                    userLocation.setLongitude(getLongitude() + "");
+////                    userLocation.setLatitude(getLatitude() + "");
+//                    userLocation.setLongitude("49.888747");
+//                    userLocation.setLatitude("-119.491591");
 
                     try {
-                        mapper.save(userLocation);
+//                        mapper.save(userLocation);
                     } catch (final AmazonClientException ex) {
                         Log.e("AMAZON EXCEPTION", "Failed saving item : " + ex.getMessage(), ex);
                         lastException = ex;
@@ -319,10 +320,14 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
                 JSONObject requestParams   = new JSONObject();
                 JSONObject parent = new JSONObject();
 
-                requestParams.put("lat", getLatitude());
-                requestParams.put("lng", getLongitude());
+
+//                requestParams.put("lat", getLatitude());
+//                requestParams.put("lng", getLongitude());
+                requestParams.put("lat", 49.888721);
+                requestParams.put("lng", -119.491572);
                 requestParams.put("count", count);
-                requestParams.put("radiusInMeter", "200");
+                requestParams.put("accessToken", AccessToken.getCurrentAccessToken().getToken());
+                requestParams.put("radiusInMeter", "500000");
                 requestParams.put("debug", "androidApp");
                 requestParams.put("rangeKey", identityManager.getUserFacebookId());
 
@@ -364,6 +369,8 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
             //Print server AsyncTask response
             System.out.println("Resulted Value: " + result);
+            AccessToken accessToken = AccessToken.getCurrentAccessToken();
+            System.out.println("ACCESS TOKEN: " + accessToken.getToken());
 
 
 
@@ -443,8 +450,8 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
         protected String doInBackground(String... params) {
 
 
-            User_Locations userToFind = new User_Locations();
-            userToFind.setFacebookId(identityManager.getUserFacebookId());
+//            User_Locations userToFind = new User_Locations();
+//            userToFind.setFacebookId(identityManager.getUserFacebookId());
 
             String queryString = identityManager.getUserFacebookId();
 
@@ -456,10 +463,10 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
                     .withRangeKeyCondition("rangeKey", rangeKeyCondition)
                     .withConsistentRead(false);
 
-            PaginatedQueryList result = mapper.query(User_Locations.class, queryExpression);
+//            PaginatedQueryList result = mapper.query(User_Locations.class, queryExpression);
 // Do something with result.
 
-            System.out.println("Returned GEOHASH" + result.get(0).toString());
+//            System.out.println("Returned GEOHASH" + result.get(0).toString());
 
 
 

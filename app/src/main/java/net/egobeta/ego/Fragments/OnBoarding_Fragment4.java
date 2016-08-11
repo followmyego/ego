@@ -57,6 +57,8 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
     public final static String KEY_PERMISSION_MUSIC = "Music you love";
     public final static String KEY_PERMISSION_MOVIES = "Movies you love";
     public final static String KEY_PERMISSION_BOOKS = "Books you love";
+    public final static String KEY_PERMISSION_PROFFESIONAL_SKILLS = "Proffesional Skills";
+
 
 
 
@@ -132,8 +134,6 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
 
                     }
                 }
-
-
 
                 Bundle bundle = new Bundle();
                 bundle.putStringArrayList("privacy_preferences", confirmedList);
@@ -278,194 +278,6 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
 
     }
 
-
-
-//    @Override
-//    public void onClick(View view) {
-
-//        if(view == doneButton){
-//            String final_fruit_selection = "";
-//            for(String Selections : listOfNames)
-//            {
-//                final_fruit_selection = final_fruit_selection + Selections + "\n";
-//            }
-//            Toast.makeText(getActivity(), final_fruit_selection, Toast.LENGTH_LONG).show();
-////            ((Main_OnBoarding) getActivity()).goToMainActivity();
-//        } else {
-//            boolean checked = ((CheckBox) view).isChecked();
-//
-//            if(view.getId() == R.id.checkBox1) {
-//                if (checked) {
-//                    listOfNames.add(0, "Friends");
-//                    Toast.makeText(getActivity(), "Friends added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Friends");
-//                    Toast.makeText(getActivity(), "Friends removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox2) {
-//                if(checked){
-//                    listOfNames.add(1, "Friends of Friends");
-//                    Toast.makeText(getActivity(), "Friends of Friends added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Friends of Friends");
-//                    Toast.makeText(getActivity(), "Friends of Friends removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox3){
-//                if(checked){
-//                    listOfNames.add(2, "Follower");
-//                    Toast.makeText(getActivity(), "Follower added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Follower");
-//                    Toast.makeText(getActivity(), "Follower removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox4){
-//                if(checked){
-//                    listOfNames.add(3, "Following");
-//                    Toast.makeText(getActivity(), "Following added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Following");
-//                    Toast.makeText(getActivity(), "Following removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox5){
-//                if(checked){
-//                    listOfNames.add(4, "Where you Live");
-//                    Toast.makeText(getActivity(), "Where you Live added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Where you Live");
-//                    Toast.makeText(getActivity(), "Where you Live removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox6){
-//                if(checked){
-//                    listOfNames.add(5, "Common Hometown");
-//                    Toast.makeText(getActivity(), "Common Hometown added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Common Hometown");
-//                    Toast.makeText(getActivity(), "Common Hometown removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox7){
-//                if(checked){
-//                    listOfNames.add(6, "Common like");
-//                    Toast.makeText(getActivity(), "Common like added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Common like");
-//                    Toast.makeText(getActivity(), "Common like removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox8){
-//                if(checked){
-//                    listOfNames.add(7, "Same Birthday");
-//                    Toast.makeText(getActivity(), "Same Birthday added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Same Birthday");
-//                    Toast.makeText(getActivity(), "Same Birthday removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox9){
-//                if(checked){
-//                    listOfNames.add(8, "Common Workplace");
-//                    Toast.makeText(getActivity(), "Common Workplace added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Common Workplace");
-//                    Toast.makeText(getActivity(), "Common Workplace removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox10){
-//                if(checked){
-//                    listOfNames.add(9, "Common School");
-//                    Toast.makeText(getActivity(), "Common School added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Common School");
-//                    Toast.makeText(getActivity(), "Common School removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox11){
-//                if(checked){
-//                    listOfNames.add(10, "Music you love");
-//                    Toast.makeText(getActivity(), "Music you love added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Music you love");
-//                    Toast.makeText(getActivity(), "Music you love removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox12){
-//                if(checked){
-//                    listOfNames.add(11, "Movies you love");
-//                    Toast.makeText(getActivity(), "Movies you love added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Movies you love");
-//                    Toast.makeText(getActivity(), "Movies you love removed", Toast.LENGTH_LONG).show();
-//                }
-//            } else if(view.getId() == R.id.checkBox13){
-//                if(checked){
-//                    listOfNames.add(12, "Books you love");
-//                    Toast.makeText(getActivity(), "Books you love added", Toast.LENGTH_LONG).show();
-//                } else {
-//                    listOfNames.remove("Books you love");
-//                    Toast.makeText(getActivity(), "Books you love removed", Toast.LENGTH_LONG).show();
-//                }
-//            }
-//
-//        }
-//    }
-
-
-//    public class BadgeListAdapter extends BaseAdapter {
-//
-//
-//        private int[] imagesList;
-//        private ArrayList<String> namesList;
-//
-//
-//        public BadgeListAdapter(int[] images, ArrayList<String> names) {
-//            this.imagesList = images;
-//            this.namesList = names;
-//        }
-//
-//        public void setItems(ArrayList<String> arrList){
-//            this.namesList = arrList;
-//            notifyDataSetChanged();
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            return namesList.size();
-//        }
-//
-//        @Override
-//        public Object getItem(int position) {
-//            return namesList.get(position);
-//        }
-//
-//        @Override
-//        public long getItemId(int position) {
-//            return position;
-//        }
-//
-//        @Override
-//        public View getView(int position, View convertView, ViewGroup parent) {
-//            System.out.println("getView" + position + " " + convertView);
-//
-//            LayoutInflater mInflater = (LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            convertView = mInflater.inflate(R.layout.badge_list_item, null);
-//            ImageView badgeImage = (ImageView) convertView.findViewById(R.id.badge_image);
-//            TextView badgeName = (TextView) convertView.findViewById(R.id.badge_name);
-//            final CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.radioButton);
-//
-//
-//
-//            badgeImage.setImageResource(imagesList[position]);
-//            badgeName.setText(namesList.get(position));
-//            badgeName.setTypeface(typeface);
-//
-//
-//
-//
-//
-//            return convertView;
-//        }
-//
-//
-////        public class ViewHolder{
-////            ImageView badgeImage;
-////            TextView badgeName;
-////            RadioButton radioButton;
-////        }
-//    }
 }
 
 
