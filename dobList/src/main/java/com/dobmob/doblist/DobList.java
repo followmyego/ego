@@ -23,8 +23,8 @@ public class DobList {
 		dobListController.register(listView);
 	}
 
-	public void finishLoading() {
-		dobListController.finishLoading();
+	public void finishLoading(boolean topOfMenu) {
+		dobListController.finishLoading(topOfMenu);
 		System.out.println("SOUT" + " finishLoading");
 	}
 

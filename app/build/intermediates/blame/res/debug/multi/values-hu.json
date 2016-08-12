@@ -11,13 +11,13 @@
                     "endOffset": 208
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 229,
+                        "startOffset": 55,
                         "endColumn": 107,
-                        "endOffset": 332
+                        "endOffset": 158
                     }
                 }
             },
@@ -30,13 +30,13 @@
                     "endOffset": 316
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 5,
+                        "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 337,
+                        "startOffset": 163,
                         "endColumn": 107,
-                        "endOffset": 440
+                        "endOffset": 266
                     }
                 }
             },
@@ -49,13 +49,13 @@
                     "endOffset": 439
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 6,
+                        "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 445,
+                        "startOffset": 271,
                         "endColumn": 122,
-                        "endOffset": 563
+                        "endOffset": 389
                     }
                 }
             },
@@ -68,13 +68,13 @@
                     "endOffset": 544
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 7,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 568,
+                        "startOffset": 394,
                         "endColumn": 104,
-                        "endOffset": 668
+                        "endOffset": 494
                     }
                 }
             },
@@ -87,13 +87,13 @@
                     "endOffset": 659
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 8,
+                        "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 673,
+                        "startOffset": 499,
                         "endColumn": 114,
-                        "endOffset": 783
+                        "endOffset": 609
                     }
                 }
             },
@@ -106,13 +106,13 @@
                     "endOffset": 743
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 9,
+                        "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 788,
+                        "startOffset": 614,
                         "endColumn": 83,
-                        "endOffset": 867
+                        "endOffset": 693
                     }
                 }
             },
@@ -125,13 +125,13 @@
                     "endOffset": 855
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 10,
+                        "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 872,
+                        "startOffset": 698,
                         "endColumn": 111,
-                        "endOffset": 979
+                        "endOffset": 805
                     }
                 }
             },
@@ -144,13 +144,13 @@
                     "endOffset": 985
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 11,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 984,
+                        "startOffset": 810,
                         "endColumn": 129,
-                        "endOffset": 1109
+                        "endOffset": 935
                     }
                 }
             },
@@ -163,13 +163,13 @@
                     "endOffset": 1061
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 12,
+                        "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 1114,
+                        "startOffset": 940,
                         "endColumn": 75,
-                        "endOffset": 1185
+                        "endOffset": 1011
                     }
                 }
             },
@@ -182,13 +182,13 @@
                     "endOffset": 1137
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 13,
+                        "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 1190,
+                        "startOffset": 1016,
                         "endColumn": 75,
-                        "endOffset": 1261
+                        "endOffset": 1087
                     }
                 }
             },
@@ -201,13 +201,13 @@
                     "endOffset": 1220
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 14,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 1266,
+                        "startOffset": 1092,
                         "endColumn": 82,
-                        "endOffset": 1344
+                        "endOffset": 1170
                     }
                 }
             },
@@ -220,13 +220,13 @@
                     "endOffset": 1330
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 15,
+                        "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 1349,
+                        "startOffset": 1175,
                         "endColumn": 109,
-                        "endOffset": 1454
+                        "endOffset": 1280
                     }
                 }
             },
@@ -239,13 +239,13 @@
                     "endOffset": 1441
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 16,
+                        "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 1459,
+                        "startOffset": 1285,
                         "endColumn": 110,
-                        "endOffset": 1565
+                        "endOffset": 1391
                     }
                 }
             },
@@ -258,13 +258,13 @@
                     "endOffset": 1541
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 1570,
+                        "startOffset": 1396,
                         "endColumn": 99,
-                        "endOffset": 1665
+                        "endOffset": 1491
                     }
                 }
             },
@@ -277,13 +277,13 @@
                     "endOffset": 1652
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 1670,
+                        "startOffset": 1496,
                         "endColumn": 110,
-                        "endOffset": 1776
+                        "endOffset": 1602
                     }
                 }
             },
@@ -296,13 +296,13 @@
                     "endOffset": 1760
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 1781,
+                        "startOffset": 1607,
                         "endColumn": 107,
-                        "endOffset": 1884
+                        "endOffset": 1710
                     }
                 }
             },
@@ -315,13 +315,13 @@
                     "endOffset": 1879
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 20,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 1889,
+                        "startOffset": 1715,
                         "endColumn": 118,
-                        "endOffset": 2003
+                        "endOffset": 1829
                     }
                 }
             },
@@ -334,13 +334,13 @@
                     "endOffset": 2013
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 21,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 2008,
+                        "startOffset": 1834,
                         "endColumn": 133,
-                        "endOffset": 2137
+                        "endOffset": 1963
                     }
                 }
             },
@@ -353,13 +353,13 @@
                     "endOffset": 2116
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 22,
+                        "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 2142,
+                        "startOffset": 1968,
                         "endColumn": 102,
-                        "endOffset": 2240
+                        "endOffset": 2066
                     }
                 }
             },
@@ -672,17 +672,17 @@
                     "startLine": 37,
                     "startColumn": 4,
                     "startOffset": 3602,
-                    "endColumn": 309,
-                    "endOffset": 3907
+                    "endColumn": 112,
+                    "endOffset": 3710
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 24,
+                        "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 3748,
-                        "endColumn": 313,
-                        "endOffset": 4057
+                        "startOffset": 329,
+                        "endColumn": 112,
+                        "endOffset": 437
                     }
                 }
             },
@@ -690,18 +690,18 @@
                 "to": {
                     "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 3912,
-                    "endColumn": 140,
-                    "endOffset": 4048
+                    "startOffset": 3715,
+                    "endColumn": 215,
+                    "endOffset": 3926
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 10,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 1427,
-                        "endColumn": 140,
-                        "endOffset": 1563
+                        "startOffset": 442,
+                        "endColumn": 215,
+                        "endOffset": 653
                     }
                 }
             },
@@ -709,18 +709,18 @@
                 "to": {
                     "startLine": 39,
                     "startColumn": 4,
-                    "startOffset": 4053,
-                    "endColumn": 215,
-                    "endOffset": 4264
+                    "startOffset": 3931,
+                    "endColumn": 139,
+                    "endOffset": 4066
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 9,
+                        "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 1207,
-                        "endColumn": 219,
-                        "endOffset": 1422
+                        "startOffset": 658,
+                        "endColumn": 139,
+                        "endOffset": 793
                     }
                 }
             },
@@ -728,18 +728,18 @@
                 "to": {
                     "startLine": 40,
                     "startColumn": 4,
-                    "startOffset": 4269,
-                    "endColumn": 139,
-                    "endOffset": 4404
+                    "startOffset": 4071,
+                    "endColumn": 140,
+                    "endOffset": 4207
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 8,
+                        "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 1067,
-                        "endColumn": 139,
-                        "endOffset": 1202
+                        "startOffset": 798,
+                        "endColumn": 140,
+                        "endOffset": 934
                     }
                 }
             },
@@ -747,18 +747,18 @@
                 "to": {
                     "startLine": 41,
                     "startColumn": 4,
-                    "startOffset": 4409,
-                    "endColumn": 140,
-                    "endOffset": 4545
+                    "startOffset": 4212,
+                    "endColumn": 232,
+                    "endOffset": 4440
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 7,
+                        "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 926,
-                        "endColumn": 140,
-                        "endOffset": 1062
+                        "startOffset": 939,
+                        "endColumn": 232,
+                        "endOffset": 1167
                     }
                 }
             },
@@ -766,18 +766,18 @@
                 "to": {
                     "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 4550,
-                    "endColumn": 232,
-                    "endOffset": 4778
+                    "startOffset": 4445,
+                    "endColumn": 234,
+                    "endOffset": 4675
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 5,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 450,
-                        "endColumn": 236,
-                        "endOffset": 682
+                        "startOffset": 1172,
+                        "endColumn": 234,
+                        "endOffset": 1402
                     }
                 }
             },
@@ -785,18 +785,18 @@
                 "to": {
                     "startLine": 43,
                     "startColumn": 4,
-                    "startOffset": 4783,
-                    "endColumn": 234,
-                    "endOffset": 5013
+                    "startOffset": 4680,
+                    "endColumn": 139,
+                    "endOffset": 4815
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 6,
+                        "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 687,
-                        "endColumn": 238,
-                        "endOffset": 921
+                        "startOffset": 1407,
+                        "endColumn": 139,
+                        "endOffset": 1542
                     }
                 }
             },
@@ -804,18 +804,18 @@
                 "to": {
                     "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 5018,
-                    "endColumn": 139,
-                    "endOffset": 5153
+                    "startOffset": 4820,
+                    "endColumn": 138,
+                    "endOffset": 4954
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 310,
-                        "endColumn": 139,
-                        "endOffset": 445
+                        "startOffset": 1547,
+                        "endColumn": 138,
+                        "endOffset": 1681
                     }
                 }
             },
@@ -823,18 +823,18 @@
                 "to": {
                     "startLine": 45,
                     "startColumn": 4,
-                    "startOffset": 5158,
-                    "endColumn": 176,
-                    "endOffset": 5330
+                    "startOffset": 4959,
+                    "endColumn": 294,
+                    "endOffset": 5249
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 2932,
-                        "endColumn": 176,
-                        "endOffset": 3104
+                        "startOffset": 331,
+                        "endColumn": 294,
+                        "endOffset": 621
                     }
                 }
             },
@@ -842,18 +842,18 @@
                 "to": {
                     "startLine": 46,
                     "startColumn": 4,
-                    "startOffset": 5335,
-                    "endColumn": 121,
-                    "endOffset": 5452
+                    "startOffset": 5254,
+                    "endColumn": 294,
+                    "endOffset": 5544
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 2810,
-                        "endColumn": 121,
-                        "endOffset": 2927
+                        "startOffset": 1686,
+                        "endColumn": 294,
+                        "endOffset": 1976
                     }
                 }
             },
@@ -861,18 +861,18 @@
                 "to": {
                     "startLine": 47,
                     "startColumn": 4,
-                    "startOffset": 5457,
-                    "endColumn": 184,
-                    "endOffset": 5637
+                    "startOffset": 5549,
+                    "endColumn": 129,
+                    "endOffset": 5674
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 2625,
-                        "endColumn": 184,
-                        "endOffset": 2805
+                        "startOffset": 1981,
+                        "endColumn": 129,
+                        "endOffset": 2106
                     }
                 }
             },
@@ -880,18 +880,18 @@
                 "to": {
                     "startLine": 48,
                     "startColumn": 4,
-                    "startOffset": 5642,
-                    "endColumn": 119,
-                    "endOffset": 5757
+                    "startOffset": 5679,
+                    "endColumn": 109,
+                    "endOffset": 5784
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 16,
+                        "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 2505,
-                        "endColumn": 119,
-                        "endOffset": 2620
+                        "startOffset": 2111,
+                        "endColumn": 109,
+                        "endOffset": 2216
                     }
                 }
             },
@@ -899,18 +899,18 @@
                 "to": {
                     "startLine": 49,
                     "startColumn": 4,
-                    "startOffset": 5762,
-                    "endColumn": 139,
-                    "endOffset": 5897
+                    "startOffset": 5789,
+                    "endColumn": 215,
+                    "endOffset": 6000
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 3,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 170,
-                        "endColumn": 139,
-                        "endOffset": 305
+                        "startOffset": 2221,
+                        "endColumn": 215,
+                        "endOffset": 2432
                     }
                 }
             },
@@ -918,18 +918,18 @@
                 "to": {
                     "startLine": 50,
                     "startColumn": 4,
-                    "startOffset": 5902,
-                    "endColumn": 180,
-                    "endOffset": 6078
+                    "startOffset": 6005,
+                    "endColumn": 138,
+                    "endOffset": 6139
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 28,
+                        "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 4526,
-                        "endColumn": 180,
-                        "endOffset": 4702
+                        "startOffset": 2437,
+                        "endColumn": 138,
+                        "endOffset": 2571
                     }
                 }
             },
@@ -937,18 +937,18 @@
                 "to": {
                     "startLine": 51,
                     "startColumn": 4,
-                    "startOffset": 6083,
-                    "endColumn": 149,
-                    "endOffset": 6228
+                    "startOffset": 6144,
+                    "endColumn": 230,
+                    "endOffset": 6370
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 27,
+                        "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 4376,
-                        "endColumn": 149,
-                        "endOffset": 4521
+                        "startOffset": 2576,
+                        "endColumn": 230,
+                        "endOffset": 2802
                     }
                 }
             },
@@ -956,18 +956,18 @@
                 "to": {
                     "startLine": 52,
                     "startColumn": 4,
-                    "startOffset": 6233,
-                    "endColumn": 181,
-                    "endOffset": 6410
+                    "startOffset": 6375,
+                    "endColumn": 140,
+                    "endOffset": 6511
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 26,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 4194,
-                        "endColumn": 181,
-                        "endOffset": 4371
+                        "startOffset": 2807,
+                        "endColumn": 140,
+                        "endOffset": 2943
                     }
                 }
             },
@@ -975,18 +975,18 @@
                 "to": {
                     "startLine": 53,
                     "startColumn": 4,
-                    "startOffset": 6415,
-                    "endColumn": 131,
-                    "endOffset": 6542
+                    "startOffset": 6516,
+                    "endColumn": 201,
+                    "endOffset": 6713
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 25,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 4062,
-                        "endColumn": 131,
-                        "endOffset": 4189
+                        "startOffset": 2948,
+                        "endColumn": 201,
+                        "endOffset": 3145
                     }
                 }
             },
@@ -994,18 +994,18 @@
                 "to": {
                     "startLine": 54,
                     "startColumn": 4,
-                    "startOffset": 6547,
-                    "endColumn": 294,
-                    "endOffset": 6837
+                    "startOffset": 6718,
+                    "endColumn": 100,
+                    "endOffset": 6814
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.4.0\\res\\values-hu\\common_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 3,
+                        "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 170,
-                        "endColumn": 298,
-                        "endOffset": 464
+                        "startOffset": 3150,
+                        "endColumn": 100,
+                        "endOffset": 3246
                     }
                 }
             },
@@ -1013,18 +1013,18 @@
                 "to": {
                     "startLine": 55,
                     "startColumn": 4,
-                    "startOffset": 6842,
-                    "endColumn": 294,
-                    "endOffset": 7132
+                    "startOffset": 6819,
+                    "endColumn": 97,
+                    "endOffset": 6912
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
-                        "startOffset": 3239,
-                        "endColumn": 298,
-                        "endOffset": 3533
+                        "startOffset": 3251,
+                        "endColumn": 97,
+                        "endOffset": 3344
                     }
                 }
             },
@@ -1032,18 +1032,18 @@
                 "to": {
                     "startLine": 56,
                     "startColumn": 4,
-                    "startOffset": 7137,
-                    "endColumn": 129,
-                    "endOffset": 7262
+                    "startOffset": 6917,
+                    "endColumn": 116,
+                    "endOffset": 7029
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-hu\\values.xml",
                     "position": {
-                        "startLine": 20,
+                        "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 3109,
-                        "endColumn": 129,
-                        "endOffset": 3234
+                        "startOffset": 3349,
+                        "endColumn": 116,
+                        "endOffset": 3461
                     }
                 }
             },
@@ -1051,227 +1051,18 @@
                 "to": {
                     "startLine": 57,
                     "startColumn": 4,
-                    "startOffset": 7267,
-                    "endColumn": 109,
-                    "endOffset": 7372
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 3538,
-                        "endColumn": 109,
-                        "endOffset": 3643
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 58,
-                    "startColumn": 4,
-                    "startOffset": 7377,
-                    "endColumn": 215,
-                    "endOffset": 7588
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1707,
-                        "endColumn": 219,
-                        "endOffset": 1922
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 59,
-                    "startColumn": 4,
-                    "startOffset": 7593,
-                    "endColumn": 138,
-                    "endOffset": 7727
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1568,
-                        "endColumn": 138,
-                        "endOffset": 1702
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 60,
-                    "startColumn": 4,
-                    "startOffset": 7732,
-                    "endColumn": 230,
-                    "endOffset": 7958
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 2270,
-                        "endColumn": 234,
-                        "endOffset": 2500
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 61,
-                    "startColumn": 4,
-                    "startOffset": 7963,
-                    "endColumn": 140,
-                    "endOffset": 8099
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 2129,
-                        "endColumn": 140,
-                        "endOffset": 2265
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 62,
-                    "startColumn": 4,
-                    "startOffset": 8104,
-                    "endColumn": 201,
-                    "endOffset": 8301
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1927,
-                        "endColumn": 201,
-                        "endOffset": 2124
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 63,
-                    "startColumn": 4,
-                    "startOffset": 8306,
-                    "endColumn": 99,
-                    "endOffset": 8401
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 3648,
-                        "endColumn": 99,
-                        "endOffset": 3743
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 64,
-                    "startColumn": 4,
-                    "startOffset": 8406,
-                    "endColumn": 97,
-                    "endOffset": 8499
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
-                    "position": {
-                        "startLine": 29,
-                        "startColumn": 4,
-                        "startOffset": 4707,
-                        "endColumn": 97,
-                        "endOffset": 4800
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 65,
-                    "startColumn": 4,
-                    "startOffset": 8504,
-                    "endColumn": 117,
-                    "endOffset": 8617
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\values-hu\\base_strings.xml",
-                    "position": {
-                        "startLine": 30,
-                        "startColumn": 4,
-                        "startOffset": 4805,
-                        "endColumn": 117,
-                        "endOffset": 4918
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 66,
-                    "startColumn": 4,
-                    "startOffset": 8622,
-                    "endColumn": 105,
-                    "endOffset": 8723
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-location\\8.4.0\\res\\values-hu\\location_strings.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 327,
-                        "endColumn": 105,
-                        "endOffset": 428
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 67,
-                    "startColumn": 4,
-                    "startOffset": 8728,
-                    "endColumn": 96,
-                    "endOffset": 8820
-                },
-                "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-location\\8.4.0\\res\\values-hu\\location_strings.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 230,
-                        "endColumn": 96,
-                        "endOffset": 322
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 68,
-                    "startColumn": 4,
-                    "startOffset": 8825,
+                    "startOffset": 7034,
                     "endColumn": 100,
-                    "endOffset": 8921
+                    "endOffset": 7130
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-hu\\values-hu.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-hu\\values-hu.xml",
                     "position": {
-                        "startLine": 23,
+                        "startLine": 21,
                         "startColumn": 4,
-                        "startOffset": 2245,
+                        "startOffset": 2071,
                         "endColumn": 100,
-                        "endOffset": 2341
+                        "endOffset": 2167
                     }
                 }
             }

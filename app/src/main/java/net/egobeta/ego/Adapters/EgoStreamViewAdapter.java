@@ -1,5 +1,6 @@
 package net.egobeta.ego.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import net.egobeta.ego.Fragments.Fragment_Main;
-import net.egobeta.ego.ImportedClasses.FacebookPictureViewRound;
 import net.egobeta.ego.R;
 import net.egobeta.ego.RoundedImageView;
 
@@ -21,29 +20,38 @@ import java.util.List;
 public class EgoStreamViewAdapter extends BaseAdapter {
 
     private final Context context;
+    private Activity activity;
     private ArrayList<String> arrList;
-    private List<BadgeItem> badgeList;
+    private List<UserItem> userList;
 
 
 
-    public EgoStreamViewAdapter(Context context, ArrayList<String> arrList) {
+    public EgoStreamViewAdapter(List<UserItem> userList, Context context, ArrayList<String> arrList, Activity activity) {
         this.context = context;
         this.arrList = arrList; /**This should hold be the facebook id's*/
-
-    }
-
-    public void setItems(ArrayList<String> arrList){
-        this.arrList = arrList;
+        this.activity = activity;
+        this.userList = userList;
         notifyDataSetChanged();
     }
 
-    public void addAllItems(ArrayList<String> addThisList){
-        arrList.addAll(addThisList);
+    public class UserViewHolder {
+        RoundedImageView userProfilePic;
+        ImageView badge;
+    }
+
+
+    public void setItems(List<UserItem> userList){
+        this.userList = userList;
         notifyDataSetChanged();
     }
 
-    public void addItem(String item){
-        arrList.add(item);
+    public void addAllItems(List<UserItem> addThisList){
+        userList.addAll(addThisList);
+        notifyDataSetChanged();
+    }
+
+    public void addItem(UserItem item){
+        userList.add(item);
         notifyDataSetChanged();
     }
 
@@ -52,12 +60,12 @@ public class EgoStreamViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return arrList.size();
+        return userList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return arrList.get(position);
+        return userList.get(position);
     }
 
     @Override
@@ -69,35 +77,39 @@ public class EgoStreamViewAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         System.out.println("getView" + position + " " + convertView);
 
-        ViewHolder viewHolder = null;
+        UserViewHolder holder = null;
 
 
         if(convertView == null){
-            LayoutInflater mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = mInflater.inflate(R.layout.stream_gridviewitem, null);
-            viewHolder = new ViewHolder();
-            viewHolder.userProfilePic = (RoundedImageView) convertView.findViewById(R.id.img);
-            convertView.setTag(viewHolder);
+            System.out.println("EgoStreamViewAdapter: ONE");
+            LayoutInflater inflater = activity.getLayoutInflater();
+//            LayoutInflater mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.stream_gridviewitem, null);
+            holder = new UserViewHolder();
+
+            holder.userProfilePic = (RoundedImageView) convertView.findViewById(R.id.img);
+
+            convertView.setTag(holder);
+            convertView.setTag(R.id.img, holder.userProfilePic);
         } else {
-            viewHolder = (ViewHolder)convertView.getTag();
+            System.out.println("EgoStreamViewAdapter: TWO");
+            holder = (UserViewHolder)convertView.getTag();
         }
 
-//        viewHolder.userProfilePic.setPresetSize(FacebookPictureViewRound.NORMAL);
-//        try{
-//            viewHolder.userProfilePic.setProfileId(arrList.get(position));
-//        } catch (OutOfMemoryError e){
-//            System.out.println("SOUT" + " backToTop e");
-//            Fragment_Main.backToTop();
-//        }
+        holder.userProfilePic.setTag(position);
 
-        new LoadUserImageAsyncTask(viewHolder.userProfilePic, context).execute(arrList.get(position));
+        UserItem userItem = userList.get(position);
+        if(userItem.getProfilePicture() == null){
+            System.out.println("EgoStreamViewAdapter: THREE");
+            userItem.setViewItem(holder.userProfilePic);
+        } else {
+            System.out.println("EgoStreamViewAdapter: FOUR");
+            holder.userProfilePic.setImageDrawable(userItem.getProfilePicture());
+        }
 
         return convertView;
     }
 
 
-    public class ViewHolder{
-        RoundedImageView userProfilePic;
 
-    }
 }

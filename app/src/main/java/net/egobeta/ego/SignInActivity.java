@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.amazonaws.mobileconnectors.cognito.Dataset;
@@ -38,6 +39,7 @@ public class SignInActivity extends Activity {
 
     /** The Google OnClick listener, since we must override it to get permissions on Marshmallow and above. */
     private View.OnClickListener googleOnClickListener;
+    private ProgressBar progressBar;
 
     /**
      * SignInResultsHandler handles the final result from sign in. Making it static is a best
@@ -50,6 +52,13 @@ public class SignInActivity extends Activity {
          */
         @Override
         public void onSuccess(final IdentityProvider provider) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    progressBar.setVisibility(View.VISIBLE);
+                }
+            });
+
             Log.d(LOG_TAG, String.format("User sign-in with %s succeeded",
                 provider.getDisplayName()));
 
@@ -199,6 +208,7 @@ public class SignInActivity extends Activity {
                     SignInActivity.this.finish();
                 } else {
                     Toast.makeText(SignInActivity.this, "Failure updating", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                 }
 
             }
@@ -210,7 +220,7 @@ public class SignInActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.d("ACT DEBUG", "SignInActivity: OnCreate");
         setContentView(R.layout.activity_sign_in);
-
+        progressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
         signInManager = SignInManager.getInstance(this);
 

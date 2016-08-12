@@ -2,7 +2,6 @@ package net.egobeta.ego.Fragments;
 
 import android.app.Activity;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 
 import android.content.Intent;
@@ -24,7 +23,6 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 
 import android.widget.AdapterView;
-import android.widget.Button;
 
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -45,16 +43,14 @@ import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutD
 import net.egobeta.ego.Adapters.BadgeItem;
 import net.egobeta.ego.Adapters.EgoStreamViewAdapter;
 import net.egobeta.ego.Adapters.GenericAdapter;
+import net.egobeta.ego.Adapters.UserItem;
 import net.egobeta.ego.ImportedClasses.NonScrollableGridView;
 import net.egobeta.ego.MainActivity;
 import net.egobeta.ego.ProfileActivity;
 import net.egobeta.ego.R;
 
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 
@@ -106,6 +102,8 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
     private static ItemAdapter adapter;
     SlidingMenu slidingMenu;
 
+    private static List<UserItem> userList = new ArrayList<UserItem>();
+
 
     public static Fragment newInstance(Activity activtiy, Context context1, int position, Toolbar toolbar1) {
         activity = activtiy;
@@ -115,7 +113,6 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         context = context1;
         toolbar = toolbar1;
         f.setArguments(b);
-//        mBinding = mBindingg;
         return f;
     }
 
@@ -125,29 +122,21 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         super.onCreate(savedInstanceState);
         mPosition = getArguments().getInt(ARG_POSITION);
         typeface = Typeface.createFromAsset(context.getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
-//		/**Not Currently using this data set**/
-//		mListItems = new ArrayList<String>();
-//		for (int i = 1; i <= 15; i++) {
-//			mListItems.add(i + ". item - currnet page: " + (mPosition + 1));
-//		}
 
-
-
-
-        //Create adapter for instagram images and horizontal image sliding view
-        adapter_Grid = new EgoStreamViewAdapter(context, facebook_Ids);
+        //Initialize the adapter for the listView that holds the gridView
         adapter = new ItemAdapter();
 
-
+        //Initialize the adapter for gridView with empty variables. We will populate variables later.
+//        UserItem userItem = new UserItem(context, facebookId);
+//        userList.add(userItem);
 
     }
 
 
 
-
-    private boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager
-                = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+    /** check if the network is available **/
+    private boolean isNetworkAvailable(){
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
@@ -161,8 +150,6 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         mListView.setDivider(null);
         mListView.setDividerHeight(0);
 
-
-
         initDobList(v, mListView);
         adapter.addItem("Some item");
         mListView.setAdapter(adapter);
@@ -173,6 +160,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         return v;
     }
 
+    /** Method to Initialize the auto loader when scrolled to the bottom of the list **/
     private void initDobList(View rootView, ListView listView) {
         System.out.println("SOUT" + " initDobList");
 
@@ -207,7 +195,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
                     // period of time to simulate waiting
                     // data from server
                     System.out.println("SOUT" + " onLoadMore");
-                    addDummyData(1, false);
+                    checkIfWeAddItemToListView(1, false);
                 }
             });
 
@@ -230,67 +218,61 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
             e.printStackTrace();
         }
         // Simulate adding data at the first time
-//        addDummyData(3);
+//        checkIfWeAddItemToListView(3);
     }
 
-    protected static void addDummyData(final int itemsCount, boolean bool) {
-        System.out.println("SOUT" + " addDummyData");
-        System.out.println("MAINACTIVITY: getNearbyUsers addDummyData");
+    /** Make sure the proper conditions are met before we add an item to the listView **/
+    protected static void checkIfWeAddItemToListView(final int itemsCount, boolean bool) {
+        System.out.println("SOUT" + " checkIfWeAddItemToListView");
+        System.out.println("MAINACTIVITY: getNearbyUsers checkIfWeAddItemToListView");
         if(!bool){
             if(count > 0){
-                System.out.println("SOUT" + " addDummyData 1");
+                System.out.println("SOUT" + " checkIfWeAddItemToListView 1");
                 MainActivity.getNearbyUsers(count);
-//            dobList.finishLoading();
                 new Handler().postDelayed(new Runnable() {
-
                     @Override
                     public void run() {
-
-                        // We must call finishLoading
-                        // when finishing adding data
-
-                        dobList.finishLoading();
+                        // We must call finishLoading when finishing adding data
+                        dobList.finishLoading(true);
                     }
-
-                }, 3000);
+                }, 1000);
             } else {
-                System.out.println("SOUT" + " addDummyData 2");
+                System.out.println("SOUT" + " checkIfWeAddItemToListView 2");
                 new Handler().postDelayed(new Runnable() {
 
                     @Override
                     public void run() {
 
-                        addItems(adapter.getCount(), adapter.getCount() + itemsCount);
+                        addItemsToListView(adapter.getCount(), adapter.getCount() + itemsCount);
 
                         // We must call finishLoading
                         // when finishing adding data
-                        dobList.finishLoading();
+                        dobList.finishLoading(false);
                     }
-                }, 3000);
+                }, 1000);
             }
         } else {
-            System.out.println("SOUT" + " addDummyData 3");
+            System.out.println("SOUT" + " checkIfWeAddItemToListView 3");
             new Handler().postDelayed(new Runnable() {
 
                 @Override
                 public void run() {
 
-                    addItems(adapter.getCount(), adapter.getCount() + itemsCount);
+                    addItemsToListView(adapter.getCount(), adapter.getCount() + itemsCount);
 
                     // We must call finishLoading
                     // when finishing adding data
-                    dobList.finishLoading();
+                    dobList.finishLoading(false);
                 }
-            }, 3000);
+            }, 1000);
         }
 
     }
 
-    protected static void addItems(int from, int to) {
-        System.out.println("SOUT" + " addItems");
-
+    /** method to add an item to the listview adapter **/
+    protected static void addItemsToListView(int from, int to) {
+        System.out.println("SOUT" + " addItemsToListView");
         String strPlainItem = "Some string";
-
         for (int i = from; i < to; i++) {
             String strItem = String.format(strPlainItem, i);
             adapter.addItem(strItem);
@@ -298,60 +280,37 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
     }
 
 
-
+    /** ONLY CALLED FROM EGOMAP CLASS **/
+    /** Method to add items to gridView adapter if its the first time getting users **/
     public static void notifiyAdapterHasChanged(String[] facebook_Ids1){
         System.out.println("SOUT" + " notifiyAdapterHasChanged");
         facebook_Ids = new ArrayList<>(Arrays.asList(facebook_Ids1));
-//        adapter = new EgoStreamViewAdapter(context, facebook_Ids);
-//        facebook_Ids.add(0, facebookId);
-        adapter_Grid.setItems(facebook_Ids);
-
-
-
+        for (int i = 0; i < facebook_Ids1.length; i++) {
+            UserItem userItem = new UserItem(context, facebook_Ids1[i]);
+            userList.add(userItem);
+        }
+        adapter_Grid = new EgoStreamViewAdapter(userList, context, facebook_Ids, activity);
+        gridView.setAdapter(adapter_Grid);
         gridView.invalidateViews();
-        addDummyData(1, false);
-
+        checkIfWeAddItemToListView(1, false);
         count ++;
-//        dobList.finishLoading();
     }
 
     public static void addNewItems(String[] facebook_Ids1) {
         System.out.println("SOUT" + " addNewItems");
-        ArrayList<String> newList = new ArrayList<>(Arrays.asList(facebook_Ids1));
-//        if(count == 3){
-//            System.out.println("SOUT" + " backToTop1");
-//            Toast.makeText(activity, "End of your Ego Stream", Toast.LENGTH_SHORT).show();
-//        } else {
-//            if(facebook_Ids.size() >= 40 ){
-//                System.out.println("SOUT" + " removeAnItem");
-//                for (int i = 0; i < facebook_Ids1.length - 1; i++) {
-//                    facebook_Ids.remove(0);
-//                    facebook_Ids.add(newList.get(i));
-//                }
-//            } else {
-                for (int i = 0; i < facebook_Ids1.length; i++) {
-                    facebook_Ids.add(newList.get(i));
-                }
-//            }
-//            adapter.addItem(newList.get(i));
 
-
-//        adapter.notifyDataSetChanged();
-            gridView.invalidateViews();
-//            dobList.finishLoading();
-            addDummyData(1, true);
-            count ++;
-//        }
+        for (int i = 0; i < facebook_Ids1.length; i++) {
+            UserItem userItem = new UserItem(context, facebook_Ids1[i]);
+            userList.add(userItem);
+        }
+        adapter_Grid = new EgoStreamViewAdapter(userList, context, facebook_Ids, activity);
+//        adapter_Grid.addAllItems(userList);
+        adapter_Grid.notifyDataSetChanged();
+        gridView.setAdapter(adapter_Grid);
+        gridView.invalidateViews();
+        checkIfWeAddItemToListView(1, true);
+        count ++;
     }
-
-    public static void backToTop(){
-//        System.out.println("MAINACTIVITY: getNearbyUsers backToTop");
-//        count = 0;
-//        addDummyData(3, true);
-//        MainActivity.getNearbyUsers(count);
-
-    }
-
 
 
     public static void stopRefreshing(){
@@ -372,8 +331,9 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 
             count = 0;
             facebook_Ids = new ArrayList<String>();
+            userList = new ArrayList<UserItem>();
 //        adapter = new EgoStreamViewAdapter(context, facebook_Ids);
-            adapter_Grid.setItems(facebook_Ids);
+            adapter_Grid.setItems(userList);
             gridView.invalidateViews();
             adapter = new ItemAdapter();
             initDobList(v, mListView);
@@ -418,7 +378,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         //Initialize the gridview
         gridView = (NonScrollableGridView) convertView.findViewById(R.id.myGridView);
         gridView.setVisibility(View.VISIBLE);
-        gridView.setAdapter(adapter_Grid);
+
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -461,20 +421,23 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
                 return convertView;
             } else {
                 System.out.println("SOUT" + " ItemAdapter2");
+
+                ViewHolder holder = null;
+
                 if (convertView == null) {
                     convertView = layoutInflater.inflate(R.layout.list_item, null);
 
-                    ViewHolder viewHolder = new ViewHolder();
-                    viewHolder.title = (TextView) convertView.findViewById(R.id.text1);
+                    holder = new ViewHolder();
+                    holder.title = (TextView) convertView.findViewById(R.id.text1);
 
-                    convertView.setTag(viewHolder);
+                    convertView.setTag(holder);
+                } else {
+                    holder = (ViewHolder) convertView.getTag();
                 }
 
-                ViewHolder holder = (ViewHolder) convertView.getTag();
-                String item = getItem(position);
-
-                holder.title.setText(" ");
-
+                if(holder.title != null){
+                    holder.title.setText(" ");
+                }
                 return convertView;
             }
 

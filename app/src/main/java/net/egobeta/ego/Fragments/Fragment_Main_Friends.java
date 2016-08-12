@@ -34,6 +34,7 @@ import android.widget.TextView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import net.egobeta.ego.Adapters.EgoStreamViewAdapter;
+import net.egobeta.ego.Adapters.UserItem;
 import net.egobeta.ego.ImportedClasses.NonScrollableGridView;
 import net.egobeta.ego.ProfileActivity;
 import net.egobeta.ego.R;
@@ -42,6 +43,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.TreeSet;
 
 
@@ -61,6 +63,7 @@ public class Fragment_Main_Friends extends ScrollTabHolderFragment implements Ab
 
     //Other variables
     static ArrayList<String> facebook_Ids = new ArrayList<String>();
+    private List<UserItem> userList = new ArrayList<UserItem>();
 
 
     private ListView mListView;
@@ -134,11 +137,9 @@ public class Fragment_Main_Friends extends ScrollTabHolderFragment implements Ab
             facebookProfileIds.add("facebookProfileId " + i);
         }
 
-
-
         getUsersAroundUs();
         //Create adapter for instagram images and horizontal image sliding view
-        adapter = new EgoStreamViewAdapter(getActivity(), facebook_Ids);
+        adapter = new EgoStreamViewAdapter(userList, getActivity(), facebook_Ids, getActivity());
     }
 
 

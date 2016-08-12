@@ -56,8 +56,11 @@ public class DobListController {
 		}
 	}
 
-	public void finishLoading() {
-		setFooterLoadViewVisibility(false);
+	public void finishLoading(boolean topOfMenu) {
+		if(topOfMenu){
+			setFooterLoadViewVisibility(false);
+		}
+
 		setLoading(false);
 	}
 

@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,6 +62,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
     ImageView loadingItem2;
     ImageView loadingItem3;
     TextView textView;
+    ProgressBar spinner;
 
 
     //User privacy booleans
@@ -664,6 +666,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
         loadingItem3 = (ImageView) findViewById(R.id.itemListing3);
         textView = (TextView) findViewById(R.id.onBoarding_text);
         textView.setTypeface(typeface);
+        spinner = (ProgressBar) findViewById(R.id.progressBar1);
     }
 
     public String animateItem(View loadingBar){
@@ -676,7 +679,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
 
 
         if(loadingBar == loadingItem3){
-            ObjectAnimator animator = ObjectAnimator.ofInt(loadingBar, "right", trackStartValue, trackEndValue).setDuration(1700);
+            ObjectAnimator animator = ObjectAnimator.ofInt(loadingBar, "right", trackStartValue, trackEndValue).setDuration(1000);
             animator.addListener(new Animator.AnimatorListener() {
                 @Override
                 public void onAnimationStart(Animator animation) {
@@ -685,6 +688,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
 
                 @Override
                 public void onAnimationEnd(Animator animation) {
+                    spinner.setVisibility(View.GONE);
                     finishButton.setVisibility(View.VISIBLE);
                 }
 
@@ -700,7 +704,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
             });
             animator.start();
         } else {
-            ObjectAnimator.ofInt(loadingBar, "right", trackStartValue, trackEndValue).setDuration(1700).start();
+            ObjectAnimator.ofInt(loadingBar, "right", trackStartValue, trackEndValue).setDuration(1000).start();
         }
         return null;
     }

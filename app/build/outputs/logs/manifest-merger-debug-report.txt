@@ -15,15 +15,14 @@ ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:
 		INJECTED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:18:5-67
-MERGED from [com.google.android.gms:play-services-gcm:7.8.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.8.0\AndroidManifest.xml:22:5-67
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\9.4.0\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\9.4.0\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.4.0\AndroidManifest.xml:21:5-66
 	android:name
 		ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:18:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:19:5-79
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:20:5-78
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.4.0\AndroidManifest.xml:20:5-78
 	android:name
 		ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:19:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
@@ -36,7 +35,8 @@ ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:
 		ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:21:22-65
 uses-permission#com.google.android.c2dm.permission.RECEIVE
 ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:22:5-82
-MERGED from [com.google.android.gms:play-services-gcm:7.8.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.8.0\AndroidManifest.xml:21:5-82
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\9.4.0\AndroidManifest.xml:21:5-82
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\9.4.0\AndroidManifest.xml:21:5-82
 	android:name
 		ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:22:22-79
 permission#com.amazon.mysampleapp.permission.C2D_MESSAGE
@@ -79,42 +79,93 @@ ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:
 		ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:35:22-75
 application
 ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:37:5-164:19
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
 MERGED from [ego:dobList:unspecified] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\Ego\dobList\unspecified\AndroidManifest.xml:11:5-15:19
-MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:palette-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\palette-v7\23.1.1\AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-gcm:7.8.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.8.0\AndroidManifest.xml:24:5-20
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:27:5-20
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-location:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\AndroidManifest.xml:19:5-20
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:27:5-20
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:20:5-32:19
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:design:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\design\24.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:palette-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.1.1\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\9.4.0\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\9.4.0\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.4.0\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-location:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\9.4.0\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
 MERGED from [com.facebook.android:facebook-android-sdk:4.6.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.6.0\AndroidManifest.xml:28:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
 MERGED from [com.github.orangegangsters:swipy:1.2.3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.github.orangegangsters\swipy\1.2.3\AndroidManifest.xml:11:5-12:19
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
 	android:label
 		ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:41:9-41
 	android:allowBackup
@@ -280,95 +331,166 @@ ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:
 uses-sdk
 INJECTED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:multidex:1.0.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
-MERGED from [com.android.databinding:library:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.0-rc3\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.databinding:adapters:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\adapters\1.0-rc3\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.databinding:library:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.0-rc3\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
 MERGED from [ego:SlidingMenuLib-master:unspecified] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\Ego\SlidingMenuLib-master\unspecified\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
 MERGED from [ego:dobList:unspecified] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\Ego\dobList\unspecified\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:design:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:palette-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\palette-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.google.android.gms:play-services-gcm:7.8.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.8.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-base:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:26:5-42
-MERGED from [com.google.android.gms:play-services-base:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.google.android.gms:play-services-location:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-base:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:26:5-42
-MERGED from [com.google.android.gms:play-services-base:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-base:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:design:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\design\24.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:recyclerview-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:appcompat-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-vector-drawable:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:palette-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:recyclerview-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.4.0\AndroidManifest.xml:26:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-location:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.4.0\AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
 MERGED from [com.facebook.android:facebook-android-sdk:4.6.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.6.0\AndroidManifest.xml:24:5-26:41
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
 MERGED from [com.github.orangegangsters:swipy:1.2.3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.github.orangegangsters\swipy\1.2.3\AndroidManifest.xml:7:5-9:41
 MERGED from [jp.wasabeef:blurry:2.0.2] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\jp.wasabeef\blurry\2.0.2\AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.databinding:library:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.0-rc3\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.databinding:adapters:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\adapters\1.0-rc3\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.databinding:library:1.0-rc3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.0-rc3\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.databinding:library:1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.1\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.databinding:adapters:1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\adapters\1.1\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.databinding:library:1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.databinding\library\1.1\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml
-meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:21:9-23:69
-MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:21:9-23:69
-	android:value
-		ADDED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:23:13-66
-	android:name
-		ADDED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:22:13-58
-uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:22:5-24:33
-MERGED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:22:5-24:33
-	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:23:8-40
-	android:required
-		ADDED from [com.google.android.gms:play-services-maps:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\AndroidManifest.xml:24:8-31
-activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:21:9-24:46
-	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:23:19-52
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:20:9-22:45
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:20:9-22:45
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:20:9-22:45
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:20:9-22:45
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:20:9-22:45
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:20:9-22:45
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:24:19-43
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:22:19-43
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:22:19-78
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:21:19-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:21:19-72
-service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:28:9-31:110
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\AndroidManifest.xml:20:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:22:13-58
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.4.0\AndroidManifest.xml:22:5-24:33
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.4.0\AndroidManifest.xml:23:8-40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.4.0\AndroidManifest.xml:24:8-31
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:21:9-24:46
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:23:19-52
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:30:13-36
-	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:31:13-107
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:24:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:22:19-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:8.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\AndroidManifest.xml:29:13-62
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:21:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:28:9-31:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:30:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:31:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:29:13-58

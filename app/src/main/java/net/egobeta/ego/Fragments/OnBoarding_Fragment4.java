@@ -183,11 +183,8 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
 
         }
 
-
-
         badgeAdapter = new BadgeAdapter(badgeList, getContext(), typeface, listView);
         listView.setAdapter(badgeAdapter);
-
 
     }
 
