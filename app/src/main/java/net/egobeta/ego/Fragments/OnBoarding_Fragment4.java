@@ -35,7 +35,7 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
     private View view;
     Typeface typeface;
 //    private BadgeListAdapter adapter;
-    static Context context;
+    Context context;
 
     //View Items
     private TextView headerText;
@@ -71,7 +71,7 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
     public static ArrayList<BadgeItem> badgeList;
     BadgeAdapter badgeAdapter;
 
-    public ArrayList<String> confirmedList = new ArrayList<String>();
+
 
 
     public static OnBoarding_Fragment4 newInstance(String param1) {
@@ -125,13 +125,18 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
         doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ArrayList<String> confirmedList = new ArrayList<String>();
                 for(BadgeItem badgeItem : badgeList){
                     if(badgeItem.isSelected()){
+                        /** If confirmedList doesn't contain the badge name for this badgeItem **/
                         if(!confirmedList.contains(badgeItem.getBadgeName())){
                             confirmedList.add(badgeItem.getBadgeName());
+                            System.out.println("OnBoardingDebuggin 1: " + badgeItem.getBadgeName() );
+                        } else {
+                            System.out.println("OnBoardingDebuggin 2: " + badgeItem.getBadgeName() );
                         }
-
+                    } else {
+                        System.out.println("OnBoardingDebuggin 3: " + badgeItem.getBadgeName() );
                     }
                 }
 
@@ -143,6 +148,8 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
     }
 
     private void InitializeListView() {
+
+        /** Names for the listView textViews **/
         listOfNames.add(KEY_PERMISSION_FRIENDS);
         listOfNames.add(KEY_PERMISSION_FRIENDS_OF_FRIENDS);
         listOfNames.add(KEY_PERMISSION_INSTAGRAM_FOLLOWERS);
@@ -157,6 +164,7 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
         listOfNames.add(KEY_PERMISSION_MOVIES);
         listOfNames.add(KEY_PERMISSION_BOOKS);
 
+        /** Drawables for the listView imageViews **/
         int[] badgeImages = {
                 R.drawable.friend,
                 R.drawable.friends_of_friend,
@@ -173,19 +181,17 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
                 R.drawable.loves_the_same_books
         };
 
+        /** Badge List for the BadgeItems **/
         badgeList = new ArrayList<BadgeItem>();
 
-
-
+        /** Populate the badgeList with badge items.
+         * Create badge items from drawables array and names array **/
         for(int i = 0; i < listOfNames.size(); i++){
             badgeList.add(new BadgeItem(listOfNames.get(i), badgeImages[i]));
-            System.out.println(listOfNames.get(i) + badgeImages[i]);
-
         }
 
-        badgeAdapter = new BadgeAdapter(badgeList, getContext(), typeface, listView);
+        badgeAdapter = new BadgeAdapter(badgeList, typeface);
         listView.setAdapter(badgeAdapter);
-
     }
 
 
@@ -197,9 +203,11 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
             BadgeItem badgeItem = badgeList.get(pos);
             badgeItem.setSelected(isChecked);
 
-            if(confirmedList.contains(badgeItem.getBadgeName()) && !isChecked){
-                confirmedList.remove(badgeItem.getBadgeName());
-            }
+//            if(confirmedList.contains(badgeItem.getBadgeName()) && !isChecked){
+//                confirmedList.remove(badgeItem.getBadgeName());
+//            }
+
+            Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -216,13 +224,11 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
     public class BadgeAdapter extends ArrayAdapter<BadgeItem> {
 
         private List<BadgeItem> badgeList;
-        private Context context;
         private Typeface typeface;
 
-        public BadgeAdapter(List<BadgeItem> badgeList, Context context, Typeface typeface, ListView listView) {
+        public BadgeAdapter(List<BadgeItem> badgeList, Typeface typeface) {
             super(context, R.layout.badge_list_item, badgeList);
             this.badgeList = badgeList;
-            this.context = context;
             this.typeface = typeface;
 
         }
@@ -267,9 +273,6 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
             holder.badgeName.setTypeface(typeface);
             holder.badgeImage.setImageResource(badgeItem.getBadgeImage());
             holder.checkBox.setChecked(badgeItem.isSelected());
-
-
-
             return convertView;
         }
 

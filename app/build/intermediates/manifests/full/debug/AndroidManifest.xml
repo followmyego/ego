@@ -62,27 +62,21 @@
         </activity>
         <activity
             android:name="net.egobeta.ego.SignInActivity"
-            android:label="@string/title_activity_sign_in" >
-        </activity>
+            android:label="@string/title_activity_sign_in" />
         <activity
             android:name="net.egobeta.ego.OnBoarding.Main_OnBoarding"
-            android:label="Main_OnBoarding" >
-        </activity>
+            android:label="Main_OnBoarding" />
         <activity
             android:name="net.egobeta.ego.MainActivity"
             android:label="@string/title_activity_main"
-            android:launchMode="singleTask"
-            android:windowSoftInputMode="adjustPan" >
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="net.egobeta.ego.Settings.SettingsActivity"
-            android:windowSoftInputMode="adjustPan" >
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="net.egobeta.ego.ProfileActivity"
             android:theme="@style/Theme.Transparent"
-            android:windowSoftInputMode="adjustPan" >
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
 
         <!-- BEGIN - APP CONTENT DELIVERY AND USER DATA STORAGE -->
 
@@ -113,8 +107,7 @@
             android:name="net.amazonaws.mobile.downloader.query.DownloadQueueProvider"
             android:authorities="@string/download_queue_provider_authority"
             android:enabled="true"
-            android:exported="false" >
-        </provider>
+            android:exported="false" />
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="@string/content_file_provider_authority"
@@ -162,13 +155,12 @@
 
         <!-- END - PUSH NOTIFICATIONS WITH GOOGLE CLOUD MESSAGING (GCM) -->
 
-        <activity android:name="net.egobeta.ego.Settings.GeneralSettingsActivity" >
-        </activity>
+        <activity android:name="net.egobeta.ego.Settings.GeneralSettingsActivity" />
         <activity
             android:name="net.egobeta.ego.OnBoarding.LoadFacebookPermissions"
             android:label="@string/title_activity_load_facebook_permissions"
-            android:theme="@style/AppTheme" >
-        </activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name="net.egobeta.ego.BlankActivity" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

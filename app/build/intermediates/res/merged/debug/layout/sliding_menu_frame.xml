@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#232323"
-    tools:context="com.myegotest.ego_17012016.Main.MainActivity2">
+    tools:context="net.egobeta.ego.MainActivity">
 
 
     <ImageView
@@ -47,16 +47,36 @@
 
 
     <ImageButton
+    android:layout_width="160dp"
+    android:layout_height="50dp"
+    android:id="@+id/settingsButton"
+    android:src="@drawable/settings_button"
+    android:background="@null"
+    android:scaleType="centerInside"
+    android:layout_above="@+id/egoLogo1"
+    android:layout_alignLeft="@+id/viewing_you_image"
+    android:layout_alignStart="@+id/viewing_you_image"
+    android:layout_marginBottom="35dp"/>
+
+    <Button
         android:layout_width="160dp"
         android:layout_height="50dp"
-        android:id="@+id/settingsButton"
-        android:src="@drawable/settings_button"
-        android:background="@null"
-        android:scaleType="centerInside"
-        android:layout_above="@+id/egoLogo1"
+        android:id="@+id/blankActivity_Button"
+        android:text="Blank Activity"
+        android:layout_above="@+id/logout_Button"
         android:layout_alignLeft="@+id/viewing_you_image"
         android:layout_alignStart="@+id/viewing_you_image"
-        android:layout_marginBottom="35dp"/>
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:id="@+id/logout_Button"
+        android:text="LOGOUT"
+        android:layout_above="@+id/settingsButton"
+        android:layout_alignLeft="@+id/viewing_you_image"
+        android:layout_alignStart="@+id/viewing_you_image"
+        android:layout_marginBottom="10dp"/>
 
     <ImageView
         android:layout_width="55dp"
@@ -92,5 +112,7 @@
         android:layout_marginLeft="35dp"
         android:layout_marginStart="35dp"
         android:layout_marginBottom="25dp"/>
+
+
 
 </RelativeLayout>

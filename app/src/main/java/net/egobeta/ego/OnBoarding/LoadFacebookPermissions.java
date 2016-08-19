@@ -110,8 +110,6 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_load_facebook_permissions);
-        context = getApplicationContext();
-        activity = LoadFacebookPermissions.this;
         Intent intent = getIntent();
         privacyPreferences = intent.getStringArrayListExtra("privacy_preferences");
         typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
@@ -134,8 +132,10 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
         String final_badge_selection = "";
         for (String item : privacyPreferences) {
             final_badge_selection = final_badge_selection + item + "\n";
+            System.out.println("CHECK BADGE: " + final_badge_selection);
         }
 //        Toast.makeText(LoadFacebookPermissions.this, final_badge_selection, Toast.LENGTH_LONG).show();
+
 
     }
 
@@ -147,55 +147,80 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
         if(friends_isConnected){
             userPermissions.setFriends(1);
         } else {
+            userPermissions.setFriends(0);
             Toast.makeText(LoadFacebookPermissions.this, "Does not contain " + OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS, Toast.LENGTH_SHORT).show();
         }
 
         if(friendsOfFriends_isConnected){
             userPermissions.setFriendsOfFriends(1);
+        } else {
+            userPermissions.setFriendsOfFriends(0);
         }
 
         if(followers_isConnected){
             userPermissions.setInstagramFollowers(1);
+        } else {
+            userPermissions.setInstagramFollowers(0);
         }
 
         if(following_isConnected){
             userPermissions.setInstagramFollowing(1);
+        } else {
+            userPermissions.setInstagramFollowing(0);
         }
 
         if(location_isConnected){
             userPermissions.setLocation(1);
+        } else {
+            userPermissions.setLocation(0);
         }
 
         if(hometown_isConnected){
             userPermissions.setHometown(1);
+        } else {
+            userPermissions.setHometown(0);
         }
 
         if(likes_isConnected){
             userPermissions.setCommonLikes(1);
+        } else {
+            userPermissions.setCommonLikes(0);
         }
 
         if(birthday_isConnected){
             userPermissions.setBirthday(1);
+        } else {
+            userPermissions.setBirthday(0);
         }
 
         if(work_isConnected){
             userPermissions.setWorkplace(1);
+        } else {
+            userPermissions.setWorkplace(0);
         }
 
         if(school_isConnected){
             userPermissions.setSchool(1);
+        } else {
+            userPermissions.setSchool(0);
         }
 
         if(music_isConnected){
             userPermissions.setMusic(1);
+        } else {
+            userPermissions.setMusic(0);
         }
 
         if(movies_isConnected){
             userPermissions.setMovies(1);
+        } else {
+            userPermissions.setMovies(0);
         }
 
         if(books_isConnected){
             userPermissions.setBooks(1);
+        } else {
+            userPermissions.setBooks(0);
         }
 
         //Set First time user boolean to be false.
@@ -204,6 +229,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(final Void... params) {
+                System.out.println("do in backgroundte: " + userPermissions.getBirthday());
                 userPermissions.saveToDataset();
                 return null;
             }
@@ -215,7 +241,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
                     @Override
                     public void onSuccess(Dataset dataset, List<Record> updatedRecords) {
                         Log.d(LOG_TAG, "onSuccess - dataset updated");
-
+                        System.out.println("onPostExecutete: " + userPermissions.getBirthday());
                         //Get the info from facebook based on the privacy settings
                         getFacebookInfo();
                     }
@@ -292,7 +318,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
         JSONObject json = response.getJSONObject();
 
         //Print json response for debugging purposes
-        printJsonResponse(json);
+//        printJsonResponse(json);
 
         //Parse json response into the corresponding variables
         try {
@@ -639,10 +665,9 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
     public void goToMainActivity(){
 
         startActivity(new Intent(LoadFacebookPermissions.this, MainActivity.class)
-                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
 
         LoadFacebookPermissions.this.finish();
-//        overridePendingTransition(R.anim.activity_close_scale_r, R.anim.activity_open_translate_r);
     }
 
     /** Divides json response down into 5 lines to be printed **/
@@ -718,117 +743,91 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
         }
     }
 
-
-    private void setFirstTimeUser(int firstTime) {
-        System.out.println("MAINACTIVITY: setFirstTimeUser");
-        final UserPermissions userPermissions = UserPermissions.getInstance(context);
-        userPermissions.setNewUser(firstTime);
-
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(final Void... params) {
-                userPermissions.saveToDataset();
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(final Void aVoid) {
-
-                // update color
-//                ((MainActivity) getActivity()).updateColor();
-
-                // save user settings to remote on background thread
-                userPermissions.getDataset().synchronize(new Dataset.SyncCallback() {
-                    @Override
-                    public void onSuccess(Dataset dataset, List<Record> updatedRecords) {
-                        Log.d(LOG_TAG, "onSuccess - dataset updated");
-
-                    }
-
-                    @Override
-                    public boolean onConflict(Dataset dataset, List<SyncConflict> conflicts) {
-                        Log.d(LOG_TAG, "onConflict - dataset conflict");
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onDatasetDeleted(Dataset dataset, String datasetName) {
-                        Log.d(LOG_TAG, "onDatasetDeleted - dataset deleted");
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onDatasetsMerged(Dataset dataset, List<String> datasetNames) {
-                        Log.d(LOG_TAG, "onDatasetsMerged - datasets merged");
-                        return false;
-                    }
-
-                    @Override
-                    public void onFailure(DataStorageException dse) {
-                        Log.e(LOG_TAG, "onFailure - " + dse.getMessage(), dse);
-                    }
-                });
-            }
-        }.execute();
-    }
-
     /** Sets the booleans for the user badges, just makes the code cleaner **/
     private void setBooleansForUserBadges() {
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS)){
             friends_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS_OF_FRIENDS)){
             friendsOfFriends_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS_OF_FRIENDS, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_INSTAGRAM_FOLLOWERS)){
             following_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_INSTAGRAM_FOLLOWERS, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_INSTAGRAM_FOLLOWING)){
             followers_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_INSTAGRAM_FOLLOWING, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_LOCATION)){
             location_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_LOCATION, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_HOMETOWN)){
             hometown_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_HOMETOWN, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_LIKES)){
             likes_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_LIKES, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_BIRTHDAY)){
             birthday_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_BIRTHDAY, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_WORK)){
             work_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_WORK, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_SCHOOL)){
             school_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_SCHOOL, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_MUSIC)){
             music_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_MUSIC, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_MOVIES)){
             movies_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_MOVIES, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_BOOKS)){
             books_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_BOOKS, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_PROFFESIONAL_SKILLS)){
             professionalSkills_isConnected = true;
+        } else {
+            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_PROFFESIONAL_SKILLS, Toast.LENGTH_SHORT).show();
         }
     }
 }

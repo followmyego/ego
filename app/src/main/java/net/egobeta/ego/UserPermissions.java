@@ -296,7 +296,7 @@ public class UserPermissions {
         Dataset dataset = getDataset();
 
         //Save item booleans
-        for(int i = 0; i <variables.length; i++){
+        for(int i = 0; i < variables.length; i++){
             dataset.put(keys[i], String.valueOf(variables[i]));
             Log.d(LOG_TAG, "onSuccess - dataset updated: " + keys[i] + " " + String.valueOf(variables[i]));
         }

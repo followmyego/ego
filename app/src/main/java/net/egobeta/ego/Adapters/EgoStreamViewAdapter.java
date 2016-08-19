@@ -21,14 +21,14 @@ public class EgoStreamViewAdapter extends BaseAdapter {
 
     private final Context context;
     private Activity activity;
-    private ArrayList<String> arrList;
+    private ArrayList<String> friends_Ids;
     private List<UserItem> userList;
 
 
 
-    public EgoStreamViewAdapter(List<UserItem> userList, Context context, ArrayList<String> arrList, Activity activity) {
+    public EgoStreamViewAdapter(List<UserItem> userList, Context context, ArrayList<String> friends_Ids, Activity activity) {
         this.context = context;
-        this.arrList = arrList; /**This should hold be the facebook id's*/
+        this.friends_Ids = friends_Ids; /**This should hold be the facebook id's*/
         this.activity = activity;
         this.userList = userList;
         notifyDataSetChanged();
@@ -36,7 +36,8 @@ public class EgoStreamViewAdapter extends BaseAdapter {
 
     public class UserViewHolder {
         RoundedImageView userProfilePic;
-        ImageView badge;
+        ImageView badgeBackground;
+        ImageView friendBadge;
     }
 
 
@@ -83,14 +84,16 @@ public class EgoStreamViewAdapter extends BaseAdapter {
         if(convertView == null){
             System.out.println("EgoStreamViewAdapter: ONE");
             LayoutInflater inflater = activity.getLayoutInflater();
-//            LayoutInflater mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.stream_gridviewitem, null);
             holder = new UserViewHolder();
 
             holder.userProfilePic = (RoundedImageView) convertView.findViewById(R.id.img);
-
+            holder.badgeBackground = (ImageView) convertView.findViewById(R.id.badge_background);
+            holder.friendBadge = (ImageView) convertView.findViewById(R.id.friend_badge);
             convertView.setTag(holder);
             convertView.setTag(R.id.img, holder.userProfilePic);
+            convertView.setTag(R.id.badge_background, holder.badgeBackground);
+            convertView.setTag(R.id.friend_badge, holder.friendBadge);
         } else {
             System.out.println("EgoStreamViewAdapter: TWO");
             holder = (UserViewHolder)convertView.getTag();
@@ -99,13 +102,31 @@ public class EgoStreamViewAdapter extends BaseAdapter {
         holder.userProfilePic.setTag(position);
 
         UserItem userItem = userList.get(position);
+
+        //Detect if the person is a friend or not
+        boolean isFriend = friends_Ids.contains(userItem.getFacebookId());
+
+
+
         if(userItem.getProfilePicture() == null){
             System.out.println("EgoStreamViewAdapter: THREE");
-            userItem.setViewItem(holder.userProfilePic);
+            if(isFriend){
+                holder.badgeBackground.setVisibility(View.VISIBLE);
+                holder.friendBadge.setVisibility(View.VISIBLE);
+                System.out.println("EgoStreamViewAdapter: friend");
+            }
+            userItem.setViewItem(holder.userProfilePic, isFriend);
         } else {
             System.out.println("EgoStreamViewAdapter: FOUR");
+            if(isFriend){
+                holder.badgeBackground.setVisibility(View.VISIBLE);
+                holder.friendBadge.setVisibility(View.VISIBLE);
+                System.out.println("EgoStreamViewAdapter: friend");
+            }
             holder.userProfilePic.setImageDrawable(userItem.getProfilePicture());
         }
+
+
 
         return convertView;
     }

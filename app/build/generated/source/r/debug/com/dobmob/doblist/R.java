@@ -11,10 +11,10 @@ public final class R {
 		public static final int ic_launcher = 0x7f02009e;
 	}
 	public static final class id {
-		public static final int loading = 0x7f0e012e;
+		public static final int loading = 0x7f0e012f;
 	}
 	public static final class layout {
-		public static final int loading = 0x7f04004c;
+		public static final int loading = 0x7f04004d;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f080046;

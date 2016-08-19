@@ -46,8 +46,6 @@ public class Main_OnBoarding extends AppCompatActivity   {
 
 
     public ArrayList<String> confirmedList = new ArrayList<String>();
-
-    static Context context;
     public ListView listView = null;
     public Drawable upArrow;
     public static ScrollView scrollView;
@@ -74,7 +72,7 @@ public class Main_OnBoarding extends AppCompatActivity   {
 
 
 
-        context = getApplicationContext();
+
 
         /**Set up the ViewPager and PagerAdapter*/
         mViewPager = (ViewPager) findViewById(R.id.pager);

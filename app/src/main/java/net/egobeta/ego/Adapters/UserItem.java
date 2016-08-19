@@ -20,7 +20,7 @@ public class UserItem {
     Context context;
     Drawable profilePicture = null;
     String facebookId;
-
+    boolean isFriend;
     RoundedImageView roundedImageView;
 
 
@@ -53,9 +53,10 @@ public class UserItem {
         this.facebookId = facebookId;
     }
 
-    public void setViewItem(RoundedImageView roundedImageView) {
+    public void setViewItem(RoundedImageView roundedImageView, boolean isFriend) {
         this.roundedImageView = roundedImageView;
         new LoadUserImageAsyncTask().execute(facebookId);
+        this.isFriend = isFriend;
     }
 
 

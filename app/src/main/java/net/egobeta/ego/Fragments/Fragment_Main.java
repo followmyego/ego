@@ -44,6 +44,7 @@ import net.egobeta.ego.Adapters.BadgeItem;
 import net.egobeta.ego.Adapters.EgoStreamViewAdapter;
 import net.egobeta.ego.Adapters.GenericAdapter;
 import net.egobeta.ego.Adapters.UserItem;
+import net.egobeta.ego.EgoMap;
 import net.egobeta.ego.ImportedClasses.NonScrollableGridView;
 import net.egobeta.ego.MainActivity;
 import net.egobeta.ego.ProfileActivity;
@@ -101,11 +102,11 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 
     private static ItemAdapter adapter;
     SlidingMenu slidingMenu;
-
+    private static ArrayList<String> friends_Ids;
     private static List<UserItem> userList = new ArrayList<UserItem>();
 
 
-    public static Fragment newInstance(Activity activtiy, Context context1, int position, Toolbar toolbar1) {
+    public static Fragment newInstance(Activity activtiy, Context context1, int position, Toolbar toolbar1, ArrayList<String> friendsIds) {
         activity = activtiy;
         Fragment_Main f = new Fragment_Main();
         Bundle b = new Bundle();
@@ -113,6 +114,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         context = context1;
         toolbar = toolbar1;
         f.setArguments(b);
+        friends_Ids = friendsIds;
         return f;
     }
 
@@ -247,7 +249,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 
                         // We must call finishLoading
                         // when finishing adding data
-                        dobList.finishLoading(false);
+                        dobList.finishLoading(true);
                     }
                 }, 1000);
             }
@@ -262,7 +264,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 
                     // We must call finishLoading
                     // when finishing adding data
-                    dobList.finishLoading(false);
+                    dobList.finishLoading(true);
                 }
             }, 1000);
         }
@@ -289,9 +291,9 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
             UserItem userItem = new UserItem(context, facebook_Ids1[i]);
             userList.add(userItem);
         }
-        adapter_Grid = new EgoStreamViewAdapter(userList, context, facebook_Ids, activity);
+        adapter_Grid = new EgoStreamViewAdapter(userList, context, friends_Ids, activity);
         gridView.setAdapter(adapter_Grid);
-        gridView.invalidateViews();
+//        gridView.invalidateViews();
         checkIfWeAddItemToListView(1, false);
         count ++;
     }
@@ -303,11 +305,11 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
             UserItem userItem = new UserItem(context, facebook_Ids1[i]);
             userList.add(userItem);
         }
-        adapter_Grid = new EgoStreamViewAdapter(userList, context, facebook_Ids, activity);
+        adapter_Grid = new EgoStreamViewAdapter(userList, context, friends_Ids, activity);
 //        adapter_Grid.addAllItems(userList);
         adapter_Grid.notifyDataSetChanged();
         gridView.setAdapter(adapter_Grid);
-        gridView.invalidateViews();
+//        gridView.invalidateViews();
         checkIfWeAddItemToListView(1, true);
         count ++;
     }
@@ -332,7 +334,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
             count = 0;
             facebook_Ids = new ArrayList<String>();
             userList = new ArrayList<UserItem>();
-//        adapter = new EgoStreamViewAdapter(context, facebook_Ids);
+//        adapter = new EgoStreamViewAdapter(context, friends_Ids);
             adapter_Grid.setItems(userList);
             gridView.invalidateViews();
             adapter = new ItemAdapter();
@@ -384,7 +386,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Bundle bundle = new Bundle();
-                bundle.putString("facebook_id", facebook_Ids.get(position));
+                bundle.putString("facebook_id", userList.get(position).getFacebookId());
                 Intent intent = new Intent(getActivity(), ProfileActivity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -421,32 +423,11 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
                 return convertView;
             } else {
                 System.out.println("SOUT" + " ItemAdapter2");
-
-                ViewHolder holder = null;
-
-                if (convertView == null) {
-                    convertView = layoutInflater.inflate(R.layout.list_item, null);
-
-                    holder = new ViewHolder();
-                    holder.title = (TextView) convertView.findViewById(R.id.text1);
-
-                    convertView.setTag(holder);
-                } else {
-                    holder = (ViewHolder) convertView.getTag();
-                }
-
-                if(holder.title != null){
-                    holder.title.setText(" ");
-                }
+                convertView = layoutInflater.inflate(R.layout.list_item, null);
+                TextView title = (TextView) convertView.findViewById(R.id.text1);
+                title.setText(" ");
                 return convertView;
             }
-
-
-
-        }
-
-        class ViewHolder {
-            public TextView title;
         }
 
     }

@@ -9,6 +9,7 @@
 package net.egobeta.ego;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +24,7 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -49,31 +51,42 @@ import net.egobeta.ego.Fragments.Fragment_Main_Friends;
 import net.egobeta.ego.Fragments.ScrollTabHolderFragment;
 import net.egobeta.ego.Interfaces.ScrollTabHolder;
 import net.egobeta.ego.Settings.SettingsActivity;
+import net.egobeta.ego.Table_Classes.User_Badges;
+import net.egobeta.ego.Table_Classes.User_Profile;
 import net.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.mobileconnectors.cognito.Dataset;
 import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
 import com.amazonaws.mobileconnectors.cognito.Record;
 import com.amazonaws.mobileconnectors.cognito.exceptions.DataStorageException;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.viewpagerindicator.CirclePageIndicator;
 
 
 import android.content.IntentFilter;
 import android.content.BroadcastReceiver;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements ScrollTabHolder, ViewPager.OnPageChangeListener, View.OnClickListener {
 
     //AWS Variables
-    AWSMobileClient awsMobileClient = null;
     static DynamoDBMapper mapper = null;
     public static IdentityManager identityManager = null; //The identity manager used to keep track of the current user account.
 
@@ -86,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     ScrollTabHolderFragment fragment = null;
 
     private Resources resources;
-    static Context context;
+    Context context;
     private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
     static EgoMap egoMap = null;
 
@@ -94,12 +107,14 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     protected void onDestroy() {
         super.onDestroy();
         Log.d("ACT DEBUG", "MainActivity: OnDestroy");
+        egoMap = null;
         android.os.Process.killProcess(android.os.Process.myPid());
     }
 
 //    static UserLocation userLocation = null;
     public static Activity activity = null;
 //    static EgoStreamViewAdapter2 adapter;
+    private static String facebookId;
 
     //Number Variables
     private static int mMinHeaderTranslation;
@@ -126,132 +141,52 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     static CirclePageIndicator pageIndicator;
 
     static String[] facebookIds = {"699211431"};
+    private static User_Badges userBadges;
+    private static User_Profile userProfile;
+    private GraphResponse response;
+    ArrayList<String> friends_Ids = new ArrayList<String>(); //list to pass through to friends fragment
+    boolean isCreated = false;
 
-
-
-
-//    /** The toolbar view control. */
-//    private Toolbar toolbar = null;
-//
-//    /** Our navigation drawer class for handling navigation drawer logic. */
-//    private NavigationDrawer navigationDrawer;
-//
-//    /** The helper class used to toggle the left navigation drawer open and closed. */
-//    private ActionBarDrawerToggle drawerToggle;
-//    /**
-//     * Initializes the sign-in and sign-out buttons.
-//     */
-//    private void setupSignInButtons() {
-//
-//        signOutButton = (Button) findViewById(R.id.button_signout);
-//        signOutButton.setOnClickListener(this);
-//
-//        signInButton = (Button) findViewById(R.id.button_signin);
-//        signInButton.setOnClickListener(this);
-//
-//        final boolean isUserSignedIn = identityManager.isUserSignedIn();
-//        signOutButton.setVisibility(isUserSignedIn ? View.VISIBLE : View.INVISIBLE);
-//        signInButton.setVisibility(!isUserSignedIn ? View.VISIBLE : View.INVISIBLE);
-//
-//    }
-
-//    /**
-//     * Initializes the navigation drawer menu to allow toggling via the toolbar or swipe from the
-//     * side of the screen.
-//     */
-//    private void setupNavigationMenu(final Bundle savedInstanceState) {
-//        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        final ListView drawerItems = (ListView) findViewById(R.id.nav_drawer_items);
-//
-//        // Create the navigation drawer.
-//        navigationDrawer = new NavigationDrawer(this, drawerLayout, drawerItems,
-//            R.id.main_fragment_container);
-//
-//        // Add navigation drawer menu items.
-//        // Home isn't a demo, but is fake as a demo.
-//        DemoConfiguration.DemoFeature home = new DemoConfiguration.DemoFeature();
-//        home.iconResId = R.mipmap.icon_home;
-//        home.titleResId = R.string.main_nav_menu_item_home;
-//        navigationDrawer.addDemoFeatureToMenu(home);
-//
-//        for (DemoConfiguration.DemoFeature demoFeature : DemoConfiguration.getDemoFeatureList()) {
-//            navigationDrawer.addDemoFeatureToMenu(demoFeature);
-//        }
-//        setupSignInButtons();
-//
-//        if (savedInstanceState == null) {
-//            // Add the home fragment to be displayed initially.
-//            navigationDrawer.showHome();
-//        }
-//    }
 
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("ACT DEBUG", "MainActivity: OnCreate");
+
+
         System.out.println("MAINACTIVITY: onCreate");
+        /** Set up and initialize aws variables **/
+        initializeAWSVariables();
+
+        /** Set Content View **/
+        setContentView(R.layout.activity_main);
+
+        /**Initialize facebookId, context, egoMap, resources, typeface, and dimension items*/
+        setUpNeededVariables();
+
+        /** Sync user permissions from server **/
+        /** Chain ends at updateUI method which then initializes the pager adapter **/
+        syncPrivacySettings();
+
+
+    }
+
+    private void initializeAWSVariables() {
         activity = this;
-        /** AWS Stuffs **/
+
         // Obtain a reference to the mobile client. It is created in the Application class,
         // but in case a custom Application class is not used, we initialize it here if necessary.
         AWSMobileClient.initializeMobileClientIfNecessary(this);
         // Obtain a reference to the mobile client. It is created in the Application class.
-        awsMobileClient = AWSMobileClient.defaultMobileClient();
+        final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
         // Obtain a reference to the identity manager.
         identityManager = awsMobileClient.getIdentityManager();
 
         //Initialize the mapper for DynamoDB
         mapper = AWSMobileClient.defaultMobileClient().getDynamoDBMapper();
-        /****************/
-        setContentView(R.layout.activity_main);
-        context = getApplicationContext();
+    }
 
-
-
-//        adapter = new EgoStreamViewAdapter2(this, facebookIds);
-        egoMap = new EgoMap(MainActivity.this, identityManager, mapper);
-
-        resources = getResources();
-
-        /**Initialize font*/
-        typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
-
-        /**Initialize dimension variables for the animations*/
-        initializeDimensionItems();
-
-        /**Initialize view item variables*/
-        initializeViewItems();
-
-        /**Create the pull out Sliding menu*/
-        if(slidingMenu == null){
-            createMenuDrawer();
-        }
-
-        /**Set up the ViewPager and PagerAdapter*/
-        mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setOffscreenPageLimit(3);
-        mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
-        mPagerAdapter.setTabHolderScrollingContent(this);
-        mViewPager.setAdapter(mPagerAdapter);
-
-        /**Set up the SlidingTabStrip*/
-        initializeSlidingTabStrip();
-
-
-
-        /**Create top toolbar/menu bar*/
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        assert getSupportActionBar() != null;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setOnClickListener(this);
-
-        /**Get rid of the default arrow image*/
-        removeDefaultMenuButton();
-
-
-        /*Bind the Page indicator to the adapter*/
+    private void setUpPageIndicator() {
         pageIndicator = (CirclePageIndicator)findViewById(R.id.titles);
         int tabPageColor = Color.parseColor("#5055C1AD");
         int tabFillColor = Color.parseColor("#55C1AD");
@@ -260,28 +195,28 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         pageIndicator.setPageColor(tabPageColor);
         pageIndicator.setExtraSpacing(15f);
         pageIndicator.setViewPager(mViewPager);
+    }
 
+    private void setUpToolBar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setOnClickListener(this);
+    }
 
-        //Fire the ego map on create method
-
-
-        //GetThe first batch of nearby users
-//        getNearbyUsers(0);
-
-        loadUserSettings2();
+    private void setUpViewPager() {
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setOffscreenPageLimit(3);
+        mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        mPagerAdapter.setTabHolderScrollingContent(this);
+        mViewPager.setAdapter(mPagerAdapter);
     }
 
 
-
-
-
-
-
-
-    /**Created from the AWS demo app**/
     /** Sync user's preferences only if user is signed in **/
-    private void syncUserSettings() {
-        System.out.println("MAINACTIVITY: syncUserSettings");
+    private void syncPrivacySettings() {
+        System.out.println("MAINACTIVITY: syncPrivacySettings");
         // sync only if user is signed in
         if (AWSMobileClient.defaultMobileClient().getIdentityManager().isUserSignedIn()) {
             final UserPermissions userPermissions = UserPermissions.getInstance(getApplicationContext());
@@ -294,47 +229,16 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            loadUserSettings1();
+                            loadUserSettings();
                         }
                     });
-
-
-                    //If firstTimeUser = 0
-                    // go to OnBoardingActivity
-                    //else
-                    // stay on current activity and
-
                 }
             });
         }
     }
 
-    private void loadUserSettings1() {
-        System.out.println("MAINACTIVITY: loadUserSettings");
-        final UserPermissions userPermissions = UserPermissions.getInstance(getApplicationContext());
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(final Void... params) {
-                userPermissions.loadFromDataset();
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(final Void aVoid) {
-                int firstTimeUser = userPermissions.getNewUser();
-                if(firstTimeUser == 1){
-                    Toast.makeText(activity, "not FirstTimeUser", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(activity, "FirstTimeUser", Toast.LENGTH_SHORT).show();
-                }
-
-
-                Toast.makeText(activity, userPermissions.getBirthday() + " ", Toast.LENGTH_LONG).show();
-            }
-        }.execute();
-    }
-
-    private void loadUserSettings2() {
+    /** userPermissions.loadFromDataset(); get called here **/
+    private void loadUserSettings() {
         final UserPermissions userPermissions = UserPermissions.getInstance(getApplicationContext());
         final Dataset dataset = userPermissions.getDataset();
         final ProgressDialog dialog = ProgressDialog.show(this,
@@ -346,13 +250,14 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
             public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
                 super.onSuccess(dataset, updatedRecords);
                 userPermissions.loadFromDataset();
-                updateUI(dialog, userPermissions);
+                getFacebookInfo(userPermissions, dialog);
+
             }
 
             @Override
             public void onFailure(final DataStorageException dse) {
                 Log.w(LOG_TAG, "Failed to load user settings from remote, using default.", dse);
-                updateUI(dialog, userPermissions);
+                updateUI(dialog);
             }
 
             @Override
@@ -369,49 +274,489 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         });
     }
 
-    private void updateUI(final ProgressDialog dialog, final UserPermissions userPermissions) {
+    /** Get the info from the facebook api**/
+    private void getFacebookInfo(final UserPermissions userPermissions, final ProgressDialog dialog) {
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    if(true) {
+                        sleep(1000);
+                        final Bundle parameters = new Bundle();
+                        parameters.putString("fields", "name,picture.type(large), age_range, birthday, context, " +
+                                "education, email, favorite_athletes, favorite_teams, hometown, inspirational_people, is_verified, " +
+                                "languages, locale, location, work, movies, music, books, friends");
+                        final GraphRequest graphRequest = new GraphRequest(AccessToken.getCurrentAccessToken(), "me");
+                        graphRequest.setParameters(parameters);
+                        response = graphRequest.executeAndWait();
+                        getBadgeVariablesFromResponse(response, userPermissions, dialog);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        thread.start();
+    }
+
+    /** Gets the variables set by the user's privacy preferences needed for the badge class **/
+    public void getBadgeVariablesFromResponse(GraphResponse response, UserPermissions userPermissions, ProgressDialog dialog){
+        userBadges = new User_Badges();
+
+        //Get json object from response
+        JSONObject json = response.getJSONObject();
+
+        //Print json response for debugging purposes
+//        printJsonResponse(json);
+
+        //Parse json response into the corresponding variables
+        try {
+            userBadges.setFacebookId(facebookId);
+
+            if(userPermissions.getFriends() == 1){
+                //Need to set the badge variable to 1 so that the database can do a badge comparison on this badge
+                userBadges.setFriend("1");
+                // Get all friends from response and store in arraylist to pass through to ego friends fragment.
+                //Create JSON array to store the friend items
+                JSONArray friendArray = new JSONArray();
+
+                //Get the items from the response JSONArray and add it to our custom json array
+                JSONObject friendObject = json.getJSONObject("friends");
+                JSONArray data = friendObject.getJSONArray("data");
+                friends_Ids = new ArrayList<String>();
+                for (int i = 0; i < data.length(); i++) {
+                    JSONObject jsonobject = data.getJSONObject(i);
+                    String friend_facebook_id = jsonobject.getString("id");
+
+                    friends_Ids.add(friend_facebook_id);
+                    System.out.println("MAINACTIVITY JSONPARSING: " + friend_facebook_id);
+                }
+            }
+
+            if(userPermissions.getFriendsOfFriends() == 1){
+                //Need to set the badge variable to 1 so that the database can do a badge comparison on this badge
+                userBadges.setFriendsOfFriends("1");
+            }
+
+            if(userPermissions.getInstagramFollowers() == 1){
+                //Need to set the badge variable to 1 so that the database can do a badge comparison on this badge
+                userBadges.setInstagram_follower("1");
+            }
+
+            if(userPermissions.getInstagramFollowing() == 1){
+                userBadges.setInstagram_following("1");
+            }
+
+            if(userPermissions.getLocation() == 1){
+                JSONObject locationObject = json.getJSONObject("location");
+                String location = locationObject.getString("name");
+                userBadges.setLocation(location);
+                System.out.println("MAINACTIVITY JSONPARSING: " + location);
+            }
+
+            if(userPermissions.getHometown() == 1){
+                JSONObject hometownObject = json.getJSONObject("hometown");
+                String hometown = hometownObject.getString("name");
+                userBadges.setHometown(hometown);
+                System.out.println("MAINACTIVITY JSONPARSING: " + hometown);
+            }
+
+            if(userPermissions.getCommonLikes() == 1){
+                //Create JSON array to store the likes
+                JSONArray likesArray = new JSONArray();
+
+                //Get the items from the response JSONArray and add it to our custom json array
+                JSONObject contextObject = json.getJSONObject("context");
+                JSONObject mutualLikes = contextObject.getJSONObject("mutual_likes");
+                JSONArray data = mutualLikes.getJSONArray("data");
+
+                for (int i = 0; i < data.length(); i++) {
+                    JSONObject jsonobject = data.getJSONObject(i);
+                    String name = jsonobject.getString("name");
+
+                    likesArray.put(name);
+                }
+
+                JSONObject likesObject = new JSONObject();
+                likesObject.put("likes", likesArray);
+
+                String likes_json = likesObject.toString();
+
+                userBadges.setLikes_json(likes_json);
+                System.out.println("MAINACTIVITY JSONPARSING: " + likes_json);
+            }
+
+            if(userPermissions.getBirthday() == 1){
+                String birthday = json.getString("birthday");
+                userBadges.setBirthday(birthday);
+                System.out.println("MAINACTIVITY JSONPARSING: " + birthday);
+            }
+
+            if(userPermissions.getWorkplace() == 1){
+                //Create JSON array to store the work items
+                JSONArray workArray = new JSONArray();
+
+                //Get the work array from the json response
+                JSONArray data = json.getJSONArray("work");
+
+                for (int i = 0; i < data.length(); i++) {
+                    JSONObject workObject = data.getJSONObject(i);
+
+                    //Get work position name
+                    JSONObject positionObject = workObject.getJSONObject("position");
+                    String position = positionObject.getString("name");
+
+                    //Get work employer name
+                    JSONObject employerObject = workObject.getJSONObject("employer");
+                    String employer = employerObject.getString("name");
+
+                    //Get work location name
+                    JSONObject locationObject = workObject.getJSONObject("location");
+                    String location = locationObject.getString("name");
+
+                    JSONObject workItem = new JSONObject();
+                    workItem.put("position", position);
+                    workItem.put("employer", employer);
+                    workItem.put("location", location);
+                    workArray.put(workItem);
+                }
+
+                JSONObject workObject = new JSONObject();
+                workObject.put("work", workArray);
+
+                String workplace_json = workObject.toString();
+
+                userBadges.setWorkplace_json(workplace_json);
+                System.out.println("MAINACTIVITY JSONPARSING: " + workplace_json);
+            }
+
+            if(userPermissions.getSchool() == 1){
+                //Create JSON array to store the school items
+                JSONArray educationArray = new JSONArray();
+
+                //Get the education array from the json response
+                JSONArray data = json.getJSONArray("education");
+
+                for (int i = 0; i < data.length(); i++) {
+                    JSONObject educationObject = data.getJSONObject(i);
+
+                    //Get school name
+                    JSONObject schoolObject = educationObject.getJSONObject("school");
+                    String school = schoolObject.getString("name");
+
+                    educationArray.put(school);
+                }
+
+                JSONObject schoolsObject = new JSONObject();
+                schoolsObject.put("schools", educationArray);
+
+                String school_json = schoolsObject.toString();
+
+                userBadges.setSchool_json(school_json);
+                System.out.println("MAINACTIVITY JSONPARSING: " + school_json);
+            }
+
+            if(userPermissions.getSchool() == 1){
+                //Create JSON array to store the skill items
+                JSONArray skillsArray = new JSONArray();
+
+                //Get the education array from the json response
+                JSONArray data = json.getJSONArray("education");
+
+                for (int i = 0; i < data.length(); i++) {
+                    JSONObject educationObject = data.getJSONObject(i);
+
+                    //Get skill name
+                    JSONArray concentration = educationObject.getJSONArray("concentration");
+                    for(int ii = 0; ii < concentration.length(); ii++){
+                        JSONObject skillObject = concentration.getJSONObject(ii);
+                        String skill = skillObject.getString("name");
+
+                        skillsArray.put(skill);
+                    }
+                }
+
+                JSONObject skillObject = new JSONObject();
+                skillObject.put("skills", skillsArray);
+
+                String professionalSkills_json = skillObject.toString();
+
+                userBadges.setProfessionalSkills_json(professionalSkills_json);
+                System.out.println("MAINACTIVITY JSONPARSING: " + professionalSkills_json);
+            }
+
+            if(userPermissions.getMusic() == 1){
+                //Create JSON array to store the music items
+                JSONArray musicArray = new JSONArray();
+
+                //Get the items from the response JSONArray and add it to our custom json array
+                JSONObject musicObject = json.getJSONObject("music");
+                JSONArray data = musicObject.getJSONArray("data");
+
+                for (int i = 0; i < data.length(); i++) {
+                    JSONObject jsonobject = data.getJSONObject(i);
+                    String name = jsonobject.getString("name");
+
+                    musicArray.put(name);
+                }
+
+                musicObject = new JSONObject();
+                musicObject.put("music", musicArray);
+
+                String music_json = musicObject.toString();
+
+                userBadges.setMusic_json(music_json);
+                System.out.println("MAINACTIVITY JSONPARSING: " + music_json);
+            }
+
+            if(userPermissions.getMovies() == 1){
+                //Create JSON array to store the movie items
+                JSONArray moviesArray = new JSONArray();
+
+                //Get the items from the response JSONArray and add it to our custom json array
+                JSONObject movieObject = json.getJSONObject("movies");
+                JSONArray data = movieObject.getJSONArray("data");
+
+                for (int i = 0; i < data.length(); i++) {
+                    JSONObject jsonobject = data.getJSONObject(i);
+                    String name = jsonobject.getString("name");
+
+                    moviesArray.put(name);
+                }
+
+                movieObject = new JSONObject();
+                movieObject.put("movies", moviesArray);
+
+                String movies_json = movieObject.toString();
+
+                userBadges.setMovies_json(movies_json);
+                System.out.println("MAINACTIVITY JSONPARSING: " + movies_json);
+            }
+
+            if(userPermissions.getBooks() == 1){
+                //Create JSON array to store the book items
+                JSONArray booksArray = new JSONArray();
+
+                //Get the items from the response JSONArray and add it to our custom json array
+                JSONObject bookObject = json.getJSONObject("books");
+                JSONArray data = bookObject.getJSONArray("data");
+
+                for (int i = 0; i < data.length(); i++) {
+                    JSONObject jsonobject = data.getJSONObject(i);
+                    String name = jsonobject.getString("name");
+
+                    booksArray.put(name);
+                }
+
+                bookObject = new JSONObject();
+                bookObject.put("books", booksArray);
+
+                String books_json = bookObject.toString();
+
+                userBadges.setBooks_json(books_json);
+                System.out.println("MAINACTIVITY JSONPARSING: " + books_json);
+            }
+//            userName = json.getString("name");
+//            userImageUrl = json.getJSONObject("picture")
+//                    .getJSONObject("data")
+//                    .getString("url");
+        } catch (final JSONException jsonException) {
+            Log.e("LOGTAG",
+                    "Unable to get Facebook user info. " + jsonException.getMessage() + "\n" + response,
+                    jsonException);
+            // Nothing much we can do here.
+        }
+
+        /** Push userBadges item to server **/
+        new SaveUserBadgesToDB(dialog).execute();
+    }
+
+
+    public class SaveUserBadgesToDB extends AsyncTask<Void, Void, Void> {
+        ProgressDialog dialog;
+
+        public SaveUserBadgesToDB(ProgressDialog dialog) {
+            this.dialog = dialog;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try{
+                mapper.save(userBadges);
+            } catch (AmazonClientException ex){
+                ex.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            Toast.makeText(MainActivity.this, "Successfully saved user's badges to db", Toast.LENGTH_SHORT).show();
+            getBasicUserVariablesFromResponse(response, dialog);
+        }
+    }
+
+
+    /** Gets the variables set by the user's privacy preferences needed for the badge class **/
+    public void getBasicUserVariablesFromResponse(GraphResponse response, ProgressDialog dialog){
+        userProfile = new User_Profile();
+
+        //Get json object from response
+        JSONObject json = response.getJSONObject();
+
+        try {
+            /** Get the variables **/
+            //Get name
+            String name = json.getString("name");
+            String firstAndLastNAme[] = name.split(" ");
+            String firstName = firstAndLastNAme[0];
+            String lastName = firstAndLastNAme[1];
+            //Get age
+            JSONObject ageRangeObject = json.getJSONObject("age_range");
+            String age = ageRangeObject.getString("min");
+            //Get email
+            String email = json.getString("email");
+
+            /** Set the variables **/
+            userProfile.setFacebookId(facebookId); //Set facebookId
+            userProfile.setFirstName(firstName); //Set first name
+            userProfile.setLastName(lastName); //Set last name
+            userProfile.setAge(age); //Set Age
+            userProfile.setEmail(email); //Set email
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        /** Push userInfo item to server **/
+        new SaveBasicInfoToDB(dialog).execute();
+    }
+
+    public class SaveBasicInfoToDB extends AsyncTask<Void, Void, Void> {
+        ProgressDialog dialog;
+
+        public SaveBasicInfoToDB(ProgressDialog dialog) {
+            this.dialog = dialog;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try{
+                mapper.save(userProfile);
+            } catch (AmazonClientException ex){
+                ex.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            Toast.makeText(MainActivity.this, "Successfully saved user's info to db", Toast.LENGTH_SHORT).show();
+            updateUI(dialog);
+        }
+
+    }
+
+
+    /** Anything on the ui thread that needs changing after sync gets updated here **/
+    private void updateUI(final ProgressDialog dialog) {
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 if (dialog != null) {
                     dialog.dismiss();
                 }
-                Toast.makeText(MainActivity.this, userPermissions.getBooks() + "", Toast.LENGTH_SHORT).show();
-                loadUserSettings1();
+
+                /**Initialize view item variables*/
+                initializeViewItems();
+
+                /**Create the pull out Sliding menu*/
+                createMenuDrawer();
+
+                /**Set up the ViewPager and PagerAdapter*/
+                setUpViewPager();
+
+                /**Set up the SlidingTabStrip*/
+                initializeSlidingTabStrip();
+
+                /**Create top toolbar/menu bar*/
+                setUpToolBar();
+
+                /**Get rid of the default arrow image*/
+                removeDefaultMenuButton();
+
+                /**Bind the Page indicator to the adapter*/
+                setUpPageIndicator();
+
+                isCreated = true;
+
+                theMapOnCreateMethod();
+                theMapOnStartMethod();
+                theMapOnResumeMethod();
             }
         });
     }
 
 
+    /** Divides json response from facebook info down into 5 lines to be printed **/
+    private void printJsonResponse(JSONObject json) {
+        int maxLogSize = 1000;
+        for(int i = 0; i <= json.toString().length() / maxLogSize; i++) {
+            int start = i * maxLogSize;
+            int end = (i+1) * maxLogSize;
+            end = end > json.toString().length() ? json.toString().length() : end;
+            Log.d("MAINACTIVITY FB:  ", json.toString().substring(start, end));
+        }
+    }
 
     //Create the pull out Sliding menu
     private void createMenuDrawer() {
-        System.out.println("MAINACTIVITY: createMenuDrawer");
+        if(slidingMenu == null){
+            System.out.println("MAINACTIVITY: createMenuDrawer");
 
-        slidingMenu = new SlidingMenu(MainActivity.this);
-        slidingMenu.attachToActivity(MainActivity.this, SlidingMenu.SLIDING_CONTENT, true);
-        slidingMenu.setFadeDegree(0f);
-        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
-        slidingMenu.setBehindOffsetRes(R.dimen.behindOffSetRes);
-        slidingMenu.setMenu(R.layout.sliding_menu_frame);
+            slidingMenu = new SlidingMenu(MainActivity.this);
+            slidingMenu.attachToActivity(MainActivity.this, SlidingMenu.SLIDING_CONTENT, true);
+            slidingMenu.setFadeDegree(0f);
+            slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+            slidingMenu.setBehindOffsetRes(R.dimen.behindOffSetRes);
+            slidingMenu.setMenu(R.layout.sliding_menu_frame);
 
-        View view = slidingMenu.getRootView();
+            View view = slidingMenu.getRootView();
 
-        TextView viewingYou = (TextView) view.findViewById(R.id.viewing_you_text);
-        TextView version = (TextView) view.findViewById(R.id.version);
-        TextView year = (TextView) view.findViewById(R.id.year);
-        ImageView imageView = (ImageView) view.findViewById(R.id.settingsButton);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                settings();
-            }
-        });
+            TextView viewingYou = (TextView) view.findViewById(R.id.viewing_you_text);
+            TextView version = (TextView) view.findViewById(R.id.version);
+            TextView year = (TextView) view.findViewById(R.id.year);
+            ImageView settingsButton = (ImageView) view.findViewById(R.id.settingsButton);
+            settingsButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    settings();
+                }
+            });
 
-        viewingYou.setTypeface(typeface);
-        version.setTypeface(typeface);
-        year.setTypeface(typeface);
+            Button logoutButton = (Button) view.findViewById(R.id.logout_Button);
+            logoutButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    logout();
+                }
+            });
 
+            Button blankActivityButton = (Button) view.findViewById(R.id.blankActivity_Button);
+            blankActivityButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    blankActivity();
+                }
+            });
+
+            viewingYou.setTypeface(typeface);
+            version.setTypeface(typeface);
+            year.setTypeface(typeface);
+        }
     }
 
     //Method to go to user settings
@@ -421,13 +766,33 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         slidingMenu.toggle();
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
-//        this.finish();
     }
 
-    //Initialize dimension variables for the animations
-    private void initializeDimensionItems() {
-        System.out.println("MAINACTIVITY: initializeDimensionItems");
+    public void logout(){
+        identityManager.signOut();
+        Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        this.finish();
+    }
 
+    public void blankActivity(){
+        identityManager.signOut();
+        Intent intent = new Intent(MainActivity.this, BlankActivity.class);
+        startActivity(intent);
+        this.finish();
+    }
+
+    //Initialize some needed variables
+    private void setUpNeededVariables() {
+        System.out.println("MAINACTIVITY: setUpNeededVariables");
+        facebookId = identityManager.getUserFacebookId();
+        context = getApplicationContext();
+        egoMap = new EgoMap(MainActivity.this, identityManager, mapper);
+        resources = getResources();
+        typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
+
+        /**Initialize dimension variables for the animations*/
         mMinHeaderHeight = getResources().getDimensionPixelSize(R.dimen.min_header_height);
         mHeaderHeight = getResources().getDimensionPixelSize(R.dimen.header_height);
         mMinHeaderTranslation = -mMinHeaderHeight + getActionBarHeight();
@@ -532,7 +897,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         @Override
         public void onReceive(Context context, Intent intent) {
             Log.d(LOG_TAG, "Received settings changed local broadcast. Update theme colors.");
-            loadUserSettings1();
+            syncPrivacySettings();
         }
     };
 
@@ -575,15 +940,13 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 //        // register settings changed receiver.
         LocalBroadcastManager.getInstance(this).registerReceiver(settingsChangedReceiver,
                 new IntentFilter(UserPermissions.ACTION_PERMISSIONS_CHANGED));
-        loadUserSettings1();
 
-//        Sync the user's privacy settings and detect if the user is first time.
-        syncUserSettings();
 
-        theMapOnCreateMethod();
-        theMapOnStartMethod();
-        theMapOnResumeMethod();
-//        getNearbyUsers(0);
+        if(isCreated){
+            theMapOnCreateMethod();
+            theMapOnStartMethod();
+            theMapOnResumeMethod();
+        }
     }
 
     @Override
@@ -758,9 +1121,9 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         @Override
         public Fragment getItem(int position) {
             if(position == 0){
-                fragment = (ScrollTabHolderFragment) Fragment_Main.newInstance(MainActivity.this, context, position, toolbar);
+                fragment = (ScrollTabHolderFragment) Fragment_Main.newInstance(MainActivity.this, context, position, toolbar, friends_Ids);
             } else {
-                fragment = (ScrollTabHolderFragment) Fragment_Main_Friends.newInstance(MainActivity.this, context, position, toolbar);
+                fragment = (ScrollTabHolderFragment) Fragment_Main_Friends.newInstance(position, toolbar, friends_Ids);
             }
 
 
@@ -828,6 +1191,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     public void theMapOnStartMethod(){
         System.out.println("MAINACTIVITY: theMapOnStartMethod");
         egoMap.theOnStartMethod();
+    }
+
+    @Nullable
+    @Override
+    public CharSequence onCreateDescription() {
+        return super.onCreateDescription();
     }
 
     public void theMapOnResumeMethod(){

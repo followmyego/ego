@@ -53,75 +53,34 @@ import java.util.TreeSet;
 public class Fragment_Main_Friends extends ScrollTabHolderFragment implements AbsListView.OnScrollListener {
 
 
-    private static final String ARG_POSITION = "position";
-    static int egoStreamPosition = 0;
-    static int egoFriendsPosition = 1;
-
-
-    //User profile info variables
-    private String facebookId;
-
-    //Other variables
-    static ArrayList<String> facebook_Ids = new ArrayList<String>();
-    private List<UserItem> userList = new ArrayList<UserItem>();
-
-
+    //View Item Variables
     private ListView mListView;
-    private ArrayList<String> mListItems;
-    private static final String TAG = "DEBUGGING MESSAGE";
-    private String interestSuggestionsUrlAddress = "http://www.myegotest.com/android_user_api/searcher.php";
-    private String getUserInterestsUrlAddress =  "http://www.myegotest.com/android_user_api/getUserInterests.php";
     public ScrollView scrollView;
-
-    private static int mPosition;
-    static Context context;
-    static Activity activity;
-    private Typeface typeface;
-
-    //Instagram GridView view Variables
-    private static AlertDialog.Builder builder;
-    private static TextView connectButtonText;
-    private static ImageButton connectButton;
     private static NonScrollableGridView gridView;
-    private static NonScrollableGridView gridView2;
-
     public static View v;
-    private static Toolbar toolbar;
+    public static Toolbar toolbar;
 
-    private int scrollHeight;
-//    EgoStreamViewAdapter adapter;
-
-    static EgoStreamViewAdapter adapter;
-
-
-    SlidingMenu slidingMenu;
-
-    //Instagram stuffs
-    private static String instagramProfileLinked;
-    private static String instagramId;
-    private static String instagramUsername;
-    private static ArrayList<String> facebookProfileIds = new ArrayList<String>();
-    private int WHAT_FINALIZE = 0;
-    private static int WHAT_ERROR = 1;
-    private ProgressDialog pd;
-    public static final String TAG_DATA = "data";
-    public static final String TAG_IMAGES = "images";
-    public static final String TAG_THUMBNAIL = "standard_resolution";
-    public static final String TAG_URL = "url";
-    public JSONObject jObj = null;
-    Integer[] imageId = new Integer[10];
-    private Button btnConnect;
-    private HashMap<String, String> instagramUserInfoHashmap = new HashMap<String, String>();
+    //Other Variables
+    private static final String ARG_POSITION = "position";
+    private static ArrayList<String> friends_Ids = new ArrayList<String>();
+    private List<UserItem> userList = new ArrayList<UserItem>();
+    public static EgoStreamViewAdapter adapter;
+    private static int mPosition;
+    Context context;
+    Activity activity;
+    public Typeface typeface;
+    public int scrollHeight;
 
 
-    public static Fragment newInstance(Activity activtiy, Context context1, int position, Toolbar toolbar1) {
-        activity = activtiy;
+
+
+    public static Fragment newInstance(int position, Toolbar toolbar1, ArrayList<String> friendsIds) {
         Fragment_Main_Friends f = new Fragment_Main_Friends();
         Bundle b = new Bundle();
         b.putInt(ARG_POSITION, position);
-        context = context1;
         toolbar = toolbar1;
         f.setArguments(b);
+        friends_Ids = friendsIds;
         return f;
     }
 
@@ -129,17 +88,20 @@ public class Fragment_Main_Friends extends ScrollTabHolderFragment implements Ab
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        context = getContext();
+        activity = getActivity();
+
         mPosition = getArguments().getInt(ARG_POSITION);
         typeface = Typeface.createFromAsset(context.getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
 
-        /**Add 30 strings to the ArrayList<Strings> to load 30 fake profiles to the stream for testing **/
-        for(int i = 0; i < 10; i++){
-            facebookProfileIds.add("facebookProfileId " + i);
+        /** Initialize UserItems from ArrayList of friends facebook ids **/
+        for (int i = 0; i < friends_Ids.size(); i++) {
+            UserItem userItem = new UserItem(context, friends_Ids.get(i));
+            userList.add(userItem);
         }
 
-        getUsersAroundUs();
-        //Create adapter for instagram images and horizontal image sliding view
-        adapter = new EgoStreamViewAdapter(userList, getActivity(), facebook_Ids, getActivity());
+        /** Create adapter for the gridView containing the users friends profiles **/
+        adapter = new EgoStreamViewAdapter(userList, context, friends_Ids, getActivity());
     }
 
 
@@ -158,7 +120,7 @@ public class Fragment_Main_Friends extends ScrollTabHolderFragment implements Ab
 
         int lengthOfUsers = user_friendsFacebookIds.length;
         for (int i = 0; i < lengthOfUsers; i++) {
-            facebook_Ids.add(user_friendsFacebookIds[i]);
+            friends_Ids.add(user_friendsFacebookIds[i]);
         }
 
     }
@@ -227,18 +189,12 @@ public class Fragment_Main_Friends extends ScrollTabHolderFragment implements Ab
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Bundle bundle = new Bundle();
-                bundle.putString("facebook_id", facebook_Ids.get(position));
+                bundle.putString("facebook_id", friends_Ids.get(position));
                 Intent intent = new Intent(getActivity(), ProfileActivity.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
-//                Toast.makeText(getActivity(), "item number: " + position, Toast.LENGTH_SHORT).show();
             }
         });
-
-    }
-
-    public static void notfiyAdapterHasChanged(String[] facebook_Ids1){
-
 
     }
 

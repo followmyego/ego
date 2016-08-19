@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBQueryExpression;
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.PaginatedQueryList;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.ComparisonOperator;
 import com.amazonaws.services.dynamodbv2.model.Condition;
@@ -24,7 +23,6 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
-import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
 import net.egobeta.ego.Fragments.Fragment_Main;
 
@@ -65,7 +63,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     private List<String> usernames;
     private static String serverURL = "http://ebjavasampleapp-env.us-east-1.elasticbeanstalk.com/dynamodb-geo";
     private String googleAPI = "AIzaSyAyMXHOJdJg6Jjj64SZnmyxIaY2lWvKDC0";
-    private Activity context;
+    private Activity activity;
     private String username = "username";
     double longitude;
     double latitude;
@@ -76,8 +74,8 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
 
 
-    public EgoMap(Activity context, IdentityManager identityManager, DynamoDBMapper mapper){
-        this.context = context;
+    public EgoMap(Activity activity, IdentityManager identityManager, DynamoDBMapper mapper){
+        this.activity = activity;
         this.identityManager = identityManager;
         this.mapper = mapper;
     }
@@ -121,7 +119,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 //                ThreadUtils.runOnUiThread(new Runnable() {
 //                    @Override
 //                    public void run() {
-//                        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+//                        final AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
 //                        dialogBuilder.setTitle(R.string.nosql_dialog_title_added_sample_data_text);
 //                        dialogBuilder.setMessage(R.string.nosql_dialog_message_added_sample_data_text);
 //                        dialogBuilder.setNegativeButton(R.string.nosql_dialog_ok_text, null);
@@ -192,7 +190,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
             }
 
 //            saveToDB();
-//            Toast.makeText(context, "Long: " + longitude + " Lat: " + latitude, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(activity, "Long: " + longitude + " Lat: " + latitude, Toast.LENGTH_SHORT).show();
             System.out.println("Long: " + longitude + " Lat: " + latitude + " facebookId: " + identityManager.getUserFacebookId());
         } else {
             //lblLocation.setText("Couldn't get the location. Make sure location is enabled on the device");
@@ -205,7 +203,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
 
     protected synchronized void buildGoogleApiClient(){
-        mGoogleApiClient = new GoogleApiClient.Builder(context)
+        mGoogleApiClient = new GoogleApiClient.Builder(activity)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API).build();
@@ -225,12 +223,12 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
 
     private boolean checkPlayServices(){
-        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(context);
+        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(activity);
         if(resultCode != ConnectionResult.SUCCESS){
             if(GooglePlayServicesUtil.isUserRecoverableError(resultCode)){
-                GooglePlayServicesUtil.getErrorDialog(resultCode, context, PLAY_SERVICES_RESOLUTION_REQUEST).show();
+                GooglePlayServicesUtil.getErrorDialog(resultCode, activity, PLAY_SERVICES_RESOLUTION_REQUEST).show();
             } else {
-                Toast.makeText(context, "This device is not supported", Toast.LENGTH_LONG).show();
+                Toast.makeText(activity, "This device is not supported", Toast.LENGTH_LONG).show();
             }
             return false;
         }
@@ -239,12 +237,16 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
 
     protected void startLocationUpdates(){
-        LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
+        if(mGoogleApiClient != null){
+            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
+        }
     }
 
 
     protected void stopLocationUpdates(){
-        LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
+        if(mGoogleApiClient != null){
+            LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
+        }
     }
 
 
@@ -383,7 +385,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
                     mRequestLocationUpdates = true;
 //                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
 //                    returnParsedJsonArray(result);
-//                    adapter = new EgoStreamViewAdapter2(context, returnArrayOfFacebookIds(result));
+//                    adapter = new EgoStreamViewAdapter2(activity, returnArrayOfFacebookIds(result));
                     notifyOfNewUsers(returnArrayOfFacebookIds(result));
 
                     Fragment_Main.stopRefreshing();
@@ -400,7 +402,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
             } else {
                 if(!mRequestLocationUpdates){
                     //startLocationUpdates();
-//                    Toast.makeText(context, "Uh oh, looks like there was an error", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(activity, "Uh oh, looks like there was an error", Toast.LENGTH_LONG).show();
                     mRequestLocationUpdates = true;
                 }
             }
@@ -434,86 +436,6 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
                 e.printStackTrace();
             }
             return facebookIds;
-        }
-    }
-
-
-    //AsyncTask to get profile pic url string from server
-    private class DeleteCurrentLocationOnDB extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-
-
-//            User_Locations userToFind = new User_Locations();
-//            userToFind.setFacebookId(identityManager.getUserFacebookId());
-
-            String queryString = identityManager.getUserFacebookId();
-
-            Condition rangeKeyCondition = new Condition()
-                    .withComparisonOperator(ComparisonOperator.EQ.toString())
-                    .withAttributeValueList(new AttributeValue().withS(queryString.toString()));
-
-            DynamoDBQueryExpression queryExpression = new DynamoDBQueryExpression()
-                    .withRangeKeyCondition("rangeKey", rangeKeyCondition)
-                    .withConsistentRead(false);
-
-//            PaginatedQueryList result = mapper.query(User_Locations.class, queryExpression);
-// Do something with result.
-
-//            System.out.println("Returned GEOHASH" + result.get(0).toString());
-
-
-
-
-
-
-
-//            User_Locations userToDelete = new User_Locations();
-//            userToDelete.setFacebookId(identityManager.getUserFacebookId());
-//
-//            mapper.delete(userToDelete);
-
-
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-
-            //Print server AsyncTask response
-            System.out.println("Delete method Resulted Value: " + result);
-
-        }
-
-
-    }
-
-
-
-    class Userinfo{
-        String profilePiciture;
-        String user_id;
-
-        Userinfo(String pic, String id){
-            profilePiciture = pic;
-            user_id = id;
-        }
-    }
-
-
-    public class ViewHolder{
-        ImageView usersProfilePic;
-
-        ViewHolder(View v){
-            usersProfilePic = new ImageView(null);
         }
     }
 

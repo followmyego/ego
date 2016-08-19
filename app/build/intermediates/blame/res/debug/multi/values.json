@@ -7291,10 +7291,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 96,
-                        "startColumn": 2,
-                        "startOffset": 10080,
-                        "endColumn": 150,
-                        "endOffset": 10228
+                        "startColumn": 4,
+                        "startOffset": 10258,
+                        "endColumn": 152,
+                        "endOffset": 10406
                     }
                 }
             },
@@ -7310,10 +7310,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 2,
-                        "startColumn": 2,
-                        "startOffset": 17,
-                        "endColumn": 38,
-                        "endOffset": 53
+                        "startColumn": 4,
+                        "startOffset": 19,
+                        "endColumn": 40,
+                        "endOffset": 55
                     }
                 }
             },
@@ -7367,10 +7367,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 20,
-                        "startColumn": 2,
-                        "startOffset": 1054,
-                        "endColumn": 53,
-                        "endOffset": 1105
+                        "startColumn": 4,
+                        "startOffset": 1084,
+                        "endColumn": 55,
+                        "endOffset": 1135
                     }
                 }
             },
@@ -7386,10 +7386,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 21,
-                        "startColumn": 2,
-                        "startOffset": 1109,
-                        "endColumn": 55,
-                        "endOffset": 1162
+                        "startColumn": 4,
+                        "startOffset": 1141,
+                        "endColumn": 57,
+                        "endOffset": 1194
                     }
                 }
             },
@@ -7424,10 +7424,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 157,
-                        "startColumn": 2,
-                        "startOffset": 15029,
-                        "endColumn": 59,
-                        "endOffset": 15086
+                        "startColumn": 4,
+                        "startOffset": 15329,
+                        "endColumn": 61,
+                        "endOffset": 15386
                     }
                 }
             },
@@ -7443,10 +7443,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 156,
-                        "startColumn": 2,
-                        "startOffset": 14972,
-                        "endColumn": 55,
-                        "endOffset": 15025
+                        "startColumn": 4,
+                        "startOffset": 15270,
+                        "endColumn": 57,
+                        "endOffset": 15323
                     }
                 }
             },
@@ -7462,10 +7462,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 151,
-                        "startColumn": 2,
-                        "startOffset": 14703,
-                        "endColumn": 55,
-                        "endOffset": 14756
+                        "startColumn": 4,
+                        "startOffset": 14991,
+                        "endColumn": 57,
+                        "endOffset": 15044
                     }
                 }
             },
@@ -7481,10 +7481,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 155,
-                        "startColumn": 2,
-                        "startOffset": 14919,
-                        "endColumn": 51,
-                        "endOffset": 14968
+                        "startColumn": 4,
+                        "startOffset": 15215,
+                        "endColumn": 53,
+                        "endOffset": 15264
                     }
                 }
             },
@@ -7500,10 +7500,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 152,
-                        "startColumn": 2,
-                        "startOffset": 14760,
-                        "endColumn": 53,
-                        "endOffset": 14811
+                        "startColumn": 4,
+                        "startOffset": 15050,
+                        "endColumn": 55,
+                        "endOffset": 15101
                     }
                 }
             },
@@ -7519,10 +7519,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 154,
-                        "startColumn": 2,
-                        "startOffset": 14868,
-                        "endColumn": 49,
-                        "endOffset": 14915
+                        "startColumn": 4,
+                        "startOffset": 15162,
+                        "endColumn": 51,
+                        "endOffset": 15209
                     }
                 }
             },
@@ -7538,10 +7538,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 153,
-                        "startColumn": 2,
-                        "startOffset": 14815,
-                        "endColumn": 51,
-                        "endOffset": 14864
+                        "startColumn": 4,
+                        "startOffset": 15107,
+                        "endColumn": 53,
+                        "endOffset": 15156
                     }
                 }
             },
@@ -8241,10 +8241,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 106,
-                        "startColumn": 2,
-                        "startOffset": 10939,
-                        "endColumn": 64,
-                        "endOffset": 11001
+                        "startColumn": 4,
+                        "startOffset": 11137,
+                        "endColumn": 66,
+                        "endOffset": 11199
                     }
                 }
             },
@@ -8260,10 +8260,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 104,
-                        "startColumn": 2,
-                        "startOffset": 10824,
-                        "endColumn": 56,
-                        "endOffset": 10878
+                        "startColumn": 4,
+                        "startOffset": 11018,
+                        "endColumn": 58,
+                        "endOffset": 11072
                     }
                 }
             },
@@ -8279,10 +8279,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 107,
-                        "startColumn": 2,
-                        "startOffset": 11005,
-                        "endColumn": 58,
-                        "endOffset": 11061
+                        "startColumn": 4,
+                        "startOffset": 11205,
+                        "endColumn": 60,
+                        "endOffset": 11261
                     }
                 }
             },
@@ -8298,10 +8298,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 103,
-                        "startColumn": 2,
-                        "startOffset": 10756,
-                        "endColumn": 66,
-                        "endOffset": 10820
+                        "startColumn": 4,
+                        "startOffset": 10948,
+                        "endColumn": 68,
+                        "endOffset": 11012
                     }
                 }
             },
@@ -8317,10 +8317,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 105,
-                        "startColumn": 2,
-                        "startOffset": 10882,
-                        "endColumn": 55,
-                        "endOffset": 10935
+                        "startColumn": 4,
+                        "startOffset": 11078,
+                        "endColumn": 57,
+                        "endOffset": 11131
                     }
                 }
             },
@@ -8336,10 +8336,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 111,
-                        "startColumn": 2,
-                        "startOffset": 11263,
-                        "endColumn": 62,
-                        "endOffset": 11323
+                        "startColumn": 4,
+                        "startOffset": 11471,
+                        "endColumn": 64,
+                        "endOffset": 11531
                     }
                 }
             },
@@ -8355,10 +8355,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 121,
-                        "startColumn": 2,
-                        "startOffset": 11940,
-                        "endColumn": 77,
-                        "endOffset": 12015
+                        "startColumn": 4,
+                        "startOffset": 12168,
+                        "endColumn": 79,
+                        "endOffset": 12243
                     }
                 }
             },
@@ -8374,10 +8374,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 116,
-                        "startColumn": 2,
-                        "startOffset": 11590,
-                        "endColumn": 64,
-                        "endOffset": 11652
+                        "startColumn": 4,
+                        "startOffset": 11808,
+                        "endColumn": 66,
+                        "endOffset": 11870
                     }
                 }
             },
@@ -8393,10 +8393,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 117,
-                        "startColumn": 2,
-                        "startOffset": 11656,
-                        "endColumn": 86,
-                        "endOffset": 11740
+                        "startColumn": 4,
+                        "startOffset": 11876,
+                        "endColumn": 88,
+                        "endOffset": 11960
                     }
                 }
             },
@@ -8412,10 +8412,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 119,
-                        "startColumn": 2,
-                        "startOffset": 11800,
-                        "endColumn": 78,
-                        "endOffset": 11876
+                        "startColumn": 4,
+                        "startOffset": 12024,
+                        "endColumn": 80,
+                        "endOffset": 12100
                     }
                 }
             },
@@ -8431,10 +8431,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 114,
-                        "startColumn": 2,
-                        "startOffset": 11456,
-                        "endColumn": 56,
-                        "endOffset": 11510
+                        "startColumn": 4,
+                        "startOffset": 11670,
+                        "endColumn": 58,
+                        "endOffset": 11724
                     }
                 }
             },
@@ -8450,10 +8450,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 115,
-                        "startColumn": 2,
-                        "startOffset": 11514,
-                        "endColumn": 74,
-                        "endOffset": 11586
+                        "startColumn": 4,
+                        "startOffset": 11730,
+                        "endColumn": 76,
+                        "endOffset": 11802
                     }
                 }
             },
@@ -8469,10 +8469,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 118,
-                        "startColumn": 2,
-                        "startOffset": 11744,
-                        "endColumn": 54,
-                        "endOffset": 11796
+                        "startColumn": 4,
+                        "startOffset": 11966,
+                        "endColumn": 56,
+                        "endOffset": 12018
                     }
                 }
             },
@@ -8488,10 +8488,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 120,
-                        "startColumn": 2,
-                        "startOffset": 11880,
-                        "endColumn": 58,
-                        "endOffset": 11936
+                        "startColumn": 4,
+                        "startOffset": 12106,
+                        "endColumn": 60,
+                        "endOffset": 12162
                     }
                 }
             },
@@ -8507,10 +8507,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 102,
-                        "startColumn": 2,
-                        "startOffset": 10708,
-                        "endColumn": 46,
-                        "endOffset": 10752
+                        "startColumn": 4,
+                        "startOffset": 10898,
+                        "endColumn": 48,
+                        "endOffset": 10942
                     }
                 }
             },
@@ -8526,10 +8526,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 109,
-                        "startColumn": 2,
-                        "startOffset": 11121,
-                        "endColumn": 70,
-                        "endOffset": 11189
+                        "startColumn": 4,
+                        "startOffset": 11325,
+                        "endColumn": 72,
+                        "endOffset": 11393
                     }
                 }
             },
@@ -8545,10 +8545,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 7,
-                        "startColumn": 2,
-                        "startOffset": 390,
-                        "endColumn": 82,
-                        "endOffset": 470
+                        "startColumn": 4,
+                        "startOffset": 400,
+                        "endColumn": 84,
+                        "endOffset": 480
                     }
                 }
             },
@@ -8564,10 +8564,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 113,
-                        "startColumn": 2,
-                        "startOffset": 11391,
-                        "endColumn": 63,
-                        "endOffset": 11452
+                        "startColumn": 4,
+                        "startOffset": 11603,
+                        "endColumn": 65,
+                        "endOffset": 11664
                     }
                 }
             },
@@ -8583,10 +8583,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 24,
-                        "startColumn": 2,
-                        "startOffset": 1406,
-                        "endColumn": 100,
-                        "endOffset": 1504
+                        "startColumn": 4,
+                        "startOffset": 1444,
+                        "endColumn": 102,
+                        "endOffset": 1542
                     }
                 }
             },
@@ -8602,10 +8602,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 23,
-                        "startColumn": 2,
-                        "startOffset": 1334,
-                        "endColumn": 70,
-                        "endOffset": 1402
+                        "startColumn": 4,
+                        "startOffset": 1370,
+                        "endColumn": 72,
+                        "endOffset": 1438
                     }
                 }
             },
@@ -8621,10 +8621,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 125,
-                        "startColumn": 2,
-                        "startOffset": 12297,
-                        "endColumn": 75,
-                        "endOffset": 12370
+                        "startColumn": 4,
+                        "startOffset": 12533,
+                        "endColumn": 77,
+                        "endOffset": 12606
                     }
                 }
             },
@@ -8640,10 +8640,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 112,
-                        "startColumn": 2,
-                        "startOffset": 11327,
-                        "endColumn": 62,
-                        "endOffset": 11387
+                        "startColumn": 4,
+                        "startOffset": 11537,
+                        "endColumn": 64,
+                        "endOffset": 11597
                     }
                 }
             },
@@ -8659,10 +8659,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 129,
-                        "startColumn": 2,
-                        "startOffset": 12608,
-                        "endColumn": 147,
-                        "endOffset": 12753
+                        "startColumn": 4,
+                        "startOffset": 12852,
+                        "endColumn": 149,
+                        "endOffset": 12997
                     }
                 }
             },
@@ -8678,10 +8678,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 128,
-                        "startColumn": 2,
-                        "startOffset": 12524,
-                        "endColumn": 82,
-                        "endOffset": 12604
+                        "startColumn": 4,
+                        "startOffset": 12766,
+                        "endColumn": 84,
+                        "endOffset": 12846
                     }
                 }
             },
@@ -8697,10 +8697,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 124,
-                        "startColumn": 2,
-                        "startOffset": 12201,
-                        "endColumn": 94,
-                        "endOffset": 12293
+                        "startColumn": 4,
+                        "startOffset": 12435,
+                        "endColumn": 96,
+                        "endOffset": 12527
                     }
                 }
             },
@@ -8716,10 +8716,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 123,
-                        "startColumn": 2,
-                        "startOffset": 12101,
-                        "endColumn": 98,
-                        "endOffset": 12197
+                        "startColumn": 4,
+                        "startOffset": 12333,
+                        "endColumn": 100,
+                        "endOffset": 12429
                     }
                 }
             },
@@ -8735,10 +8735,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 122,
-                        "startColumn": 2,
-                        "startOffset": 12019,
-                        "endColumn": 80,
-                        "endOffset": 12097
+                        "startColumn": 4,
+                        "startOffset": 12249,
+                        "endColumn": 82,
+                        "endOffset": 12327
                     }
                 }
             },
@@ -8754,10 +8754,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 108,
-                        "startColumn": 2,
-                        "startOffset": 11065,
-                        "endColumn": 54,
-                        "endOffset": 11117
+                        "startColumn": 4,
+                        "startOffset": 11267,
+                        "endColumn": 56,
+                        "endOffset": 11319
                     }
                 }
             },
@@ -8773,10 +8773,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 127,
-                        "startColumn": 2,
-                        "startOffset": 12448,
-                        "endColumn": 74,
-                        "endOffset": 12520
+                        "startColumn": 4,
+                        "startOffset": 12688,
+                        "endColumn": 76,
+                        "endOffset": 12760
                     }
                 }
             },
@@ -8792,10 +8792,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 110,
-                        "startColumn": 2,
-                        "startOffset": 11193,
-                        "endColumn": 68,
-                        "endOffset": 11259
+                        "startColumn": 4,
+                        "startOffset": 11399,
+                        "endColumn": 70,
+                        "endOffset": 11465
                     }
                 }
             },
@@ -8811,10 +8811,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 126,
-                        "startColumn": 2,
-                        "startOffset": 12374,
-                        "endColumn": 72,
-                        "endOffset": 12444
+                        "startColumn": 4,
+                        "startOffset": 12612,
+                        "endColumn": 74,
+                        "endOffset": 12682
                     }
                 }
             },
@@ -8830,10 +8830,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
-                        "startColumn": 2,
-                        "startOffset": 211,
-                        "endColumn": 107,
-                        "endOffset": 316
+                        "startColumn": 4,
+                        "startOffset": 217,
+                        "endColumn": 109,
+                        "endOffset": 322
                     }
                 }
             },
@@ -8849,10 +8849,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 8,
-                        "startColumn": 2,
-                        "startOffset": 474,
-                        "endColumn": 57,
-                        "endOffset": 529
+                        "startColumn": 4,
+                        "startOffset": 486,
+                        "endColumn": 59,
+                        "endOffset": 541
                     }
                 }
             },
@@ -8868,10 +8868,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 41,
-                        "startColumn": 2,
-                        "startOffset": 3628,
-                        "endColumn": 78,
-                        "endOffset": 3704
+                        "startColumn": 4,
+                        "startOffset": 3696,
+                        "endColumn": 80,
+                        "endOffset": 3772
                     }
                 }
             },
@@ -8887,10 +8887,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 39,
-                        "startColumn": 2,
-                        "startOffset": 3200,
-                        "endColumn": 331,
-                        "endOffset": 3529
+                        "startColumn": 4,
+                        "startOffset": 3264,
+                        "endColumn": 333,
+                        "endOffset": 3593
                     }
                 }
             },
@@ -8906,10 +8906,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 38,
-                        "startColumn": 2,
-                        "startOffset": 2881,
-                        "endColumn": 317,
-                        "endOffset": 3196
+                        "startColumn": 4,
+                        "startOffset": 2943,
+                        "endColumn": 319,
+                        "endOffset": 3258
                     }
                 }
             },
@@ -8925,10 +8925,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 40,
-                        "startColumn": 2,
-                        "startOffset": 3533,
-                        "endColumn": 93,
-                        "endOffset": 3624
+                        "startColumn": 4,
+                        "startOffset": 3599,
+                        "endColumn": 95,
+                        "endOffset": 3690
                     }
                 }
             },
@@ -8944,10 +8944,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 37,
-                        "startColumn": 2,
-                        "startOffset": 2768,
-                        "endColumn": 111,
-                        "endOffset": 2877
+                        "startColumn": 4,
+                        "startOffset": 2828,
+                        "endColumn": 113,
+                        "endOffset": 2937
                     }
                 }
             },
@@ -8963,10 +8963,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 36,
-                        "startColumn": 2,
-                        "startOffset": 2699,
-                        "endColumn": 67,
-                        "endOffset": 2764
+                        "startColumn": 4,
+                        "startOffset": 2757,
+                        "endColumn": 69,
+                        "endOffset": 2822
                     }
                 }
             },
@@ -8982,10 +8982,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 54,
-                        "startColumn": 2,
-                        "startOffset": 5930,
-                        "endColumn": 88,
-                        "endOffset": 6016
+                        "startColumn": 4,
+                        "startOffset": 6024,
+                        "endColumn": 90,
+                        "endOffset": 6110
                     }
                 }
             },
@@ -9001,10 +9001,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 52,
-                        "startColumn": 2,
-                        "startOffset": 5424,
-                        "endColumn": 394,
-                        "endOffset": 5816
+                        "startColumn": 4,
+                        "startOffset": 5514,
+                        "endColumn": 396,
+                        "endOffset": 5906
                     }
                 }
             },
@@ -9020,10 +9020,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 51,
-                        "startColumn": 2,
-                        "startOffset": 5270,
-                        "endColumn": 152,
-                        "endOffset": 5420
+                        "startColumn": 4,
+                        "startOffset": 5358,
+                        "endColumn": 154,
+                        "endOffset": 5508
                     }
                 }
             },
@@ -9039,10 +9039,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 53,
-                        "startColumn": 2,
-                        "startOffset": 5820,
-                        "endColumn": 108,
-                        "endOffset": 5926
+                        "startColumn": 4,
+                        "startOffset": 5912,
+                        "endColumn": 110,
+                        "endOffset": 6018
                     }
                 }
             },
@@ -9058,10 +9058,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 50,
-                        "startColumn": 2,
-                        "startOffset": 5154,
-                        "endColumn": 114,
-                        "endOffset": 5266
+                        "startColumn": 4,
+                        "startOffset": 5240,
+                        "endColumn": 116,
+                        "endOffset": 5352
                     }
                 }
             },
@@ -9077,10 +9077,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 49,
-                        "startColumn": 2,
-                        "startOffset": 5071,
-                        "endColumn": 81,
-                        "endOffset": 5150
+                        "startColumn": 4,
+                        "startOffset": 5155,
+                        "endColumn": 83,
+                        "endOffset": 5234
                     }
                 }
             },
@@ -9096,10 +9096,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 66,
-                        "startColumn": 2,
-                        "startOffset": 7384,
-                        "endColumn": 74,
-                        "endOffset": 7456
+                        "startColumn": 4,
+                        "startOffset": 7502,
+                        "endColumn": 76,
+                        "endOffset": 7574
                     }
                 }
             },
@@ -9115,10 +9115,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 64,
-                        "startColumn": 2,
-                        "startOffset": 7033,
-                        "endColumn": 269,
-                        "endOffset": 7300
+                        "startColumn": 4,
+                        "startOffset": 7147,
+                        "endColumn": 271,
+                        "endOffset": 7414
                     }
                 }
             },
@@ -9134,10 +9134,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 63,
-                        "startColumn": 2,
-                        "startOffset": 6946,
-                        "endColumn": 85,
-                        "endOffset": 7029
+                        "startColumn": 4,
+                        "startOffset": 7058,
+                        "endColumn": 87,
+                        "endOffset": 7141
                     }
                 }
             },
@@ -9153,10 +9153,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 65,
-                        "startColumn": 2,
-                        "startOffset": 7304,
-                        "endColumn": 78,
-                        "endOffset": 7380
+                        "startColumn": 4,
+                        "startOffset": 7420,
+                        "endColumn": 80,
+                        "endOffset": 7496
                     }
                 }
             },
@@ -9172,10 +9172,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 62,
-                        "startColumn": 2,
-                        "startOffset": 6859,
-                        "endColumn": 85,
-                        "endOffset": 6942
+                        "startColumn": 4,
+                        "startOffset": 6969,
+                        "endColumn": 87,
+                        "endOffset": 7052
                     }
                 }
             },
@@ -9191,10 +9191,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 61,
-                        "startColumn": 2,
-                        "startOffset": 6794,
-                        "endColumn": 63,
-                        "endOffset": 6855
+                        "startColumn": 4,
+                        "startOffset": 6902,
+                        "endColumn": 65,
+                        "endOffset": 6963
                     }
                 }
             },
@@ -9210,10 +9210,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 170,
-                        "startColumn": 2,
-                        "startOffset": 16268,
-                        "endColumn": 80,
-                        "endOffset": 16346
+                        "startColumn": 4,
+                        "startOffset": 16592,
+                        "endColumn": 82,
+                        "endOffset": 16670
                     }
                 }
             },
@@ -9229,10 +9229,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 166,
-                        "startColumn": 2,
-                        "startOffset": 15700,
-                        "endColumn": 399,
-                        "endOffset": 16097
+                        "startColumn": 4,
+                        "startOffset": 16018,
+                        "endColumn": 401,
+                        "endOffset": 16415
                     }
                 }
             },
@@ -9248,10 +9248,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 165,
-                        "startColumn": 2,
-                        "startOffset": 15616,
-                        "endColumn": 82,
-                        "endOffset": 15696
+                        "startColumn": 4,
+                        "startOffset": 15932,
+                        "endColumn": 84,
+                        "endOffset": 16012
                     }
                 }
             },
@@ -9267,10 +9267,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 167,
-                        "startColumn": 2,
-                        "startOffset": 16101,
-                        "endColumn": 86,
-                        "endOffset": 16185
+                        "startColumn": 4,
+                        "startOffset": 16421,
+                        "endColumn": 88,
+                        "endOffset": 16505
                     }
                 }
             },
@@ -9286,10 +9286,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 164,
-                        "startColumn": 2,
-                        "startOffset": 15532,
-                        "endColumn": 82,
-                        "endOffset": 15612
+                        "startColumn": 4,
+                        "startOffset": 15846,
+                        "endColumn": 84,
+                        "endOffset": 15926
                     }
                 }
             },
@@ -9305,10 +9305,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 163,
-                        "startColumn": 2,
-                        "startOffset": 15461,
-                        "endColumn": 69,
-                        "endOffset": 15528
+                        "startColumn": 4,
+                        "startOffset": 15773,
+                        "endColumn": 71,
+                        "endOffset": 15840
                     }
                 }
             },
@@ -9324,10 +9324,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 60,
-                        "startColumn": 2,
-                        "startOffset": 6704,
-                        "endColumn": 88,
-                        "endOffset": 6790
+                        "startColumn": 4,
+                        "startOffset": 6810,
+                        "endColumn": 90,
+                        "endOffset": 6896
                     }
                 }
             },
@@ -9343,10 +9343,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 58,
-                        "startColumn": 2,
-                        "startOffset": 6368,
-                        "endColumn": 247,
-                        "endOffset": 6613
+                        "startColumn": 4,
+                        "startOffset": 6470,
+                        "endColumn": 249,
+                        "endOffset": 6715
                     }
                 }
             },
@@ -9362,10 +9362,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 57,
-                        "startColumn": 2,
-                        "startOffset": 6221,
-                        "endColumn": 145,
-                        "endOffset": 6364
+                        "startColumn": 4,
+                        "startOffset": 6321,
+                        "endColumn": 147,
+                        "endOffset": 6464
                     }
                 }
             },
@@ -9381,10 +9381,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 59,
-                        "startColumn": 2,
-                        "startOffset": 6617,
-                        "endColumn": 85,
-                        "endOffset": 6700
+                        "startColumn": 4,
+                        "startOffset": 6721,
+                        "endColumn": 87,
+                        "endOffset": 6804
                     }
                 }
             },
@@ -9400,10 +9400,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 56,
-                        "startColumn": 2,
-                        "startOffset": 6099,
-                        "endColumn": 120,
-                        "endOffset": 6217
+                        "startColumn": 4,
+                        "startOffset": 6197,
+                        "endColumn": 122,
+                        "endOffset": 6315
                     }
                 }
             },
@@ -9419,10 +9419,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 55,
-                        "startColumn": 2,
-                        "startOffset": 6020,
-                        "endColumn": 77,
-                        "endOffset": 6095
+                        "startColumn": 4,
+                        "startOffset": 6116,
+                        "endColumn": 79,
+                        "endOffset": 6191
                     }
                 }
             },
@@ -9438,10 +9438,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 35,
-                        "startColumn": 2,
-                        "startOffset": 2625,
-                        "endColumn": 72,
-                        "endOffset": 2695
+                        "startColumn": 4,
+                        "startOffset": 2681,
+                        "endColumn": 74,
+                        "endOffset": 2751
                     }
                 }
             },
@@ -9457,10 +9457,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 33,
-                        "startColumn": 2,
-                        "startOffset": 2210,
-                        "endColumn": 333,
-                        "endOffset": 2541
+                        "startColumn": 4,
+                        "startOffset": 2262,
+                        "endColumn": 335,
+                        "endOffset": 2593
                     }
                 }
             },
@@ -9476,10 +9476,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 32,
-                        "startColumn": 2,
-                        "startOffset": 1963,
-                        "endColumn": 245,
-                        "endOffset": 2206
+                        "startColumn": 4,
+                        "startOffset": 2013,
+                        "endColumn": 247,
+                        "endOffset": 2256
                     }
                 }
             },
@@ -9495,10 +9495,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 34,
-                        "startColumn": 2,
-                        "startOffset": 2545,
-                        "endColumn": 78,
-                        "endOffset": 2621
+                        "startColumn": 4,
+                        "startOffset": 2599,
+                        "endColumn": 80,
+                        "endOffset": 2675
                     }
                 }
             },
@@ -9514,10 +9514,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 31,
-                        "startColumn": 2,
-                        "startOffset": 1828,
-                        "endColumn": 133,
-                        "endOffset": 1959
+                        "startColumn": 4,
+                        "startOffset": 1876,
+                        "endColumn": 135,
+                        "endOffset": 2007
                     }
                 }
             },
@@ -9533,10 +9533,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 30,
-                        "startColumn": 2,
-                        "startOffset": 1766,
-                        "endColumn": 60,
-                        "endOffset": 1824
+                        "startColumn": 4,
+                        "startOffset": 1812,
+                        "endColumn": 62,
+                        "endOffset": 1870
                     }
                 }
             },
@@ -9552,10 +9552,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 47,
-                        "startColumn": 2,
-                        "startOffset": 4863,
-                        "endColumn": 104,
-                        "endOffset": 4965
+                        "startColumn": 4,
+                        "startOffset": 4943,
+                        "endColumn": 106,
+                        "endOffset": 5045
                     }
                 }
             },
@@ -9571,10 +9571,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 48,
-                        "startColumn": 2,
-                        "startOffset": 4969,
-                        "endColumn": 100,
-                        "endOffset": 5067
+                        "startColumn": 4,
+                        "startOffset": 5051,
+                        "endColumn": 102,
+                        "endOffset": 5149
                     }
                 }
             },
@@ -9590,10 +9590,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 45,
-                        "startColumn": 2,
-                        "startOffset": 4139,
-                        "endColumn": 618,
-                        "endOffset": 4755
+                        "startColumn": 4,
+                        "startOffset": 4215,
+                        "endColumn": 620,
+                        "endOffset": 4831
                     }
                 }
             },
@@ -9609,10 +9609,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 44,
-                        "startColumn": 2,
-                        "startOffset": 3934,
-                        "endColumn": 203,
-                        "endOffset": 4135
+                        "startColumn": 4,
+                        "startOffset": 4008,
+                        "endColumn": 205,
+                        "endOffset": 4209
                     }
                 }
             },
@@ -9628,10 +9628,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 46,
-                        "startColumn": 2,
-                        "startOffset": 4759,
-                        "endColumn": 102,
-                        "endOffset": 4859
+                        "startColumn": 4,
+                        "startOffset": 4837,
+                        "endColumn": 104,
+                        "endOffset": 4937
                     }
                 }
             },
@@ -9647,10 +9647,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 43,
-                        "startColumn": 2,
-                        "startOffset": 3785,
-                        "endColumn": 147,
-                        "endOffset": 3930
+                        "startColumn": 4,
+                        "startOffset": 3857,
+                        "endColumn": 149,
+                        "endOffset": 4002
                     }
                 }
             },
@@ -9666,10 +9666,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 42,
-                        "startColumn": 2,
-                        "startOffset": 3708,
-                        "endColumn": 75,
-                        "endOffset": 3781
+                        "startColumn": 4,
+                        "startOffset": 3778,
+                        "endColumn": 77,
+                        "endOffset": 3851
                     }
                 }
             },
@@ -9685,10 +9685,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 29,
-                        "startColumn": 2,
-                        "startOffset": 1674,
-                        "endColumn": 90,
-                        "endOffset": 1762
+                        "startColumn": 4,
+                        "startOffset": 1718,
+                        "endColumn": 92,
+                        "endOffset": 1806
                     }
                 }
             },
@@ -9704,10 +9704,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 28,
-                        "startColumn": 2,
-                        "startOffset": 1596,
-                        "endColumn": 76,
-                        "endOffset": 1670
+                        "startColumn": 4,
+                        "startOffset": 1638,
+                        "endColumn": 78,
+                        "endOffset": 1712
                     }
                 }
             },
@@ -9723,10 +9723,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 97,
-                        "startColumn": 2,
-                        "startOffset": 10232,
-                        "endColumn": 69,
-                        "endOffset": 10299
+                        "startColumn": 4,
+                        "startOffset": 10412,
+                        "endColumn": 71,
+                        "endOffset": 10479
                     }
                 }
             },
@@ -9742,10 +9742,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 98,
-                        "startColumn": 2,
-                        "startOffset": 10303,
-                        "endColumn": 81,
-                        "endOffset": 10382
+                        "startColumn": 4,
+                        "startOffset": 10485,
+                        "endColumn": 83,
+                        "endOffset": 10564
                     }
                 }
             },
@@ -9761,10 +9761,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 10,
-                        "startColumn": 2,
-                        "startOffset": 588,
-                        "endColumn": 72,
-                        "endOffset": 658
+                        "startColumn": 4,
+                        "startOffset": 604,
+                        "endColumn": 74,
+                        "endOffset": 674
                     }
                 }
             },
@@ -9779,11 +9779,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 265,
+                        "startLine": 266,
                         "startColumn": 4,
-                        "startOffset": 23486,
+                        "startOffset": 23954,
                         "endColumn": 69,
-                        "endOffset": 23551
+                        "endOffset": 24019
                     }
                 }
             },
@@ -9799,10 +9799,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 76,
-                        "startColumn": 2,
-                        "startOffset": 8153,
-                        "endColumn": 67,
-                        "endOffset": 8218
+                        "startColumn": 4,
+                        "startOffset": 8291,
+                        "endColumn": 69,
+                        "endOffset": 8356
                     }
                 }
             },
@@ -9818,10 +9818,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 77,
-                        "startColumn": 2,
-                        "startOffset": 8222,
-                        "endColumn": 84,
-                        "endOffset": 8304
+                        "startColumn": 4,
+                        "startOffset": 8362,
+                        "endColumn": 86,
+                        "endOffset": 8444
                     }
                 }
             },
@@ -9837,10 +9837,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 78,
-                        "startColumn": 2,
-                        "startOffset": 8308,
-                        "endColumn": 117,
-                        "endOffset": 8423
+                        "startColumn": 4,
+                        "startOffset": 8450,
+                        "endColumn": 119,
+                        "endOffset": 8565
                     }
                 }
             },
@@ -9856,10 +9856,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 70,
-                        "startColumn": 2,
-                        "startOffset": 7693,
-                        "endColumn": 89,
-                        "endOffset": 7780
+                        "startColumn": 4,
+                        "startOffset": 7819,
+                        "endColumn": 91,
+                        "endOffset": 7906
                     }
                 }
             },
@@ -9875,10 +9875,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 74,
-                        "startColumn": 2,
-                        "startOffset": 7970,
-                        "endColumn": 93,
-                        "endOffset": 8061
+                        "startColumn": 4,
+                        "startOffset": 8104,
+                        "endColumn": 95,
+                        "endOffset": 8195
                     }
                 }
             },
@@ -9894,10 +9894,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 73,
-                        "startColumn": 2,
-                        "startOffset": 7886,
-                        "endColumn": 82,
-                        "endOffset": 7966
+                        "startColumn": 4,
+                        "startOffset": 8018,
+                        "endColumn": 84,
+                        "endOffset": 8098
                     }
                 }
             },
@@ -9913,10 +9913,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 75,
-                        "startColumn": 2,
-                        "startOffset": 8065,
-                        "endColumn": 86,
-                        "endOffset": 8149
+                        "startColumn": 4,
+                        "startOffset": 8201,
+                        "endColumn": 88,
+                        "endOffset": 8285
                     }
                 }
             },
@@ -9932,10 +9932,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 95,
-                        "startColumn": 2,
-                        "startOffset": 9990,
-                        "endColumn": 88,
-                        "endOffset": 10076
+                        "startColumn": 4,
+                        "startOffset": 10166,
+                        "endColumn": 90,
+                        "endOffset": 10252
                     }
                 }
             },
@@ -9951,10 +9951,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 150,
-                        "startColumn": 2,
-                        "startOffset": 14610,
-                        "endColumn": 91,
-                        "endOffset": 14699
+                        "startColumn": 4,
+                        "startOffset": 14896,
+                        "endColumn": 93,
+                        "endOffset": 14985
                     }
                 }
             },
@@ -9970,10 +9970,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 101,
-                        "startColumn": 2,
-                        "startOffset": 10552,
-                        "endColumn": 154,
-                        "endOffset": 10704
+                        "startColumn": 4,
+                        "startOffset": 10740,
+                        "endColumn": 156,
+                        "endOffset": 10892
                     }
                 }
             },
@@ -9989,10 +9989,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 81,
-                        "startColumn": 2,
-                        "startOffset": 8586,
-                        "endColumn": 103,
-                        "endOffset": 8687
+                        "startColumn": 4,
+                        "startOffset": 8734,
+                        "endColumn": 105,
+                        "endOffset": 8835
                     }
                 }
             },
@@ -10008,10 +10008,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 132,
-                        "startColumn": 2,
-                        "startOffset": 12899,
-                        "endColumn": 98,
-                        "endOffset": 12995
+                        "startColumn": 4,
+                        "startOffset": 13149,
+                        "endColumn": 100,
+                        "endOffset": 13245
                     }
                 }
             },
@@ -10027,10 +10027,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 69,
-                        "startColumn": 2,
-                        "startOffset": 7609,
-                        "endColumn": 82,
-                        "endOffset": 7689
+                        "startColumn": 4,
+                        "startOffset": 7733,
+                        "endColumn": 84,
+                        "endOffset": 7813
                     }
                 }
             },
@@ -10046,10 +10046,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 94,
-                        "startColumn": 2,
-                        "startOffset": 9915,
-                        "endColumn": 73,
-                        "endOffset": 9986
+                        "startColumn": 4,
+                        "startOffset": 10089,
+                        "endColumn": 75,
+                        "endOffset": 10160
                     }
                 }
             },
@@ -10065,10 +10065,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 149,
-                        "startColumn": 2,
-                        "startOffset": 14539,
-                        "endColumn": 69,
-                        "endOffset": 14606
+                        "startColumn": 4,
+                        "startOffset": 14823,
+                        "endColumn": 71,
+                        "endOffset": 14890
                     }
                 }
             },
@@ -10084,10 +10084,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 100,
-                        "startColumn": 2,
-                        "startOffset": 10471,
-                        "endColumn": 79,
-                        "endOffset": 10548
+                        "startColumn": 4,
+                        "startOffset": 10657,
+                        "endColumn": 81,
+                        "endOffset": 10734
                     }
                 }
             },
@@ -10103,10 +10103,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 169,
-                        "startColumn": 2,
-                        "startOffset": 16191,
-                        "endColumn": 75,
-                        "endOffset": 16264
+                        "startColumn": 4,
+                        "startOffset": 16513,
+                        "endColumn": 77,
+                        "endOffset": 16586
                     }
                 }
             },
@@ -10122,10 +10122,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 172,
-                        "startColumn": 2,
-                        "startOffset": 16352,
-                        "endColumn": 83,
-                        "endOffset": 16433
+                        "startColumn": 4,
+                        "startOffset": 16678,
+                        "endColumn": 85,
+                        "endOffset": 16759
                     }
                 }
             },
@@ -10141,10 +10141,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 173,
-                        "startColumn": 2,
-                        "startOffset": 16437,
-                        "endColumn": 89,
-                        "endOffset": 16524
+                        "startColumn": 4,
+                        "startOffset": 16765,
+                        "endColumn": 91,
+                        "endOffset": 16852
                     }
                 }
             },
@@ -10160,10 +10160,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 80,
-                        "startColumn": 2,
-                        "startOffset": 8502,
-                        "endColumn": 82,
-                        "endOffset": 8582
+                        "startColumn": 4,
+                        "startOffset": 8648,
+                        "endColumn": 84,
+                        "endOffset": 8728
                     }
                 }
             },
@@ -10179,10 +10179,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 131,
-                        "startColumn": 2,
-                        "startOffset": 12830,
-                        "endColumn": 67,
-                        "endOffset": 12895
+                        "startColumn": 4,
+                        "startOffset": 13078,
+                        "endColumn": 69,
+                        "endOffset": 13143
                     }
                 }
             },
@@ -10198,10 +10198,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 68,
-                        "startColumn": 2,
-                        "startOffset": 7534,
-                        "endColumn": 73,
-                        "endOffset": 7605
+                        "startColumn": 4,
+                        "startOffset": 7656,
+                        "endColumn": 75,
+                        "endOffset": 7727
                     }
                 }
             },
@@ -10217,10 +10217,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 159,
-                        "startColumn": 2,
-                        "startOffset": 15154,
-                        "endColumn": 77,
-                        "endOffset": 15229
+                        "startColumn": 4,
+                        "startOffset": 15458,
+                        "endColumn": 79,
+                        "endOffset": 15533
                     }
                 }
             },
@@ -10236,10 +10236,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 22,
-                        "startColumn": 2,
-                        "startOffset": 1166,
-                        "endColumn": 166,
-                        "endOffset": 1330
+                        "startColumn": 4,
+                        "startOffset": 1200,
+                        "endColumn": 168,
+                        "endOffset": 1364
                     }
                 }
             },
@@ -10255,10 +10255,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 93,
-                        "startColumn": 2,
-                        "startOffset": 9836,
-                        "endColumn": 77,
-                        "endOffset": 9911
+                        "startColumn": 4,
+                        "startOffset": 10008,
+                        "endColumn": 79,
+                        "endOffset": 10083
                     }
                 }
             },
@@ -10274,10 +10274,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 148,
-                        "startColumn": 2,
-                        "startOffset": 14464,
-                        "endColumn": 73,
-                        "endOffset": 14535
+                        "startColumn": 4,
+                        "startOffset": 14746,
+                        "endColumn": 75,
+                        "endOffset": 14817
                     }
                 }
             },
@@ -10293,10 +10293,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 99,
-                        "startColumn": 2,
-                        "startOffset": 10386,
-                        "endColumn": 83,
-                        "endOffset": 10467
+                        "startColumn": 4,
+                        "startOffset": 10570,
+                        "endColumn": 85,
+                        "endOffset": 10651
                     }
                 }
             },
@@ -10312,10 +10312,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 15,
-                        "startColumn": 2,
-                        "startOffset": 748,
-                        "endColumn": 54,
-                        "endOffset": 800
+                        "startColumn": 4,
+                        "startOffset": 768,
+                        "endColumn": 56,
+                        "endOffset": 820
                     }
                 }
             },
@@ -10331,10 +10331,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 67,
-                        "startColumn": 2,
-                        "startOffset": 7460,
-                        "endColumn": 72,
-                        "endOffset": 7530
+                        "startColumn": 4,
+                        "startOffset": 7580,
+                        "endColumn": 74,
+                        "endOffset": 7650
                     }
                 }
             },
@@ -10350,10 +10350,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 79,
-                        "startColumn": 2,
-                        "startOffset": 8427,
-                        "endColumn": 73,
-                        "endOffset": 8498
+                        "startColumn": 4,
+                        "startOffset": 8571,
+                        "endColumn": 75,
+                        "endOffset": 8642
                     }
                 }
             },
@@ -10369,10 +10369,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 158,
-                        "startColumn": 2,
-                        "startOffset": 15090,
-                        "endColumn": 62,
-                        "endOffset": 15150
+                        "startColumn": 4,
+                        "startOffset": 15392,
+                        "endColumn": 64,
+                        "endOffset": 15452
                     }
                 }
             },
@@ -10388,10 +10388,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 130,
-                        "startColumn": 2,
-                        "startOffset": 12757,
-                        "endColumn": 71,
-                        "endOffset": 12826
+                        "startColumn": 4,
+                        "startOffset": 13003,
+                        "endColumn": 73,
+                        "endOffset": 13072
                     }
                 }
             },
@@ -10425,11 +10425,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 256,
-                        "startColumn": 2,
-                        "startOffset": 22860,
-                        "endColumn": 79,
-                        "endOffset": 22937
+                        "startLine": 257,
+                        "startColumn": 4,
+                        "startOffset": 23316,
+                        "endColumn": 81,
+                        "endOffset": 23393
                     }
                 }
             },
@@ -10444,11 +10444,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 255,
-                        "startColumn": 2,
-                        "startOffset": 22779,
-                        "endColumn": 79,
-                        "endOffset": 22856
+                        "startLine": 256,
+                        "startColumn": 4,
+                        "startOffset": 23233,
+                        "endColumn": 81,
+                        "endOffset": 23310
                     }
                 }
             },
@@ -10463,11 +10463,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 254,
-                        "startColumn": 2,
-                        "startOffset": 22688,
-                        "endColumn": 89,
-                        "endOffset": 22775
+                        "startLine": 255,
+                        "startColumn": 4,
+                        "startOffset": 23140,
+                        "endColumn": 91,
+                        "endOffset": 23227
                     }
                 }
             },
@@ -10483,10 +10483,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 186,
-                        "startColumn": 2,
-                        "startOffset": 17255,
-                        "endColumn": 81,
-                        "endOffset": 17334
+                        "startColumn": 4,
+                        "startOffset": 17601,
+                        "endColumn": 83,
+                        "endOffset": 17680
                     }
                 }
             },
@@ -10502,10 +10502,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 195,
-                        "startColumn": 2,
-                        "startOffset": 17871,
-                        "endColumn": 108,
-                        "endOffset": 17977
+                        "startColumn": 4,
+                        "startOffset": 18231,
+                        "endColumn": 110,
+                        "endOffset": 18337
                     }
                 }
             },
@@ -10520,11 +10520,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 260,
-                        "startColumn": 2,
-                        "startOffset": 23237,
-                        "endColumn": 122,
-                        "endOffset": 23357
+                        "startLine": 261,
+                        "startColumn": 4,
+                        "startOffset": 23701,
+                        "endColumn": 124,
+                        "endOffset": 23821
                     }
                 }
             },
@@ -10539,11 +10539,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 258,
-                        "startColumn": 2,
-                        "startOffset": 23027,
-                        "endColumn": 122,
-                        "endOffset": 23147
+                        "startLine": 259,
+                        "startColumn": 4,
+                        "startOffset": 23487,
+                        "endColumn": 124,
+                        "endOffset": 23607
                     }
                 }
             },
@@ -10558,11 +10558,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 252,
-                        "startColumn": 2,
-                        "startOffset": 22553,
-                        "endColumn": 131,
-                        "endOffset": 22682
+                        "startLine": 253,
+                        "startColumn": 4,
+                        "startOffset": 23003,
+                        "endColumn": 133,
+                        "endOffset": 23132
                     }
                 }
             },
@@ -10577,11 +10577,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 246,
-                        "startColumn": 2,
-                        "startOffset": 22099,
-                        "endColumn": 113,
-                        "endOffset": 22210
+                        "startLine": 247,
+                        "startColumn": 4,
+                        "startOffset": 22541,
+                        "endColumn": 115,
+                        "endOffset": 22652
                     }
                 }
             },
@@ -10597,10 +10597,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 192,
-                        "startColumn": 2,
-                        "startOffset": 17661,
-                        "endColumn": 121,
-                        "endOffset": 17780
+                        "startColumn": 4,
+                        "startOffset": 18017,
+                        "endColumn": 123,
+                        "endOffset": 18136
                     }
                 }
             },
@@ -10616,10 +10616,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 197,
-                        "startColumn": 2,
-                        "startOffset": 18070,
-                        "endColumn": 115,
-                        "endOffset": 18183
+                        "startColumn": 4,
+                        "startOffset": 18434,
+                        "endColumn": 117,
+                        "endOffset": 18547
                     }
                 }
             },
@@ -10634,11 +10634,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 249,
-                        "startColumn": 2,
-                        "startOffset": 22307,
-                        "endColumn": 156,
-                        "endOffset": 22461
+                        "startLine": 250,
+                        "startColumn": 4,
+                        "startOffset": 22753,
+                        "endColumn": 158,
+                        "endOffset": 22907
                     }
                 }
             },
@@ -10654,10 +10654,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 198,
-                        "startColumn": 2,
-                        "startOffset": 18187,
-                        "endColumn": 49,
-                        "endOffset": 18234
+                        "startColumn": 4,
+                        "startOffset": 18553,
+                        "endColumn": 51,
+                        "endOffset": 18600
                     }
                 }
             },
@@ -10673,10 +10673,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 194,
-                        "startColumn": 2,
-                        "startOffset": 17786,
-                        "endColumn": 83,
-                        "endOffset": 17867
+                        "startColumn": 4,
+                        "startOffset": 18144,
+                        "endColumn": 85,
+                        "endOffset": 18225
                     }
                 }
             },
@@ -10691,11 +10691,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 259,
-                        "startColumn": 2,
-                        "startOffset": 23151,
-                        "endColumn": 84,
-                        "endOffset": 23233
+                        "startLine": 260,
+                        "startColumn": 4,
+                        "startOffset": 23613,
+                        "endColumn": 86,
+                        "endOffset": 23695
                     }
                 }
             },
@@ -10710,11 +10710,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 257,
-                        "startColumn": 2,
-                        "startOffset": 22941,
-                        "endColumn": 84,
-                        "endOffset": 23023
+                        "startLine": 258,
+                        "startColumn": 4,
+                        "startOffset": 23399,
+                        "endColumn": 86,
+                        "endOffset": 23481
                     }
                 }
             },
@@ -10730,10 +10730,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 184,
-                        "startColumn": 2,
-                        "startOffset": 17164,
-                        "endColumn": 87,
-                        "endOffset": 17249
+                        "startColumn": 4,
+                        "startOffset": 17508,
+                        "endColumn": 89,
+                        "endOffset": 17593
                     }
                 }
             },
@@ -10749,10 +10749,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 180,
-                        "startColumn": 2,
-                        "startOffset": 16763,
-                        "endColumn": 123,
-                        "endOffset": 16884
+                        "startColumn": 4,
+                        "startOffset": 17099,
+                        "endColumn": 125,
+                        "endOffset": 17220
                     }
                 }
             },
@@ -10768,10 +10768,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 182,
-                        "startColumn": 2,
-                        "startOffset": 16973,
-                        "endColumn": 100,
-                        "endOffset": 17071
+                        "startColumn": 4,
+                        "startOffset": 17313,
+                        "endColumn": 102,
+                        "endOffset": 17411
                     }
                 }
             },
@@ -10787,10 +10787,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 181,
-                        "startColumn": 2,
-                        "startOffset": 16888,
-                        "endColumn": 83,
-                        "endOffset": 16969
+                        "startColumn": 4,
+                        "startOffset": 17226,
+                        "endColumn": 85,
+                        "endOffset": 17307
                     }
                 }
             },
@@ -10806,10 +10806,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 183,
-                        "startColumn": 2,
-                        "startOffset": 17075,
-                        "endColumn": 87,
-                        "endOffset": 17160
+                        "startColumn": 4,
+                        "startOffset": 17417,
+                        "endColumn": 89,
+                        "endOffset": 17502
                     }
                 }
             },
@@ -10824,11 +10824,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 251,
-                        "startColumn": 2,
-                        "startOffset": 22467,
-                        "endColumn": 84,
-                        "endOffset": 22549
+                        "startLine": 252,
+                        "startColumn": 4,
+                        "startOffset": 22915,
+                        "endColumn": 86,
+                        "endOffset": 22997
                     }
                 }
             },
@@ -10843,11 +10843,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 245,
-                        "startColumn": 2,
-                        "startOffset": 22013,
-                        "endColumn": 84,
-                        "endOffset": 22095
+                        "startLine": 246,
+                        "startColumn": 4,
+                        "startOffset": 22453,
+                        "endColumn": 86,
+                        "endOffset": 22535
                     }
                 }
             },
@@ -10863,10 +10863,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 191,
-                        "startColumn": 2,
-                        "startOffset": 17563,
-                        "endColumn": 96,
-                        "endOffset": 17657
+                        "startColumn": 4,
+                        "startOffset": 17917,
+                        "endColumn": 98,
+                        "endOffset": 18011
                     }
                 }
             },
@@ -10882,10 +10882,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 196,
-                        "startColumn": 2,
-                        "startOffset": 17981,
-                        "endColumn": 87,
-                        "endOffset": 18066
+                        "startColumn": 4,
+                        "startOffset": 18343,
+                        "endColumn": 89,
+                        "endOffset": 18428
                     }
                 }
             },
@@ -10900,11 +10900,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 248,
-                        "startColumn": 2,
-                        "startOffset": 22216,
-                        "endColumn": 89,
-                        "endOffset": 22303
+                        "startLine": 249,
+                        "startColumn": 4,
+                        "startOffset": 22660,
+                        "endColumn": 91,
+                        "endOffset": 22747
                     }
                 }
             },
@@ -10920,10 +10920,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 187,
-                        "startColumn": 2,
-                        "startOffset": 17338,
-                        "endColumn": 81,
-                        "endOffset": 17417
+                        "startColumn": 4,
+                        "startOffset": 17686,
+                        "endColumn": 83,
+                        "endOffset": 17765
                     }
                 }
             },
@@ -10938,11 +10938,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 210,
-                        "startColumn": 2,
-                        "startOffset": 18901,
-                        "endColumn": 132,
-                        "endOffset": 19031
+                        "startLine": 211,
+                        "startColumn": 4,
+                        "startOffset": 19293,
+                        "endColumn": 134,
+                        "endOffset": 19423
                     }
                 }
             },
@@ -10957,11 +10957,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 207,
-                        "startColumn": 2,
-                        "startOffset": 18711,
-                        "endColumn": 103,
-                        "endOffset": 18812
+                        "startLine": 208,
+                        "startColumn": 4,
+                        "startOffset": 19099,
+                        "endColumn": 105,
+                        "endOffset": 19200
                     }
                 }
             },
@@ -10976,11 +10976,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 232,
-                        "startColumn": 2,
-                        "startOffset": 20825,
-                        "endColumn": 150,
-                        "endOffset": 20973
+                        "startLine": 233,
+                        "startColumn": 4,
+                        "startOffset": 21247,
+                        "endColumn": 152,
+                        "endOffset": 21395
                     }
                 }
             },
@@ -10995,11 +10995,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 226,
-                        "startColumn": 2,
-                        "startOffset": 20317,
-                        "endColumn": 158,
-                        "endOffset": 20473
+                        "startLine": 227,
+                        "startColumn": 4,
+                        "startOffset": 20731,
+                        "endColumn": 160,
+                        "endOffset": 20887
                     }
                 }
             },
@@ -11014,11 +11014,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 235,
-                        "startColumn": 2,
-                        "startOffset": 21135,
-                        "endColumn": 186,
-                        "endOffset": 21319
+                        "startLine": 236,
+                        "startColumn": 4,
+                        "startOffset": 21561,
+                        "endColumn": 188,
+                        "endOffset": 21745
                     }
                 }
             },
@@ -11033,11 +11033,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 229,
-                        "startColumn": 2,
-                        "startOffset": 20581,
-                        "endColumn": 116,
-                        "endOffset": 20695
+                        "startLine": 230,
+                        "startColumn": 4,
+                        "startOffset": 20999,
+                        "endColumn": 118,
+                        "endOffset": 21113
                     }
                 }
             },
@@ -11052,11 +11052,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 220,
-                        "startColumn": 2,
-                        "startOffset": 19695,
-                        "endColumn": 144,
-                        "endOffset": 19837
+                        "startLine": 221,
+                        "startColumn": 4,
+                        "startOffset": 20101,
+                        "endColumn": 146,
+                        "endOffset": 20243
                     }
                 }
             },
@@ -11071,11 +11071,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 214,
-                        "startColumn": 2,
-                        "startOffset": 19211,
-                        "endColumn": 152,
-                        "endOffset": 19361
+                        "startLine": 215,
+                        "startColumn": 4,
+                        "startOffset": 19609,
+                        "endColumn": 154,
+                        "endOffset": 19759
                     }
                 }
             },
@@ -11090,11 +11090,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 223,
-                        "startColumn": 2,
-                        "startOffset": 19993,
-                        "endColumn": 180,
-                        "endOffset": 20171
+                        "startLine": 224,
+                        "startColumn": 4,
+                        "startOffset": 20403,
+                        "endColumn": 182,
+                        "endOffset": 20581
                     }
                 }
             },
@@ -11109,11 +11109,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 217,
-                        "startColumn": 2,
-                        "startOffset": 19463,
-                        "endColumn": 110,
-                        "endOffset": 19571
+                        "startLine": 218,
+                        "startColumn": 4,
+                        "startOffset": 19865,
+                        "endColumn": 112,
+                        "endOffset": 19973
                     }
                 }
             },
@@ -11128,11 +11128,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 238,
-                        "startColumn": 2,
-                        "startOffset": 21408,
-                        "endColumn": 110,
-                        "endOffset": 21516
+                        "startLine": 239,
+                        "startColumn": 4,
+                        "startOffset": 21838,
+                        "endColumn": 112,
+                        "endOffset": 21946
                     }
                 }
             },
@@ -11147,11 +11147,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 240,
-                        "startColumn": 2,
-                        "startOffset": 21701,
-                        "endColumn": 132,
-                        "endOffset": 21831
+                        "startLine": 241,
+                        "startColumn": 4,
+                        "startOffset": 22135,
+                        "endColumn": 134,
+                        "endOffset": 22265
                     }
                 }
             },
@@ -11166,11 +11166,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 239,
-                        "startColumn": 2,
-                        "startOffset": 21520,
-                        "endColumn": 179,
-                        "endOffset": 21697
+                        "startLine": 240,
+                        "startColumn": 4,
+                        "startOffset": 21952,
+                        "endColumn": 181,
+                        "endOffset": 22129
                     }
                 }
             },
@@ -11185,11 +11185,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 243,
-                        "startColumn": 2,
-                        "startOffset": 21911,
-                        "endColumn": 98,
-                        "endOffset": 22007
+                        "startLine": 244,
+                        "startColumn": 4,
+                        "startOffset": 22349,
+                        "endColumn": 100,
+                        "endOffset": 22445
                     }
                 }
             },
@@ -11204,11 +11204,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 209,
-                        "startColumn": 2,
-                        "startOffset": 18818,
-                        "endColumn": 81,
-                        "endOffset": 18897
+                        "startLine": 210,
+                        "startColumn": 4,
+                        "startOffset": 19208,
+                        "endColumn": 83,
+                        "endOffset": 19287
                     }
                 }
             },
@@ -11223,11 +11223,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 206,
-                        "startColumn": 2,
-                        "startOffset": 18637,
-                        "endColumn": 72,
-                        "endOffset": 18707
+                        "startLine": 207,
+                        "startColumn": 4,
+                        "startOffset": 19023,
+                        "endColumn": 74,
+                        "endOffset": 19093
                     }
                 }
             },
@@ -11243,10 +11243,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 201,
-                        "startColumn": 2,
-                        "startOffset": 18282,
-                        "endColumn": 56,
-                        "endOffset": 18336
+                        "startColumn": 4,
+                        "startOffset": 18652,
+                        "endColumn": 58,
+                        "endOffset": 18706
                     }
                 }
             },
@@ -11262,10 +11262,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 202,
-                        "startColumn": 2,
-                        "startOffset": 18340,
-                        "endColumn": 86,
-                        "endOffset": 18424
+                        "startColumn": 4,
+                        "startOffset": 18712,
+                        "endColumn": 88,
+                        "endOffset": 18796
                     }
                 }
             },
@@ -11280,11 +11280,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 204,
-                        "startColumn": 2,
-                        "startOffset": 18532,
-                        "endColumn": 58,
-                        "endOffset": 18588
+                        "startLine": 205,
+                        "startColumn": 4,
+                        "startOffset": 18914,
+                        "endColumn": 60,
+                        "endOffset": 18970
                     }
                 }
             },
@@ -11300,10 +11300,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 203,
-                        "startColumn": 2,
-                        "startOffset": 18428,
-                        "endColumn": 95,
-                        "endOffset": 18521
+                        "startColumn": 4,
+                        "startOffset": 18802,
+                        "endColumn": 97,
+                        "endOffset": 18895
                     }
                 }
             },
@@ -11318,11 +11318,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 231,
-                        "startColumn": 2,
-                        "startOffset": 20701,
-                        "endColumn": 122,
-                        "endOffset": 20821
+                        "startLine": 232,
+                        "startColumn": 4,
+                        "startOffset": 21121,
+                        "endColumn": 124,
+                        "endOffset": 21241
                     }
                 }
             },
@@ -11337,11 +11337,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 225,
-                        "startColumn": 2,
-                        "startOffset": 20177,
-                        "endColumn": 138,
-                        "endOffset": 20313
+                        "startLine": 226,
+                        "startColumn": 4,
+                        "startOffset": 20589,
+                        "endColumn": 140,
+                        "endOffset": 20725
                     }
                 }
             },
@@ -11356,11 +11356,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 234,
-                        "startColumn": 2,
-                        "startOffset": 20979,
-                        "endColumn": 154,
-                        "endOffset": 21131
+                        "startLine": 235,
+                        "startColumn": 4,
+                        "startOffset": 21403,
+                        "endColumn": 156,
+                        "endOffset": 21555
                     }
                 }
             },
@@ -11375,11 +11375,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 228,
-                        "startColumn": 2,
-                        "startOffset": 20479,
-                        "endColumn": 100,
-                        "endOffset": 20577
+                        "startLine": 229,
+                        "startColumn": 4,
+                        "startOffset": 20895,
+                        "endColumn": 102,
+                        "endOffset": 20993
                     }
                 }
             },
@@ -11394,11 +11394,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 219,
-                        "startColumn": 2,
-                        "startOffset": 19577,
-                        "endColumn": 116,
-                        "endOffset": 19691
+                        "startLine": 220,
+                        "startColumn": 4,
+                        "startOffset": 19981,
+                        "endColumn": 118,
+                        "endOffset": 20095
                     }
                 }
             },
@@ -11413,11 +11413,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 213,
-                        "startColumn": 2,
-                        "startOffset": 19077,
-                        "endColumn": 132,
-                        "endOffset": 19207
+                        "startLine": 214,
+                        "startColumn": 4,
+                        "startOffset": 19473,
+                        "endColumn": 134,
+                        "endOffset": 19603
                     }
                 }
             },
@@ -11432,11 +11432,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 222,
-                        "startColumn": 2,
-                        "startOffset": 19843,
-                        "endColumn": 148,
-                        "endOffset": 19989
+                        "startLine": 223,
+                        "startColumn": 4,
+                        "startOffset": 20251,
+                        "endColumn": 150,
+                        "endOffset": 20397
                     }
                 }
             },
@@ -11451,11 +11451,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 216,
-                        "startColumn": 2,
-                        "startOffset": 19367,
-                        "endColumn": 94,
-                        "endOffset": 19459
+                        "startLine": 217,
+                        "startColumn": 4,
+                        "startOffset": 19767,
+                        "endColumn": 96,
+                        "endOffset": 19859
                     }
                 }
             },
@@ -11470,11 +11470,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 237,
-                        "startColumn": 2,
-                        "startOffset": 21325,
-                        "endColumn": 81,
-                        "endOffset": 21404
+                        "startLine": 238,
+                        "startColumn": 4,
+                        "startOffset": 21753,
+                        "endColumn": 83,
+                        "endOffset": 21832
                     }
                 }
             },
@@ -11489,11 +11489,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 242,
-                        "startColumn": 2,
-                        "startOffset": 21837,
-                        "endColumn": 72,
-                        "endOffset": 21907
+                        "startLine": 243,
+                        "startColumn": 4,
+                        "startOffset": 22273,
+                        "endColumn": 74,
+                        "endOffset": 22343
                     }
                 }
             },
@@ -11509,10 +11509,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 188,
-                        "startColumn": 2,
-                        "startOffset": 17421,
-                        "endColumn": 81,
-                        "endOffset": 17500
+                        "startColumn": 4,
+                        "startOffset": 17771,
+                        "endColumn": 83,
+                        "endOffset": 17850
                     }
                 }
             },
@@ -11528,10 +11528,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 177,
-                        "startColumn": 2,
-                        "startOffset": 16688,
-                        "endColumn": 69,
-                        "endOffset": 16755
+                        "startColumn": 4,
+                        "startOffset": 17022,
+                        "endColumn": 71,
+                        "endOffset": 17089
                     }
                 }
             },
@@ -11547,10 +11547,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 175,
-                        "startColumn": 2,
-                        "startOffset": 16530,
-                        "endColumn": 82,
-                        "endOffset": 16610
+                        "startColumn": 4,
+                        "startOffset": 16860,
+                        "endColumn": 84,
+                        "endOffset": 16940
                     }
                 }
             },
@@ -11566,10 +11566,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 176,
-                        "startColumn": 2,
-                        "startOffset": 16614,
-                        "endColumn": 72,
-                        "endOffset": 16684
+                        "startColumn": 4,
+                        "startOffset": 16946,
+                        "endColumn": 74,
+                        "endOffset": 17016
                     }
                 }
             },
@@ -11585,10 +11585,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 9,
-                        "startColumn": 2,
-                        "startOffset": 533,
-                        "endColumn": 53,
-                        "endOffset": 584
+                        "startColumn": 4,
+                        "startOffset": 547,
+                        "endColumn": 55,
+                        "endOffset": 598
                     }
                 }
             },
@@ -11604,10 +11604,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 92,
-                        "startColumn": 2,
-                        "startOffset": 9731,
-                        "endColumn": 103,
-                        "endOffset": 9832
+                        "startColumn": 4,
+                        "startOffset": 9901,
+                        "endColumn": 105,
+                        "endOffset": 10002
                     }
                 }
             },
@@ -11623,10 +11623,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 91,
-                        "startColumn": 2,
-                        "startOffset": 9555,
-                        "endColumn": 174,
-                        "endOffset": 9727
+                        "startColumn": 4,
+                        "startOffset": 9723,
+                        "endColumn": 176,
+                        "endOffset": 9895
                     }
                 }
             },
@@ -11642,10 +11642,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 88,
-                        "startColumn": 2,
-                        "startOffset": 9215,
-                        "endColumn": 99,
-                        "endOffset": 9312
+                        "startColumn": 4,
+                        "startOffset": 9377,
+                        "endColumn": 101,
+                        "endOffset": 9474
                     }
                 }
             },
@@ -11661,10 +11661,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 89,
-                        "startColumn": 2,
-                        "startOffset": 9316,
-                        "endColumn": 121,
-                        "endOffset": 9435
+                        "startColumn": 4,
+                        "startOffset": 9480,
+                        "endColumn": 123,
+                        "endOffset": 9599
                     }
                 }
             },
@@ -11680,10 +11680,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 90,
-                        "startColumn": 2,
-                        "startOffset": 9439,
-                        "endColumn": 114,
-                        "endOffset": 9551
+                        "startColumn": 4,
+                        "startOffset": 9605,
+                        "endColumn": 116,
+                        "endOffset": 9717
                     }
                 }
             },
@@ -11699,10 +11699,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 84,
-                        "startColumn": 2,
-                        "startOffset": 8830,
-                        "endColumn": 77,
-                        "endOffset": 8905
+                        "startColumn": 4,
+                        "startOffset": 8984,
+                        "endColumn": 79,
+                        "endOffset": 9059
                     }
                 }
             },
@@ -11718,10 +11718,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 83,
-                        "startColumn": 2,
-                        "startOffset": 8769,
-                        "endColumn": 59,
-                        "endOffset": 8826
+                        "startColumn": 4,
+                        "startOffset": 8921,
+                        "endColumn": 61,
+                        "endOffset": 8978
                     }
                 }
             },
@@ -11737,10 +11737,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 85,
-                        "startColumn": 2,
-                        "startOffset": 8909,
-                        "endColumn": 99,
-                        "endOffset": 9006
+                        "startColumn": 4,
+                        "startOffset": 9065,
+                        "endColumn": 101,
+                        "endOffset": 9162
                     }
                 }
             },
@@ -11756,10 +11756,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 86,
-                        "startColumn": 2,
-                        "startOffset": 9010,
-                        "endColumn": 103,
-                        "endOffset": 9111
+                        "startColumn": 4,
+                        "startOffset": 9168,
+                        "endColumn": 105,
+                        "endOffset": 9269
                     }
                 }
             },
@@ -11775,10 +11775,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 87,
-                        "startColumn": 2,
-                        "startOffset": 9115,
-                        "endColumn": 98,
-                        "endOffset": 9211
+                        "startColumn": 4,
+                        "startOffset": 9275,
+                        "endColumn": 100,
+                        "endOffset": 9371
                     }
                 }
             },
@@ -11794,10 +11794,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 82,
-                        "startColumn": 2,
-                        "startOffset": 8691,
-                        "endColumn": 76,
-                        "endOffset": 8765
+                        "startColumn": 4,
+                        "startOffset": 8841,
+                        "endColumn": 78,
+                        "endOffset": 8915
                     }
                 }
             },
@@ -11813,10 +11813,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 161,
-                        "startColumn": 2,
-                        "startOffset": 15311,
-                        "endColumn": 73,
-                        "endOffset": 15382
+                        "startColumn": 4,
+                        "startOffset": 15619,
+                        "endColumn": 75,
+                        "endOffset": 15690
                     }
                 }
             },
@@ -11832,10 +11832,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 160,
-                        "startColumn": 2,
-                        "startOffset": 15233,
-                        "endColumn": 76,
-                        "endOffset": 15307
+                        "startColumn": 4,
+                        "startOffset": 15539,
+                        "endColumn": 78,
+                        "endOffset": 15613
                     }
                 }
             },
@@ -11851,10 +11851,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 162,
-                        "startColumn": 2,
-                        "startOffset": 15386,
-                        "endColumn": 73,
-                        "endOffset": 15457
+                        "startColumn": 4,
+                        "startOffset": 15696,
+                        "endColumn": 75,
+                        "endOffset": 15767
                     }
                 }
             },
@@ -11869,11 +11869,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 262,
-                        "startColumn": 2,
-                        "startOffset": 23363,
-                        "endColumn": 60,
-                        "endOffset": 23421
+                        "startLine": 263,
+                        "startColumn": 4,
+                        "startOffset": 23829,
+                        "endColumn": 62,
+                        "endOffset": 23887
                     }
                 }
             },
@@ -11908,10 +11908,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 16,
-                        "startColumn": 2,
-                        "startOffset": 804,
-                        "endColumn": 64,
-                        "endOffset": 866
+                        "startColumn": 4,
+                        "startOffset": 826,
+                        "endColumn": 66,
+                        "endOffset": 888
                     }
                 }
             },
@@ -11927,10 +11927,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 17,
-                        "startColumn": 2,
-                        "startOffset": 870,
-                        "endColumn": 60,
-                        "endOffset": 928
+                        "startColumn": 4,
+                        "startOffset": 894,
+                        "endColumn": 62,
+                        "endOffset": 952
                     }
                 }
             },
@@ -11945,11 +11945,11 @@
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 266,
+                        "startLine": 267,
                         "startColumn": 4,
-                        "startOffset": 23557,
+                        "startOffset": 24025,
                         "endColumn": 92,
-                        "endOffset": 23645
+                        "endOffset": 24113
                     }
                 }
             },
@@ -11965,10 +11965,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 18,
-                        "startColumn": 2,
-                        "startOffset": 932,
-                        "endColumn": 62,
-                        "endOffset": 992
+                        "startColumn": 4,
+                        "startOffset": 958,
+                        "endColumn": 64,
+                        "endOffset": 1018
                     }
                 }
             },
@@ -11984,10 +11984,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 19,
-                        "startColumn": 2,
-                        "startOffset": 996,
-                        "endColumn": 56,
-                        "endOffset": 1050
+                        "startColumn": 4,
+                        "startOffset": 1024,
+                        "endColumn": 58,
+                        "endOffset": 1078
                     }
                 }
             },
@@ -12003,10 +12003,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 71,
-                        "startColumn": 2,
-                        "startOffset": 7784,
-                        "endColumn": 49,
-                        "endOffset": 7831
+                        "startColumn": 4,
+                        "startOffset": 7912,
+                        "endColumn": 51,
+                        "endOffset": 7959
                     }
                 }
             },
@@ -12022,10 +12022,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 138,
-                        "startColumn": 2,
-                        "startOffset": 13434,
-                        "endColumn": 83,
-                        "endOffset": 13515
+                        "startColumn": 4,
+                        "startOffset": 13696,
+                        "endColumn": 85,
+                        "endOffset": 13777
                     }
                 }
             },
@@ -12041,10 +12041,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 139,
-                        "startColumn": 2,
-                        "startOffset": 13519,
-                        "endColumn": 82,
-                        "endOffset": 13599
+                        "startColumn": 4,
+                        "startOffset": 13783,
+                        "endColumn": 84,
+                        "endOffset": 13863
                     }
                 }
             },
@@ -12060,10 +12060,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 144,
-                        "startColumn": 2,
-                        "startOffset": 14020,
-                        "endColumn": 111,
-                        "endOffset": 14129
+                        "startColumn": 4,
+                        "startOffset": 14294,
+                        "endColumn": 113,
+                        "endOffset": 14403
                     }
                 }
             },
@@ -12079,10 +12079,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 145,
-                        "startColumn": 2,
-                        "startOffset": 14133,
-                        "endColumn": 107,
-                        "endOffset": 14238
+                        "startColumn": 4,
+                        "startOffset": 14409,
+                        "endColumn": 109,
+                        "endOffset": 14514
                     }
                 }
             },
@@ -12098,10 +12098,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 146,
-                        "startColumn": 2,
-                        "startOffset": 14242,
-                        "endColumn": 111,
-                        "endOffset": 14351
+                        "startColumn": 4,
+                        "startOffset": 14520,
+                        "endColumn": 113,
+                        "endOffset": 14629
                     }
                 }
             },
@@ -12117,10 +12117,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 147,
-                        "startColumn": 2,
-                        "startOffset": 14355,
-                        "endColumn": 107,
-                        "endOffset": 14460
+                        "startColumn": 4,
+                        "startOffset": 14635,
+                        "endColumn": 109,
+                        "endOffset": 14740
                     }
                 }
             },
@@ -12136,10 +12136,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 137,
-                        "startColumn": 2,
-                        "startOffset": 13361,
-                        "endColumn": 71,
-                        "endOffset": 13430
+                        "startColumn": 4,
+                        "startOffset": 13621,
+                        "endColumn": 73,
+                        "endOffset": 13690
                     }
                 }
             },
@@ -12155,10 +12155,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 140,
-                        "startColumn": 2,
-                        "startOffset": 13603,
-                        "endColumn": 105,
-                        "endOffset": 13706
+                        "startColumn": 4,
+                        "startOffset": 13869,
+                        "endColumn": 107,
+                        "endOffset": 13972
                     }
                 }
             },
@@ -12174,10 +12174,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 141,
-                        "startColumn": 2,
-                        "startOffset": 13710,
-                        "endColumn": 96,
-                        "endOffset": 13804
+                        "startColumn": 4,
+                        "startOffset": 13978,
+                        "endColumn": 98,
+                        "endOffset": 14072
                     }
                 }
             },
@@ -12193,10 +12193,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 143,
-                        "startColumn": 2,
-                        "startOffset": 13912,
-                        "endColumn": 106,
-                        "endOffset": 14016
+                        "startColumn": 4,
+                        "startOffset": 14184,
+                        "endColumn": 108,
+                        "endOffset": 14288
                     }
                 }
             },
@@ -12212,10 +12212,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 142,
-                        "startColumn": 2,
-                        "startOffset": 13808,
-                        "endColumn": 102,
-                        "endOffset": 13908
+                        "startColumn": 4,
+                        "startOffset": 14078,
+                        "endColumn": 104,
+                        "endOffset": 14178
                     }
                 }
             },
@@ -12231,10 +12231,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 136,
-                        "startColumn": 2,
-                        "startOffset": 13296,
-                        "endColumn": 63,
-                        "endOffset": 13357
+                        "startColumn": 4,
+                        "startOffset": 13554,
+                        "endColumn": 65,
+                        "endOffset": 13615
                     }
                 }
             },
@@ -12250,10 +12250,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 134,
-                        "startColumn": 2,
-                        "startOffset": 13063,
-                        "endColumn": 64,
-                        "endOffset": 13125
+                        "startColumn": 4,
+                        "startOffset": 13317,
+                        "endColumn": 66,
+                        "endOffset": 13379
                     }
                 }
             },
@@ -12269,10 +12269,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 133,
-                        "startColumn": 2,
-                        "startOffset": 12999,
-                        "endColumn": 62,
-                        "endOffset": 13059
+                        "startColumn": 4,
+                        "startOffset": 13251,
+                        "endColumn": 64,
+                        "endOffset": 13311
                     }
                 }
             },
@@ -12288,10 +12288,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 135,
-                        "startColumn": 2,
-                        "startOffset": 13129,
-                        "endColumn": 165,
-                        "endOffset": 13292
+                        "startColumn": 4,
+                        "startOffset": 13385,
+                        "endColumn": 167,
+                        "endOffset": 13548
                     }
                 }
             },
@@ -12307,10 +12307,10 @@
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 72,
-                        "startColumn": 2,
-                        "startOffset": 7835,
-                        "endColumn": 49,
-                        "endOffset": 7882
+                        "startColumn": 4,
+                        "startOffset": 7965,
+                        "endColumn": 51,
+                        "endOffset": 8012
                     }
                 }
             },

@@ -1,14 +1,11 @@
 package net.egobeta.ego;
 
-import android.Manifest;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -26,7 +23,7 @@ import net.amazonaws.mobile.user.IdentityProvider;
 
 import net.amazonaws.mobile.user.signin.FacebookSignInProvider;
 import net.egobeta.ego.OnBoarding.Main_OnBoarding;
-import net.egobeta.ego.demo.UserSettings;
+
 
 import java.util.List;
 
@@ -34,11 +31,7 @@ public class SignInActivity extends Activity {
     private final static String LOG_TAG = SignInActivity.class.getSimpleName();
     private SignInManager signInManager;
 
-    /** Permission Request Code (Must be < 256). */
-    private static final int GET_ACCOUNTS_PERMISSION_REQUEST_CODE = 93;
-
     /** The Google OnClick listener, since we must override it to get permissions on Marshmallow and above. */
-    private View.OnClickListener googleOnClickListener;
     private ProgressBar progressBar;
 
     /**
@@ -84,6 +77,10 @@ public class SignInActivity extends Activity {
          */
         @Override
         public void onCancel(final IdentityProvider provider) {
+            if(provider.isUserSignedIn()){
+                provider.signOut();
+                Toast.makeText(SignInActivity.this, "user signed in already", Toast.LENGTH_LONG).show();
+            }
             Log.d(LOG_TAG, String.format("User sign-in with %s canceled.",
                 provider.getDisplayName()));
 
@@ -116,7 +113,7 @@ public class SignInActivity extends Activity {
     private void syncUserSettings() {
         // sync only if user is signed in
         if (AWSMobileClient.defaultMobileClient().getIdentityManager().isUserSignedIn()) {
-            final UserPermissions userPermissions = UserPermissions.getInstance(getApplicationContext());
+            UserPermissions userPermissions = UserPermissions.getInstance(getApplicationContext());
             userPermissions.getDataset().synchronize(new DefaultSyncCallback() {
                 @Override
                 public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
@@ -130,8 +127,6 @@ public class SignInActivity extends Activity {
 
                         }
                     });
-
-
                     //If firstTimeUser = 0
                     // go to OnBoardingActivity
                     //else
@@ -199,13 +194,13 @@ public class SignInActivity extends Activity {
                     startActivity(new Intent(SignInActivity.this, Main_OnBoarding.class)
                             .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     // finish should always be called on the main thread.
-                    SignInActivity.this.finish();
+                    finish();
                 } else if (isFirstTimeUSer == 0) {
                     Log.d(LOG_TAG, "Launching OnBoarding Process...");
                     startActivity(new Intent(SignInActivity.this, Main_OnBoarding.class)
                             .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     // finish should always be called on the main thread.
-                    SignInActivity.this.finish();
+                    finish();
                 } else {
                     Toast.makeText(SignInActivity.this, "Failure updating", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
@@ -220,6 +215,21 @@ public class SignInActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.d("ACT DEBUG", "SignInActivity: OnCreate");
         setContentView(R.layout.activity_sign_in);
+
+        // Obtain a reference to the mobile client. It is created in the Application class,
+        // but in case a custom Application class is not used, we initialize it here if necessary.
+        AWSMobileClient.initializeMobileClientIfNecessary(this);
+        // Obtain a reference to the mobile client. It is created in the Application class.
+        AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
+        // Obtain a reference to the identity manager.
+        IdentityManager identityManager = awsMobileClient.getIdentityManager();
+        if(identityManager.isUserSignedIn()){
+            identityManager.signOut();
+            Toast.makeText(SignInActivity.this, "User is signed in", Toast.LENGTH_SHORT).show();
+        }
+
+
+
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
         signInManager = SignInManager.getInstance(this);
@@ -241,6 +251,18 @@ public class SignInActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        // Obtain a reference to the mobile client. It is created in the Application class,
+        // but in case a custom Application class is not used, we initialize it here if necessary.
+        AWSMobileClient.initializeMobileClientIfNecessary(this);
+        // Obtain a reference to the mobile client. It is created in the Application class.
+        AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
+        // Obtain a reference to the identity manager.
+        IdentityManager identityManager = awsMobileClient.getIdentityManager();
+        if(identityManager.isUserSignedIn()){
+            identityManager.signOut();
+            Toast.makeText(SignInActivity.this, "User is signed in", Toast.LENGTH_SHORT).show();
+        }
 
         Log.d("ACT DEBUG", "SignInActivity: OnResume");
         // pause/resume Mobile Analytics collection

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
 import net.egobeta.ego.MainActivity;
+import net.egobeta.ego.OnBoarding.Main_OnBoarding;
 import net.egobeta.ego.R;
 import net.egobeta.ego.SignInActivity;
 
@@ -83,12 +84,11 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         if(view == logoutButton){
             identityManager.signOut();
-            Intent intent = new Intent(this, SignInActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(new Intent(this, SignInActivity.class));
-//            MainActivity.activity.finish();
-//            this.finish();
+
+            Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            this.finish();
         }
 
         if(view == blockedButton){
