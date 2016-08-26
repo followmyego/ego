@@ -14,6 +14,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Toast;
+
+import com.facebook.FacebookSdk;
+
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.signin.SignInManager;
 import net.amazonaws.mobile.user.signin.SignInProvider;
@@ -31,6 +34,43 @@ public class SplashActivity extends Activity {
     private final static String LOG_TAG = SplashActivity.class.getSimpleName();
     private final CountDownLatch timeoutLatch = new CountDownLatch(1);
     private SignInManager signInManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        Log.d(LOG_TAG, "onCreate");
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash);
+
+        final Thread thread = new Thread(new Runnable() {
+            public void run() {
+
+                signInManager = SignInManager.getInstance(getApplicationContext());
+                final SignInProvider provider = signInManager.getPreviouslySignedInProvider();
+
+
+                // if the user was already previously in to a provider.
+                if (provider != null) {
+                    // asynchronously handle refreshing credentials and call our handler.
+                    signInManager.refreshCredentialsWithProvider(SplashActivity.this,
+                            provider, new SignInResultsHandler());
+                } else {
+                    // Asyncronously go to the main activity (after the splash delay has expired).
+                    goSignIn();
+                }
+
+
+                // Wait for the splash timeout.
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) { }
+
+                // Expire the splash page delay.
+                timeoutLatch.countDown();
+            }
+        });
+        thread.start();
+    }
 
     /**
      * SignInResultsHandler handles the results from sign-in for a previously signed in user.
@@ -92,40 +132,7 @@ public class SplashActivity extends Activity {
         }
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        Log.d(LOG_TAG, "onCreate");
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-
-        final Thread thread = new Thread(new Runnable() {
-            public void run() {
-                signInManager = SignInManager.getInstance(SplashActivity.this);
-
-                final SignInProvider provider = signInManager.getPreviouslySignedInProvider();
-
-                // if the user was already previously in to a provider.
-                if (provider != null) {
-                    // asynchronously handle refreshing credentials and call our handler.
-                    signInManager.refreshCredentialsWithProvider(SplashActivity.this,
-                        provider, new SignInResultsHandler());
-                } else {
-                    // Asyncronously go to the main activity (after the splash delay has expired).
-                    goSignIn();
-                }
-
-                // Wait for the splash timeout.
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) { }
-
-                // Expire the splash page delay.
-                timeoutLatch.countDown();
-            }
-        });
-        thread.start();
-    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -164,7 +171,8 @@ public class SplashActivity extends Activity {
      */
     protected void goMain() {
         Log.d(LOG_TAG, "Launching Main Activity...");
-        goAfterSplashTimeout(new Intent(this, MainActivity.class));
+        goAfterSplashTimeout(new Intent(SplashActivity.this, MainActivity.class));
+//        goAfterSplashTimeout(new Intent(this, BlankActivity.class));
     }
 
     /**
@@ -172,7 +180,7 @@ public class SplashActivity extends Activity {
      */
     protected void goSignIn() {
         Log.d(LOG_TAG, "Launching Sign-in Activity...");
-        goAfterSplashTimeout(new Intent(this, SignInActivity.class));
+        goAfterSplashTimeout(new Intent(SplashActivity.this, SignInActivity.class));
     }
 
     @Override

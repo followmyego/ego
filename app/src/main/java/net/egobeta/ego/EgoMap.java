@@ -1,6 +1,7 @@
 package net.egobeta.ego;
 
 import android.app.Activity;
+import android.content.Context;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -57,6 +58,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     private boolean mRequestLocationUpdates = false;
     private LocationRequest mLocationRequest;
     int firstTime = 0;
+    private Context context;
 
     //Other variables
     private List<String> usersImages;
@@ -74,8 +76,9 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 
 
 
-    public EgoMap(Activity activity, IdentityManager identityManager, DynamoDBMapper mapper){
+    public EgoMap(Activity activity, Context context, IdentityManager identityManager, DynamoDBMapper mapper){
         this.activity = activity;
+        this.context = context;
         this.identityManager = identityManager;
         this.mapper = mapper;
     }
@@ -328,7 +331,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
                 requestParams.put("lat", 49.888721);
                 requestParams.put("lng", -119.491572);
                 requestParams.put("count", count);
-                requestParams.put("accessToken", AccessToken.getCurrentAccessToken().getToken());
+                requestParams.put("accessToken", "");
                 requestParams.put("radiusInMeter", "500000");
                 requestParams.put("debug", "androidApp");
                 requestParams.put("rangeKey", identityManager.getUserFacebookId());
@@ -386,18 +389,18 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
 //                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
 //                    returnParsedJsonArray(result);
 //                    adapter = new EgoStreamViewAdapter2(activity, returnArrayOfFacebookIds(result));
-                    notifyOfNewUsers(returnArrayOfFacebookIds(result));
+                    notifyOfNewUsers(returnArrayOfFacebookIds(result), returnArrayOfBadges(result));
 
-                    Fragment_Main.stopRefreshing();
+                    Fragment_Main.stopRefreshing(activity);
                 } else {
                     usernames = new ArrayList<>();
                     usersImages = new ArrayList<>();
 //                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
 //                    returnParsedJsonArray(result);
 //                    adapter.setUsers(returnArrayOfFacebookIds(result));
-                    notifyOfNewUsers(returnArrayOfFacebookIds(result));
+                    notifyOfNewUsers(returnArrayOfFacebookIds(result), returnArrayOfBadges(result));
 
-                    Fragment_Main.stopRefreshing();
+                    Fragment_Main.stopRefreshing(activity);
                 }
             } else {
                 if(!mRequestLocationUpdates){
@@ -408,15 +411,15 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
             }
         }
 
-        public void notifyOfNewUsers(String[] result){
+        public void notifyOfNewUsers(String[] facebookIds, int[] badges){
             if(count == 0){
-                Fragment_Main.notifiyAdapterHasChanged(result);
+                Fragment_Main.notifiyAdapterHasChanged(facebookIds, context, activity, badges);
             } else {
-                Fragment_Main.addNewItems(result);
+                Fragment_Main.addNewItems(facebookIds, context, activity, badges);
             }
         }
 
-        //Method to parse json result and get the value of the key "image"
+        //Method to parse json result and get the value of the key "rangeKey"
         private String[] returnArrayOfFacebookIds(String result){
             JSONObject resultObject = null;
             JSONArray arrayOfUsers = null;
@@ -436,6 +439,28 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
                 e.printStackTrace();
             }
             return facebookIds;
+        }
+
+        //Method to parse json result and get the value of the key "badge"
+        private int[] returnArrayOfBadges(String result){
+            JSONObject resultObject = null;
+            JSONArray arrayOfUsers = null;
+            int[] badges = null;
+            try {
+
+                resultObject = new JSONObject(result);
+                arrayOfUsers = resultObject.getJSONArray("result");
+
+                badges = new int[arrayOfUsers.length()];
+                for(int i = 0; i < arrayOfUsers.length(); ++i){
+                    JSONObject user = arrayOfUsers.getJSONObject(i);
+                    int badge = user.getInt("badge");
+                    badges[i] = badge;
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return badges;
         }
     }
 

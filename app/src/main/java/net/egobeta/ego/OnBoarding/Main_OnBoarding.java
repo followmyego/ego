@@ -106,7 +106,7 @@ public class Main_OnBoarding extends AppCompatActivity   {
         startActivity(intent);
 //        overridePendingTransition(R.anim.right_slide_in, R.anim.right_slide_in);
         overridePendingTransition(R.anim.activity_open_translate, R.anim.activity_close_scale);
-        this.finish();
+        finish();
 
     }
 

@@ -20,13 +20,16 @@ public class UserItem {
     Context context;
     Drawable profilePicture = null;
     String facebookId;
+    int badge;
     boolean isFriend;
     RoundedImageView roundedImageView;
+    boolean isLoading = false;
 
 
-    public UserItem(Context context, String facebookId) {
+    public UserItem(Context context, String facebookId, int badge) {
         this.context = context;
         this.facebookId = facebookId;
+        this.badge = badge;
         setUserProfilePicture();
     }
 
@@ -53,6 +56,14 @@ public class UserItem {
         this.facebookId = facebookId;
     }
 
+    public int getBadge() {
+        return badge;
+    }
+
+    public void setBadge(int badge) {
+        this.badge = badge;
+    }
+
     public void setViewItem(RoundedImageView roundedImageView, boolean isFriend) {
         this.roundedImageView = roundedImageView;
         new LoadUserImageAsyncTask().execute(facebookId);
@@ -75,6 +86,7 @@ public class UserItem {
 
         @Override
         protected String doInBackground(String... params) {
+            isLoading = true;
             //Code to Load Bitmap
             userImageUrl = "https://graph.facebook.com/" + params[0] + "/picture?width=190&height=190";
 
@@ -109,6 +121,8 @@ public class UserItem {
                     roundedImageView.setImageDrawable(profilePicture);
                 }
             }
+
+            isLoading = false;
         }
 
 

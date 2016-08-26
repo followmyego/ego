@@ -12,8 +12,9 @@
         android:layout_height="120dp"
         android:scaleType="fitXY"
         android:layout_centerInParent="true"
-        android:src="@drawable/default_user_image"
         >
+        <!--android:src="@drawable/default_user_image"-->
+
 
     </net.egobeta.ego.RoundedImageView>
 
@@ -37,7 +38,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:id="@+id/friend_badge"
-            android:src="@drawable/friend"
+            tools:src="@drawable/friend"
             android:layout_centerInParent="true"
             android:visibility="gone"
             />

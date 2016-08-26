@@ -39,7 +39,7 @@ public class SignInManager {
      * @param context context.
      */
     private SignInManager(final Context context) {
-        assert (singleton == null);
+//        assert (singleton == null);
         singleton = this;
 
         this.context = context.getApplicationContext();
@@ -57,6 +57,7 @@ public class SignInManager {
      */
     public synchronized static SignInManager getInstance(final Context context) {
         if (singleton == null) {
+            System.out.println("FACEBOOKLOGIN " + "SignInManager.getInstance == null");
             singleton = new SignInManager(context);
         }
         return singleton;
@@ -71,6 +72,7 @@ public class SignInManager {
      * @param signInProvider sign-in provider
      */
     public void addSignInProvider(final SignInProvider signInProvider) {
+        System.out.println("FACEBOOKLOGIN " + "addSignInProvider is fired");
         signInProviders.put(signInProvider.getClass(), signInProvider);
     }
 
@@ -83,11 +85,12 @@ public class SignInManager {
      * @return false if not already signed in, true if the user was signed in with a provider.
      */
     public SignInProvider getPreviouslySignedInProvider() {
-
+        System.out.println("FACEBOOKLOGIN " + "signInProviders.length == " + signInProviders.size());
         for (final SignInProvider provider : signInProviders.values()) {
             // Note: This method may block. This loop could potentially be sped
             // up by running these calls in parallel using an executorService.
             if (provider.isUserSignedIn()) {
+                System.out.println("FACEBOOKLOGIN " + "provider = user is signed in");
                 return provider;
             }
         }

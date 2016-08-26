@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.hardware.camera2.params.Face;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.amazonaws.mobileconnectors.cognito.Dataset;
 import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
 import com.amazonaws.mobileconnectors.cognito.Record;
 import com.amazonaws.mobileconnectors.cognito.exceptions.DataStorageException;
+import com.facebook.login.LoginManager;
 
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.signin.SignInManager;
@@ -33,6 +35,41 @@ public class SignInActivity extends Activity {
 
     /** The Google OnClick listener, since we must override it to get permissions on Marshmallow and above. */
     private ProgressBar progressBar;
+    static SignInResultsHandler signInResultsHandler;
+
+
+
+    @Override
+    protected void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d("ACT DEBUG", "SignInActivity: OnCreate");
+        setContentView(R.layout.activity_sign_in);
+        LoginManager.getInstance().logOut();
+
+//        // Obtain a reference to the mobile client. It is created in the Application class,
+//        // but in case a custom Application class is not used, we initialize it here if necessary.
+//        AWSMobileClient.initializeMobileClientIfNecessary(this);
+//        // Obtain a reference to the mobile client. It is created in the Application class.
+//        AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
+//        // Obtain a reference to the identity manager.
+//        IdentityManager identityManager = awsMobileClient.getIdentityManager();
+//        identityManager.signOut();
+
+
+        signInResultsHandler = new SignInResultsHandler();
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar2);
+
+        signInManager = SignInManager.getInstance(SignInActivity.this);
+
+        signInManager.setResultsHandler(SignInActivity.this, signInResultsHandler);
+
+        // Initialize sign-in buttons.
+        signInManager.initializeSignInButton(FacebookSignInProvider.class,
+                this.findViewById(R.id.fb_login_button));
+
+    }
+
 
     /**
      * SignInResultsHandler handles the final result from sign in. Making it static is a best
@@ -191,8 +228,8 @@ public class SignInActivity extends Activity {
                 }
                 if (isFirstTimeUSer == 1) {
                     Log.d(LOG_TAG, "Launching Main Activity...");
-                    startActivity(new Intent(SignInActivity.this, Main_OnBoarding.class)
-                            .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                    startActivity(new Intent(SignInActivity.this, MainActivity.class));
+//                    startActivity(new Intent(SignInActivity.this, BlankActivity.class));
                     // finish should always be called on the main thread.
                     finish();
                 } else if (isFirstTimeUSer == 0) {
@@ -210,37 +247,7 @@ public class SignInActivity extends Activity {
         });
     }
 
-    @Override
-    protected void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d("ACT DEBUG", "SignInActivity: OnCreate");
-        setContentView(R.layout.activity_sign_in);
 
-        // Obtain a reference to the mobile client. It is created in the Application class,
-        // but in case a custom Application class is not used, we initialize it here if necessary.
-        AWSMobileClient.initializeMobileClientIfNecessary(this);
-        // Obtain a reference to the mobile client. It is created in the Application class.
-        AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
-        // Obtain a reference to the identity manager.
-        IdentityManager identityManager = awsMobileClient.getIdentityManager();
-        if(identityManager.isUserSignedIn()){
-            identityManager.signOut();
-            Toast.makeText(SignInActivity.this, "User is signed in", Toast.LENGTH_SHORT).show();
-        }
-
-
-
-        progressBar = (ProgressBar) findViewById(R.id.progressBar2);
-
-        signInManager = SignInManager.getInstance(this);
-
-        signInManager.setResultsHandler(this, new SignInResultsHandler());
-
-        // Initialize sign-in buttons.
-        signInManager.initializeSignInButton(FacebookSignInProvider.class,
-            this.findViewById(R.id.fb_login_button));
-
-    }
 
     @Override
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {

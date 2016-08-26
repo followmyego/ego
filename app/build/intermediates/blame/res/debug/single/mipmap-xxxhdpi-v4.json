@@ -12,12 +12,12 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\push.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_4_pressed.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_4_pressed.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_4.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_4.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_4_pressed.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_4_pressed.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\icon_star.png",
@@ -72,12 +72,12 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\user_files.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_3.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_3.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\icon_check_dated.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon_check_dated.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\theme_3.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\mipmap-xxxhdpi\\theme_3.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\user_profile_data.png",

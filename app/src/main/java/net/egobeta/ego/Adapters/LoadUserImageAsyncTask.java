@@ -18,14 +18,16 @@ import java.net.URL;
  */
 public class LoadUserImageAsyncTask extends AsyncTask<String, Void, String> {
 
-    private RoundedImageView imageView;
+    private RoundedImageView roundedImageView;
+    Drawable profilePicture = null;
     String userImageUrl;
     Bitmap userImage;
     Context context;
 
-    public LoadUserImageAsyncTask(RoundedImageView imageView, Context context){
-        this.imageView = imageView;
+    public LoadUserImageAsyncTask(RoundedImageView imageView, Context context, Drawable profilePicture){
+        this.roundedImageView = imageView;
         this.context = context;
+        this.profilePicture = profilePicture;
     }
 
     @Override
@@ -56,13 +58,20 @@ public class LoadUserImageAsyncTask extends AsyncTask<String, Void, String> {
         super.onPostExecute(result);
 
         if(userImage != null){
-
-            Drawable d = new BitmapDrawable(context.getResources(), userImage);
-            imageView.setImageDrawable(d);
+            System.out.println("UserItem: ONE");
+            profilePicture = new BitmapDrawable(context.getResources(), userImage);
+        } else {
+            System.out.println("UserItem: TWO");
+            System.out.println("User Image eqauls null");
         }
 
-        //Print server AsyncTask response
-        System.out.println("LoadUserImageAsyncTask method Resulted Value: " + result);
+        if(roundedImageView != null){
+            System.out.println("UserItem: THREE");
+            if(profilePicture != null){
+                System.out.println("UserItem: FOUR");
+                roundedImageView.setImageDrawable(profilePicture);
+            }
+        }
     }
 
 

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\com_facebook_button_icon.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable-xxhdpi\\com_facebook_button_icon.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-xxhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
@@ -12,12 +8,12 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-xxhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal.9.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal.9.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\vector_drawable_side_pullout_icon.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\vector_drawable_side_pullout_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal.9.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal.9.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_pressed.9.png",
@@ -36,12 +32,12 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable-xxhdpi-v4\\common_plus_signin_btn_text_light_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal.9.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal.9.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_ic_star_half_black_48dp.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal.9.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal.9.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
@@ -64,8 +60,12 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-xxhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\com_facebook_button_icon_white.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\drawable-xxhdpi-v4\\com_facebook_button_icon_white.png"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\messenger_bubble_large_white.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable-xxhdpi\\messenger_bubble_large_white.png"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\drawable-xxhdpi-v4\\messenger_bubble_large_white.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
@@ -90,6 +90,10 @@
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_plus_signin_btn_text_dark_focused.9.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable-xxhdpi-v4\\common_plus_signin_btn_text_dark_focused.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\com_facebook_button_icon_blue.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\drawable-xxhdpi-v4\\com_facebook_button_icon_blue.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_disabled.9.png",
@@ -136,12 +140,16 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\com_facebook_favicon_white.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\drawable-xxhdpi-v4\\com_facebook_favicon_white.png"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\messenger_button_send_round_shadow.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable-xxhdpi\\messenger_button_send_round_shadow.png"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\drawable-xxhdpi-v4\\messenger_button_send_round_shadow.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\messenger_bubble_large_blue.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable-xxhdpi\\messenger_bubble_large_blue.png"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\drawable-xxhdpi-v4\\messenger_bubble_large_blue.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_plus_signin_btn_text_dark_normal.9.png",
@@ -189,7 +197,11 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\com_facebook_button_like_icon_selected.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable-xxhdpi\\com_facebook_button_like_icon_selected.png"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\drawable-xxhdpi-v4\\com_facebook_button_like_icon_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\com_facebook_button_send_icon_white.png",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\drawable-xxhdpi-v4\\com_facebook_button_send_icon_white.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\abc_ic_star_half_black_36dp.png",
@@ -224,10 +236,6 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\com_facebook_button_send_icon.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable-xxhdpi\\com_facebook_button_send_icon.png"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_plus_signin_btn_icon_light_disabled.9.png",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable-xxhdpi-v4\\common_plus_signin_btn_icon_light_disabled.9.png"
     },
@@ -237,7 +245,7 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\messenger_bubble_small_blue.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable-xxhdpi\\messenger_bubble_small_blue.png"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\drawable-xxhdpi-v4\\messenger_bubble_small_blue.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal.9.png",
@@ -297,7 +305,7 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\messenger_bubble_small_white.png",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\drawable-xxhdpi\\messenger_bubble_small_white.png"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\drawable-xxhdpi-v4\\messenger_bubble_small_white.png"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_plus_signin_btn_icon_light_focused.9.png",

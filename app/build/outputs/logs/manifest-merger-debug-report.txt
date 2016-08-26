@@ -161,7 +161,10 @@ MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
-MERGED from [com.facebook.android:facebook-android-sdk:4.6.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.6.0\AndroidManifest.xml:28:5-20
+MERGED from [com.facebook.android:facebook-android-sdk:4.15.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.15.0\AndroidManifest.xml:28:5-38:19
+MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.4.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:customtabs:23.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\customtabs\23.4.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
 MERGED from [com.github.orangegangsters:swipy:1.2.3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.github.orangegangsters\swipy\1.2.3\AndroidManifest.xml:11:5-12:19
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:25:5-20
@@ -280,6 +283,11 @@ ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:
 		ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:113:17-67
 activity#com.facebook.FacebookActivity
 ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:122:9-66
+MERGED from [com.facebook.android:facebook-android-sdk:4.15.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.15.0\AndroidManifest.xml:29:9-32:75
+	android:configChanges
+		ADDED from [com.facebook.android:facebook-android-sdk:4.15.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.15.0\AndroidManifest.xml:31:13-96
+	android:theme
+		ADDED from [com.facebook.android:facebook-android-sdk:4.15.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.15.0\AndroidManifest.xml:32:13-72
 	android:name
 		ADDED from C:\Users\Lucas\Desktop\Ego_Test\ego\app\src\main\AndroidManifest.xml:122:19-63
 meta-data#com.facebook.sdk.ApplicationId
@@ -419,7 +427,10 @@ MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
-MERGED from [com.facebook.android:facebook-android-sdk:4.6.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.6.0\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.15.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.15.0\AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.4.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:customtabs:23.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\customtabs\23.4.0\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:24.1.1] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\AndroidManifest.xml:21:5-23:54
 MERGED from [com.github.orangegangsters:swipy:1.2.3] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.github.orangegangsters\swipy\1.2.3\AndroidManifest.xml:7:5-9:41
 MERGED from [jp.wasabeef:blurry:2.0.2] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\jp.wasabeef\blurry\2.0.2\AndroidManifest.xml:8:5-10:41
@@ -496,3 +507,13 @@ ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desk
 		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:31:13-107
 	android:name
 		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.4.0\AndroidManifest.xml:29:13-58
+activity#com.facebook.CustomTabActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.15.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.15.0\AndroidManifest.xml:33:9-36:20
+	android:exported
+		ADDED from [com.facebook.android:facebook-android-sdk:4.15.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.15.0\AndroidManifest.xml:35:13-36
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.15.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.15.0\AndroidManifest.xml:34:13-58
+activity#com.facebook.CustomTabMainActivity
+ADDED from [com.facebook.android:facebook-android-sdk:4.15.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.15.0\AndroidManifest.xml:37:9-71
+	android:name
+		ADDED from [com.facebook.android:facebook-android-sdk:4.15.0] C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.15.0\AndroidManifest.xml:37:19-68

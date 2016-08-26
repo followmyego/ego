@@ -40,6 +40,7 @@ import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutD
 
 //import net.egobeta.ego.databinding.FragmentListBinding;
 
+import net.amazonaws.mobile.user.IdentityManager;
 import net.egobeta.ego.Adapters.BadgeItem;
 import net.egobeta.ego.Adapters.EgoStreamViewAdapter;
 import net.egobeta.ego.Adapters.GenericAdapter;
@@ -74,7 +75,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
     static ArrayList<String> facebook_Ids = new ArrayList<String>();
     SwipyRefreshLayout swipyRefreshLayout;
 //    private ActivityMainBinding mBinding;
-
+    IdentityManager identityManager = null;
     private static ListView mListView;
     private ArrayList<String> mListItems;
     private static final String TAG = "DEBUGGING MESSAGE";
@@ -83,10 +84,8 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
     public ScrollView scrollView;
     static int deleteCounter = 0;
     private static int mPosition;
-    public static Context context;
-    static Activity activity;
     private Typeface typeface;
-    public static String facebookId = MainActivity.identityManager.getUserFacebookId();
+    public static String facebookId;
 
     //Instagram GridView view Variables
     private static NonScrollableGridView gridView;
@@ -104,17 +103,18 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
     SlidingMenu slidingMenu;
     private static ArrayList<String> friends_Ids;
     private static List<UserItem> userList = new ArrayList<UserItem>();
+    private static EgoMap egoMap;
 
-
-    public static Fragment newInstance(Activity activtiy, Context context1, int position, Toolbar toolbar1, ArrayList<String> friendsIds) {
-        activity = activtiy;
+    public static Fragment newInstance(EgoMap egomap, IdentityManager identityManager,
+                                       int position, Toolbar toolbar1, ArrayList<String> friendsIds) {
         Fragment_Main f = new Fragment_Main();
         Bundle b = new Bundle();
         b.putInt(ARG_POSITION, position);
-        context = context1;
         toolbar = toolbar1;
         f.setArguments(b);
         friends_Ids = friendsIds;
+        facebookId = identityManager.getUserFacebookId();
+        egoMap = egomap;
         return f;
     }
 
@@ -123,7 +123,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPosition = getArguments().getInt(ARG_POSITION);
-        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
+        typeface = Typeface.createFromAsset(getContext().getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
 
         //Initialize the adapter for the listView that holds the gridView
         adapter = new ItemAdapter();
@@ -138,7 +138,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 
     /** check if the network is available **/
     private boolean isNetworkAvailable(){
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
@@ -230,7 +230,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         if(!bool){
             if(count > 0){
                 System.out.println("SOUT" + " checkIfWeAddItemToListView 1");
-                MainActivity.getNearbyUsers(count);
+                MainActivity.getNearbyUsers(count, egoMap);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -284,11 +284,11 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 
     /** ONLY CALLED FROM EGOMAP CLASS **/
     /** Method to add items to gridView adapter if its the first time getting users **/
-    public static void notifiyAdapterHasChanged(String[] facebook_Ids1){
+    public static void notifiyAdapterHasChanged(String[] facebook_Ids1, Context context, Activity activity, int[] badges){
         System.out.println("SOUT" + " notifiyAdapterHasChanged");
         facebook_Ids = new ArrayList<>(Arrays.asList(facebook_Ids1));
         for (int i = 0; i < facebook_Ids1.length; i++) {
-            UserItem userItem = new UserItem(context, facebook_Ids1[i]);
+            UserItem userItem = new UserItem(context, facebook_Ids1[i], badges[i]);
             userList.add(userItem);
         }
         adapter_Grid = new EgoStreamViewAdapter(userList, context, friends_Ids, activity);
@@ -298,11 +298,11 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         count ++;
     }
 
-    public static void addNewItems(String[] facebook_Ids1) {
+    public static void addNewItems(String[] facebook_Ids1, Context context, Activity activity, int[] badges) {
         System.out.println("SOUT" + " addNewItems");
 
         for (int i = 0; i < facebook_Ids1.length; i++) {
-            UserItem userItem = new UserItem(context, facebook_Ids1[i]);
+            UserItem userItem = new UserItem(context, facebook_Ids1[i], badges[i]);
             userList.add(userItem);
         }
         adapter_Grid = new EgoStreamViewAdapter(userList, context, friends_Ids, activity);
@@ -315,7 +315,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
     }
 
 
-    public static void stopRefreshing(){
+    public static void stopRefreshing(Activity activity){
         //Hide the refresh after 2sec
         activity.runOnUiThread(new Runnable() {
             @Override
@@ -344,7 +344,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
 
         }
         System.out.println("MAINACTIVITY: getNearbyUsers onRefresh");
-        MainActivity.getNearbyUsers(count);
+        MainActivity.getNearbyUsers(count, egoMap);
     }
 
 
@@ -406,7 +406,7 @@ public class Fragment_Main extends ScrollTabHolderFragment implements SwipyRefre
         private List<BadgeItem> badgeList;
 
         public ItemAdapter() {
-            super(context);
+            super(getContext());
         }
 
 

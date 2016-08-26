@@ -752,13 +752,13 @@
                     "endOffset": 5253
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-in\\values-in.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-in\\values-in.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 178,
+                        "startOffset": 55,
                         "endColumn": 60,
-                        "endOffset": 234
+                        "endOffset": 111
                     }
                 }
             },

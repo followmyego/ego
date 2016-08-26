@@ -87,8 +87,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements ScrollTabHolder, ViewPager.OnPageChangeListener, View.OnClickListener {
 
     //AWS Variables
-    static DynamoDBMapper mapper = null;
-    public static IdentityManager identityManager = null; //The identity manager used to keep track of the current user account.
+    DynamoDBMapper mapper = null;
+    public IdentityManager identityManager = null; //The identity manager used to keep track of the current user account.
 
 
     //Other variables
@@ -101,18 +101,18 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     private Resources resources;
     Context context;
     private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
-    static EgoMap egoMap = null;
+    EgoMap egoMap = null;
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("ACT DEBUG", "MainActivity: OnDestroy");
-        egoMap = null;
-        android.os.Process.killProcess(android.os.Process.myPid());
-    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        Log.d("ACT DEBUG", "MainActivity: OnDestroy");
+//        egoMap = null;
+//        android.os.Process.killProcess(android.os.Process.myPid());
+//    }
 
 //    static UserLocation userLocation = null;
-    public static Activity activity = null;
+    public Activity activity = null;
 //    static EgoStreamViewAdapter2 adapter;
     private static String facebookId;
 
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         identityManager = awsMobileClient.getIdentityManager();
 
         //Initialize the mapper for DynamoDB
-        mapper = AWSMobileClient.defaultMobileClient().getDynamoDBMapper();
+        mapper = awsMobileClient.getDynamoDBMapper();
     }
 
     private void setUpPageIndicator() {
@@ -771,7 +771,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     public void logout(){
         identityManager.signOut();
         Intent intent = new Intent(MainActivity.this, SignInActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         this.finish();
     }
@@ -788,7 +788,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         System.out.println("MAINACTIVITY: setUpNeededVariables");
         facebookId = identityManager.getUserFacebookId();
         context = getApplicationContext();
-        egoMap = new EgoMap(MainActivity.this, identityManager, mapper);
+        egoMap = new EgoMap(MainActivity.this, getApplicationContext(), identityManager, mapper);
         resources = getResources();
         typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
 
@@ -1121,7 +1121,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         @Override
         public Fragment getItem(int position) {
             if(position == 0){
-                fragment = (ScrollTabHolderFragment) Fragment_Main.newInstance(MainActivity.this, context, position, toolbar, friends_Ids);
+                fragment = (ScrollTabHolderFragment) Fragment_Main.newInstance(egoMap, identityManager, position, toolbar, friends_Ids);
             } else {
                 fragment = (ScrollTabHolderFragment) Fragment_Main_Friends.newInstance(position, toolbar, friends_Ids);
             }
@@ -1204,7 +1204,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         egoMap.theOnResumeMethod();
     }
 
-    public static void getNearbyUsers(int count){
+    public static void getNearbyUsers(int count, EgoMap egoMap){
         System.out.println("MAINACTIVITY: getNearbyUsers");
         egoMap.PushLocation(count);
     }

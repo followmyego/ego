@@ -56,15 +56,16 @@ public class Fragment_Main_Friends extends ScrollTabHolderFragment implements Ab
     //View Item Variables
     private ListView mListView;
     public ScrollView scrollView;
-    private static NonScrollableGridView gridView;
-    public static View v;
+    private NonScrollableGridView gridView;
+    public View v;
     public static Toolbar toolbar;
 
     //Other Variables
     private static final String ARG_POSITION = "position";
     private static ArrayList<String> friends_Ids = new ArrayList<String>();
+    private static ArrayList<String> badges = new ArrayList<String>();
     private List<UserItem> userList = new ArrayList<UserItem>();
-    public static EgoStreamViewAdapter adapter;
+    public EgoStreamViewAdapter adapter;
     private static int mPosition;
     Context context;
     Activity activity;
@@ -96,7 +97,7 @@ public class Fragment_Main_Friends extends ScrollTabHolderFragment implements Ab
 
         /** Initialize UserItems from ArrayList of friends facebook ids **/
         for (int i = 0; i < friends_Ids.size(); i++) {
-            UserItem userItem = new UserItem(context, friends_Ids.get(i));
+            UserItem userItem = new UserItem(context, friends_Ids.get(i), 0);
             userList.add(userItem);
         }
 

@@ -1,0 +1,11 @@
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\egobeta\ego\Adapters\UserItem$LoadUserImageAsyncTask$override.class
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\egobeta\ego\Adapters\EgoStreamViewAdapter$UserViewHolder$override.class
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\egobeta\ego\EgoMap$PushUserLocationToDataBase$override.class
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\egobeta\ego\Fragments\Fragment_Main_Friends$1$override.class
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\egobeta\ego\Fragments\Fragment_Main$override.class
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\egobeta\ego\Fragments\Fragment_Main_Friends$EgoStreamTabAdapter$override.class
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\egobeta\ego\Fragments\Fragment_Main_Friends$EgoStreamTabAdapter$ViewHolder$override.class
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\egobeta\ego\Fragments\Fragment_Main_Friends$override.class
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\egobeta\ego\Adapters\UserItem$override.class
+CHANGED,C:\Users\Lucas\Desktop\Ego_Test\ego\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\net\egobeta\ego\Adapters\EgoStreamViewAdapter$override.class

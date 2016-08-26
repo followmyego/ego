@@ -53,7 +53,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
     User_Profile userProfile;
 
     private String facebookId;
-    static DynamoDBMapper mapper = null;
+    DynamoDBMapper mapper = null;
     GraphResponse response;
 
     //View items
@@ -296,7 +296,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
                         parameters.putString("fields", "name,picture.type(large), age_range, birthday, context, " +
                                 "education, email, favorite_athletes, favorite_teams, hometown, inspirational_people, is_verified, " +
                                 "languages, locale, location, work, movies, music, books, friends");
-                        final GraphRequest graphRequest = new GraphRequest(AccessToken.getCurrentAccessToken(), "me");
+                        GraphRequest graphRequest = new GraphRequest(AccessToken.getCurrentAccessToken(), "me");
                         graphRequest.setParameters(parameters);
                         response = graphRequest.executeAndWait();
                         getBadgeVariablesFromResponse(response);
@@ -664,10 +664,9 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
     /** Method to go to the Main Activity **/
     public void goToMainActivity(){
 
-        startActivity(new Intent(LoadFacebookPermissions.this, MainActivity.class)
-                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+        startActivity(new Intent(LoadFacebookPermissions.this, MainActivity.class));
 
-        LoadFacebookPermissions.this.finish();
+        finish();
     }
 
     /** Divides json response down into 5 lines to be printed **/

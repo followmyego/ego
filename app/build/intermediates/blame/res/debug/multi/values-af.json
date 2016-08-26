@@ -368,38 +368,38 @@
                     "startLine": 21,
                     "startColumn": 4,
                     "startOffset": 2020,
-                    "endLine": 22,
-                    "endColumn": 23,
-                    "endOffset": 2135
+                    "endColumn": 158,
+                    "endOffset": 2174
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 161,
-                        "endLine": 5,
-                        "endColumn": 23,
-                        "endOffset": 276
+                        "startOffset": 55,
+                        "endColumn": 158,
+                        "endOffset": 209
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 23,
+                    "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 2140,
-                    "endColumn": 124,
-                    "endOffset": 2260
+                    "startOffset": 2179,
+                    "endLine": 23,
+                    "endColumn": 23,
+                    "endOffset": 2294
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 6,
+                        "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 281,
-                        "endColumn": 124,
-                        "endOffset": 401
+                        "startOffset": 214,
+                        "endLine": 4,
+                        "endColumn": 23,
+                        "endOffset": 329
                     }
                 }
             },
@@ -407,18 +407,18 @@
                 "to": {
                     "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 2265,
-                    "endColumn": 93,
-                    "endOffset": 2354
+                    "startOffset": 2299,
+                    "endColumn": 124,
+                    "endOffset": 2419
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 7,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 406,
-                        "endColumn": 93,
-                        "endOffset": 495
+                        "startOffset": 334,
+                        "endColumn": 124,
+                        "endOffset": 454
                     }
                 }
             },
@@ -426,18 +426,18 @@
                 "to": {
                     "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 2359,
-                    "endColumn": 66,
-                    "endOffset": 2421
+                    "startOffset": 2424,
+                    "endColumn": 93,
+                    "endOffset": 2513
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 8,
+                        "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 500,
-                        "endColumn": 66,
-                        "endOffset": 562
+                        "startOffset": 459,
+                        "endColumn": 93,
+                        "endOffset": 548
                     }
                 }
             },
@@ -445,18 +445,18 @@
                 "to": {
                     "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 2426,
-                    "endColumn": 70,
-                    "endOffset": 2492
+                    "startOffset": 2518,
+                    "endColumn": 66,
+                    "endOffset": 2580
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 9,
+                        "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 567,
-                        "endColumn": 70,
-                        "endOffset": 633
+                        "startOffset": 553,
+                        "endColumn": 66,
+                        "endOffset": 615
                     }
                 }
             },
@@ -464,18 +464,18 @@
                 "to": {
                     "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 2497,
-                    "endColumn": 61,
-                    "endOffset": 2554
+                    "startOffset": 2585,
+                    "endColumn": 70,
+                    "endOffset": 2651
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 10,
+                        "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 638,
-                        "endColumn": 61,
-                        "endOffset": 695
+                        "startOffset": 620,
+                        "endColumn": 70,
+                        "endOffset": 686
                     }
                 }
             },
@@ -483,18 +483,18 @@
                 "to": {
                     "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 2559,
-                    "endColumn": 75,
-                    "endOffset": 2630
+                    "startOffset": 2656,
+                    "endColumn": 61,
+                    "endOffset": 2713
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 11,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 700,
-                        "endColumn": 75,
-                        "endOffset": 771
+                        "startOffset": 691,
+                        "endColumn": 61,
+                        "endOffset": 748
                     }
                 }
             },
@@ -502,18 +502,18 @@
                 "to": {
                     "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 2635,
-                    "endColumn": 73,
-                    "endOffset": 2704
+                    "startOffset": 2718,
+                    "endColumn": 75,
+                    "endOffset": 2789
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 12,
+                        "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 776,
-                        "endColumn": 73,
-                        "endOffset": 845
+                        "startOffset": 753,
+                        "endColumn": 75,
+                        "endOffset": 824
                     }
                 }
             },
@@ -521,18 +521,18 @@
                 "to": {
                     "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 2709,
-                    "endColumn": 91,
-                    "endOffset": 2796
+                    "startOffset": 2794,
+                    "endColumn": 73,
+                    "endOffset": 2863
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 13,
+                        "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 850,
-                        "endColumn": 91,
-                        "endOffset": 937
+                        "startOffset": 829,
+                        "endColumn": 73,
+                        "endOffset": 898
                     }
                 }
             },
@@ -540,18 +540,18 @@
                 "to": {
                     "startLine": 31,
                     "startColumn": 4,
-                    "startOffset": 2801,
-                    "endColumn": 73,
-                    "endOffset": 2870
+                    "startOffset": 2868,
+                    "endColumn": 91,
+                    "endOffset": 2955
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 14,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 942,
-                        "endColumn": 73,
-                        "endOffset": 1011
+                        "startOffset": 903,
+                        "endColumn": 91,
+                        "endOffset": 990
                     }
                 }
             },
@@ -559,18 +559,18 @@
                 "to": {
                     "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 2875,
+                    "startOffset": 2960,
                     "endColumn": 73,
-                    "endOffset": 2944
+                    "endOffset": 3029
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 15,
+                        "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 1016,
+                        "startOffset": 995,
                         "endColumn": 73,
-                        "endOffset": 1085
+                        "endOffset": 1064
                     }
                 }
             },
@@ -578,18 +578,18 @@
                 "to": {
                     "startLine": 33,
                     "startColumn": 4,
-                    "startOffset": 2949,
-                    "endColumn": 82,
-                    "endOffset": 3027
+                    "startOffset": 3034,
+                    "endColumn": 73,
+                    "endOffset": 3103
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 16,
+                        "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 1090,
-                        "endColumn": 82,
-                        "endOffset": 1168
+                        "startOffset": 1069,
+                        "endColumn": 73,
+                        "endOffset": 1138
                     }
                 }
             },
@@ -597,18 +597,18 @@
                 "to": {
                     "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 3032,
-                    "endColumn": 98,
-                    "endOffset": 3126
+                    "startOffset": 3108,
+                    "endColumn": 82,
+                    "endOffset": 3186
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 1173,
-                        "endColumn": 98,
-                        "endOffset": 1267
+                        "startOffset": 1143,
+                        "endColumn": 82,
+                        "endOffset": 1221
                     }
                 }
             },
@@ -616,18 +616,18 @@
                 "to": {
                     "startLine": 35,
                     "startColumn": 4,
-                    "startOffset": 3131,
-                    "endColumn": 63,
-                    "endOffset": 3190
+                    "startOffset": 3191,
+                    "endColumn": 98,
+                    "endOffset": 3285
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 1272,
-                        "endColumn": 63,
-                        "endOffset": 1331
+                        "startOffset": 1226,
+                        "endColumn": 98,
+                        "endOffset": 1320
                     }
                 }
             },
@@ -635,18 +635,18 @@
                 "to": {
                     "startLine": 36,
                     "startColumn": 4,
-                    "startOffset": 3195,
+                    "startOffset": 3290,
                     "endColumn": 63,
-                    "endOffset": 3254
+                    "endOffset": 3349
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 1336,
+                        "startOffset": 1325,
                         "endColumn": 63,
-                        "endOffset": 1395
+                        "endOffset": 1384
                     }
                 }
             },
@@ -654,18 +654,18 @@
                 "to": {
                     "startLine": 37,
                     "startColumn": 4,
-                    "startOffset": 3259,
-                    "endColumn": 131,
-                    "endOffset": 3386
+                    "startOffset": 3354,
+                    "endColumn": 63,
+                    "endOffset": 3413
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 20,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 1400,
-                        "endColumn": 131,
-                        "endOffset": 1527
+                        "startOffset": 1389,
+                        "endColumn": 63,
+                        "endOffset": 1448
                     }
                 }
             },
@@ -673,9 +673,28 @@
                 "to": {
                     "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 3391,
+                    "startOffset": 3418,
+                    "endColumn": 131,
+                    "endOffset": 3545
+                },
+                "from": {
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1453,
+                        "endColumn": 131,
+                        "endOffset": 1580
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 3550,
                     "endColumn": 108,
-                    "endOffset": 3495
+                    "endOffset": 3654
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -690,11 +709,11 @@
             },
             {
                 "to": {
-                    "startLine": 39,
+                    "startLine": 40,
                     "startColumn": 4,
-                    "startOffset": 3500,
+                    "startOffset": 3659,
                     "endColumn": 187,
-                    "endOffset": 3683
+                    "endOffset": 3842
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -709,11 +728,11 @@
             },
             {
                 "to": {
-                    "startLine": 40,
+                    "startLine": 41,
                     "startColumn": 4,
-                    "startOffset": 3688,
+                    "startOffset": 3847,
                     "endColumn": 127,
-                    "endOffset": 3811
+                    "endOffset": 3970
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -728,11 +747,11 @@
             },
             {
                 "to": {
-                    "startLine": 41,
+                    "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 3816,
+                    "startOffset": 3975,
                     "endColumn": 124,
-                    "endOffset": 3936
+                    "endOffset": 4095
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -747,11 +766,11 @@
             },
             {
                 "to": {
-                    "startLine": 42,
+                    "startLine": 43,
                     "startColumn": 4,
-                    "startOffset": 3941,
+                    "startOffset": 4100,
                     "endColumn": 211,
-                    "endOffset": 4148
+                    "endOffset": 4307
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -766,11 +785,11 @@
             },
             {
                 "to": {
-                    "startLine": 43,
+                    "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 4153,
+                    "startOffset": 4312,
                     "endColumn": 214,
-                    "endOffset": 4363
+                    "endOffset": 4522
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -785,11 +804,11 @@
             },
             {
                 "to": {
-                    "startLine": 44,
+                    "startLine": 45,
                     "startColumn": 4,
-                    "startOffset": 4368,
+                    "startOffset": 4527,
                     "endColumn": 123,
-                    "endOffset": 4487
+                    "endOffset": 4646
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -804,11 +823,11 @@
             },
             {
                 "to": {
-                    "startLine": 45,
+                    "startLine": 46,
                     "startColumn": 4,
-                    "startOffset": 4492,
+                    "startOffset": 4651,
                     "endColumn": 130,
-                    "endOffset": 4618
+                    "endOffset": 4777
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -823,11 +842,11 @@
             },
             {
                 "to": {
-                    "startLine": 46,
+                    "startLine": 47,
                     "startColumn": 4,
-                    "startOffset": 4623,
+                    "startOffset": 4782,
                     "endColumn": 250,
-                    "endOffset": 4869
+                    "endOffset": 5028
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\9.4.0\\res\\values-af\\values.xml",
@@ -842,11 +861,11 @@
             },
             {
                 "to": {
-                    "startLine": 47,
+                    "startLine": 48,
                     "startColumn": 4,
-                    "startOffset": 4874,
+                    "startOffset": 5033,
                     "endColumn": 254,
-                    "endOffset": 5124
+                    "endOffset": 5283
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -861,11 +880,11 @@
             },
             {
                 "to": {
-                    "startLine": 48,
+                    "startLine": 49,
                     "startColumn": 4,
-                    "startOffset": 5129,
+                    "startOffset": 5288,
                     "endColumn": 122,
-                    "endOffset": 5247
+                    "endOffset": 5406
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -880,11 +899,11 @@
             },
             {
                 "to": {
-                    "startLine": 49,
+                    "startLine": 50,
                     "startColumn": 4,
-                    "startOffset": 5252,
+                    "startOffset": 5411,
                     "endColumn": 109,
-                    "endOffset": 5357
+                    "endOffset": 5516
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -899,11 +918,11 @@
             },
             {
                 "to": {
-                    "startLine": 50,
+                    "startLine": 51,
                     "startColumn": 4,
-                    "startOffset": 5362,
+                    "startOffset": 5521,
                     "endColumn": 187,
-                    "endOffset": 5545
+                    "endOffset": 5704
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -918,11 +937,11 @@
             },
             {
                 "to": {
-                    "startLine": 51,
+                    "startLine": 52,
                     "startColumn": 4,
-                    "startOffset": 5550,
+                    "startOffset": 5709,
                     "endColumn": 128,
-                    "endOffset": 5674
+                    "endOffset": 5833
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -937,11 +956,11 @@
             },
             {
                 "to": {
-                    "startLine": 52,
+                    "startLine": 53,
                     "startColumn": 4,
-                    "startOffset": 5679,
+                    "startOffset": 5838,
                     "endColumn": 197,
-                    "endOffset": 5872
+                    "endOffset": 6031
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -956,11 +975,11 @@
             },
             {
                 "to": {
-                    "startLine": 53,
+                    "startLine": 54,
                     "startColumn": 4,
-                    "startOffset": 5877,
+                    "startOffset": 6036,
                     "endColumn": 135,
-                    "endOffset": 6008
+                    "endOffset": 6167
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -975,11 +994,11 @@
             },
             {
                 "to": {
-                    "startLine": 54,
+                    "startLine": 55,
                     "startColumn": 4,
-                    "startOffset": 6013,
+                    "startOffset": 6172,
                     "endColumn": 183,
-                    "endOffset": 6192
+                    "endOffset": 6351
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -994,11 +1013,11 @@
             },
             {
                 "to": {
-                    "startLine": 55,
+                    "startLine": 56,
                     "startColumn": 4,
-                    "startOffset": 6197,
+                    "startOffset": 6356,
                     "endColumn": 95,
-                    "endOffset": 6288
+                    "endOffset": 6447
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -1013,11 +1032,11 @@
             },
             {
                 "to": {
-                    "startLine": 56,
+                    "startLine": 57,
                     "startColumn": 4,
-                    "startOffset": 6293,
+                    "startOffset": 6452,
                     "endColumn": 92,
-                    "endOffset": 6381
+                    "endOffset": 6540
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -1032,11 +1051,11 @@
             },
             {
                 "to": {
-                    "startLine": 57,
+                    "startLine": 58,
                     "startColumn": 4,
-                    "startOffset": 6386,
+                    "startOffset": 6545,
                     "endColumn": 107,
-                    "endOffset": 6489
+                    "endOffset": 6648
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\values-af\\values.xml",
@@ -1051,30 +1070,30 @@
             },
             {
                 "to": {
-                    "startLine": 58,
+                    "startLine": 59,
                     "startColumn": 4,
-                    "startOffset": 6494,
+                    "startOffset": 6653,
                     "endColumn": 60,
-                    "endOffset": 6550
+                    "endOffset": 6709
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\values-af\\values-af.xml",
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\values-af\\values-af.xml",
                     "position": {
-                        "startLine": 23,
+                        "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 1655,
+                        "startOffset": 1585,
                         "endColumn": 60,
-                        "endOffset": 1711
+                        "endOffset": 1641
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 59,
+                    "startLine": 60,
                     "startColumn": 4,
-                    "startOffset": 6555,
+                    "startOffset": 6714,
                     "endColumn": 100,
-                    "endOffset": 6651
+                    "endOffset": 6810
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\values-af\\values-af.xml",

@@ -12,16 +12,16 @@
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\layout\\fragment_demo_user_settings.xml"
     },
     {
-        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.1.1\\res\\layout\\design_navigation_item_header.xml"
     },
     {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_small.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\layout\\messenger_button_send_blue_small.xml"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\layout\\messenger_button_send_blue_small.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_settings.xml",
@@ -45,7 +45,7 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_login_fragment.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\layout\\com_facebook_login_fragment.xml"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\layout\\com_facebook_login_fragment.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
@@ -69,7 +69,7 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_large.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\layout\\messenger_button_send_blue_large.xml"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\layout\\messenger_button_send_blue_large.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
@@ -97,7 +97,7 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_blue_round.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\layout\\messenger_button_send_blue_round.xml"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\layout\\messenger_button_send_blue_round.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_icon_text_with_subtitle.xml",
@@ -161,7 +161,7 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_white_large.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\layout\\messenger_button_send_white_large.xml"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\layout\\messenger_button_send_white_large.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
@@ -201,7 +201,7 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_activity_layout.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\layout\\com_facebook_activity_layout.xml"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\layout\\com_facebook_activity_layout.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main_onboarding.xml",
@@ -225,7 +225,7 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_white_round.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\layout\\messenger_button_send_white_round.xml"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\layout\\messenger_button_send_white_round.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_demo_cloud_logic.xml",
@@ -265,7 +265,7 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\messenger_button_send_white_small.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\layout\\messenger_button_send_white_small.xml"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\layout\\messenger_button_send_white_small.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
@@ -329,7 +329,7 @@
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_tooltip_bubble.xml",
-        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.6.0\\res\\layout\\com_facebook_tooltip_bubble.xml"
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\layout\\com_facebook_tooltip_bubble.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
@@ -386,6 +386,10 @@
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_demo_nosql_select_table.xml",
         "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\layout\\fragment_demo_nosql_select_table.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\com_facebook_device_auth_dialog_fragment.xml",
+        "source": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.15.0\\res\\layout\\com_facebook_device_auth_dialog_fragment.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_blank.xml",

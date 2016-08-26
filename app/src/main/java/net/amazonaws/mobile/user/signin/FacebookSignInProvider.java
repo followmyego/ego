@@ -80,12 +80,14 @@ public class FacebookSignInProvider implements SignInProvider {
      */
     private AccessToken getSignedInToken() {
         final AccessToken accessToken = AccessToken.getCurrentAccessToken();
+//        Log.d(LOG_TAG, "Facebook Access Token = " + accessToken.hashCode());
         if (accessToken != null && !accessToken.isExpired()) {
             Log.d(LOG_TAG, "Facebook Access Token is OK. Token hashcode = " + accessToken.hashCode());
             return accessToken;
         }
 
         Log.d(LOG_TAG,"Facebook Access Token is null or expired.");
+//        signOut();
         return null;
     }
 

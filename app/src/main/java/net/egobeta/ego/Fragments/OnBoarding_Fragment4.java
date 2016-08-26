@@ -40,7 +40,7 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
     //View Items
     private TextView headerText;
     private ImageButton doneButton;
-    public static ListView listView;
+    public ListView listView;
     private CheckBox friends_Box;
 
     //Badge Names

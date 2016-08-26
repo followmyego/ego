@@ -38,18 +38,27 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
+    <color name="cardview_dark_background">#FF424242</color>
+    <color name="cardview_light_background">#FFFFFFFF</color>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="cardview_shadow_start_color">#37000000</color>
     <color name="com_facebook_blue">#3B5998</color>
     <color name="com_facebook_button_background_color">#415dae</color>
     <color name="com_facebook_button_background_color_disabled">#bdc1c9</color>
+    <color name="com_facebook_button_background_color_focused">#FFFFFe</color>
+    <color name="com_facebook_button_background_color_focused_disabled">#84878c</color>
     <color name="com_facebook_button_background_color_pressed">#2f477a</color>
-    <color name="com_facebook_button_like_background_color_selected">#7c8fc8</color>
+    <color name="com_facebook_button_background_color_selected">#7c8fc8</color>
+    <color name="com_facebook_button_border_color_focused">#dedee6</color>
     <color name="com_facebook_button_login_silver_background_color">#f4f6f8</color>
     <color name="com_facebook_button_login_silver_background_color_pressed">#e9eaf0</color>
-    <color name="com_facebook_button_send_background_color">#0084ff</color>
+    <color name="com_facebook_button_send_background_color">@color/com_facebook_messenger_blue</color>
     <color name="com_facebook_button_send_background_color_pressed">#006fff</color>
+    <color name="com_facebook_device_auth_text">#797E87</color>
     <color name="com_facebook_likeboxcountview_border_color">#6a7180</color>
     <color name="com_facebook_likeboxcountview_text_color">#6a7180</color>
     <color name="com_facebook_likeview_text_color">#6a7180</color>
+    <color name="com_facebook_messenger_blue">#0084ff</color>
     <color name="com_facebook_share_button_text_color">#FFFFFF</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
     <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
@@ -162,6 +171,7 @@
     <declare-styleable name="AppCompatTheme"><attr format="boolean" name="windowActionBar"/><attr format="boolean" name="windowNoTitle"/><attr format="boolean" name="windowActionBarOverlay"/><attr format="boolean" name="windowActionModeOverlay"/><attr format="dimension|fraction" name="windowFixedWidthMajor"/><attr format="dimension|fraction" name="windowFixedHeightMinor"/><attr format="dimension|fraction" name="windowFixedWidthMinor"/><attr format="dimension|fraction" name="windowFixedHeightMajor"/><attr format="dimension|fraction" name="windowMinWidthMajor"/><attr format="dimension|fraction" name="windowMinWidthMinor"/><attr name="android:windowIsFloating"/><attr name="android:windowAnimationStyle"/><attr format="reference" name="actionBarTabStyle"/><attr format="reference" name="actionBarTabBarStyle"/><attr format="reference" name="actionBarTabTextStyle"/><attr format="reference" name="actionOverflowButtonStyle"/><attr format="reference" name="actionOverflowMenuStyle"/><attr format="reference" name="actionBarPopupTheme"/><attr format="reference" name="actionBarStyle"/><attr format="reference" name="actionBarSplitStyle"/><attr format="reference" name="actionBarTheme"/><attr format="reference" name="actionBarWidgetTheme"/><attr format="dimension" name="actionBarSize"><enum name="wrap_content" value="0"/></attr><attr format="reference" name="actionBarDivider"/><attr format="reference" name="actionBarItemBackground"/><attr format="reference" name="actionMenuTextAppearance"/><attr format="color|reference" name="actionMenuTextColor"/><attr format="reference" name="actionModeStyle"/><attr format="reference" name="actionModeCloseButtonStyle"/><attr format="reference" name="actionModeBackground"/><attr format="reference" name="actionModeSplitBackground"/><attr format="reference" name="actionModeCloseDrawable"/><attr format="reference" name="actionModeCutDrawable"/><attr format="reference" name="actionModeCopyDrawable"/><attr format="reference" name="actionModePasteDrawable"/><attr format="reference" name="actionModeSelectAllDrawable"/><attr format="reference" name="actionModeShareDrawable"/><attr format="reference" name="actionModeFindDrawable"/><attr format="reference" name="actionModeWebSearchDrawable"/><attr format="reference" name="actionModePopupWindowStyle"/><attr format="reference" name="textAppearanceLargePopupMenu"/><attr format="reference" name="textAppearanceSmallPopupMenu"/><attr format="reference" name="textAppearancePopupMenuHeader"/><attr format="reference" name="dialogTheme"/><attr format="dimension" name="dialogPreferredPadding"/><attr format="reference" name="listDividerAlertDialog"/><attr format="reference" name="actionDropDownStyle"/><attr format="dimension" name="dropdownListPreferredItemHeight"/><attr format="reference" name="spinnerDropDownItemStyle"/><attr format="reference" name="homeAsUpIndicator"/><attr format="reference" name="actionButtonStyle"/><attr format="reference" name="buttonBarStyle"/><attr format="reference" name="buttonBarButtonStyle"/><attr format="reference" name="selectableItemBackground"/><attr format="reference" name="selectableItemBackgroundBorderless"/><attr format="reference" name="borderlessButtonStyle"/><attr format="reference" name="dividerVertical"/><attr format="reference" name="dividerHorizontal"/><attr format="reference" name="activityChooserViewStyle"/><attr format="reference" name="toolbarStyle"/><attr format="reference" name="toolbarNavigationButtonStyle"/><attr format="reference" name="popupMenuStyle"/><attr format="reference" name="popupWindowStyle"/><attr format="reference|color" name="editTextColor"/><attr format="reference" name="editTextBackground"/><attr format="reference" name="imageButtonStyle"/><attr format="reference" name="textAppearanceSearchResultTitle"/><attr format="reference" name="textAppearanceSearchResultSubtitle"/><attr format="reference|color" name="textColorSearchUrl"/><attr format="reference" name="searchViewStyle"/><attr format="dimension" name="listPreferredItemHeight"/><attr format="dimension" name="listPreferredItemHeightSmall"/><attr format="dimension" name="listPreferredItemHeightLarge"/><attr format="dimension" name="listPreferredItemPaddingLeft"/><attr format="dimension" name="listPreferredItemPaddingRight"/><attr format="reference" name="dropDownListViewStyle"/><attr format="reference" name="listPopupWindowStyle"/><attr format="reference" name="textAppearanceListItem"/><attr format="reference" name="textAppearanceListItemSmall"/><attr format="reference" name="panelBackground"/><attr format="dimension" name="panelMenuListWidth"/><attr format="reference" name="panelMenuListTheme"/><attr format="reference" name="listChoiceBackgroundIndicator"/><attr format="color" name="colorPrimary"/><attr format="color" name="colorPrimaryDark"/><attr format="color" name="colorAccent"/><attr format="color" name="colorControlNormal"/><attr format="color" name="colorControlActivated"/><attr format="color" name="colorControlHighlight"/><attr format="color" name="colorButtonNormal"/><attr format="color" name="colorSwitchThumbNormal"/><attr format="reference" name="controlBackground"/><attr format="color" name="colorBackgroundFloating"/><attr format="reference" name="alertDialogStyle"/><attr format="reference" name="alertDialogButtonGroupStyle"/><attr format="boolean" name="alertDialogCenterButtons"/><attr format="reference" name="alertDialogTheme"/><attr format="reference|color" name="textColorAlertDialogListItem"/><attr format="reference" name="buttonBarPositiveButtonStyle"/><attr format="reference" name="buttonBarNegativeButtonStyle"/><attr format="reference" name="buttonBarNeutralButtonStyle"/><attr format="reference" name="autoCompleteTextViewStyle"/><attr format="reference" name="buttonStyle"/><attr format="reference" name="buttonStyleSmall"/><attr format="reference" name="checkboxStyle"/><attr format="reference" name="checkedTextViewStyle"/><attr format="reference" name="editTextStyle"/><attr format="reference" name="radioButtonStyle"/><attr format="reference" name="ratingBarStyle"/><attr format="reference" name="ratingBarStyleIndicator"/><attr format="reference" name="ratingBarStyleSmall"/><attr format="reference" name="seekBarStyle"/><attr format="reference" name="spinnerStyle"/><attr format="reference" name="switchStyle"/><attr format="reference" name="listMenuViewStyle"/></declare-styleable>
     <declare-styleable name="BottomSheetBehavior_Layout"><attr format="dimension" name="behavior_peekHeight"/><attr format="boolean" name="behavior_hideable"/><attr format="boolean" name="behavior_skipCollapsed"/></declare-styleable>
     <declare-styleable name="ButtonBarLayout"><attr format="boolean" name="allowStacking"/></declare-styleable>
+    <declare-styleable name="CardView"><attr format="color" name="cardBackgroundColor"/><attr format="dimension" name="cardCornerRadius"/><attr format="dimension" name="cardElevation"/><attr format="dimension" name="cardMaxElevation"/><attr format="boolean" name="cardUseCompatPadding"/><attr format="boolean" name="cardPreventCornerOverlap"/><attr format="dimension" name="contentPadding"/><attr format="dimension" name="contentPaddingLeft"/><attr format="dimension" name="contentPaddingRight"/><attr format="dimension" name="contentPaddingTop"/><attr format="dimension" name="contentPaddingBottom"/><attr name="android:minWidth"/><attr name="android:minHeight"/></declare-styleable>
     <declare-styleable name="CirclePageIndicator"><attr name="centered"/><attr format="color" name="fillColor"/><attr format="color" name="pageColor"/><attr name="android:orientation"/><attr format="dimension" name="radius"/><attr format="boolean" name="snap"/><attr format="color" name="strokeColor"/><attr name="strokeWidth"/><attr format="dimension" name="extraSpacing"/><attr name="android:background"/></declare-styleable>
     <declare-styleable name="CollapsingToolbarLayout"><attr format="dimension" name="expandedTitleMargin"/><attr format="dimension" name="expandedTitleMarginStart"/><attr format="dimension" name="expandedTitleMarginTop"/><attr format="dimension" name="expandedTitleMarginEnd"/><attr format="dimension" name="expandedTitleMarginBottom"/><attr format="reference" name="expandedTitleTextAppearance"/><attr format="reference" name="collapsedTitleTextAppearance"/><attr format="color" name="contentScrim"/><attr format="color" name="statusBarScrim"/><attr format="reference" name="toolbarId"/><attr format="dimension" name="scrimVisibleHeightTrigger"/><attr format="integer" name="scrimAnimationDuration"/><attr name="collapsedTitleGravity"><flag name="top" value="0x30"/><flag name="bottom" value="0x50"/><flag name="left" value="0x03"/><flag name="right" value="0x05"/><flag name="center_vertical" value="0x10"/><flag name="fill_vertical" value="0x70"/><flag name="center_horizontal" value="0x01"/><flag name="center" value="0x11"/><flag name="start" value="0x00800003"/><flag name="end" value="0x00800005"/></attr><attr name="expandedTitleGravity"><flag name="top" value="0x30"/><flag name="bottom" value="0x50"/><flag name="left" value="0x03"/><flag name="right" value="0x05"/><flag name="center_vertical" value="0x10"/><flag name="fill_vertical" value="0x70"/><flag name="center_horizontal" value="0x01"/><flag name="center" value="0x11"/><flag name="start" value="0x00800003"/><flag name="end" value="0x00800005"/></attr><attr format="boolean" name="titleEnabled"/><attr name="title"/></declare-styleable>
     <declare-styleable name="CollapsingToolbarLayout_Layout"><attr name="layout_collapseMode"><enum name="none" value="0"/><enum name="pin" value="1"/><enum name="parallax" value="2"/></attr><attr format="float" name="layout_collapseParallaxMultiplier"/></declare-styleable>
@@ -285,6 +295,12 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="behindOffSetRes">70dp</dimen>
     <dimen name="behindoffsetRes">100dp</dimen>
+    <dimen name="cardview_compat_inset_shadow">1dp</dimen>
+    <dimen name="cardview_default_elevation">2dp</dimen>
+    <dimen name="cardview_default_radius">2dp</dimen>
+    <dimen name="com_facebook_auth_dialog_corner_radius">2dp</dimen>
+    <dimen name="com_facebook_auth_dialog_corner_radius_oversized">4dp</dimen>
+    <dimen name="com_facebook_button_corner_radius">2dp</dimen>
     <dimen name="com_facebook_likeboxcountview_border_radius">3dp</dimen>
     <dimen name="com_facebook_likeboxcountview_border_width">1dp</dimen>
     <dimen name="com_facebook_likeboxcountview_caret_height">3dp</dimen>
@@ -462,6 +478,7 @@
     <string name="cloud_logic_request">REQUEST</string>
     <string name="cloud_logic_reset">RESET</string>
     <string name="cloud_logic_result">RESULT</string>
+    <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> on your smartphone or computer and enter this code</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
     <string name="com_facebook_internet_permission_error_title">AndroidManifest Error</string>
@@ -748,6 +765,13 @@
     <style name="Base.Animation.AppCompat.DropDownUp" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/abc_grow_fade_in_from_bottom</item>
         <item name="android:windowExitAnimation">@anim/abc_shrink_fade_out_from_bottom</item>
+    </style>
+    <style name="Base.CardView" parent="android:Widget">
+        <item name="cardCornerRadius">@dimen/cardview_default_radius</item>
+        <item name="cardElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardMaxElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardPreventCornerOverlap">true</item>
     </style>
     <style name="Base.DialogWindowTitle.AppCompat" parent="android:Widget">
         <item name="android:maxLines">1</item>
@@ -1751,6 +1775,14 @@
         <item name="android:background">@android:drawable/bottom_bar</item>
     </style>
     <style name="ButtonBarButton"/>
+    <style name="CardView" parent="Base.CardView">
+    </style>
+    <style name="CardView.Dark">
+        <item name="cardBackgroundColor">@color/cardview_dark_background</item>
+    </style>
+    <style name="CardView.Light">
+        <item name="cardBackgroundColor">@color/cardview_light_background</item>
+    </style>
     <style name="CustomCirclePageIndicator">
         <item name="fillColor">#000000</item>
         <item name="strokeColor">#000000</item>
@@ -2290,6 +2322,12 @@
         <item name="android:textSize">12sp</item>
         <item name="android:maxLines">1</item>
     </style>
+    <style name="com_facebook_auth_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
     <style name="com_facebook_button" parent="@android:style/Widget.Button">
         <item name="android:background">@drawable/com_facebook_button_background</item>
         <item name="android:drawablePadding">6dp</item>
@@ -2298,7 +2336,7 @@
         <item name="android:paddingLeft">8dp</item>
         <item name="android:paddingRight">8dp</item>
         <item name="android:paddingTop">5dp</item>
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">@color/com_facebook_button_text_color</item>
         <item name="android:textSize">14.0dp</item>
     </style>
     <style name="com_facebook_button_like" parent="com_facebook_button">
@@ -2306,8 +2344,9 @@
     </style>
     <style name="com_facebook_button_send" parent="com_facebook_button">
         <item name="android:background">@drawable/com_facebook_button_send_background</item>
-        <item name="android:drawableLeft">@drawable/com_facebook_button_send_icon</item>
+        <item name="android:drawableLeft">@drawable/com_facebook_send_button_icon</item>
         <item name="android:text">@string/com_facebook_send_button_text</item>
+        <item name="android:textColor">@color/com_facebook_send_button_text_color</item>
     </style>
     <style name="com_facebook_button_share" parent="com_facebook_button">
         <item name="android:drawableLeft">@drawable/com_facebook_button_icon</item>
@@ -2322,11 +2361,11 @@
         <item name="android:textColor">#4b5164</item>
     </style>
     <style name="tooltip_bubble_text">
-	    <item name="android:textColor">@android:color/white</item>
-	    <item name="android:gravity">left</item>
-	    <item name="android:textSize">12sp</item>
-	    <item name="android:shadowDy">-1</item>
-	    <item name="android:shadowRadius">0.25</item>
-	    <item name="android:shadowColor">#40000000</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:shadowDy">-1</item>
+        <item name="android:shadowRadius">0.25</item>
+        <item name="android:shadowColor">#40000000</item>
     </style>
 </resources>

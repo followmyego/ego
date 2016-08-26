@@ -8,19 +8,19 @@ package com.dobmob.doblist;
 
 public final class R {
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f02009e;
+		public static final int ic_launcher = 0x7f0200a6;
 	}
 	public static final class id {
-		public static final int loading = 0x7f0e012f;
+		public static final int loading = 0x7f0e0133;
 	}
 	public static final class layout {
-		public static final int loading = 0x7f04004d;
+		public static final int loading = 0x7f04004e;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f080046;
+		public static final int app_name = 0x7f080047;
 	}
 	public static final class style {
-		public static final int AppBaseTheme = 0x7f0a0091;
-		public static final int AppTheme = 0x7f0a0092;
+		public static final int AppBaseTheme = 0x7f0a0092;
+		public static final int AppTheme = 0x7f0a0093;
 	}
 }
