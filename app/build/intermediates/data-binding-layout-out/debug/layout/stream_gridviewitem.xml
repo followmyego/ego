@@ -18,6 +18,27 @@
 
     </net.egobeta.ego.RoundedImageView>
 
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        android:id="@+id/overlay"
+        android:src="@drawable/profile_overlay_custom"
+        android:layout_centerInParent="true"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:id="@+id/text_overlay"
+        android:text="YOU"
+        android:textColor="#fff"
+        android:textSize="28sp"
+        android:visibility="gone"/>
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

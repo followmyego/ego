@@ -2,9 +2,11 @@ package net.egobeta.ego;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -45,7 +47,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
@@ -55,7 +56,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     private static final String TAG = EgoMap.class.getSimpleName();
     private Location mLastLocation;
     private GoogleApiClient mGoogleApiClient;
-    private boolean mRequestLocationUpdates = false;
+    public boolean mRequestLocationUpdates = false;
     private LocationRequest mLocationRequest;
     int firstTime = 0;
     private Context context;
@@ -69,14 +70,12 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     private String username = "username";
     double longitude;
     double latitude;
-//    UserLocation userLocation;
+    //    UserLocation userLocation;
     IdentityManager identityManager;
     DynamoDBMapper mapper;
 
 
-
-
-    public EgoMap(Activity activity, Context context, IdentityManager identityManager, DynamoDBMapper mapper){
+    public EgoMap(Activity activity, Context context, IdentityManager identityManager, DynamoDBMapper mapper) {
         this.activity = activity;
         this.context = context;
         this.identityManager = identityManager;
@@ -116,7 +115,6 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
                     // show the error dialog to the user at this point.
 
 
-
                     return;
                 }
 //                ThreadUtils.runOnUiThread(new Runnable() {
@@ -134,23 +132,23 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     }
 
 
-    public void theOnCreateMethod(){
-        if(checkPlayServices()){
+    public void theOnCreateMethod() {
+        if (checkPlayServices()) {
             buildGoogleApiClient();
             createLocationRequest();
             displayLocation();
         }
     }
 
-    public void theOnStartMethod(){
-        if(mGoogleApiClient != null){
+    public void theOnStartMethod() {
+        if (mGoogleApiClient != null) {
             mGoogleApiClient.connect();
         }
     }
 
     public void theOnResumeMethod() {
         checkPlayServices();
-        if(mGoogleApiClient.isConnected() && mRequestLocationUpdates){
+        if (mGoogleApiClient.isConnected() && mRequestLocationUpdates) {
             startLocationUpdates();
         }
     }
@@ -159,33 +157,38 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
         stopLocationUpdates();
     }
 
-    public double getLongitude(){
+    public double getLongitude() {
         return longitude;
     }
 
-    public double getLatitude(){
+    public double getLatitude() {
         return latitude;
     }
 
 
-
-
-
-    private void displayLocation(){
+    private void displayLocation() {
+        if (ActivityCompat.checkSelfPermission(activity, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(activity, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-        if(mLastLocation != null){
+        if (mLastLocation != null) {
             longitude = mLastLocation.getLongitude();
             latitude = mLastLocation.getLatitude();
             //lblLocation.setText(latitude + " " + longitude);
 
 
 
-
-
-            if(firstTime == 0){
-                if(getLongitude() != 0 && getLatitude() != 0){
-                    new PushUserLocationToDataBase(0).execute(serverURL, username);
-                    firstTime = 1;
+            if (Fragment_Main.current_page == 0) {
+                if (getLongitude() != 0 && getLatitude() != 0) {
+                    Fragment_Main.PushUserLocationToDataBase pushLocation = new Fragment_Main.PushUserLocationToDataBase();
+                    pushLocation.execute();
                 } else {
                     startLocationUpdates();
                     mRequestLocationUpdates = true;
@@ -200,12 +203,12 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
         }
     }
 
-    public void PushLocation(int count){
-        new PushUserLocationToDataBase(count).execute(serverURL);
+    public void PushLocation(int count) {
+//        new PushUserLocationToDataBase(count).execute(serverURL);
     }
 
 
-    protected synchronized void buildGoogleApiClient(){
+    protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(activity)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
@@ -213,7 +216,7 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     }
 
 
-    protected void createLocationRequest(){
+    protected void createLocationRequest() {
         mLocationRequest = new LocationRequest();
         int UPDATE_INTERVAL = 20000;
         mLocationRequest.setInterval(UPDATE_INTERVAL);
@@ -225,22 +228,32 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     }
 
 
-    private boolean checkPlayServices(){
+    private boolean checkPlayServices() {
         int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(activity);
-        if(resultCode != ConnectionResult.SUCCESS){
-            if(GooglePlayServicesUtil.isUserRecoverableError(resultCode)){
+        if (resultCode != ConnectionResult.SUCCESS) {
+            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
                 GooglePlayServicesUtil.getErrorDialog(resultCode, activity, PLAY_SERVICES_RESOLUTION_REQUEST).show();
             } else {
                 Toast.makeText(activity, "This device is not supported", Toast.LENGTH_LONG).show();
             }
             return false;
         }
-        return  true;
+        return true;
     }
 
 
-    protected void startLocationUpdates(){
-        if(mGoogleApiClient != null){
+    public void startLocationUpdates() {
+        if (mGoogleApiClient != null) {
+            if (ActivityCompat.checkSelfPermission(activity, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(activity, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
         }
     }
@@ -282,186 +295,6 @@ public class EgoMap implements GoogleApiClient.ConnectionCallbacks,
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Log.i(TAG, "Connection failed: " + connectionResult.getErrorCode());
-    }
-
-
-    //AsyncTask to get profile pic url string from server
-    private class PushUserLocationToDataBase extends AsyncTask<String, Void, String> {
-
-        int count;
-
-        public PushUserLocationToDataBase(int count){
-            this.count = count;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-            try {
-                URL url = new URL(params[0]);
-                HttpURLConnection LucasHttpURLConnection = (HttpURLConnection)url.openConnection();
-                LucasHttpURLConnection.setRequestMethod("POST");
-                LucasHttpURLConnection.setDoOutput(true);
-                LucasHttpURLConnection.setDoInput(true);
-                LucasHttpURLConnection.setConnectTimeout(1000 * 6);
-                LucasHttpURLConnection.setReadTimeout(1000 * 6);
-                LucasHttpURLConnection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
-                LucasHttpURLConnection.setRequestProperty("Accept", "application/json");
-                //OutputStream to get response
-                OutputStream outputStream = LucasHttpURLConnection.getOutputStream();
-                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-
-                /*String data =
-                        URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(params[1], "UTF-8")+"&"+
-                                URLEncoder.encode("latitude", "UTF-8")+"="+URLEncoder.encode(params[2], "UTF-8")+"&"+
-                                URLEncoder.encode("longitude", "UTF-8")+"="+URLEncoder.encode(params[3], "UTF-8");*/
-
-
-
-                JSONObject requestParams   = new JSONObject();
-                JSONObject parent = new JSONObject();
-
-
-//                requestParams.put("lat", getLatitude());
-//                requestParams.put("lng", getLongitude());
-                requestParams.put("lat", 49.888721);
-                requestParams.put("lng", -119.491572);
-                requestParams.put("count", count);
-                requestParams.put("accessToken", "");
-                requestParams.put("radiusInMeter", "500000");
-                requestParams.put("debug", "androidApp");
-                requestParams.put("rangeKey", identityManager.getUserFacebookId());
-
-
-                parent.put("action", "put-point");
-                parent.put("request", requestParams);
-
-                System.out.println(parent.toString());
-                bufferedWriter.write(parent.toString());
-                bufferedWriter.flush();
-                bufferedWriter.close();
-                outputStream.close();
-                //InputStream to get response
-                InputStream IS = LucasHttpURLConnection.getInputStream();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(IS, "iso-8859-1"));
-                StringBuilder response = new StringBuilder();
-                String json;
-                while( (json = bufferedReader.readLine()) != null){
-                    response.append(json + "\n");
-                    break;
-                }
-                bufferedReader.close();
-                IS.close();
-                LucasHttpURLConnection.disconnect();
-                return response.toString().trim();
-            } catch (MalformedInputException e){
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-
-            //Print server AsyncTask response
-            System.out.println("Resulted Value: " + result);
-            AccessToken accessToken = AccessToken.getCurrentAccessToken();
-            System.out.println("ACCESS TOKEN: " + accessToken.getToken());
-
-
-
-//            If null Response
-            if (result != null && !result.equals("")) {
-                if(!mRequestLocationUpdates){
-                    usernames = new ArrayList<>();
-                    usersImages = new ArrayList<>();
-                    startLocationUpdates();
-                    mRequestLocationUpdates = true;
-//                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
-//                    returnParsedJsonArray(result);
-//                    adapter = new EgoStreamViewAdapter2(activity, returnArrayOfFacebookIds(result));
-                    notifyOfNewUsers(returnArrayOfFacebookIds(result), returnArrayOfBadges(result));
-
-                    Fragment_Main.stopRefreshing(activity);
-                } else {
-                    usernames = new ArrayList<>();
-                    usersImages = new ArrayList<>();
-//                    Fragment_Main.setUsers(returnArrayOfFacebookIds(result));
-//                    returnParsedJsonArray(result);
-//                    adapter.setUsers(returnArrayOfFacebookIds(result));
-                    notifyOfNewUsers(returnArrayOfFacebookIds(result), returnArrayOfBadges(result));
-
-                    Fragment_Main.stopRefreshing(activity);
-                }
-            } else {
-                if(!mRequestLocationUpdates){
-                    //startLocationUpdates();
-//                    Toast.makeText(activity, "Uh oh, looks like there was an error", Toast.LENGTH_LONG).show();
-                    mRequestLocationUpdates = true;
-                }
-            }
-        }
-
-        public void notifyOfNewUsers(String[] facebookIds, int[] badges){
-            if(count == 0){
-                Fragment_Main.notifiyAdapterHasChanged(facebookIds, context, activity, badges);
-            } else {
-                Fragment_Main.addNewItems(facebookIds, context, activity, badges);
-            }
-        }
-
-        //Method to parse json result and get the value of the key "rangeKey"
-        private String[] returnArrayOfFacebookIds(String result){
-            JSONObject resultObject = null;
-            JSONArray arrayOfUsers = null;
-            String[] facebookIds = null;
-            try {
-
-                resultObject = new JSONObject(result);
-                arrayOfUsers = resultObject.getJSONArray("result");
-
-                facebookIds = new String[arrayOfUsers.length()];
-                for(int i = 0; i < arrayOfUsers.length(); ++i){
-                    JSONObject user = arrayOfUsers.getJSONObject(i);
-                    String id = user.getString("rangeKey");
-                    facebookIds[i] = id;
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return facebookIds;
-        }
-
-        //Method to parse json result and get the value of the key "badge"
-        private int[] returnArrayOfBadges(String result){
-            JSONObject resultObject = null;
-            JSONArray arrayOfUsers = null;
-            int[] badges = null;
-            try {
-
-                resultObject = new JSONObject(result);
-                arrayOfUsers = resultObject.getJSONArray("result");
-
-                badges = new int[arrayOfUsers.length()];
-                for(int i = 0; i < arrayOfUsers.length(); ++i){
-                    JSONObject user = arrayOfUsers.getJSONObject(i);
-                    int badge = user.getInt("badge");
-                    badges[i] = badge;
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return badges;
-        }
     }
 
 }

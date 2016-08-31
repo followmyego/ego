@@ -2,14 +2,19 @@ package net.egobeta.ego.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import net.egobeta.ego.InstagramClasses.ImageLoader;
 import net.egobeta.ego.R;
 import net.egobeta.ego.RoundedImageView;
 
@@ -24,21 +29,33 @@ public class EgoStreamViewAdapter extends BaseAdapter {
     private final Context context;
     private Activity activity;
     private ArrayList<String> friends_Ids;
-    private List<UserItem> userList;
+    private ArrayList<UserItem> userList;
+    private static LayoutInflater inflater = null;
+    ImageLoader imageLoader;
+    String facebookId;
+    Typeface typeface;
+
     ArrayList<Integer> badgeImages = new ArrayList<>();
 
 
 
-    public EgoStreamViewAdapter(List<UserItem> userList, Context context, ArrayList<String> friends_Ids, Activity activity) {
+    public EgoStreamViewAdapter(ArrayList<UserItem> userList, Context context,
+                                ArrayList<String> friends_Ids, Activity activity,
+                                String facebookId, Typeface typeface) {
         this.context = context;
         this.friends_Ids = friends_Ids; /**This should hold be the facebook id's*/
         this.activity = activity;
         this.userList = userList;
-        notifyDataSetChanged();
+        this.facebookId = facebookId;
+        this.typeface = typeface;
         initializeBadgeImageArrayList();
+
+        inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        imageLoader = new ImageLoader(activity.getApplicationContext());
     }
 
     private void initializeBadgeImageArrayList() {
+        badgeImages = new ArrayList<>();
         badgeImages.add(R.drawable.common_workplace);
         badgeImages.add(R.drawable.shared_birthday);
         badgeImages.add(R.drawable.same_school); //this should be swapped out with skills image
@@ -56,10 +73,12 @@ public class EgoStreamViewAdapter extends BaseAdapter {
         RoundedImageView userProfilePic;
         ImageView badgeBackground;
         ImageView badge;
+        TextView textOverlay;
+        ImageView overlay;
     }
 
 
-    public void setItems(List<UserItem> userList){
+    public void setItems(ArrayList<UserItem> userList){
         this.userList = userList;
         notifyDataSetChanged();
     }
@@ -74,9 +93,6 @@ public class EgoStreamViewAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-
-
-
     @Override
     public int getCount() {
         return userList.size();
@@ -84,6 +100,7 @@ public class EgoStreamViewAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
+
         return userList.get(position);
     }
 
@@ -95,12 +112,12 @@ public class EgoStreamViewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         System.out.println("getView" + position + " " + convertView);
-
+        System.out.println("getItem badge#: " + position + " " + userList.get(position).getBadge());
         UserViewHolder holder = null;
 
 
-        if(convertView == null){
-            System.out.println("EgoStreamViewAdapter: ONE");
+
+        if(convertView == null) {
             LayoutInflater inflater = activity.getLayoutInflater();
             convertView = inflater.inflate(R.layout.stream_gridviewitem, null);
             holder = new UserViewHolder();
@@ -108,69 +125,77 @@ public class EgoStreamViewAdapter extends BaseAdapter {
             holder.userProfilePic = (RoundedImageView) convertView.findViewById(R.id.img);
             holder.badgeBackground = (ImageView) convertView.findViewById(R.id.badge_background);
             holder.badge = (ImageView) convertView.findViewById(R.id.friend_badge);
+            holder.textOverlay = (TextView) convertView.findViewById(R.id.text_overlay);
+            holder.overlay = (ImageView) convertView.findViewById(R.id.overlay);
+
+
             convertView.setTag(holder);
-            convertView.setTag(R.id.img, holder.userProfilePic);
-            convertView.setTag(R.id.badge_background, holder.badgeBackground);
             convertView.setTag(R.id.friend_badge, holder.badge);
+            convertView.setTag(R.id.img, holder.userProfilePic);
+            convertView.setTag(R.id.overlay, holder.overlay);
+            convertView.setTag(R.id.text_overlay, holder.textOverlay);
         } else {
-            System.out.println("EgoStreamViewAdapter: TWO");
-            holder = (UserViewHolder)convertView.getTag();
+            holder = (UserViewHolder) convertView.getTag();
         }
 
+        holder.badge.setTag(position);
         holder.userProfilePic.setTag(position);
+        holder.overlay.setTag(position);
+        holder.textOverlay.setTag(position);
 
         UserItem userItem = userList.get(position);
 
         //Detect if the person is a friend or not
         boolean isFriend = friends_Ids.contains(userItem.getFacebookId());
 
-
-
-//        if(userItem.getProfilePicture() == null){
-//            System.out.println("EgoStreamViewAdapter: THREE");
-//
-//            if(isFriend){
-//                holder.badgeBackground.setVisibility(View.VISIBLE);
-//                holder.badge.setVisibility(View.VISIBLE);
-//                System.out.println("EgoStreamViewAdapter: friend");
-//            }
-//            userItem.setViewItem(holder.userProfilePic, isFriend);
-//
-//
-//        } else {
-//            System.out.println("EgoStreamViewAdapter: FOUR");
-//
-//            if(isFriend){
-//                holder.badgeBackground.setVisibility(View.VISIBLE);
-//                holder.badge.setVisibility(View.VISIBLE);
-//                System.out.println("EgoStreamViewAdapter: friend");
-//            }
-//
-//            holder.userProfilePic.setImageDrawable(userItem.getProfilePicture());
-//        }
         if(isFriend){
+            holder.userProfilePic.setVisibility(View.VISIBLE);
             holder.badgeBackground.setVisibility(View.VISIBLE);
             holder.badge.setImageResource(R.drawable.friend);
             holder.badge.setVisibility(View.VISIBLE);
+            holder.textOverlay.setVisibility(View.INVISIBLE);
+            holder.overlay.setVisibility(View.INVISIBLE);
             System.out.println("EgoStreamViewAdapter: friend");
         } else {
             //Check what badge we need to display.
-            for(int i = 0; i < 10; i ++){
-                if(i != 0){
-                    if(userItem.getBadge() == i){
-                        holder.badgeBackground.setVisibility(View.VISIBLE);
-                        holder.badge.setImageResource(badgeImages.get(i));
-                        holder.badge.setVisibility(View.VISIBLE);
-                    }
+            int badge = userItem.getBadge();
+            if(facebookId.equals(userItem.getFacebookId())){
+                holder.userProfilePic.setVisibility(View.VISIBLE);
+                holder.badgeBackground.setVisibility(View.INVISIBLE);
+                holder.badge.setVisibility(View.INVISIBLE);
+                holder.textOverlay.setVisibility(View.VISIBLE);
+                holder.overlay.setVisibility(View.VISIBLE);
 
-                }
-
+                holder.textOverlay.setTypeface(typeface);
+            }else if(badge == 0){
+                System.out.println("badge is 0");
+                holder.userProfilePic.setVisibility(View.VISIBLE);
+                holder.badgeBackground.setVisibility(View.INVISIBLE);
+                holder.badge.setVisibility(View.INVISIBLE);
+                holder.textOverlay.setVisibility(View.INVISIBLE);
+                holder.overlay.setVisibility(View.INVISIBLE);
+            } else {
+                System.out.println("badge is " + badge);
+                holder.userProfilePic.setVisibility(View.VISIBLE);
+                holder.badgeBackground.setVisibility(View.VISIBLE);
+                holder.badge.setImageResource(badgeImages.get(badge - 1));
+                holder.badge.setVisibility(View.VISIBLE);
+                holder.textOverlay.setVisibility(View.INVISIBLE);
+                holder.overlay.setVisibility(View.INVISIBLE);
             }
         }
-        Picasso.with(context)
-                .load("https://graph.facebook.com/" + userItem.getFacebookId() + "/picture?width=190&height=190")
-                .placeholder(R.drawable.default_user_image)
-                .into(holder.userProfilePic);
+
+        if (userItem.getFacebookId() != null){
+            imageLoader.DisplayImage("https://graph.facebook.com/" + userItem.getFacebookId() + "/picture?width=500&height=500"
+                    , holder.userProfilePic);
+        } else {
+            holder.userProfilePic.setVisibility(View.INVISIBLE);
+            holder.badgeBackground.setVisibility(View.INVISIBLE);
+            holder.badge.setVisibility(View.INVISIBLE);
+            holder.textOverlay.setVisibility(View.INVISIBLE);
+            holder.overlay.setVisibility(View.INVISIBLE);
+        }
+
 
 
 

@@ -55,7 +55,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':SlidingMenuLib-master')
-    compile project(':dobList')
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:support-v4:24.1.1'
     compile 'com.android.support:design:24.1.1'
@@ -73,8 +72,8 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:9.4.0'
     compile 'com.google.android.gms:play-services-location:9.4.0'
     compile 'com.google.android.gms:play-services-auth:9.4.0'
-    compile 'com.facebook.android:facebook-android-sdk:4.+'
+    compile 'com.facebook.android:facebook-android-sdk:4.15.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.github.orangegangsters:swipy:1.2.3@aar'
+//    compile 'com.github.orangegangsters:swipy:1.2.3@aar'
     compile 'jp.wasabeef:blurry:2.0.2'
 }

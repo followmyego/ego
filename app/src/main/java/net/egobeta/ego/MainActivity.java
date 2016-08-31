@@ -9,7 +9,6 @@
 package net.egobeta.ego;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -45,7 +44,6 @@ import android.widget.AbsListView;
 import net.amazonaws.mobile.AWSMobileClient;
 import net.amazonaws.mobile.user.IdentityManager;
 import net.astuetz.PagerSlidingTabStrip;
-//import net.egobeta.ego.databinding.FragmentListBinding;
 import net.egobeta.ego.Fragments.Fragment_Main;
 import net.egobeta.ego.Fragments.Fragment_Main_Friends;
 import net.egobeta.ego.Fragments.ScrollTabHolderFragment;
@@ -64,6 +62,7 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.login.LoginManager;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.viewpagerindicator.CirclePageIndicator;
 
@@ -92,43 +91,22 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
 
     //Other variables
+    private int mMinHeaderTranslation;
     private final static String LOG_TAG = MainActivity.class.getSimpleName(); //Class name for log messages.
     Typeface typeface;
     private TypedValue mTypedValue = new TypedValue();
-    private PagerAdapter mPagerAdapter = null; //The pager adapter, which provides the pages to the view pager widget.
-    ScrollTabHolderFragment fragment = null;
-
-    private Resources resources;
     Context context;
-    private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
     EgoMap egoMap = null;
-
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        Log.d("ACT DEBUG", "MainActivity: OnDestroy");
-//        egoMap = null;
-//        android.os.Process.killProcess(android.os.Process.myPid());
-//    }
-
-//    static UserLocation userLocation = null;
     public Activity activity = null;
-//    static EgoStreamViewAdapter2 adapter;
     private static String facebookId;
 
-    //Number Variables
-    private static int mMinHeaderTranslation;
     private int mActionBarHeight;
     public int mMinHeaderHeight;
     private int mHeaderHeight;
-    private static RectF mRect1 = new RectF();
-    private static RectF mRect2 = new RectF();
 
     //View item variables
     private static View mHeader;
-    private static ImageView home_menu_image;
-    private static ImageView home_menu_image2;
-    private ImageView mHeaderPicture;
+    ImageView mHeaderPicture;
     public Drawable upArrow;
     public static ImageView egoLogo;
     public static ScrollView scrollView;
@@ -136,16 +114,18 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     private ViewPager mViewPager = null;
     private static Toolbar toolbar;
     public PagerSlidingTabStrip mPagerSlidingTabStrip;
-    private static TextView toolbarTitle;
-    private static AbsListView absListView;
+    static AbsListView absListView;
     static CirclePageIndicator pageIndicator;
-
-    static String[] facebookIds = {"699211431"};
     private static User_Badges userBadges;
     private static User_Profile userProfile;
     private GraphResponse response;
     ArrayList<String> friends_Ids = new ArrayList<String>(); //list to pass through to friends fragment
     boolean isCreated = false;
+
+
+    //New Variables
+    private static RectF mRect1 = new RectF();
+    private static RectF mRect2 = new RectF();
 
 
 
@@ -169,6 +149,15 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         syncPrivacySettings();
 
 
+    }
+
+    //Initialize dimension variables for the animations
+    private void initializeDimensionItems() {
+        System.out.println("MAINACTIVITY: initializeDimensionItems");
+
+        mMinHeaderHeight = getResources().getDimensionPixelSize(R.dimen.min_header_height);
+        mHeaderHeight = getResources().getDimensionPixelSize(R.dimen.header_height);
+        mMinHeaderTranslation = -mMinHeaderHeight + getActionBarHeight();
     }
 
     private void initializeAWSVariables() {
@@ -203,12 +192,14 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setOnClickListener(this);
+        toolbar.setTitle(" ");
+        toolbar.setAlpha(1);
     }
 
     private void setUpViewPager() {
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setOffscreenPageLimit(3);
-        mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        PagerAdapter mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mPagerAdapter.setTabHolderScrollingContent(this);
         mViewPager.setAdapter(mPagerAdapter);
     }
@@ -280,17 +271,15 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
             @Override
             public void run() {
                 try {
-                    if(true) {
-                        sleep(1000);
-                        final Bundle parameters = new Bundle();
-                        parameters.putString("fields", "name,picture.type(large), age_range, birthday, context, " +
-                                "education, email, favorite_athletes, favorite_teams, hometown, inspirational_people, is_verified, " +
-                                "languages, locale, location, work, movies, music, books, friends");
-                        final GraphRequest graphRequest = new GraphRequest(AccessToken.getCurrentAccessToken(), "me");
-                        graphRequest.setParameters(parameters);
-                        response = graphRequest.executeAndWait();
-                        getBadgeVariablesFromResponse(response, userPermissions, dialog);
-                    }
+                    sleep(1000);
+                    final Bundle parameters = new Bundle();
+                    parameters.putString("fields", "name,picture.type(large), age_range, birthday, context, " +
+                            "education, email, favorite_athletes, favorite_teams, hometown, inspirational_people, is_verified, " +
+                            "languages, locale, location, work, movies, music, books, friends");
+                    final GraphRequest graphRequest = new GraphRequest(AccessToken.getCurrentAccessToken(), "me");
+                    graphRequest.setParameters(parameters);
+                    response = graphRequest.executeAndWait();
+                    getBadgeVariablesFromResponse(response, userPermissions, dialog);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -572,6 +561,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     }
 
 
+
+
     public class SaveUserBadgesToDB extends AsyncTask<Void, Void, Void> {
         ProgressDialog dialog;
 
@@ -770,6 +761,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     public void logout(){
         identityManager.signOut();
+//        LoginManager.getInstance().logOut();
         Intent intent = new Intent(MainActivity.this, SignInActivity.class);
 //        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
@@ -789,7 +781,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         facebookId = identityManager.getUserFacebookId();
         context = getApplicationContext();
         egoMap = new EgoMap(MainActivity.this, getApplicationContext(), identityManager, mapper);
-        resources = getResources();
+        Resources resources = getResources();
         typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
 
         /**Initialize dimension variables for the animations*/
@@ -803,12 +795,13 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         System.out.println("MAINACTIVITY: initializeViewItems");
 
         mHeader = findViewById(R.id.header); /**ENTIRE HEADER**/
-        home_menu_image = (ImageView) findViewById(R.id.toolbar_icon); /**HEADER - HOME MENU IMAGE**/
-        home_menu_image2 = (ImageView) findViewById(R.id.toolbar_icon2); /**HEADER - HOME MENU IMAGE**/
+        ImageView home_menu_image = (ImageView) findViewById(R.id.toolbar_icon); /**HEADER - HOME MENU IMAGE**/
+        ImageView home_menu_image2 = (ImageView) findViewById(R.id.toolbar_icon2); /**HEADER - HOME MENU IMAGE**/
         mHeaderPicture = (ImageView) findViewById(R.id.header_picture); /**HEADER - BLURRED BACKGROUND**/
 
         egoLogo = (ImageView) findViewById(R.id.ego_logo); /**HEADER - PROFILE PICTURE**/
-        toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        TextView toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+
     }
 
     //Method for header animation
@@ -831,7 +824,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         mPagerSlidingTabStrip.setViewPager(mViewPager);
         mPagerSlidingTabStrip.getTabBackground();
         mPagerSlidingTabStrip.setOnPageChangeListener(this);
-        mAlphaForegroundColorSpan = new AlphaForegroundColorSpan(0xffffffff);
+        AlphaForegroundColorSpan mAlphaForegroundColorSpan = new AlphaForegroundColorSpan(0xffffffff);
     }
 
     //Using custom image view as home as up indicator, this gets rid of the default arrow image
@@ -1011,11 +1004,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     @Override
     public void onPageSelected(int position) {
         System.out.println("MAINACTIVITY: onPageSelected");
-        SparseArrayCompat<ScrollTabHolder> scrollTabHolders = mPagerAdapter.getScrollTabHolders();
-        ScrollTabHolder currentHolder = scrollTabHolders.valueAt(position);
-
-        currentHolder.adjustScroll((int) (mHeader.getHeight() + mHeader.getTranslationY()));
-
     }
 
     @Override
@@ -1023,9 +1011,26 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     }
 
+
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount, int pagePosition) {
+        if (mViewPager.getCurrentItem() == pagePosition) {
+            absListView = view;
+            int scrollY = getScrollY(view);
+
+            mHeader.setTranslationY(Math.max(-scrollY, mMinHeaderTranslation));
+            float ratio = clamp(mHeader.getTranslationY() / mMinHeaderTranslation, 0.0f, 1.0f);
+
+
+            setTitleAlpha(clamp(5.0F * ratio - 4.0F, 0.0F, 1.0F));
+            setHomeAsUpAlpha(clamp((5.0F * ratio - 4.0F) * -1, 0.0F, 1.0F));
+        }
+    }
+
     @Override
     public void adjustScroll(int scrollHeight) {
-
+        // nothing
     }
 
     @Override
@@ -1042,20 +1047,28 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount, int pagePosition) {
-        if (mViewPager.getCurrentItem() == pagePosition) {
-            absListView = view;
-            int scrollY = getScrollY(view);
-
-            mHeader.setTranslationY(Math.max(-scrollY, mMinHeaderTranslation));
-            float ratio = clamp(mHeader.getTranslationY() / mMinHeaderTranslation, 0.0f, 1.0f);
-
-//            interpolate(egoLogo, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
-            setTitleAlpha(clamp(5.0F * ratio - 4.0F, 0.0F, 1.0F));
-            setHomeAsUpAlpha(clamp((5.0F * ratio - 4.0F) * -1, 0.0F, 1.0F));
-        }
+    //Method for header animation
+    private static RectF getOnScreenRect(RectF rect, View view) {
+        rect.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+        return rect;
     }
+
+    //Method for header animation
+    private static void interpolate(View view1, View view2, float interpolation) {
+        getOnScreenRect(mRect1, view1);
+        getOnScreenRect(mRect2, view2);
+
+        float scaleX = 1.0F + interpolation * (mRect2.width() / mRect1.width() - 1.0F);
+        float scaleY = 1.0F + interpolation * (mRect2.height() / mRect1.height() - 1.0F);
+        float translationX = 0.5F * (interpolation * (mRect2.left + mRect2.right - mRect1.left - mRect1.right));
+        float translationY = 0.5F * (interpolation * (mRect2.top + mRect2.bottom - mRect1.top - mRect1.bottom));
+
+        view1.setTranslationX(translationX);
+        view1.setTranslationY(translationY - mHeader.getTranslationY());
+        view1.setScaleX(scaleX);
+        view1.setScaleY(scaleY);
+    }
+
 
 
     /************************************** INNER CLASSES ******************************************/
@@ -1090,11 +1103,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     //PagerAdapter for the sliding pages under user profile
     public class PagerAdapter extends FragmentPagerAdapter {
 
-
         private SparseArrayCompat<ScrollTabHolder> mScrollTabHolders;
         private final String[] TITLES = {" ", " "};
-//        private final String[] TITLES = {" "};
-
         private ScrollTabHolder mListener;
 
         public PagerAdapter(FragmentManager fm) {
@@ -1121,20 +1131,25 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         @Override
         public Fragment getItem(int position) {
             if(position == 0){
-                fragment = (ScrollTabHolderFragment) Fragment_Main.newInstance(egoMap, identityManager, position, toolbar, friends_Ids);
+                Fragment_Main fragment;
+                fragment = (Fragment_Main) Fragment_Main.newInstance(egoMap, identityManager, position, friends_Ids);
+
+                if (mListener != null) {
+                    fragment.setScrollTabHolder(mListener);
+
+                }
+
+                return fragment;
             } else {
-                fragment = (ScrollTabHolderFragment) Fragment_Main_Friends.newInstance(position, toolbar, friends_Ids);
+                Fragment_Main_Friends fragment2;
+                fragment2 = (Fragment_Main_Friends) Fragment_Main_Friends.newInstance(identityManager, position, friends_Ids);
+
+                if (mListener != null) {
+                    fragment2.setScrollTabHolder(mListener);
+
+                }
+                return fragment2;
             }
-
-
-            mScrollTabHolders.put(position, fragment);
-            if (mListener != null) {
-                fragment.setScrollTabHolder(mListener);
-
-            }
-
-            return fragment;
-
         }
 
         public SparseArrayCompat<ScrollTabHolder> getScrollTabHolders() {

@@ -1,14 +1,14 @@
 <RelativeLayout
-	android:layout_width="fill_parent"
+	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
 	android:orientation="vertical"
-	android:layout_marginTop="15dp"
+
 	android:descendantFocusability="blocksDescendants"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:background="@null"
 	>
 
-	<net.egobeta.ego.ImportedClasses.NonScrollableGridView
+	<GridView
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		android:id="@+id/myGridView"
 		android:gravity="center"
@@ -16,30 +16,27 @@
 		android:columnWidth="150dp"
 		android:verticalSpacing="45dp"
 		android:stretchMode="spacingWidthUniform"
-		android:layout_margin="15dp"
+		android:layout_marginRight="15dp"
+		android:layout_marginLeft="15dp"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:listSelector="#00000000"
+		android:paddingTop="100dp"
+		android:paddingBottom="50dp"
+		android:clipToPadding="false"
 		/>
 
-	<!--<Space-->
-		<!--android:layout_width="match_parent"-->
-		<!--android:layout_height="200dp"-->
-		<!--android:layout_below="@+id/myGridView"-->
-		<!--android:layout_centerHorizontal="true" />-->
 
-	<!--<TextView-->
-		<!--android:id="@+id/loading_message"-->
-		<!--android:layout_width="match_parent"-->
-		<!--android:layout_height="50dp"-->
-		<!--android:layout_centerInParent="true"-->
-		<!--android:text="Getting the egos around you"-->
-		<!--android:textColor="#fff"-->
-		<!--android:textSize="26sp"-->
-		<!--android:gravity="center"-->
-		<!--android:layout_below="@+id/myGridView"-->
-		<!--android:layout_centerHorizontal="true" />-->
 
+	<ProgressBar
+		android:id="@+id/progressBar"
+		style="?android:attr/progressBarStyle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		/>
 
 
 

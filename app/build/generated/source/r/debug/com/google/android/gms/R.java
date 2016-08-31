@@ -112,7 +112,7 @@ public final class R {
 		public static final int adjust_height = 0x7f0e004b;
 		public static final int adjust_width = 0x7f0e004c;
 		public static final int auto = 0x7f0e0047;
-		public static final int button = 0x7f0e0065;
+		public static final int button = 0x7f0e0064;
 		public static final int center = 0x7f0e0038;
 		public static final int dark = 0x7f0e0058;
 		public static final int hybrid = 0x7f0e004d;
@@ -120,14 +120,15 @@ public final class R {
 		public static final int light = 0x7f0e0059;
 		public static final int none = 0x7f0e0026;
 		public static final int normal = 0x7f0e0022;
-		public static final int radio = 0x7f0e0086;
+		public static final int progressBar = 0x7f0e0130;
+		public static final int radio = 0x7f0e0085;
 		public static final int satellite = 0x7f0e004e;
 		public static final int standard = 0x7f0e0056;
 		public static final int terrain = 0x7f0e004f;
-		public static final int text = 0x7f0e0141;
-		public static final int text1 = 0x7f0e012d;
-		public static final int text2 = 0x7f0e013f;
-		public static final int toolbar = 0x7f0e00a9;
+		public static final int text = 0x7f0e013f;
+		public static final int text1 = 0x7f0e012b;
+		public static final int text2 = 0x7f0e013d;
+		public static final int toolbar = 0x7f0e00aa;
 		public static final int wide = 0x7f0e0057;
 		public static final int wrap_content = 0x7f0e0036;
 	}

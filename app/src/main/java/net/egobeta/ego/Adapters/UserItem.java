@@ -20,17 +20,27 @@ public class UserItem {
     Context context;
     Drawable profilePicture = null;
     String facebookId;
-    int badge;
+    int badge = 0;
     boolean isFriend;
     RoundedImageView roundedImageView;
     boolean isLoading = false;
+
+    boolean isNearby = false;
 
 
     public UserItem(Context context, String facebookId, int badge) {
         this.context = context;
         this.facebookId = facebookId;
         this.badge = badge;
-        setUserProfilePicture();
+    }
+
+
+    public boolean isNearby() {
+        return isNearby;
+    }
+
+    public void setNearby(boolean nearby) {
+        isNearby = nearby;
     }
 
     private void setUserProfilePicture(){

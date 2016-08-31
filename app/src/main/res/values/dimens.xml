@@ -17,8 +17,8 @@
     <dimen name="min_header_height_profile_activity">568dp</dimen> this is full screen-->
     <dimen name="profile_activity_header_height">616dp</dimen>
     <dimen name="profile_activity_min_header_height">568dp</dimen>
-    <dimen name="header_height">202dp</dimen>
-    <dimen name="min_header_height">202dp</dimen>
+    <dimen name="header_height">72dp</dimen>
+    <dimen name="min_header_height">72dp</dimen>
     <dimen name="header_logo_size">240dp</dimen>
     <dimen name="behindOffSetRes">70dp</dimen>
     <dimen name="user_info_scroll_fade">90dp</dimen>

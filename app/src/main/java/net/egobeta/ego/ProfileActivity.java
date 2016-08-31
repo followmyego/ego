@@ -710,7 +710,7 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
     public class PagerAdapter extends FragmentPagerAdapter {
 
         private SparseArrayCompat<ScrollTabHolder> mScrollTabHolders;
-        private final String[] TITLES = {" ", " "};
+        private final String[] TITLES = {" "};
 
         private ScrollTabHolder mListener;
 

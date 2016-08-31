@@ -149,6 +149,8 @@ public class ProfileFragment extends ScrollTabHolderFragment implements AbsListV
 	@Override
 	public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 		if (mScrollTabHolder != null)
+			//mScrollTabHolder is set to the ScrollTabHolder context from the Parent Activity holding this fragment since the parent activity implements scrolltabholder
+			//Since we are extending ScrollTabHolder fragment we are able to access this variable
 			mScrollTabHolder.onScroll(view, firstVisibleItem, visibleItemCount, totalItemCount, mPosition);
 	}
 

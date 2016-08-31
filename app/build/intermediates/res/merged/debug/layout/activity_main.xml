@@ -7,6 +7,27 @@
     android:background="#2d2d2d">
 
     <ImageView
+        android:id="@+id/ego_logo"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/n_ego_logo"
+        android:padding="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/titles"
+        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:padding="10dp"
+        android:layout_below="@+id/ego_logo"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <ImageView
         android:id="@+id/sidemenu_arrow"
         android:src="@drawable/slide_arrow_tab"
         android:layout_width="60dp"
@@ -111,25 +132,6 @@
 
     </FrameLayout>
 
-    <ImageView
-        android:id="@+id/ego_logo"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/n_ego_logo"
-        android:padding="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        />
-
-    <com.viewpagerindicator.CirclePageIndicator
-        android:id="@+id/titles"
-        android:layout_height="wrap_content"
-        android:layout_width="100dp"
-        android:padding="10dp"
-        android:layout_below="@+id/ego_logo"
-        android:layout_centerHorizontal="true"
-        />
 
     <!--<ImageView-->
     <!--android:id="@+id/toolbar_icon2"-->

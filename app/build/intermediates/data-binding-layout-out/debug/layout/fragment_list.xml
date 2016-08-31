@@ -8,26 +8,18 @@
 	android:paddingLeft="@dimen/activity_horizontal_margin"
 	android:paddingRight="@dimen/activity_horizontal_margin"
 	android:paddingTop="@dimen/activity_vertical_margin"
-	tools:context=".Fragment_Main">
+	>
 
 
-
-	<com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout
-		android:id="@+id/swipyrefreshlayout"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		app:srl_direction="top">
-
-		<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-			android:id="@+id/listView"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:scrollbars="none"
+	<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/listView"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scrollbars="none"
+		android:divider="#ddd"
+		android:dividerHeight="1px"
 		/>
-		<!--android:divider="#ddd"-->
-		<!--android:dividerHeight="1px"-->
 
-	</com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout>
 
 	<TextView
 		android:id="@+id/noItems"
