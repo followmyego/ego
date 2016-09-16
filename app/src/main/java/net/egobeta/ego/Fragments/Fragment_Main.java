@@ -2,10 +2,13 @@ package net.egobeta.ego.Fragments;
 
 import android.app.Activity;
 
+import android.app.Dialog;
 import android.content.Context;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
@@ -14,6 +17,7 @@ import android.os.Bundle;
 
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
@@ -22,11 +26,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.view.ViewTreeObserver;
+import android.view.Window;
 import android.widget.AbsListView;
 
 import android.widget.AdapterView;
 
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -50,10 +58,13 @@ import net.egobeta.ego.Adapters.BadgeItem;
 import net.egobeta.ego.Adapters.EgoStreamViewAdapter;
 import net.egobeta.ego.Adapters.GenericAdapter;
 import net.egobeta.ego.Adapters.UserItem;
+import net.egobeta.ego.BlurBuilder;
 import net.egobeta.ego.EgoMap;
+import net.egobeta.ego.Library.LocalDataBase;
 import net.egobeta.ego.MainActivity;
 import net.egobeta.ego.ProfileActivity;
 import net.egobeta.ego.R;
+import net.egobeta.ego.UserPinned;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -77,7 +88,7 @@ import java.util.List;
 /**
  * Created by Lucas on 29/06/2016.
  */
-public class Fragment_Main extends ScrollTabHolderFragment  {
+public class Fragment_Main extends ScrollTabHolderFragment implements SwipeRefreshLayout.OnRefreshListener  {
 
 
     //Other variables
@@ -91,12 +102,14 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
     public static String facebookId;
     private static GridView gridView;
     public static View v;
-    private static EgoStreamViewAdapter adapter;
+    public static EgoStreamViewAdapter adapter;
     private static ArrayList<String> friends_Ids;
-    private static ArrayList<UserItem> userList = new ArrayList<UserItem>();
+    public static ArrayList<UserItem> userList = new ArrayList<UserItem>();
     private static EgoMap egoMap;
     private static String serverURL = "http://ebjavasampleapp-env.us-east-1.elasticbeanstalk.com/dynamodb-geo";
     static ProgressBar progressBar;
+    SwipeRefreshLayout swipeRefreshLayout;
+    private LocalDataBase mLocalDataBase;
 
 
     //New Variables
@@ -112,10 +125,12 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
     Boolean noMoreUsersToLoad = false;
     private static Context context;
     private static Activity activity;
+    public static Bitmap image;
+    private static UserPinned userPinned;
 
 
     public static Fragment newInstance(EgoMap egomap, IdentityManager identityManager,
-                                       int position, ArrayList<String> friendsIds) {
+                                       int position, ArrayList<String> friendsIds, UserPinned user_Pinned) {
         Fragment_Main f = new Fragment_Main();
         Bundle b = new Bundle();
         b.putInt(ARG_POSITION, position);
@@ -123,6 +138,7 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
         friends_Ids = friendsIds;
         facebookId = identityManager.getUserFacebookId();
         egoMap = egomap;
+        userPinned = user_Pinned;
         return f;
     }
 
@@ -131,18 +147,45 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context = getContext();
+        mLocalDataBase = new LocalDataBase(context);
         activity = getActivity();
         mPosition = getArguments().getInt(ARG_POSITION);
         typeface = Typeface.createFromAsset(getContext().getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
 
         //Initialize the adapter for the listView that holds the gridView
-        userList.add(new UserItem(getContext(), null, 0)); //These two act as my invisible header
-        userList.add(new UserItem(getContext(), null, 0)); //These two act as my invisible header
-        userList.add(new UserItem(getContext(), facebookId, 0)); //These two act as my invisible header
+        userList.add(new UserItem(getContext(), null, 0, false)); //These two act as my invisible header
+        userList.add(new UserItem(getContext(), null, 0, false)); //These two act as my invisible header
+        userList.add(new UserItem(getContext(), facebookId, 0, false)); //These two act as my invisible header
+
+        /** check if there are any pinned users **/
+        if(userPinned != null){
+            if(!userPinned.getPinnedUser1().equals("empty") && userPinned.getPinnedUser1() != null){
+                System.out.println("Fragment_Main: " + userPinned.getPinnedUser1());
+                userList.add(new UserItem(getContext(), userPinned.getPinnedUser1(), 0, true));
+            }
+            if(!userPinned.getPinnedUser2().equals("empty") && userPinned.getPinnedUser2() != null){
+                System.out.println("Fragment_Main: " + userPinned.getPinnedUser2());
+                userList.add(new UserItem(getContext(), userPinned.getPinnedUser2(), 0, true));
+            }
+            if(!userPinned.getPinnedUser3().equals("empty") && userPinned.getPinnedUser3() != null){
+                System.out.println("Fragment_Main: " + userPinned.getPinnedUser3());
+                userList.add(new UserItem(getContext(), userPinned.getPinnedUser3(), 0, true));
+            }
+            if(!userPinned.getPinnedUser4().equals("empty") && userPinned.getPinnedUser4() != null){
+                System.out.println("Fragment_Main: " + userPinned.getPinnedUser4());
+                userList.add(new UserItem(getContext(), userPinned.getPinnedUser4(), 0, true));
+            }
+            if(!userPinned.getPinnedUser5().equals("empty") && userPinned.getPinnedUser5() != null){
+                System.out.println("Fragment_Main: " + userPinned.getPinnedUser5());
+                userList.add(new UserItem(getContext(), userPinned.getPinnedUser5(), 0, true));
+            }
+        } else {
+            Toast.makeText(activity, "user_pinned is a null object reference", Toast.LENGTH_SHORT).show();
+        }
+
+
+
         adapter = new EgoStreamViewAdapter(userList, getContext(), friends_Ids, getActivity(), facebookId, typeface);
-
-
-
 
     }
 
@@ -158,19 +201,30 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.list_item_stream, container, false);
+        swipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.swiperefresh);
+        swipeRefreshLayout.setOnRefreshListener(this);
         progressBar = (ProgressBar) v.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
 
+
         gridView = (GridView) v.findViewById(R.id.myGridView);
         gridView.setAdapter(adapter);
+        gridView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Bundle bundle = new Bundle();
-                bundle.putString("facebook_id", userList.get(position).getFacebookId());
-                Intent intent = new Intent(getActivity(), ProfileActivity.class);
-                intent.putExtras(bundle);
-                startActivity(intent);
+
+                // Make sure its not a header item
+                if(position != 0 && position != 1){
+                    Bundle bundle = new Bundle();
+                    bundle.putString("facebook_id", userList.get(position).getFacebookId());
+                    bundle.putBoolean("is_pinned", userList.get(position).isPinned());
+                    bundle.putInt("position", position);
+                    Intent intent = new Intent(getActivity(), ProfileActivity.class);
+                    intent.putExtras(bundle);
+                    MainActivity.blurTheBackground();
+                    startActivity(intent);
+                }
             }
         });
 
@@ -202,9 +256,11 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
                 }
             }
         });
-        if(egoMap.getLongitude() != 0.0 && egoMap.getLatitude() != 0.0 && current_page == 0){
-            new PushUserLocationToDataBase().execute();
-        }
+
+        /** We may not need this as it is being called from the EgoMap class**/
+//        if(egoMap.getLongitude() != 0.0 && egoMap.getLatitude() != 0.0 && current_page == 0){
+//            new PushUserLocationToDataBase().execute();
+//        }
 
         return v;
     }
@@ -212,6 +268,52 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
     @Override
     public void adjustScroll(int scrollHeight) {
 
+    }
+
+    @Override
+    public void onRefresh() {
+        swipeRefreshLayout.setRefreshing(false);
+        // show custom dialog
+        final Dialog dialog = new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.custom_dialog_toggle_stream);
+
+
+        // set the custom dialog components
+        TextView title = (TextView) dialog.findViewById(R.id.title);
+        Button yes_button = (Button) dialog.findViewById(R.id.yes);
+        Button cancel_button = (Button) dialog.findViewById(R.id.cancel);
+
+        //Set the text of the title
+        title.setText("Turn off your ego stream?");
+
+        /** Set the custom dialog view item fonts **/
+        title.setTypeface(typeface);
+        yes_button.setTypeface(typeface);
+        cancel_button.setTypeface(typeface);
+
+        // if button is clicked, close the custom dialog
+        yes_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /** Code to turn off the Ego Stream **/
+                swipeRefreshLayout.setRefreshing(false);
+                dialog.dismiss();
+                Toast.makeText(getActivity(), "This feature is not ready yet", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Your location will only update when Ego is open", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        // if button is clicked, close the custom dialog
+        cancel_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 
 
@@ -291,6 +393,7 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
                 String json_response = response.toString().trim();
                 String[] facebook_Ids1 = returnArrayOfFacebookIds(json_response);
                 int[] badges = returnArrayOfBadges(json_response);
+                int[] close_bye = returnArrayOfCloseBye(json_response);
 
                 /** Set the arrList of UserItems **/
                 if(returnArrayOfFacebookIds(json_response) != null && returnArrayOfBadges(json_response) != null){
@@ -304,21 +407,33 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
 
                         //Compare items, check to see what index is duplicate
                         if(!facebook_Ids1[i].equals(facebookId)){
-                            if(listOfIds.contains(facebook_Ids1[i])){
+                            /** Make sure its not one of the pinned users **/
+
+                            if(listOfIds.contains(facebook_Ids1[i]) && userList.get(listOfIds.indexOf(facebook_Ids1[i])).isPinned() ){
+                                /** user is pinned so don't add to list **/
+                            } else if(listOfIds.contains(facebook_Ids1[i])){
                                 userList.remove(listOfIds.indexOf(facebook_Ids1[i]));
 
-                                UserItem userItem = new UserItem(context, facebook_Ids1[i], badges[i]);
+                                UserItem userItem = new UserItem(context, facebook_Ids1[i], badges[i], false);
+                                if(close_bye[i] == 1){
+                                    userItem.setNearby(true);
+                                }
+
                                 userList.add(userItem);
                             } else {
-                                UserItem userItem = new UserItem(context, facebook_Ids1[i], badges[i]);
+                                UserItem userItem = new UserItem(context, facebook_Ids1[i], badges[i], false);
+                                if(close_bye[i] == 1){
+                                    userItem.setNearby(true);
+                                }
+
                                 userList.add(userItem);
                             }
+
+
+
                         }
-
-
                     }
                 }
-
 
                 return json_response;
             } catch (MalformedInputException e){
@@ -443,35 +558,54 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
                 String json_response = response.toString().trim();
                 String[] facebook_Ids1 = returnArrayOfFacebookIds(json_response);
                 int[] badges = returnArrayOfBadges(json_response);
+                int[] close_bye = returnArrayOfCloseBye(json_response);
 
 
                 /** Set the arrList of UserItems **/
-                if(returnArrayOfFacebookIds(json_response) != null && returnArrayOfBadges(json_response) != null){
-                    for (int i = 0; i < returnArrayOfFacebookIds(json_response).length; i++) {
+                if(returnArrayOfFacebookIds(json_response).length < 1){
+                    noMoreUsersToLoad = true;
+                } else {
+                    if(returnArrayOfFacebookIds(json_response) != null && returnArrayOfBadges(json_response) != null){
+                        for (int i = 0; i < returnArrayOfFacebookIds(json_response).length; i++) {
 
-                        //Create temporary list of ids
-                        ArrayList<String> listOfIds = new ArrayList<String>();
-                        for(int c = 0; c < userList.size(); c++){
-                            listOfIds.add(userList.get(c).getFacebookId());
-                        }
-
-                        //Compare items, check to see what index is duplicate
-                        if(!facebook_Ids1[i].equals(facebookId)){
-                            if(listOfIds.contains(facebook_Ids1[i])){
-                                userList.remove(listOfIds.indexOf(facebook_Ids1[i]));
-
-                                UserItem userItem = new UserItem(context, facebook_Ids1[i], badges[i]);
-                                userList.add(userItem);
-                            } else {
-                                UserItem userItem = new UserItem(context, facebook_Ids1[i], badges[i]);
-                                userList.add(userItem);
+                            //Create temporary list of ids
+                            ArrayList<String> listOfIds = new ArrayList<String>();
+                            for(int c = 0; c < userList.size(); c++){
+                                listOfIds.add(userList.get(c).getFacebookId());
                             }
+
+                            //Compare items, check to see what index is duplicate
+                            if(!facebook_Ids1[i].equals(facebookId)){
+                                /** Make sure its not one of the pinned users **/
+
+                                if(listOfIds.contains(facebook_Ids1[i]) && userList.get(listOfIds.indexOf(facebook_Ids1[i])).isPinned() ){
+                                    /** user is pinned so don't add to list **/
+                                } else if(listOfIds.contains(facebook_Ids1[i])){
+                                    userList.remove(listOfIds.indexOf(facebook_Ids1[i]));
+
+                                    UserItem userItem = new UserItem(context, facebook_Ids1[i], badges[i], false);
+                                    if(close_bye[i] == 1){
+                                        userItem.setNearby(true);
+                                    }
+
+                                    userList.add(userItem);
+                                } else {
+                                    UserItem userItem = new UserItem(context, facebook_Ids1[i], badges[i], false);
+                                    if(close_bye[i] == 1){
+                                        userItem.setNearby(true);
+                                    }
+
+                                    userList.add(userItem);
+                                }
+                            }
+
                         }
 
                     }
-
+                    return response.toString().trim();
                 }
-                return json_response;
+
+
             } catch (MalformedInputException e){
                 e.printStackTrace();
             } catch (IOException e) {
@@ -506,7 +640,6 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
 //            // Setting new scroll position
                 gridView.setSelection(currentPosition + 1);
 //
-
             }
 //             SET loadingMore "FALSE" AFTER ADDING NEW FEEDS TO THE EXISTING LIST
             loadingMore = false;
@@ -557,6 +690,50 @@ public class Fragment_Main extends ScrollTabHolderFragment  {
         }
         return badges;
     }
+
+    //Method to parse json result and get the value of the key "close_bye"
+    private static int[] returnArrayOfCloseBye(String result){
+        JSONObject resultObject = null;
+        JSONArray arrayOfUsers = null;
+        int[] closeByes = null;
+        try {
+
+            resultObject = new JSONObject(result);
+            arrayOfUsers = resultObject.getJSONArray("result");
+
+            closeByes = new int[arrayOfUsers.length()];
+            for(int i = 0; i < arrayOfUsers.length(); ++i){
+                JSONObject user = arrayOfUsers.getJSONObject(i);
+                int closeBye = user.getInt("close_bye");
+                closeByes[i] = closeBye;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return closeByes;
+    }
+
+    //Method to parse json result and get the value of the key "badge"
+//    private static int[][] returnArrayOfCoordinates(String result){
+//        JSONObject resultObject = null;
+//        JSONArray arrayOfUsers = null;
+//        int[][] coordinates = null;
+//        try {
+//
+//            resultObject = new JSONObject(result);
+//            arrayOfUsers = resultObject.getJSONArray("result");
+//
+//            coordinates = new int[arrayOfUsers.length()];
+//            for(int i = 0; i < arrayOfUsers.length(); ++i){
+//                JSONObject user = arrayOfUsers.getJSONObject(i);
+//                int badge = user.getInt("badge");
+//                coordinates[i] = badge;
+//            }
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        return badges;
+//    }
 }
 
 

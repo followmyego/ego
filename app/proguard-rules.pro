@@ -23,3 +23,5 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep class org.lucasr.twowayview.** { *; }

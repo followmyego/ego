@@ -261,7 +261,7 @@
     <string name="nosql_dialog_title_confirm_delete_item_text">Confirm Delete</string>
     <string name="nosql_dialog_message_confirm_delete_item_text">Are you sure you want to delete the selected item?</string>
 
-    <string name="sliding_menu_version">Version 1.0.1</string>
+    <string name="sliding_menu_version">Beta Version 1.0.1</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

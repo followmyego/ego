@@ -6,29 +6,13 @@
     android:background="#272727"
     >
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        >
-
-    <ImageView
-        android:id="@+id/splashImage"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ego_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="30dp"
-        >
-
-    </ImageView>
-
-
-
-    </LinearLayout>
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageLogoView"
+            android:src="@drawable/logo_without_tagline"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="200dp"
+            android:layout_centerInParent="true" />
 
 </RelativeLayout>

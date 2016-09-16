@@ -22,6 +22,7 @@ public class OnBoarding_Fragment123 extends Fragment {
     //View Items
     private TextView slideText;
     private ImageView slideImageView;
+    private ImageView phoneContent;
 
 
 
@@ -66,16 +67,17 @@ public class OnBoarding_Fragment123 extends Fragment {
     private void InitializeViewItems() {
         slideText = (TextView) view.findViewById(R.id.onBoarding_text);
         slideImageView = (ImageView) view.findViewById(R.id.onBoarding_phone);
+        phoneContent = (ImageView) view.findViewById(R.id.phone_content);
 
         if(position == 0){
             slideText.setText("Ego shows you the profiles of the people around you.");
-            slideImageView.setImageResource(R.drawable.slide_1_phone);
+            phoneContent.setImageResource(R.drawable.onboarding_1);
         } else if(position == 1){
             slideText.setText("Badges show you why those people are important to you.");
-            slideImageView.setImageResource(R.drawable.slide_2_phone);
+            phoneContent.setImageResource(R.drawable.onboarding_2);
         } else if(position == 2){
             slideText.setText("Highlighted people are in the same room as you.");
-            slideImageView.setImageResource(R.drawable.slide_3_phone);
+            phoneContent.setImageResource(R.drawable.onboarding_3);
         }
 
         slideText.setTypeface(typeface);

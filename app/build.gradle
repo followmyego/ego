@@ -22,7 +22,7 @@ android {
 
     defaultConfig {
         applicationId "com.egobeta.ego"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -55,6 +55,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':SlidingMenuLib-master')
+
+
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:support-v4:24.1.1'
     compile 'com.android.support:design:24.1.1'
@@ -76,4 +78,6 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
 //    compile 'com.github.orangegangsters:swipy:1.2.3@aar'
     compile 'jp.wasabeef:blurry:2.0.2'
+    compile 'com.android.support:leanback-v17:24.1.1'
+    compile 'org.lucasr.twowayview:twowayview:0.1.4'
 }

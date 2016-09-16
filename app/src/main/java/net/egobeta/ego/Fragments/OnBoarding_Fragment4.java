@@ -16,7 +16,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 import net.egobeta.ego.Adapters.BadgeItem;
 
@@ -207,7 +207,7 @@ public class OnBoarding_Fragment4 extends Fragment implements CompoundButton.OnC
 //                confirmedList.remove(badgeItem.getBadgeName());
 //            }
 
-            Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
         }
     }
 

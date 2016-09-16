@@ -10,7 +10,6 @@ import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBTable;
 @DynamoDBTable(tableName = "user_profile")
 public class User_Profile {
 
-
     private String facebookId;
     private String status;
     private int views;
@@ -20,10 +19,13 @@ public class User_Profile {
     private String email;
 
     private String snapchat_username;
-    private int instagram_id;
-    private int twitter_id;
-    private int google_plus_id;
-    private int linkedIn_id;
+    private String instagram_id;
+    private String instagram_username;
+    private String twitter_id;
+    private String google_plus_id;
+    private String linkedIn_id;
+
+    private String instagram_photos_connected;
 
     @DynamoDBHashKey(attributeName = "facebook_id")
     public String getFacebookId() {
@@ -89,38 +91,49 @@ public class User_Profile {
     }
 
     @DynamoDBAttribute(attributeName = "instagram_id")
-    public int getInstagram_id() {
+    public String getInstagram_id() {
         return instagram_id;
     }
 
-    public void setInstagram_id(int instagram_id) {
+    public void setInstagram_id(String instagram_id) {
         this.instagram_id = instagram_id;
     }
 
+    @DynamoDBAttribute(attributeName = "instagram_username")
+    public String getInstagram_username() {
+        return instagram_username;
+    }
+
+    public void setInstagram_username(String instagram_username) {
+        this.instagram_username = instagram_username;
+    }
+
+
+
     @DynamoDBAttribute(attributeName = "twitter_id")
-    public int getTwitter_id() {
+    public String getTwitter_id() {
         return twitter_id;
     }
 
-    public void setTwitter_id(int twitter_id) {
+    public void setTwitter_id(String twitter_id) {
         this.twitter_id = twitter_id;
     }
 
     @DynamoDBAttribute(attributeName = "googlePlus_id")
-    public int getGoogle_plus_id() {
+    public String getGoogle_plus_id() {
         return google_plus_id;
     }
 
-    public void setGoogle_plus_id(int google_plus_id) {
+    public void setGoogle_plus_id(String google_plus_id) {
         this.google_plus_id = google_plus_id;
     }
 
     @DynamoDBAttribute(attributeName = "linkedIn_id")
-    public int getLinkedIn_id() {
+    public String getLinkedIn_id() {
         return linkedIn_id;
     }
 
-    public void setLinkedIn_id(int linkedIn_id) {
+    public void setLinkedIn_id(String linkedIn_id) {
         this.linkedIn_id = linkedIn_id;
     }
 
@@ -131,6 +144,15 @@ public class User_Profile {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @DynamoDBAttribute(attributeName = "instagram_photos_connected")
+    public String getInstagram_photos_connected() {
+        return instagram_photos_connected;
+    }
+
+    public void setInstagram_photos_connected(String instagram_photos_connected) {
+        this.instagram_photos_connected = instagram_photos_connected;
     }
 }
 

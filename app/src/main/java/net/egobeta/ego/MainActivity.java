@@ -9,11 +9,14 @@
 package net.egobeta.ego;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.RectF;
@@ -37,6 +40,7 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.AbsListView;
 
 
@@ -46,14 +50,15 @@ import net.amazonaws.mobile.user.IdentityManager;
 import net.astuetz.PagerSlidingTabStrip;
 import net.egobeta.ego.Fragments.Fragment_Main;
 import net.egobeta.ego.Fragments.Fragment_Main_Friends;
-import net.egobeta.ego.Fragments.ScrollTabHolderFragment;
 import net.egobeta.ego.Interfaces.ScrollTabHolder;
+import net.egobeta.ego.Library.LocalDataBase;
 import net.egobeta.ego.Settings.SettingsActivity;
 import net.egobeta.ego.Table_Classes.User_Badges;
 import net.egobeta.ego.Table_Classes.User_Profile;
 import net.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.mobileconnectors.cognito.Dataset;
 import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
 import com.amazonaws.mobileconnectors.cognito.Record;
@@ -70,10 +75,13 @@ import com.viewpagerindicator.CirclePageIndicator;
 import android.content.IntentFilter;
 import android.content.BroadcastReceiver;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 
 import org.json.JSONArray;
@@ -83,8 +91,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ScrollTabHolder, ViewPager.OnPageChangeListener, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements ScrollTabHolder, ViewPager.OnPageChangeListener, View.OnClickListener{
 
+     static Bitmap image;
     //AWS Variables
     DynamoDBMapper mapper = null;
     public IdentityManager identityManager = null; //The identity manager used to keep track of the current user account.
@@ -96,8 +105,9 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     Typeface typeface;
     private TypedValue mTypedValue = new TypedValue();
     Context context;
+
     EgoMap egoMap = null;
-    public Activity activity = null;
+    public static Activity activity = null;
     private static String facebookId;
 
     private int mActionBarHeight;
@@ -110,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     public Drawable upArrow;
     public static ImageView egoLogo;
     public static ScrollView scrollView;
-    private SlidingMenu slidingMenu;
+    private static SlidingMenu slidingMenu;
     private ViewPager mViewPager = null;
     private static Toolbar toolbar;
     public PagerSlidingTabStrip mPagerSlidingTabStrip;
@@ -121,6 +131,10 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     private GraphResponse response;
     ArrayList<String> friends_Ids = new ArrayList<String>(); //list to pass through to friends fragment
     boolean isCreated = false;
+
+    private LocalDataBase mLocalDataBase;
+    UserPinned mUserPinned;
+    ArrayList<String> pinnedUsers = new ArrayList<String>();
 
 
     //New Variables
@@ -133,7 +147,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         System.out.println("MAINACTIVITY: onCreate");
         /** Set up and initialize aws variables **/
         initializeAWSVariables();
@@ -144,11 +157,34 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         /**Initialize facebookId, context, egoMap, resources, typeface, and dimension items*/
         setUpNeededVariables();
 
-        /** Sync user permissions from server **/
+        /** Sync pinned users and user permissions from server **/
         /** Chain ends at updateUI method which then initializes the pager adapter **/
-        syncPrivacySettings();
+//        syncPrivacySettings();
+        loadPinnedUsers();
 
+        /** Restart this Activity if an uncaught exception is found **/
+//        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+//            @Override
+//            public void uncaughtException(Thread thread, Throwable throwable) {
+//                restart(context, 1);
+//            }
+//        });
 
+    }
+
+    public static void restart(Context context, int delay) {
+        if (delay == 0) {
+            delay = 1;
+        }
+        Log.e("", "restarting app");
+        Intent restartIntent = context.getPackageManager()
+                .getLaunchIntentForPackage(context.getPackageName() );
+        PendingIntent intent = PendingIntent.getActivity(
+                context, 0,
+                restartIntent, PendingIntent.FLAG_CANCEL_CURRENT );
+        AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        manager.set(AlarmManager.RTC, System.currentTimeMillis() + delay, intent);
+        System.exit(2);
     }
 
     //Initialize dimension variables for the animations
@@ -182,7 +218,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         pageIndicator.setStrokeColor(tabPageColor);
         pageIndicator.setFillColor(tabFillColor);
         pageIndicator.setPageColor(tabPageColor);
-        pageIndicator.setExtraSpacing(15f);
+        pageIndicator.setExtraSpacing(25f);
         pageIndicator.setViewPager(mViewPager);
     }
 
@@ -199,14 +235,53 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     private void setUpViewPager() {
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setOffscreenPageLimit(3);
+        mViewPager.setOverScrollMode(View.OVER_SCROLL_NEVER);
         PagerAdapter mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mPagerAdapter.setTabHolderScrollingContent(this);
         mViewPager.setAdapter(mPagerAdapter);
     }
 
+    private void loadPinnedUsers() {
+        final UserPinned userPinned = UserPinned.getInstance(getApplicationContext());
+        final Dataset dataset = userPinned.getDataset();
+        final ProgressDialog dialog = ProgressDialog.show(this,
+                getString(R.string.settings_fragment_dialog_title),
+                getString(R.string.settings_fragment_dialog_message));
+        Log.d(LOG_TAG, "Loading pinned users from remote");
+        dataset.synchronize(new DefaultSyncCallback() {
+            @Override
+            public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
+                super.onSuccess(dataset, updatedRecords);
+                userPinned.loadFromDataset();
+                mUserPinned = userPinned;
+
+                /** Run method to populate localdatabase with loaded pinned users **/
+                syncPrivacySettings(dialog);
+
+            }
+
+            @Override
+            public void onFailure(final DataStorageException dse) {
+                Log.w(LOG_TAG, "Failed to load user settings from remote, using default.", dse);
+                updateUI(dialog);
+            }
+
+            @Override
+            public boolean onDatasetsMerged(final Dataset dataset,
+                                            final List<String> datasetNames) {
+                // Handle dataset merge. One can selectively copy records from merged datasets
+                // if needed. Here, simply discard merged datasets
+                for (String name : datasetNames) {
+                    Log.d(LOG_TAG, "found merged datasets: " + name);
+                    AWSMobileClient.defaultMobileClient().getSyncManager().openOrCreateDataset(name).delete();
+                }
+                return true;
+            }
+        });
+    }
 
     /** Sync user's preferences only if user is signed in **/
-    private void syncPrivacySettings() {
+    private void syncPrivacySettings(final ProgressDialog dialog) {
         System.out.println("MAINACTIVITY: syncPrivacySettings");
         // sync only if user is signed in
         if (AWSMobileClient.defaultMobileClient().getIdentityManager().isUserSignedIn()) {
@@ -220,7 +295,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            loadUserSettings();
+                            loadUserSettings(dialog);
                         }
                     });
                 }
@@ -229,12 +304,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     }
 
     /** userPermissions.loadFromDataset(); get called here **/
-    private void loadUserSettings() {
+    private void loadUserSettings(final ProgressDialog dialog) {
         final UserPermissions userPermissions = UserPermissions.getInstance(getApplicationContext());
         final Dataset dataset = userPermissions.getDataset();
-        final ProgressDialog dialog = ProgressDialog.show(this,
-                getString(R.string.settings_fragment_dialog_title),
-                getString(R.string.settings_fragment_dialog_message));
+//        final ProgressDialog dialog = ProgressDialog.show(this,
+//                getString(R.string.settings_fragment_dialog_title),
+//                getString(R.string.settings_fragment_dialog_message));
         Log.d(LOG_TAG, "Loading user settings from remote");
         dataset.synchronize(new DefaultSyncCallback() {
             @Override
@@ -562,6 +637,23 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
 
 
+    public static void blurTheBackground() {
+        /** Blur the background for profile activity **/
+        final View v = activity.getWindow().getDecorView();
+        if (v.getWidth() > 0) {
+            image = BlurBuilder.blur(v);
+
+        } else {
+            v.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    image = BlurBuilder.blur(v);
+
+                }
+            });
+        }
+    }
+
 
     public class SaveUserBadgesToDB extends AsyncTask<Void, Void, Void> {
         ProgressDialog dialog;
@@ -584,15 +676,43 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            Toast.makeText(MainActivity.this, "Successfully saved user's badges to db", Toast.LENGTH_SHORT).show();
-            getBasicUserVariablesFromResponse(response, dialog);
+//            Toast.makeText(MainActivity.this, "Successfully saved user's badges to db", Toast.LENGTH_SHORT).show();
+            new LoadUserProfile(dialog).execute();
         }
     }
 
+    public class LoadUserProfile extends AsyncTask<Void, Void, Void> {
+        ProgressDialog dialog;
 
-    /** Gets the variables set by the user's privacy preferences needed for the badge class **/
-    public void getBasicUserVariablesFromResponse(GraphResponse response, ProgressDialog dialog){
-        userProfile = new User_Profile();
+        public LoadUserProfile(ProgressDialog dialog) {
+            this.dialog = dialog;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            /** Load user profile from database before saving potential new facebook items  **/
+            try {
+                userProfile = mapper.load(User_Profile.class, facebookId);
+            } catch (final AmazonServiceException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+//            Toast.makeText(MainActivity.this, "Successfully loaded user profile from database", Toast.LENGTH_SHORT).show();
+            updateUserProfile(dialog);
+        }
+
+    }
+
+
+    /** Updates the user profile info needed from facebook **/
+    public void updateUserProfile(ProgressDialog dialog){
+
 
         //Get json object from response
         JSONObject json = response.getJSONObject();
@@ -621,13 +741,13 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         }
 
         /** Push userInfo item to server **/
-        new SaveBasicInfoToDB(dialog).execute();
+        new SaveUserProfile(dialog).execute();
     }
 
-    public class SaveBasicInfoToDB extends AsyncTask<Void, Void, Void> {
+    public class SaveUserProfile extends AsyncTask<Void, Void, Void> {
         ProgressDialog dialog;
 
-        public SaveBasicInfoToDB(ProgressDialog dialog) {
+        public SaveUserProfile(ProgressDialog dialog) {
             this.dialog = dialog;
         }
 
@@ -645,7 +765,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            Toast.makeText(MainActivity.this, "Successfully saved user's info to db", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(MainActivity.this, "Successfully saved user's info to db", Toast.LENGTH_SHORT).show();
             updateUI(dialog);
         }
 
@@ -665,7 +785,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 initializeViewItems();
 
                 /**Create the pull out Sliding menu*/
-                createMenuDrawer();
+                createSlidingMenu();
 
                 /**Set up the ViewPager and PagerAdapter*/
                 setUpViewPager();
@@ -682,11 +802,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 /**Bind the Page indicator to the adapter*/
                 setUpPageIndicator();
 
-                isCreated = true;
 
                 theMapOnCreateMethod();
                 theMapOnStartMethod();
                 theMapOnResumeMethod();
+
+                isCreated = true; //This value is checked by the onResume method in case it tries to update any ui before its created
             }
         });
     }
@@ -703,10 +824,12 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         }
     }
 
+
+
     //Create the pull out Sliding menu
-    private void createMenuDrawer() {
+    private void createSlidingMenu() {
         if(slidingMenu == null){
-            System.out.println("MAINACTIVITY: createMenuDrawer");
+            System.out.println("MAINACTIVITY: createSlidingMenu");
 
             slidingMenu = new SlidingMenu(MainActivity.this);
             slidingMenu.attachToActivity(MainActivity.this, SlidingMenu.SLIDING_CONTENT, true);
@@ -715,18 +838,30 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
             slidingMenu.setBehindOffsetRes(R.dimen.behindOffSetRes);
             slidingMenu.setMenu(R.layout.sliding_menu_frame);
 
-            View view = slidingMenu.getRootView();
+            final View view = slidingMenu.getRootView();
 
-            TextView viewingYou = (TextView) view.findViewById(R.id.viewing_you_text);
-            TextView version = (TextView) view.findViewById(R.id.version);
-            TextView year = (TextView) view.findViewById(R.id.year);
-            ImageView settingsButton = (ImageView) view.findViewById(R.id.settingsButton);
+
+
+            final ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.viewingYouProgressBar);
+            final ImageView eyeballImage = (ImageView) view.findViewById(R.id.viewing_you_image);
+            final TextView viewingYouText = (TextView) view.findViewById(R.id.viewing_you_text);
+            TextView noViewersText1 = (TextView) view.findViewById(R.id.viewersHolderText1);
+            TextView noViewersText2 = (TextView) view.findViewById(R.id.viewersHolderText2);
+            TextView settingsText = (TextView) view.findViewById(R.id.settingsButtonText);
+            ImageView settingsButton = (ImageView) view.findViewById(R.id.settings_Button);
+            final RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.noViewersHolder);
+
             settingsButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    settings();
+//                    settings();
+                    logout(); // I have the settings button logging the user out for now
                 }
             });
+            relativeLayout.setVisibility(View.GONE);
+            eyeballImage.setVisibility(View.VISIBLE);
+            viewingYouText.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
 
             Button logoutButton = (Button) view.findViewById(R.id.logout_Button);
             logoutButton.setOnClickListener(new View.OnClickListener() {
@@ -736,17 +871,59 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 }
             });
 
-            Button blankActivityButton = (Button) view.findViewById(R.id.blankActivity_Button);
-            blankActivityButton.setOnClickListener(new View.OnClickListener() {
+            /** This method gets called when the menu has finished opening **/
+            slidingMenu.setOnOpenedListener(new SlidingMenu.OnOpenedListener() {
                 @Override
-                public void onClick(View v) {
-                    blankActivity();
+                public void onOpened() {
+                    /** check to see who is viewing your profile **/
+                    Thread thread = new Thread() {
+                        @Override
+                        public void run() {
+                            try {
+                                sleep(1400);
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        //If no one is viewing you, show these graphics
+                                        eyeballImage.setVisibility(View.INVISIBLE);
+                                        viewingYouText.setVisibility(View.INVISIBLE);
+                                        relativeLayout.setVisibility(View.VISIBLE);
+                                        progressBar.setVisibility(View.GONE);
+                                    }
+                                });
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    };
+                    thread.start();
                 }
             });
 
-            viewingYou.setTypeface(typeface);
-            version.setTypeface(typeface);
-            year.setTypeface(typeface);
+            /** This method gets called when the menu has finished closing **/
+            slidingMenu.setOnClosedListener(new SlidingMenu.OnClosedListener() {
+                @Override
+                public void onClosed() {
+                    //If no one is viewing you, show these graphics
+                    eyeballImage.setVisibility(View.VISIBLE);
+                    viewingYouText.setVisibility(View.VISIBLE);
+                    relativeLayout.setVisibility(View.INVISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
+                }
+            });
+
+//            Button blankActivityButton = (Button) view.findViewById(R.id.blankActivity_Button);
+//            blankActivityButton.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    blankActivity();
+//                }
+//            });
+
+            noViewersText1.setTypeface(typeface);
+            noViewersText2.setTypeface(typeface);
+            viewingYouText.setTypeface(typeface);
+            settingsText.setTypeface(typeface);
         }
     }
 
@@ -761,25 +938,29 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
     public void logout(){
         identityManager.signOut();
-//        LoginManager.getInstance().logOut();
-        Intent intent = new Intent(MainActivity.this, SignInActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        LoginManager.getInstance().logOut();
+        Intent intent = new Intent(MainActivity.this, SplashActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         this.finish();
     }
 
-    public void blankActivity(){
-        identityManager.signOut();
-        Intent intent = new Intent(MainActivity.this, BlankActivity.class);
-        startActivity(intent);
-        this.finish();
-    }
+//    public void blankActivity(){
+//        identityManager.signOut();
+//        Intent intent = new Intent(MainActivity.this, BlankActivity.class);
+//        startActivity(intent);
+//        this.finish();
+//    }
 
     //Initialize some needed variables
     private void setUpNeededVariables() {
         System.out.println("MAINACTIVITY: setUpNeededVariables");
         facebookId = identityManager.getUserFacebookId();
         context = getApplicationContext();
+
+        mLocalDataBase = new LocalDataBase(context);
+        mLocalDataBase.clearUserData();
+
         egoMap = new EgoMap(MainActivity.this, getApplicationContext(), identityManager, mapper);
         Resources resources = getResources();
         typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
@@ -795,12 +976,18 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         System.out.println("MAINACTIVITY: initializeViewItems");
 
         mHeader = findViewById(R.id.header); /**ENTIRE HEADER**/
-        ImageView home_menu_image = (ImageView) findViewById(R.id.toolbar_icon); /**HEADER - HOME MENU IMAGE**/
-        ImageView home_menu_image2 = (ImageView) findViewById(R.id.toolbar_icon2); /**HEADER - HOME MENU IMAGE**/
+        ImageView sideMenuArrow = (ImageView) findViewById(R.id.sidemenu_arrow); /**sideMenu arrow**/
         mHeaderPicture = (ImageView) findViewById(R.id.header_picture); /**HEADER - BLURRED BACKGROUND**/
-
         egoLogo = (ImageView) findViewById(R.id.ego_logo); /**HEADER - PROFILE PICTURE**/
-        TextView toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        ImageButton button = (ImageButton) findViewById(R.id.sidemenu_arrow_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                slidingMenu.toggle();
+            }
+        });
+
+
 
     }
 
@@ -886,13 +1073,16 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         mHeader.setAlpha(alpha * 1);
     }
 
-    private final BroadcastReceiver settingsChangedReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.d(LOG_TAG, "Received settings changed local broadcast. Update theme colors.");
-            syncPrivacySettings();
-        }
-    };
+//    private final BroadcastReceiver settingsChangedReceiver = new BroadcastReceiver() {
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//            Log.d(LOG_TAG, "Received settings changed local broadcast. Update theme colors.");
+//            final ProgressDialog dialog = ProgressDialog.show(activity,
+//                    getString(R.string.settings_fragment_dialog_title),
+//                    getString(R.string.settings_fragment_dialog_message));
+//            syncPrivacySettings(dialog);
+//        }
+//    };
 
 
     @Override
@@ -908,6 +1098,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         awsMobileClient.handleOnPause();
 
         egoMap.theOnPauseMethod();
+
+
         // unregister notification receiver
 //        LocalBroadcastManager.getInstance(this).unregisterReceiver(notificationReceiver);
 //        LocalBroadcastManager.getInstance(this).unregisterReceiver(settingsChangedReceiver);
@@ -931,14 +1123,19 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 //        LocalBroadcastManager.getInstance(this).registerReceiver(notificationReceiver,
 //                new IntentFilter(PushListenerService.ACTION_SNS_NOTIFICATION));
 //        // register settings changed receiver.
-        LocalBroadcastManager.getInstance(this).registerReceiver(settingsChangedReceiver,
-                new IntentFilter(UserPermissions.ACTION_PERMISSIONS_CHANGED));
+//        LocalBroadcastManager.getInstance(this).registerReceiver(settingsChangedReceiver,
+//                new IntentFilter(UserPermissions.ACTION_PERMISSIONS_CHANGED));
 
 
         if(isCreated){
             theMapOnCreateMethod();
             theMapOnStartMethod();
             theMapOnResumeMethod();
+        }
+
+        if(isCreated){
+            createSlidingMenu();
+
         }
     }
 
@@ -978,7 +1175,10 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                         absListView.smoothScrollToPosition(0);
                     }
                 });
-                Toast.makeText(this, "toolbar clicked mainActivity", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "toolbar clicked mainActivity", Toast.LENGTH_SHORT).show();
+
+            case R.id.sidemenu_arrow:
+                slidingMenu.toggle();
                 break;
         }
 
@@ -1132,7 +1332,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         public Fragment getItem(int position) {
             if(position == 0){
                 Fragment_Main fragment;
-                fragment = (Fragment_Main) Fragment_Main.newInstance(egoMap, identityManager, position, friends_Ids);
+                fragment = (Fragment_Main) Fragment_Main.newInstance(egoMap, identityManager, position, friends_Ids, mUserPinned);
 
                 if (mListener != null) {
                     fragment.setScrollTabHolder(mListener);

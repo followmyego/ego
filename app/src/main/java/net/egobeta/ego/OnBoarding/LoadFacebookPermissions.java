@@ -15,7 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.mobileconnectors.cognito.Dataset;
@@ -148,7 +148,7 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
             userPermissions.setFriends(1);
         } else {
             userPermissions.setFriends(0);
-            Toast.makeText(LoadFacebookPermissions.this, "Does not contain " + OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoadFacebookPermissions.this, "Does not contain " + OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS, Toast.LENGTH_SHORT).show();
         }
 
         if(friendsOfFriends_isConnected){
@@ -748,85 +748,85 @@ public class LoadFacebookPermissions extends AppCompatActivity implements View.O
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS)){
             friends_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS_OF_FRIENDS)){
             friendsOfFriends_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS_OF_FRIENDS, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_FRIENDS_OF_FRIENDS, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_INSTAGRAM_FOLLOWERS)){
             following_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_INSTAGRAM_FOLLOWERS, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_INSTAGRAM_FOLLOWERS, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_INSTAGRAM_FOLLOWING)){
             followers_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_INSTAGRAM_FOLLOWING, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_INSTAGRAM_FOLLOWING, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_LOCATION)){
             location_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_LOCATION, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_LOCATION, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_HOMETOWN)){
             hometown_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_HOMETOWN, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_HOMETOWN, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_LIKES)){
             likes_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_LIKES, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_LIKES, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_BIRTHDAY)){
             birthday_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_BIRTHDAY, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_BIRTHDAY, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_WORK)){
             work_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_WORK, Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_WORK, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_SCHOOL)){
             school_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_SCHOOL, Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_SCHOOL, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_MUSIC)){
             music_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_MUSIC, Toast.LENGTH_SHORT).show();
+            //   Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_MUSIC, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_MOVIES)){
             movies_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_MOVIES, Toast.LENGTH_SHORT).show();
+            //   Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_MOVIES, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_BOOKS)){
             books_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_BOOKS, Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_BOOKS, Toast.LENGTH_SHORT).show();
         }
 
         if(privacyPreferences.contains(OnBoarding_Fragment4.KEY_PERMISSION_PROFFESIONAL_SKILLS)){
             professionalSkills_isConnected = true;
         } else {
-            Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_PROFFESIONAL_SKILLS, Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(LoadFacebookPermissions.this, "Does not containt: " + OnBoarding_Fragment4.KEY_PERMISSION_PROFFESIONAL_SKILLS, Toast.LENGTH_SHORT).show();
         }
     }
 }

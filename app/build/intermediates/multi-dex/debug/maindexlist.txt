@@ -3,11 +3,12 @@ com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMapper$SaveObje
 com/amazonaws/AmazonClientException.class
 android/support/v4/app/BaseFragmentActivityJB.class
 com/amazonaws/services/dynamodbv2/model/ConditionalOperator.class
+net/egobeta/ego/ProfileActivity$LoadUserProfile.class
 android/support/v7/view/menu/CascadingMenuPopup$2.class
 android/support/v4/app/FragmentManagerState.class
 com/amazonaws/services/cognitoidentity/AmazonCognitoIdentityClient.class
 android/support/design/widget/Snackbar$2.class
-net/egobeta/ego/BlankActivity.class
+android/support/v17/leanback/app/BrowseSupportFragment.class
 android/support/v7/app/AppCompatActivity.class
 com/google/gson/annotations/SerializedName.class
 android/support/v4/os/ResultReceiver.class
@@ -39,6 +40,7 @@ android/support/design/widget/FloatingActionButton$Size.class
 android/support/design/widget/TabLayout$AdapterChangeListener.class
 android/support/annotation/StringDef.class
 android/support/v4/media/MediaBrowserCompat$ItemReceiver.class
+net/egobeta/ego/ProfileActivity$5.class
 com/amazonaws/services/dynamodbv2/model/ScanResult.class
 android/support/design/widget/BottomSheetBehavior.class
 net/amazonaws/mobile/downloader/query/DownloadQueueProvider$DatabaseHelper.class
@@ -83,6 +85,7 @@ com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/S3ClientCache.class
 android/support/v4/app/FragmentManagerNonConfig.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBRangeKey.class
 android/support/v7/widget/ChildHelper$Callback.class
+com/jess/ui/TwoWayAdapterView.class
 com/amazonaws/ClientConfiguration.class
 com/amazonaws/DefaultRequest.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMapperConfig.class
@@ -122,6 +125,7 @@ android/support/v4/view/MotionEventCompat.class
 android/support/design/widget/Snackbar$5.class
 com/google/android/gms/auth/api/credentials/CredentialRequest$Builder.class
 com/amazonaws/services/dynamodbv2/model/GetItemRequest.class
+net/egobeta/ego/ProfileActivity$13.class
 android/support/design/widget/Snackbar$Duration.class
 android/support/v8/renderscript/BaseObj.class
 android/support/v4/app/LoaderManager$LoaderCallbacks.class
@@ -139,6 +143,7 @@ android/support/v7/appcompat/R$dimen.class
 android/support/v8/renderscript/Script$FieldBase.class
 android/support/v4/view/NestedScrollingChild.class
 com/amazonaws/services/s3/model/GetObjectRequest.class
+android/support/v17/leanback/app/RowsFragment.class
 android/support/v7/app/ActionBarDrawerToggle.class
 android/support/v4/view/ViewCompat$MarshmallowViewCompatImpl.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBTableSchemaParser$TableIndexesInfo.class
@@ -169,6 +174,7 @@ net/amazonaws/mobile/downloader/service/BasicDownloader.class
 com/facebook/appevents/AppEventsConstants.class
 com/amazonaws/metrics/RequestMetricCollector.class
 android/support/v4/view/ViewCompat$JbMr1ViewCompatImpl.class
+android/support/v17/leanback/widget/SearchOrbView.class
 android/support/annotation/RequiresPermission.class
 net/egobeta/ego/Fragments/Fragment_Main$PushUserLocationToDataBase.class
 com/amazonaws/mobileconnectors/cognito/internal/storage/CognitoSyncStorage.class
@@ -178,12 +184,14 @@ android/support/v4/view/ViewCompatEclairMr1.class
 com/google/android/gms/location/internal/LocationRequestInternal.class
 com/facebook/FacebookActivity.class
 android/support/annotation/WorkerThread.class
+android/support/v17/leanback/widget/ListRowPresenter.class
 android/support/v4/widget/MaterialProgressDrawable$3.class
 com/amazonaws/services/s3/model/UploadPartRequest.class
 android/support/v8/renderscript/Script.class
 android/support/annotation/CallSuper.class
 net/amazonaws/mobile/user/IdentityManager$2.class
 android/support/design/widget/FloatingActionButton$1.class
+net/egobeta/ego/BlurBuilder.class
 com/amazonaws/services/dynamodbv2/model/QueryRequest.class
 com/google/android/gms/internal/zzk.class
 android/support/v4/content/res/ConfigurationHelper.class
@@ -201,6 +209,7 @@ android/support/v7/app/ActionBarDrawerToggle$DelegateProvider.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/ItemConverter.class
 com/google/android/gms/common/zze.class
 android/support/design/widget/ThemeUtils.class
+net/egobeta/ego/MainActivity$13.class
 android/support/v7/widget/StaggeredGridLayoutManager.class
 com/amazonaws/services/sqs/AmazonSQSAsyncClient.class
 com/google/android/gms/maps/SupportStreetViewPanoramaFragment.class
@@ -211,10 +220,13 @@ com/viewpagerindicator/PageIndicator.class
 com/google/android/gms/common/internal/safeparcel/SafeParcelable.class
 com/amazonaws/util/AWSServiceMetrics.class
 com/amazonaws/mobileconnectors/s3/transfermanager/Transfer.class
+net/egobeta/ego/UserPinned.class
 android/support/v4/view/ViewPager$SimpleOnPageChangeListener.class
+com/jeremyfeinstein/slidingmenu/lib/SlidingMenu$OnOpenedListener.class
 com/google/android/gms/auth/api/credentials/CredentialRequest.class
 com/amazonaws/handlers/RequestHandler.class
 android/support/design/widget/VisibilityAwareImageButton.class
+android/support/v17/leanback/app/PlaybackControlSupportGlue.class
 android/support/v4/view/ViewCompatMarshmallow.class
 com/google/android/gms/auth/api/signin/GoogleSignInAccount.class
 android/support/v4/media/MediaBrowserCompat$CallbackHandler.class
@@ -238,6 +250,7 @@ android/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo.class
 net/amazonaws/mobile/user/signin/SignInManager.class
 android/support/v7/widget/RecyclerView$SavedState.class
 android/support/multidex/ZipUtil$CentralDirectory.class
+com/jess/ui/TwoWayAbsListView.class
 android/databinding/InverseBindingMethod.class
 com/amazonaws/mobileconnectors/s3/transfermanager/Copy.class
 android/support/v4/util/Pools$SynchronizedPool.class
@@ -248,6 +261,7 @@ android/support/v7/widget/ChildHelper.class
 android/support/design/widget/TabLayout$SlidingTabStrip.class
 android/support/multidex/ZipUtil.class
 android/support/v8/renderscript/FieldPacker.class
+android/support/v17/leanback/app/DetailsFragment.class
 android/support/v4/media/MediaBrowserCompat$MediaBrowserImpl.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMapperConfig$ConsistentReads.class
 com/amazonaws/services/s3/model/S3ObjectInputStream.class
@@ -255,6 +269,7 @@ com/amazonaws/internal/SdkFilterOutputStream.class
 android/support/design/widget/Snackbar$Behavior.class
 com/google/android/gms/maps/GoogleMap$OnCameraChangeListener.class
 net/egobeta/ego/OnBoarding/LoadFacebookPermissions$4.class
+net/egobeta/ego/RoundedImageView.class
 android/support/v4/app/FragmentContainer.class
 android/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener.class
 com/google/android/gms/R$styleable.class
@@ -281,6 +296,7 @@ com/google/android/gms/location/internal/zzf.class
 com/amazonaws/services/dynamodbv2/model/BatchGetItemResult.class
 android/support/annotation/ColorRes.class
 android/support/v4/view/ViewPager$2.class
+android/support/v17/leanback/app/RowsSupportFragment.class
 android/support/design/widget/ValueAnimatorCompat.class
 android/support/v4/view/ViewPropertyAnimatorListenerAdapter.class
 android/support/v7/appcompat/R.class
@@ -290,6 +306,7 @@ android/support/design/widget/CoordinatorLayout$LayoutParams.class
 com/google/android/gms/common/internal/ValidateAccountRequest.class
 android/support/v4/content/WakefulBroadcastReceiver.class
 android/support/v4/app/BackStackRecord$TransitionState.class
+net/egobeta/ego/MainActivity$SaveUserProfile.class
 com/facebook/login/LoginManager.class
 android/support/v7/widget/LinearLayoutCompat$LayoutParams.class
 com/amazonaws/services/dynamodbv2/model/KeysAndAttributes.class
@@ -334,6 +351,7 @@ com/amazonaws/mobileconnectors/cognito/DefaultSyncCallback.class
 com/amazonaws/regions/Regions.class
 android/support/v4/media/session/PlaybackStateCompatApi22.class
 android/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase.class
+android/support/v17/leanback/widget/OnChildSelectedListener.class
 net/egobeta/ego/ProfileActivity$3.class
 com/amazonaws/auth/AWSCognitoIdentityProvider.class
 com/amazonaws/util/AwsHostNameUtils.class
@@ -347,6 +365,7 @@ android/support/v4/util/DebugUtils.class
 android/databinding/BindingMethods.class
 android/support/v8/renderscript/Float2.class
 android/support/annotation/LayoutRes.class
+net/egobeta/ego/ProfileActivity$11.class
 android/support/v7/view/menu/CascadingMenuPopup$HorizPosition.class
 android/support/v8/renderscript/RSRuntimeException.class
 android/support/v7/widget/AppCompatImageHelper.class
@@ -377,6 +396,7 @@ com/google/android/gms/maps/GoogleMap.class
 android/support/design/widget/FloatingActionButton$OnVisibilityChangedListener.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBHashKey.class
 android/support/v7/widget/RecyclerView$ItemDecoration.class
+android/support/v17/leanback/widget/GuidedAction$BuilderBase.class
 android/support/v4/media/session/MediaSessionCompat$SessionFlags.class
 com/amazonaws/auth/CognitoCredentialsProvider.class
 com/amazonaws/services/sqs/AmazonSQSClient.class
@@ -393,6 +413,7 @@ net/amazonaws/mobile/downloader/service/DownloadTask$NetworkStatusProvider.class
 android/support/v7/appcompat/R$style.class
 android/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo.class
 android/support/v4/media/VolumeProviderCompat.class
+net/egobeta/ego/ProfileActivity$8.class
 com/google/android/gms/internal/zzank.class
 android/support/v4/media/VolumeProviderCompat$ControlType.class
 net/egobeta/ego/MainActivity$4.class
@@ -403,6 +424,7 @@ android/support/annotation/FractionRes.class
 android/support/v4/view/accessibility/AccessibilityNodeProviderCompat.class
 com/google/android/gms/gcm/GcmReceiver.class
 com/squareup/picasso/Picasso.class
+com/jeremyfeinstein/slidingmenu/lib/SlidingMenu$OnClosedListener.class
 net/egobeta/ego/MainActivity$10.class
 android/support/v7/appcompat/R$layout.class
 android/support/design/R.class
@@ -475,9 +497,11 @@ com/squareup/picasso/Picasso$Builder.class
 android/support/v4/widget/SlidingPaneLayout.class
 android/support/v7/recyclerview/R.class
 android/support/v4/media/session/MediaSessionCompat$MediaSessionImpl.class
+net/egobeta/ego/ProfileActivity$12.class
 android/support/v7/widget/TintTypedArray.class
 android/support/v4/view/accessibility/AccessibilityEventCompat.class
 android/support/v4/view/ViewCompat$FocusDirection.class
+android/support/v17/leanback/app/GuidedStepSupportFragment.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/PaginatedScanList.class
 android/support/v4/view/ViewCompat$FocusRealDirection.class
 com/amazonaws/services/s3/model/SetBucketNotificationConfigurationRequest.class
@@ -489,7 +513,6 @@ android/support/v4/media/MediaDescriptionCompat.class
 android/support/multidex/MultiDex$V19.class
 android/support/v4/view/ViewCompatApi24.class
 com/amazonaws/services/s3/internal/SSEResultBase.class
-net/egobeta/ego/ProfileActivity$GetProfilePicUrl.class
 android/support/v4/view/ScrollingView.class
 android/support/v4/view/ViewPager$MyAccessibilityDelegate.class
 android/support/v7/app/ActionBar$Tab.class
@@ -502,6 +525,7 @@ com/google/android/gms/maps/GoogleMap$OnMyLocationChangeListener.class
 android/support/v7/widget/AppCompatDrawableManager.class
 com/amazonaws/mobileconnectors/s3/transfermanager/TransferManager.class
 net/amazonaws/mobile/downloader/service/NetworkStateListener.class
+net/egobeta/ego/ProfileActivity$9.class
 android/support/design/widget/FloatingActionButton$Behavior$1.class
 com/amazonaws/mobileconnectors/s3/transfermanager/Download.class
 android/support/multidex/MultiDex.class
@@ -517,6 +541,7 @@ com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/ScanResultPage.class
 android/support/v4/app/FragmentManagerImpl$FragmentTag.class
 com/google/gson/annotations/Until.class
 android/support/v4/app/LoaderManagerImpl.class
+android/support/v17/leanback/widget/DetailsOverviewRowPresenter.class
 net/egobeta/ego/ProfileActivity$1.class
 android/support/v4/view/ViewPropertyAnimatorCompat.class
 android/support/design/widget/Snackbar$6.class
@@ -549,6 +574,7 @@ android/support/design/widget/TabLayout$TabLayoutOnPageChangeListener.class
 android/support/v7/widget/RecyclerView$SmoothScroller.class
 net/amazonaws/mobile/downloader/query/DownloadQueueProvider.class
 android/support/v7/app/ActionBar$OnNavigationListener.class
+android/support/v17/leanback/widget/DetailsOverviewRow.class
 net/amazonaws/mobile/downloader/query/DownloadState.class
 android/support/v4/media/RatingCompatKitkat.class
 com/facebook/share/model/ShareModel.class
@@ -562,13 +588,15 @@ android/support/design/widget/FloatingActionButton$ShadowDelegateImpl.class
 android/support/v4/app/ActivityCompatHoneycomb.class
 android/support/v4/view/ViewCompatICSMr1.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMapper$TransformerParameters.class
+net/egobeta/ego/ProfileActivity$6.class
 android/support/v4/media/MediaBrowserCompat$MediaBrowserServiceCallbackImpl.class
+android/support/v17/leanback/app/PlaybackControlGlue.class
 com/google/android/gms/R.class
 android/support/v4/widget/ScrollerCompat.class
 android/support/v7/widget/RecyclerView$RecycledViewPool.class
 com/amazonaws/services/s3/AmazonS3Client.class
-net/egobeta/ego/ImportedClasses/FacebookPictureViewRound.class
 com/google/android/gms/common/util/DynamiteApi.class
+net/egobeta/ego/MainActivity$12.class
 android/support/v4/app/TaskStackBuilder$SupportParentable.class
 android/support/v4/app/ActivityCompatApi23.class
 com/google/android/gms/auth/api/signin/internal/SignInHubActivity$1.class
@@ -584,6 +612,7 @@ android/support/v4/view/ViewCompatJellybeanMr1.class
 android/support/annotation/MenuRes.class
 android/support/v7/widget/RecyclerViewAccessibilityDelegate.class
 android/support/design/widget/Snackbar$1.class
+net/egobeta/ego/MainActivity$LoadUserProfile.class
 android/support/v4/view/ViewCompatKitKat.class
 com/google/android/gms/common/api/Api.class
 net/amazonaws/mobile/user/IdentityManager$SignInStateChangeListener.class
@@ -612,8 +641,8 @@ android/support/v4/view/AbsSavedState.class
 com/amazonaws/services/dynamodbv2/model/BatchWriteItemResult.class
 android/support/v7/widget/RecyclerView$AdapterDataObservable.class
 com/amazonaws/util/VersionInfoUtils.class
+net/egobeta/ego/Library/LocalDataBase.class
 com/amazonaws/mobileconnectors/s3/transfermanager/model/package-info.class
-net/egobeta/ego/InstagramClasses/ImageViewAdapterInstagram.class
 com/google/android/gms/maps/StreetViewPanoramaFragment.class
 com/amazonaws/services/dynamodbv2/model/BatchGetItemRequest.class
 com/facebook/internal/NativeProtocol.class
@@ -640,10 +669,10 @@ android/support/v7/widget/LinearLayoutCompat$DividerMode.class
 com/amazonaws/auth/STSSessionCredentials.class
 com/amazonaws/services/dynamodbv2/model/AttributeValue.class
 android/support/v7/widget/RecyclerView$2.class
+net/egobeta/ego/Adapters/UserItem.class
 com/amazonaws/auth/AWSIdentityProvider.class
 net/egobeta/ego/OnBoarding/Main_OnBoarding$PagerAdapter.class
 com/amazonaws/services/dynamodbv2/model/Condition.class
-net/egobeta/ego/MainActivity$SaveBasicInfoToDB.class
 com/google/gson/annotations/Since.class
 com/amazonaws/mobileconnectors/s3/transfermanager/MultipleFileDownload.class
 android/support/v7/widget/RecyclerView$OnScrollListener.class
@@ -657,6 +686,7 @@ bolts/AggregateException.class
 com/google/android/gms/auth/api/signin/internal/zzi.class
 android/support/design/widget/AppBarLayout$1.class
 com/amazonaws/services/s3/model/ObjectMetadata.class
+android/support/v17/leanback/app/GuidedStepFragment.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBReflector.class
 android/support/v4/view/ViewPager.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMapperConfig$PaginationLoadingStrategy.class
@@ -677,6 +707,7 @@ net/egobeta/ego/OnBoarding/LoadFacebookPermissions.class
 android/support/v4/view/PagerAdapter.class
 net/egobeta/ego/ProfileActivity$PagerAdapter.class
 net/amazonaws/mobile/downloader/service/DownloadStatusUpdater.class
+android/support/v17/leanback/transition/TransitionHelper.class
 android/support/v7/widget/RecyclerView$RecyclerViewDataObserver.class
 android/support/v4/widget/DrawerLayout.class
 com/google/android/gms/internal/zzanm.class
@@ -698,8 +729,10 @@ android/support/v4/view/ViewPager$SavedState.class
 android/support/v7/widget/RecyclerView$RecyclerListener.class
 android/support/v8/renderscript/Type.class
 android/support/design/widget/TabLayout$1.class
+net/egobeta/ego/ProfileActivity$10.class
 android/support/v4/view/NestedScrollingChildHelper.class
 android/support/v4/view/ViewCompatJellybeanMr2.class
+android/support/v17/leanback/widget/BaseCardView$LayoutParams.class
 android/support/v7/widget/RecyclerView$ViewCacheExtension.class
 android/support/v4/media/session/PlaybackStateCompatApi21.class
 android/support/v4/view/LayoutInflaterFactory.class
@@ -714,10 +747,12 @@ android/support/design/widget/FloatingActionButton$Behavior.class
 android/support/design/widget/FloatingActionButtonIcs.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/PaginatedParallelScanList.class
 android/support/v4/media/MediaMetadataCompat$1.class
+android/support/v17/leanback/widget/GuidedAction$Builder.class
 android/support/v8/renderscript/Script$Builder.class
 android/support/v4/view/MenuCompat.class
 android/support/v4/content/Loader.class
 android/support/v7/app/ActionBar$DisplayOptions.class
+android/support/v17/leanback/app/DetailsSupportFragment.class
 android/support/v4/util/LogWriter.class
 android/support/v4/app/DialogFragment.class
 android/support/v4/media/session/PlaybackStateCompat$CustomAction.class
@@ -726,6 +761,7 @@ android/support/v4/app/ActivityCompat21.class
 com/amazonaws/auth/AWSCredentials.class
 com/amazonaws/mobileconnectors/s3/transfermanager/model/CopyResult.class
 com/amazonaws/mobileconnectors/s3/transfermanager/PauseStatus.class
+net/egobeta/ego/InstagramClasses/ImageLoader.class
 android/support/v7/widget/RecyclerView$SimpleOnItemTouchListener.class
 android/support/v7/app/ActionBar$TabListener.class
 net/egobeta/ego/R.class
@@ -792,7 +828,6 @@ android/support/v4/view/accessibility/AccessibilityNodeInfoCompat.class
 android/support/v4/content/FileProvider$SimplePathStrategy.class
 android/support/v4/app/FragmentManagerImpl$4.class
 android/support/v4/media/MediaMetadataCompat$BitmapKey.class
-net/egobeta/ego/BlankActivity$1.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBMapperConfig$ObjectTableNameResolver.class
 com/google/android/gms/common/api/GoogleApiClient$ConnectionCallbacks.class
 com/google/android/gms/common/api/GoogleApiActivity.class
@@ -810,6 +845,7 @@ android/databinding/Bindable.class
 net/egobeta/ego/EgoMap.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/ConversionSchema.class
 com/amazonaws/mobileconnectors/s3/transfermanager/exception/PauseException.class
+android/support/v4/widget/SwipeRefreshLayout$OnRefreshListener.class
 com/facebook/share/model/ShareContent.class
 android/support/v8/renderscript/ScriptIntrinsicBLAS$Side.class
 android/support/v7/app/AppCompatDelegate$NightMode.class
@@ -833,6 +869,7 @@ android/support/design/widget/AppBarLayout$LayoutParams$ScrollFlags.class
 android/support/v4/media/MediaMetadataCompat.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/PaginatedQueryList.class
 android/support/design/widget/Snackbar$3.class
+com/jess/ui/TwoWayAbsListView$LayoutParams.class
 android/support/design/widget/TabLayout$OnTabSelectedListener.class
 android/support/annotation/RequiresPermission$Read.class
 net/amazonaws/mobile/downloader/service/DownloadService$ServiceHandler.class
@@ -887,6 +924,7 @@ android/support/annotation/AnimatorRes.class
 android/support/v4/view/KeyEventCompat.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/DynamoDBIgnore.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/QueryResultPage.class
+android/support/v17/leanback/app/BrowseFragment.class
 android/support/v7/widget/RecyclerView$AdapterDataObserver.class
 android/support/v4/view/AccessibilityDelegateCompat.class
 android/support/design/widget/SnackbarManager$Callback.class
@@ -936,18 +974,23 @@ android/support/v7/graphics/drawable/DrawerArrowDrawable.class
 net/egobeta/ego/SplashActivity$SignInResultsHandler.class
 android/support/v7/app/ActionBar$LayoutParams.class
 android/support/v4/view/ViewCompatHC.class
+net/egobeta/ego/MainActivity$11.class
 android/support/design/widget/BottomSheetBehavior$SettleRunnable.class
 android/support/v4/media/MediaBrowserCompat$ServiceBinderWrapper.class
 com/facebook/FacebookSdk.class
+android/support/v17/leanback/widget/ShadowOverlayContainer.class
 android/support/v4/media/session/PlaybackStateCompat.class
 android/support/v4/media/RatingCompat.class
 android/support/v8/renderscript/Script$FieldID.class
+net/egobeta/ego/Fragments/ProfileFragment.class
 android/support/v8/renderscript/Script$LaunchOptions.class
 android/support/annotation/RawRes.class
 android/support/v4/widget/SimpleCursorAdapter.class
 com/google/android/gms/common/api/Api$ApiOptions$Optional.class
+net/egobeta/ego/ProfileActivity$7.class
 android/support/v4/media/MediaBrowserCompat$ConnectionCallback.class
 android/support/v4/util/Pools.class
+android/support/v17/leanback/widget/ImageCardView.class
 android/support/annotation/UiThread.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/PaginatedList.class
 android/support/v4/app/BaseFragmentActivityEclair.class

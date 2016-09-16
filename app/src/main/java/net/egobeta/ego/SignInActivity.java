@@ -5,11 +5,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.hardware.camera2.params.Face;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amazonaws.mobileconnectors.cognito.Dataset;
@@ -46,14 +48,20 @@ public class SignInActivity extends Activity {
         setContentView(R.layout.activity_sign_in);
         LoginManager.getInstance().logOut();
 
-//        // Obtain a reference to the mobile client. It is created in the Application class,
-//        // but in case a custom Application class is not used, we initialize it here if necessary.
-//        AWSMobileClient.initializeMobileClientIfNecessary(this);
-//        // Obtain a reference to the mobile client. It is created in the Application class.
-//        AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
-//        // Obtain a reference to the identity manager.
-//        IdentityManager identityManager = awsMobileClient.getIdentityManager();
-//        identityManager.signOut();
+
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
+        TextView loginTexrView = (TextView) findViewById(R.id.loginTexrView);
+        loginTexrView.setTypeface(typeface);
+
+        // Obtain a reference to the mobile client. It is created in the Application class,
+        // but in case a custom Application class is not used, we initialize it here if necessary.
+        AWSMobileClient.initializeMobileClientIfNecessary(this);
+        // Obtain a reference to the mobile client. It is created in the Application class.
+        AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
+        // Obtain a reference to the identity manager.
+        IdentityManager identityManager = awsMobileClient.getIdentityManager();
+        identityManager.signOut();
+
 
 
         signInResultsHandler = new SignInResultsHandler();
@@ -228,7 +236,7 @@ public class SignInActivity extends Activity {
                 }
                 if (isFirstTimeUSer == 1) {
                     Log.d(LOG_TAG, "Launching Main Activity...");
-                    startActivity(new Intent(SignInActivity.this, Main_OnBoarding.class));
+                    startActivity(new Intent(SignInActivity.this, MainActivity.class));
 //                    startActivity(new Intent(SignInActivity.this, BlankActivity.class));
                     // finish should always be called on the main thread.
                     finish();

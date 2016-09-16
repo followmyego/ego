@@ -159,7 +159,7 @@ public class InstagramApp {
     public void fetchUserName(final Handler handler) {
         mProgress = new ProgressDialog(mCtx);
         mProgress.setMessage("Loading ...");
-        mProgress.show();
+//        mProgress.show();
 
         new Thread() {
             @Override
@@ -221,7 +221,7 @@ public class InstagramApp {
                     what = WHAT_ERROR;
                     ex.printStackTrace();
                 }
-                mProgress.dismiss();
+//                mProgress.dismiss();
                 handler.sendMessage(handler.obtainMessage(what, 2, 0));
             }
         }.start();

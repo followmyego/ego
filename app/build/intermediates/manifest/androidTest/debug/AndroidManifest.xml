@@ -3,7 +3,7 @@
     package="com.egobeta.ego.test" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="17"
         android:targetSdkVersion="24" />
 
     <instrumentation

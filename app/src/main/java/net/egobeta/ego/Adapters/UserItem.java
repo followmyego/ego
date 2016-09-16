@@ -24,16 +24,25 @@ public class UserItem {
     boolean isFriend;
     RoundedImageView roundedImageView;
     boolean isLoading = false;
-
+    boolean isPinned = false;
     boolean isNearby = false;
 
 
-    public UserItem(Context context, String facebookId, int badge) {
+
+    public UserItem(Context context, String facebookId, int badge, boolean isPinned) {
         this.context = context;
         this.facebookId = facebookId;
         this.badge = badge;
+        this.isPinned = isPinned;
     }
 
+    public boolean isPinned() {
+        return isPinned;
+    }
+
+    public void setIsPinned(boolean isPinned) {
+        isPinned = isPinned;
+    }
 
     public boolean isNearby() {
         return isNearby;

@@ -10,14 +10,14 @@
 
 
     <FrameLayout
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_margin="5dp"
         >
 
         <ImageView
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/img"
+            android:id="@+id/instagramImage"
             android:padding="5dp"
             android:scaleType="fitXY"
             android:layout_width="match_parent"

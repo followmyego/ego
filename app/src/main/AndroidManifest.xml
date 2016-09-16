@@ -35,13 +35,16 @@
     <application
         android:name=".Application"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ego_icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait"
+        >
 
         <activity
             android:name=".SplashActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,25 +55,30 @@
 
         <activity
             android:name=".SignInActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_sign_in"/>
 
 
         <activity
             android:name=".OnBoarding.Main_OnBoarding"
+            android:screenOrientation="portrait"
             android:label="Main_OnBoarding"/>
 
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
 
         <activity
             android:name=".Settings.SettingsActivity"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
 
         <activity
             android:name=".ProfileActivity"
             android:theme="@style/Theme.Transparent"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"/>
 
         <!-- BEGIN - APP CONTENT DELIVERY AND USER DATA STORAGE -->
@@ -151,12 +159,18 @@
 
         <!-- END - PUSH NOTIFICATIONS WITH GOOGLE CLOUD MESSAGING (GCM) -->
 
-        <activity android:name=".Settings.GeneralSettingsActivity"></activity>
+        <activity
+            android:name=".Settings.GeneralSettingsActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
         <activity
             android:name=".OnBoarding.LoadFacebookPermissions"
             android:label="@string/title_activity_load_facebook_permissions"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".BlankActivity"></activity>
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

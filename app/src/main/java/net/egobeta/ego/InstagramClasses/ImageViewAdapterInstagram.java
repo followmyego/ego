@@ -1,10 +1,11 @@
 package net.egobeta.ego.InstagramClasses;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 
@@ -18,29 +19,61 @@ import java.util.ArrayList;
  * Created by Lucas on 13/03/2016.
  */
 
-public class ImageViewAdapterInstagram extends ArrayAdapter<String>{
+public class ImageViewAdapterInstagram extends BaseAdapter{
 
-    private final Activity context;
+    private final Activity activity;
     private ArrayList<String> arrList;
+    ImageLoader imageLoader;
 
-
-    public ImageViewAdapterInstagram(Activity context, String[] web, Integer[] imageId, ArrayList<String> arrList) {
-        super(context, R.layout.instagram_gridviewitem, web);
-        this.context = context;
+    public ImageViewAdapterInstagram(Activity context, ArrayList<String> arrList) {
+        this.activity = context;
         this.arrList = arrList;
     }
 
+    @Override
+    public int getCount() {
+        return arrList.size();
+    }
 
     @Override
-    public View getView(int position, View view, ViewGroup parent) {
-        LayoutInflater inflater = context.getLayoutInflater();
-        View rowView= inflater.inflate(R.layout.instagram_gridviewitem, null, true);
+    public Object getItem(int position) {
+        return arrList.get(position);
+    }
 
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-        ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
-        Picasso.with(getContext()).load(arrList.get(position)).into(imageView);
-        //imageView.setImageResource(imageId[position]);
-        return rowView;
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageViewHolder holder = null;
+
+        if(convertView == null){
+            LayoutInflater inflater = activity.getLayoutInflater();
+            convertView = inflater.inflate(R.layout.instagram_gridviewitem, null);
+            holder = new ImageViewHolder();
+
+            holder.imageView = (ImageView) convertView.findViewById(R.id.instagramImage);
+
+            convertView.setTag(holder);
+            convertView.setTag(R.id.img, holder.imageView);
+        } else {
+            holder = (ImageViewHolder) convertView.getTag();
+        }
+
+        holder.imageView.setTag(position);
+
+        if(arrList.get(position) != null && holder.imageView != null){
+//            imageLoader.DisplayImage(arrList.get(position), holder.imageView);
+            Picasso.with(activity.getApplicationContext()).load(arrList.get(position)).into(holder.imageView);
+        }
+
+        return convertView;
+    }
+
+    public class ImageViewHolder{
+        ImageView imageView;
     }
 
 

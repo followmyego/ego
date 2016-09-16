@@ -5,14 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/onBoarding_phone"
-        android:layout_width="259dp"
-        android:layout_height="465dp"
-        android:layout_marginTop="35dp"
-        android:src="@drawable/slide_1_phone"
-        android:padding="10dp"
-        android:layout_gravity="center_horizontal|top" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="35dp">
+
+        <ImageView
+            android:id="@+id/onBoarding_phone"
+            android:layout_width="259dp"
+            android:layout_height="465dp"
+            android:src="@drawable/iphone_onboarding_image"
+            android:padding="10dp"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/phone_content"
+            android:layout_width="wrap_content"
+            android:layout_height="345dp"
+            android:src="@drawable/onboarding_1"
+            android:layout_centerInParent="true" />
+
+
+    </RelativeLayout>
+
+
 
     <TextView
         android:id="@+id/onBoarding_text"

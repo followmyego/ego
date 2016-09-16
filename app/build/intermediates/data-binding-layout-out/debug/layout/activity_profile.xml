@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profileBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#dd2d2d2d"
+    android:fitsSystemWindows="false"
+    android:visibility="invisible"
     >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/backgroundOverlay"
+        android:background="#ee2d2d2d"
+        />
+
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:id="@+id/backgroundTest"-->
+    <!--android:background="#000"-->
+    <!--android:src="@drawable/profile"-->
+    <!--/>-->
+
+
+
+
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -15,14 +36,15 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            />
 
 
 
         <FrameLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/profile_activity_header_height" >
+            android:layout_height="match_parent" >
 
 
             <ImageView
@@ -43,48 +65,71 @@
 
 
             <RelativeLayout
-                android:paddingTop="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="400dp"
                 android:id="@+id/user_info_layout"
                 android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginBottom="70dp">
+                >
 
                 <TextView
+                    android:layout_marginTop="150dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="50sp"
+                    android:layout_height="wrap_content"
                     android:id="@+id/first_name"
                     android:textSize="50sp"
                     android:textColor="#ffffff"
                     android:layout_centerHorizontal="true"
-                    tools:text="Daniel"
-                    android:layout_gravity="center" />
+                    tools:text="Roger"
+                    android:layout_gravity="center"
+                    />
 
-                <TextView
-                    android:paddingTop="5dp"
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/profile_views"
-                    android:textSize="17sp"
-                    android:textColor="#55C1AD"
-                    android:layout_marginBottom="15dp"
                     android:layout_below="@+id/first_name"
                     android:layout_centerHorizontal="true"
-                    tools:text="637 VIEWS" />
+                    android:id="@+id/views">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/viewsImage"
+                        android:src="@drawable/viewing_you_icon"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:tint="#55C1AD"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/profile_views"
+                        android:textSize="17sp"
+                        android:textColor="#55C1AD"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/viewsImage"
+                        tools:text="637 views"
+                        />
+
+                </RelativeLayout>
+
+
 
                 <net.egobeta.ego.ImportedClasses.AutoResizeTextView
                     android:id="@+id/etStatus"
-                    android:layout_width="325dp"
+                    android:layout_width="275dp"
                     android:layout_height="70dp"
                     android:ellipsize="none"
                     android:maxLines="3"
-                    tools:text="this is a example of how much text i can fit here. How much more can i put here?"
+                    tools:text="Hey if you want to hang out message me! I feel like chilling tonight with cool people!"
                     android:textSize="22sp"
                     android:textColor="#ffffff"
                     android:gravity="center"
-                    android:layout_below="@+id/profile_views"
-                    android:layout_marginBottom="1dp"
-                    android:layout_centerHorizontal="true"/>
+                    android:layout_below="@+id/views"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="24dp"
+                    />
 
                 <ImageButton
                     android:layout_width="100dp"
@@ -95,18 +140,169 @@
                     android:src="@drawable/tap_to_edit_button_9c9c9c"
                     android:background="@null"
                     android:scaleType="fitCenter" />
-
             </RelativeLayout>
 
-            <net.egobeta.ego.ImportedClasses.FacebookPictureViewRound
-                android:id="@+id/profile_picture"
-                android:layout_width="@dimen/header_logo_size"
-                android:layout_height="@dimen/header_logo_size"
+
+
+            <FrameLayout
+                android:id="@+id/profile_picture_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="90dp"
-                tools:src="@drawable/lucas_profile"
                 android:padding="10dp"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center"
+                    android:src="@drawable/picture_menu_background"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|bottom"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginBottom="40dp">
+
+                    <ImageView
+                        android:id="@+id/upload_button_background1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/profile_button_bg"
+                        android:layout_centerInParent="true"
+                        />
+
+                    <ImageView
+                        android:id="@+id/upload_button1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/upload_icon"
+                        android:tint="#000"
+                        android:layout_centerInParent="true"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginRight="28dp"
+                    android:layout_marginBottom="40dp">
+
+                    <ImageView
+                        android:id="@+id/block_button_background1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/profile_button_bg"
+                        android:layout_centerInParent="true"
+                        />
+
+                    <ImageView
+                        android:id="@+id/block_button1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/block_icon"
+                        android:tint="#000"
+                        android:layout_centerInParent="true"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal|top">
+
+                    <ImageView
+                        android:id="@+id/pin_button_background"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/profile_button_bg"
+                        android:layout_centerInParent="true"
+                        />
+
+                    <ImageView
+                        android:id="@+id/pin_button"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/pin_icon"
+                        android:tint="#000"
+                        android:layout_centerInParent="true"
+                        />
+
+                </RelativeLayout>
+
+
+            </FrameLayout>
+
+
+
+            <net.egobeta.ego.RoundedImageView
+                android:id="@+id/profile_picture"
+                android:layout_width="205dp"
+                android:layout_height="205dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="90dp"
+                android:padding="10dp"
+                android:src="@drawable/default_user_image"
+                >
+            </net.egobeta.ego.RoundedImageView>
+
+            <Button
+                android:id="@+id/pinButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="160dp"
+                android:background="@null"
+                android:visibility="gone"
                 />
+
+            <Button
+                android:id="@+id/uploadButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="30dp"
+                android:background="@null"
+                android:visibility="gone"
+                />
+
+            <Button
+                android:id="@+id/blockButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="60dp"
+                android:layout_marginBottom="30dp"
+                android:background="@null"
+                android:visibility="gone"
+                />
+
 
 
         </FrameLayout>
@@ -117,7 +313,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
+            android:paddingTop="50dp"
             >
 
             <ImageView
@@ -136,7 +333,6 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_centerInParent="true"
-
                 />
 
             <TextView
@@ -160,6 +356,7 @@
             android:layout_height="?attr/actionBarSize"
             android:minHeight="?attr/actionBarSize"
             android:elevation="0dp"
+            android:layout_marginTop="50dp"
             >
 
 
@@ -171,7 +368,30 @@
     </FrameLayout>
 
 
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:src="@drawable/delete_icon"
+        android:background="@null"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        >
+    </ImageButton>
 
+    <ImageButton
+        android:id="@+id/sidemenu_arrow"
+        android:src="@drawable/slide_arrow_tab"
+        android:layout_width="35dp"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitStart"
+        android:layout_marginTop="90dp"
+        android:background="@null"
+        android:contentDescription="menu tab button" />
 
 
 </RelativeLayout>

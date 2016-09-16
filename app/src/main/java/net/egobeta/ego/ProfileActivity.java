@@ -1,18 +1,31 @@
 package net.egobeta.ego;
 
 
+
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.support.v7.graphics.drawable.DrawerArrowDrawable;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.text.InputType;
-import android.text.SpannableString;
 
+
+import net.amazonaws.mobile.AWSMobileClient;
+import net.amazonaws.mobile.user.IdentityManager;
+import net.egobeta.ego.Adapters.UserItem;
+import net.egobeta.ego.Fragments.Fragment_Main;
 import net.egobeta.ego.Fragments.ProfileFragment;
 import net.egobeta.ego.Fragments.ScrollTabHolderFragment;
 import net.egobeta.ego.ImportedClasses.AutoResizeTextView;
 import net.egobeta.ego.ImportedClasses.BlurTransformation;
 import net.egobeta.ego.ImportedClasses.FacebookPictureViewRound;
-import net.egobeta.ego.InstagramClasses.ImageViewAdapterInstagram;
+
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -26,12 +39,12 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.MalformedInputException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
+
 
 
 import android.graphics.PorterDuff;
@@ -51,33 +64,54 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.ScaleAnimation;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
-import android.widget.Button;
+
 
 
 
 import net.astuetz.PagerSlidingTabStrip;
 
+import net.egobeta.ego.InstagramClasses.ImageLoader;
 import net.egobeta.ego.Interfaces.ScrollTabHolder;
+import net.egobeta.ego.Library.LocalDataBase;
 import net.egobeta.ego.Settings.SettingsActivity;
+import net.egobeta.ego.Table_Classes.User_Profile;
 import net.flavienlaurent.notboringactionbar.AlphaForegroundColorSpan;
 
 
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.mobileconnectors.cognito.Dataset;
+import com.amazonaws.mobileconnectors.cognito.DefaultSyncCallback;
+import com.amazonaws.mobileconnectors.cognito.Record;
+import com.amazonaws.mobileconnectors.cognito.SyncConflict;
+import com.amazonaws.mobileconnectors.cognito.exceptions.DataStorageException;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.squareup.picasso.Picasso;
 
 
 import android.app.AlertDialog;
 
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -89,20 +123,30 @@ import org.json.JSONObject;
 
 public class ProfileActivity extends AppCompatActivity implements ScrollTabHolder, ViewPager.OnPageChangeListener, View.OnClickListener {
 
+    private final static String LOG_TAG = "Profile Activity";
+    private boolean expanded = false;
+    //AWS Variables
+    DynamoDBMapper mapper = null;
+    public IdentityManager identityManager = null; //The identity manager used to keep track of the current user account.
+    User_Profile userProfile = null;
+    String imageURL;
+
     //Declare Variables
-    private String getProfileImageURL = "http://www.myegotest.com/PhotoUpload/getAllImages.php";
-    private static final String TAG = "DEBUGGING MESSAGE";
     private static AccelerateDecelerateInterpolator sSmoothInterpolator = new AccelerateDecelerateInterpolator();
-    private static Drawable d;
     public Drawable upArrow;
     private PagerAdapter mPagerAdapter;
     public static Context context;
     private TypedValue mTypedValue = new TypedValue();
-    private static SpannableString mSpannableString;
-    private static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
+    static AlphaForegroundColorSpan mAlphaForegroundColorSpan;
     public AlphaAnimation alpha;
     private Typeface typeface;
     public BlurTransformation blurTransformation;
+    ImageLoader imageLoader;
+    private static final int[] ITEM_DRAWABLES = {
+            R.drawable.block_icon,
+            R.drawable.pin_icon,
+            R.drawable.upload_icon
+    };
 
     //Number Variables
     private int mMinHeaderTranslation;
@@ -117,15 +161,18 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
 
     //User Info Variables
     private String facebookId;
-    public String email;
+    private String status;
+    private int views;
     private String firstName;
     private String lastName;
-    public String gender;
-    public String birthday;
-    private String user_status;
-    public String usingFacebookPic;
-    public String pageViews;
-    public String profilePic;
+    private String age;
+    private String email;
+    private String snapchat_username;
+    private String instagram_id;
+    private String twitter_id;
+    private String google_plus_id;
+    private String linkedIn_id;
+    private String instagram_photos_connected;
 
     //View Item Variables
     private static View mHeader;
@@ -134,144 +181,237 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
     private TextView profilePageViews;
     private TextView name;
     private static ImageView home_menu_image;
-    private static ImageView home_menu_image2;
-    //    private static ImageView profilePicture;
-    private static FacebookPictureViewRound profilePicture;
+    static ImageView home_menu_image2;
+    private static RoundedImageView profilePicture;
     public ImageButton tapToEdit;
     public static ScrollView scrollView;
     private SlidingMenu slidingMenu;
     private ViewPager mViewPager;
     private static Toolbar toolbar;
     public PagerSlidingTabStrip mPagerSlidingTabStrip;
-    private static TextView toolbarTitle;
+    private Button pinButton;
+    private Button uploadButton;
+    private Button blockButton;
+
+    private ImageView pinButtonImage;
+
 
     ScrollTabHolderFragment fragment;
     private AbsListView absListView;
-    private DrawerArrowDrawable drawerArrowDrawable;
-    private Resources resources;
-    private ImageView mHeaderPicture;
+    ImageView mHeaderPicture;
+    private Activity activity;
+    private static ImageButton closeButton;
+    private static FrameLayout picMenuBackground;
+    private boolean scrolled = false;
+    boolean backIsVisible = false;
+    private int userInfoScrollFade2;
+    private int mMinHeaderTranslation2;
+    private int position;
+    private LocalDataBase mLocalDataBase;
+    boolean isPinned = false;
 
-    //Instagram stuffs
-    private static String instagramProfileLinked;
-    private static String instagramId;
-    private static String instagramUsername;
-    private ArrayList<String> imageThumbList = new ArrayList<String>();
-    private int WHAT_FINALIZE = 0;
-    private static int WHAT_ERROR = 1;
-    private ProgressDialog pd;
-    public static final String TAG_DATA = "data";
-    public static final String TAG_IMAGES = "images";
-    public static final String TAG_THUMBNAIL = "standard_resolution";
-    public static final String TAG_URL = "url";
-    public JSONObject jObj = null;
-    Integer[] imageId = new Integer[10];
-    ImageViewAdapterInstagram adapter;
-//    private static InstagramApp instagramApp;
-    private Button btnConnect;
-    private HashMap<String, String> instagramUserInfoHashmap = new HashMap<String, String>();
-//    private Handler handler = new Handler(new Handler.Callback() {
-//
-//        @Override
-//        public boolean handleMessage(Message msg) {
-//            if (msg.what == InstagramApp.WHAT_FINALIZE) {
-//
-//                //Store user instagram info from instagram login on localdatabase
-//                instagramUserInfoHashmap = instagramApp.getUserInfo();
-//                mLocalDataBase = new LocalDataBase(context);
-//                mLocalDataBase.setInstagramID(instagramUserInfoHashmap.get("id"));
-//                mLocalDataBase.setInstagramUsername(instagramApp.getUserName());
-//
-//                //Assign the class instagram variables thier values
-//                user = mLocalDataBase.getUsersInfo();
-//                facebookId = user.facebookId;
-//                instagramId = mLocalDataBase.getInstagramID();
-//                instagramUsername = mLocalDataBase.getInstagramUsername();
-//
-//                //Update user instagram information on server
-//                new UpdateUserInstagramInfo(MainActivity2.this, "yes").execute(facebookId, instagramId, instagramUsername);
-//
-//                //Get logged in users instagram image links
-////                getAllMediaImages(context);
-//
-//            } else if (msg.what == InstagramApp.WHAT_ERROR) {
-//                Log.d(TAG, "Check your network.");
-//            }
-//            return false;
-//        }
-//    });
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /** Set up and initialize aws variables **/
+        initializeAWSVariables();
+
+        /** Initialize facebookId, context, typeface**/
+        setUpNeededVariables();
+
+        /** Set Content View **/
         setContentView(R.layout.activity_profile);
-        context = getApplicationContext();
+
+        /** Chain ends at updateUI method which then initializes the pager adapter **/
+        new LoadUserProfile().execute();
+
+        /** Restart this Activity if an uncaught exception is found **/
+//        Thread.setDefaultUncaughtExceptionHandler(new MyExceptionHandler(this,
+//                MainActivity.class));
+    }
+
+    public class LoadUserProfile extends AsyncTask<Void, Void, Void> {
+        final ProgressDialog dialog = ProgressDialog.show(ProfileActivity.this,
+                getString(R.string.settings_fragment_dialog_title),
+                getString(R.string.settings_fragment_dialog_message));
+
+        public LoadUserProfile() {
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            /** Load the user profile that was clicked form the stream **/
+            try {
+                userProfile = mapper.load(User_Profile.class, facebookId);
+            } catch (final AmazonServiceException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+
+            if(userProfile != null){
+                /** Fetch item variables from loaded User_Profile class **/
+                fetchUserProfileVariables();
+
+                /** Update the ui and displayed info from the user's profile info **/
+                updateUI(dialog);
+            } else {
+                /** Fetch basic user variables if theres no data **/
+                fetchDefaultProfileVariables();
+
+                /** Update the ui and displayed info from the user's profile info **/
+                updateUI(dialog);
+            }
+        }
+
+    }
+
+    /** Anything on the ui thread that needs changing after sync gets updated here **/
+    private void updateUI(final ProgressDialog dialog) {
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+
+                /**Initialize dimension variables for the animations*/
+                initializeDimensionItems();
+
+                /**Initialize view item variables*/
+                initializeViewItems();
+
+                /** Sets the profile image and blur **/
+                updateProfileAndBackgroundImage();
+
+                /**Create the pull out Sliding menu*/
+                createMenuDrawer();
+
+                /**Method to set view item fonts*/
+                setViewFonts();
+
+                /**Capitalize 1st letter of the following variable.*/
+                firstName = capitalizeFirstCharacter(firstName);
+                if (status == null) {
+                    status = "Hello there! :)";
+                    status = capitalizeFirstCharacter(status);
+                } else {
+                    status = capitalizeFirstCharacter(status);
+                }
+
+                /**Set View values from user info variables*/
+                mStatus.setText(status);
+                profilePageViews.setText(views + " VIEWS");
+                name.setText(firstName);
+
+                /**Set up the ViewPager and PagerAdapter*/
+                setUpViewPager();
+
+                /**Set up the SlidingTabStrip*/
+                initializeSlidingTabStrip();
+
+                /**Create top toolbar/menu bar*/
+                setUpToolBar();
+
+                /**Get rid of the default arrow image*/
+                removeDefaultMenuButton();
+
+            }
+        });
+    }
+
+    /** Fetch item variables from the loaded User_Profile class **/
+    private void fetchUserProfileVariables() {
+        facebookId = userProfile.getFacebookId();
+        status = userProfile.getStatus();
+        views = userProfile.getViews();
+        firstName = userProfile.getFirstName();
+        lastName = userProfile.getLastName();
+        age = userProfile.getAge();
+        email = userProfile.getEmail();
+        snapchat_username = userProfile.getSnapchat_username();
+        instagram_id = userProfile.getInstagram_id();
+        twitter_id = userProfile.getTwitter_id();
+        google_plus_id = userProfile.getGoogle_plus_id();
+        linkedIn_id = userProfile.getLinkedIn_id();
+        instagram_photos_connected = userProfile.getInstagram_photos_connected();
+    }
+
+    /** Fetch item variables from the loaded User_Profile class **/
+    private void fetchDefaultProfileVariables() {
+        status = "Hey everyone! I am new to ego!";
+        views = 137;
+        firstName = "User";
+        lastName = "User";
+        age = "20";
+        email = "SomeEmail";
+        snapchat_username = "";
+        instagram_id = "";
+        twitter_id = "";
+        google_plus_id = "";
+        linkedIn_id = "";
+        instagram_photos_connected = "no";
+
+        userProfile = new User_Profile();
+        userProfile.setStatus(status);
+        userProfile.setViews(views);
+        userProfile.setFirstName(firstName);
+        userProfile.setLastName(lastName);
+        userProfile.setAge(age);
+        userProfile.setEmail(email);
+        userProfile.setSnapchat_username(snapchat_username);
+        userProfile.setInstagram_photos_connected(instagram_id);
+        userProfile.setTwitter_id(twitter_id);
+        userProfile.setGoogle_plus_id(google_plus_id);
+        userProfile.setLinkedIn_id(linkedIn_id);
+        userProfile.setInstagram_photos_connected(instagram_photos_connected);
+    }
+
+    //Initialize some needed variables
+    private void setUpNeededVariables() {
+        activity = this;
         facebookId = getIntent().getStringExtra("facebook_id");
+        position = getIntent().getIntExtra("position", 0);
+        isPinned = getIntent().getBooleanExtra("is_pinned", false);
+        context = getApplicationContext();
+        mLocalDataBase = new LocalDataBase(context);
 
-//        resources = getResources();
-//        drawerArrowDrawable = new DrawerArrowDrawable(resources);
-//        drawerArrowDrawable.setStrokeColor(resources.getColor(R.color.menuDrawerColor));
+        //Initialize Image Loader class for profile pic and instagram pics.
+        imageLoader = new ImageLoader(activity.getApplicationContext());
 
-        /**Initialize font*/
+        //Initialize font
         typeface = Typeface.createFromAsset(getAssets(), "fonts/ChaletNewYorkNineteenEighty.ttf");
+    }
 
-        /**Initialize dimension variables for the animations*/
-        initializeDimensionItems();
+    private void initializeAWSVariables() {
+        // Obtain a reference to the mobile client. It is created in the Application class,
+        // but in case a custom Application class is not used, we initialize it here if necessary.
+        AWSMobileClient.initializeMobileClientIfNecessary(this);
+        // Obtain a reference to the mobile client. It is created in the Application class.
+        final AWSMobileClient awsMobileClient = AWSMobileClient.defaultMobileClient();
+        // Obtain a reference to the identity manager.
+        identityManager = awsMobileClient.getIdentityManager();
 
-        /**Initialize view item variables*/
-        initializeViewItems();
+        //Initialize the mapper for DynamoDB
+        mapper = awsMobileClient.getDynamoDBMapper();
+    }
 
-        /**Create the pull out Sliding menu*/
-        if(slidingMenu == null){
-            createMenuDrawer();
-        }
-
-        /****************DEBUGGING*******************/
-        /**Assign user info variables to info stored in SharedPreferences*/
-        setUserInfoVariables();
-
-        /**Method to set view item fonts*/
-        setViewFonts();
-
-        /**Capitalize 1st letter of the following variable.*/
-        firstName = capitalizeFirstCharacter(firstName);
-        if (!user_status.equals("")) {
-            user_status = capitalizeFirstCharacter(user_status);
-        }
-
-        /**Set View values from user info variables*/
-        mStatus.setText(user_status);
-        profilePageViews.setText(pageViews + " VIEWS");
-        name.setText(firstName);
-        /****************DEBUGGING*******************/
-
-
-        /**Set up the ViewPager and PagerAdapter*/
+    private void setUpViewPager() {
         mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setOffscreenPageLimit(2);
-        mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        mViewPager.setOffscreenPageLimit(1);
+        PagerAdapter mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mPagerAdapter.setTabHolderScrollingContent(this);
         mViewPager.setAdapter(mPagerAdapter);
-
-        /**Set up the SlidingTabStrip*/
-        initializeSlidingTabStrip();
-
-
-        /**Create top toolbar/menu bar*/
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        assert getSupportActionBar() != null;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setOnClickListener(this);
-
-        /**Get rid of the default arrow image*/
-        removeDefaultMenuButton();
-
-
-        /**Set OnClickListener*/
-        tapToEdit.setOnClickListener(this);
-
-        updateProfileAndBackgroundImage("");
     }
 
 
@@ -279,32 +419,109 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
 
     //Create the pull out Sliding menu
     private void createMenuDrawer() {
+        if(slidingMenu == null){
+            System.out.println("MAINACTIVITY: createMenuDrawer");
 
-        slidingMenu = new SlidingMenu(ProfileActivity.this);
-        slidingMenu.attachToActivity(ProfileActivity.this, SlidingMenu.SLIDING_CONTENT, true);
-        slidingMenu.setFadeDegree(1f);
-        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
-        slidingMenu.setBehindOffsetRes(R.dimen.behindOffSetRes);
-        slidingMenu.setMenu(R.layout.sliding_menu_frame);
+            slidingMenu = new SlidingMenu(ProfileActivity.this);
+            slidingMenu.attachToActivity(ProfileActivity.this, SlidingMenu.SLIDING_CONTENT, true);
+            slidingMenu.setFadeDegree(0f);
+            slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+            slidingMenu.setBehindOffsetRes(R.dimen.behindOffSetRes);
+            slidingMenu.setMenu(R.layout.sliding_menu_frame);
+            final View view = slidingMenu.getRootView();
 
-        View view = slidingMenu.getRootView();
+            final ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.viewingYouProgressBar);
+            final ImageView eyeballImage = (ImageView) view.findViewById(R.id.viewing_you_image);
+            final TextView viewingYouText = (TextView) view.findViewById(R.id.viewing_you_text);
+            TextView noViewersText1 = (TextView) view.findViewById(R.id.viewersHolderText1);
+            TextView noViewersText2 = (TextView) view.findViewById(R.id.viewersHolderText2);
+            TextView settingsText = (TextView) view.findViewById(R.id.settingsButtonText);
+            ImageView settingsButton = (ImageView) view.findViewById(R.id.settings_Button);
+            final RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.noViewersHolder);
 
+            settingsButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+//                    settings();
+                    logout(); // I have the settings button logging the user out for now
+                }
+            });
+            relativeLayout.setVisibility(View.GONE);
+            eyeballImage.setVisibility(View.VISIBLE);
+            viewingYouText.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
 
-        TextView viewingYou = (TextView) view.findViewById(R.id.viewing_you_text);
-        TextView version = (TextView) view.findViewById(R.id.version);
-        TextView year = (TextView) view.findViewById(R.id.year);
-        ImageView imageView = (ImageView) view.findViewById(R.id.settingsButton);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                settings();
-            }
-        });
+            Button logoutButton = (Button) view.findViewById(R.id.logout_Button);
+            logoutButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    logout();
+                }
+            });
 
-        viewingYou.setTypeface(typeface);
-        version.setTypeface(typeface);
-        year.setTypeface(typeface);
+            /** This method gets called when the menu has finished opening **/
+            slidingMenu.setOnOpenedListener(new SlidingMenu.OnOpenedListener() {
+                @Override
+                public void onOpened() {
+                    /** check to see who is viewing your profile **/
+                    Thread thread = new Thread() {
+                        @Override
+                        public void run() {
+                            try {
+                                sleep(1400);
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        //If no one is viewing you, show these graphics
+                                        eyeballImage.setVisibility(View.INVISIBLE);
+                                        viewingYouText.setVisibility(View.INVISIBLE);
+                                        relativeLayout.setVisibility(View.VISIBLE);
+                                        progressBar.setVisibility(View.GONE);
+                                    }
+                                });
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    };
+                    thread.start();
+                }
+            });
 
+            /** This method gets called when the menu has finished closing **/
+            slidingMenu.setOnClosedListener(new SlidingMenu.OnClosedListener() {
+                @Override
+                public void onClosed() {
+                    //If no one is viewing you, show these graphics
+                    eyeballImage.setVisibility(View.VISIBLE);
+                    viewingYouText.setVisibility(View.VISIBLE);
+                    relativeLayout.setVisibility(View.INVISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
+                }
+            });
+
+            noViewersText1.setTypeface(typeface);
+            noViewersText2.setTypeface(typeface);
+            viewingYouText.setTypeface(typeface);
+            settingsText.setTypeface(typeface);
+        }
+    }
+
+    //Create top toolbar/menu bar
+    private void setUpToolBar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setOnClickListener(this);
+    }
+
+    public void logout(){
+        identityManager.signOut();
+        Intent intent = new Intent(ProfileActivity.this, SignInActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        this.finish();
     }
 
     //Method to go to user settings
@@ -312,7 +529,7 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
         slidingMenu.toggle();
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
-//        this.finish();
+        this.finish();
     }
 
     //Initialize dimension variables for the animations
@@ -322,23 +539,56 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
         mMinHeaderTranslation = -mMinHeaderHeight + getActionBarHeight();
 
         userInfoScrollFade = getResources().getDimensionPixelSize(R.dimen.user_info_scroll_fade);
+
         mMinHeaderTranslation1 = -userInfoScrollFade + getActionBarHeight();
+
+        userInfoScrollFade2 = getResources().getDimensionPixelSize(R.dimen.user_info_scroll_fade2);
+        mMinHeaderTranslation2 = -mMinHeaderHeight + getActionBarHeight();
     }
 
     //Initialize view item variables
     private void initializeViewItems(){
+
+
         mHeader = findViewById(R.id.header); /**ENTIRE HEADER**/
         home_menu_image = (ImageView) findViewById(R.id.toolbar_icon); /**HEADER - HOME MENU IMAGE**/
         home_menu_image2 = (ImageView) findViewById(R.id.toolbar_icon2); /**HEADER - HOME MENU IMAGE**/
         mHeaderPicture = (ImageView) findViewById(R.id.header_picture); /**HEADER - BLURRED BACKGROUND**/
 
+        picMenuBackground = (FrameLayout) findViewById(R.id.profile_picture_menu);
+        pinButtonImage = (ImageView) findViewById(R.id.pin_button);
+        pinButton = (Button) findViewById(R.id.pinButton);
+        uploadButton = (Button) findViewById(R.id.uploadButton);
+        blockButton = (Button) findViewById(R.id.blockButton);
 
-        profilePicture = (FacebookPictureViewRound) findViewById(R.id.profile_picture); /**HEADER - PROFILE PICTURE**/
+        closeButton = (ImageButton) findViewById(R.id.close_button);
+        profilePicture = (RoundedImageView) findViewById(R.id.profile_picture); /**HEADER - PROFILE PICTURE**/
         userInfoLayout = (RelativeLayout) findViewById(R.id.user_info_layout); /**HEADER - RELATIVE LAYOUT**/
         name = (TextView) findViewById(R.id.first_name); /**HEADER - RELATIVE LAYOUT -  USER'S NAME**/
         profilePageViews = (TextView) findViewById(R.id.profile_views); /**HEADER - RELATIVE LAYOUT -  PAGE VIEWS**/
         mStatus = (AutoResizeTextView) findViewById(R.id.etStatus); /**HEADER - RELATIVE LAYOUT -  USER'S STATUS**/
         tapToEdit = (ImageButton) findViewById(R.id.tapToEdit); /**HEADER - RELATIVE LAYOUT -  TAP TO EDIT**/
+
+
+        /**Set OnClickListener*/
+        tapToEdit.setOnClickListener(this);
+        profilePicture.setOnClickListener(this);
+        closeButton.setOnClickListener(this);
+        pinButton.setOnClickListener(this);
+        uploadButton.setOnClickListener(this);
+        blockButton.setOnClickListener(this);
+
+        /** set the color for the buttons depending on values **/
+        if(isPinned){
+            int color = Color.parseColor("#55C1AD");
+            pinButtonImage.setColorFilter(color);
+        }
+
+        /** if the profile is not our, disable the tapToEdit button **/
+        if(position > 2){
+            tapToEdit.setVisibility(View.GONE);
+        }
+
     }
 
     //Method for header animation
@@ -418,35 +668,44 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
 
     //Return the home menu button view
     private View getHomeMenuImageIconView() {
-//        Drawable dra = getResources().getDrawable(R.drawable.side_arrow);
-//        home_menu_image2.setImageDrawable(d);
-//        home_menu_image2.setImageDrawable(dra);
-
-
         return home_menu_image;
     }
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount, int pagePosition) {
-        if (mViewPager.getCurrentItem() == pagePosition) {
+        if (mViewPager.getCurrentItem() == pagePosition && !expanded) {
+            picMenuBackground.setVisibility(View.GONE);
+
             absListView = view;
             int scrollY = getScrollY(view);
+
+            if(scrollY == 0){
+                scrolled = false;
+            } else {
+                scrolled = true;
+            }
 
             mHeader.setTranslationY(Math.max(-scrollY, mMinHeaderTranslation));
             float ratio = clamp(mHeader.getTranslationY() / mMinHeaderTranslation, 0.0f, 1.0f);
             float ratio1 = clamp(mHeader.getTranslationY() / mMinHeaderTranslation1, 0.0f, 1.0f);
+            float ratio2 = clamp(mHeader.getTranslationY() / mMinHeaderTranslation2, 0.0f, 1.0f);
+
 
             interpolate(profilePicture, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
+            interpolate(picMenuBackground, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
 //            interpolate(userInfoLayout, getHomeMenuImageIconView(), sSmoothInterpolator.getInterpolation(ratio));
-            setTitleAlpha(clamp(5.0F * ratio - 4.0F, 0.0F, 1.0F));
+//            setTitleAlpha(clamp(5.0F * ratio1 - 4.0F, 0.0F, 1.0F));
+            setTitleAlpha(clamp((5.0F * ratio2 - 4.0F) * -1, 0.5F, 1.0F));
             setHomeAsUpAlpha(clamp((5.0F * ratio1 - 4.0F) * -1, 0.0F, 1.0F));
+        } else {
+            picMenuBackground.startAnimation(profilePictureAnimation2());
+            profilePicture.startAnimation(profilePictureAnimation());
         }
     }
 
     //Method to animate the title fade in/out
     private static void setTitleAlpha(float alpha) {
-//        mAlphaForegroundColorSpan.setAlpha(alpha);
-//        mSpannableString.setSpan(mAlphaForegroundColorSpan, 0, mSpannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        profilePicture.setAlpha(alpha * 1);
         toolbar.setTitle(" ");
 
     }
@@ -456,6 +715,8 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
         toolbar.setAlpha(alpha * 1);
         home_menu_image.setAlpha(alpha * 1);
         userInfoLayout.setAlpha(alpha * 1);
+        closeButton.setAlpha(alpha * 1);
+        picMenuBackground.setAlpha(alpha * 1 + alpha * 1 /2);
     }
 
 
@@ -509,9 +770,338 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
                         absListView.smoothScrollToPosition(0);
                     }
                 });
-                Toast.makeText(this, "toolbar clicked mainActivity", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.profile_picture:
+                if(!scrolled){
+
+                    if(!backIsVisible){
+                        picMenuBackground.setVisibility(View.VISIBLE);
+                        backIsVisible = true;
+                    }
+                    picMenuBackground.startAnimation(profilePictureAnimation2());
+                    profilePicture.startAnimation(profilePictureAnimation());
+
+                } else {
+                    absListView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            absListView.smoothScrollToPosition(0);
+                        }
+                    });
+                }
+                break;
+            case R.id.close_button:
+                if(!scrolled){
+                    ProfileActivity.this.finish();
+                }
+                break;
+            case R.id.pinButton:
+                if(position > 2){
+                    /** Code to pin the user **/
+//                    final UserPinned userPinned = UserPinned.getInstance(context);
+//                    pinTheUser(userPinned);
+                    loadPinnedUsers();
+                } else {
+                    picMenuBackground.startAnimation(profilePictureAnimation2());
+                    profilePicture.startAnimation(profilePictureAnimation());
+                    Toast.makeText(ProfileActivity.this, "Your list of pinned users", Toast.LENGTH_SHORT).show();
+                }
+
+                break;
+            case R.id.uploadButton:
+                /** Code to upload a new user profile **/
+                picMenuBackground.startAnimation(profilePictureAnimation2());
+                profilePicture.startAnimation(profilePictureAnimation());
+                Toast.makeText(ProfileActivity.this, "This feature is not ready yet.", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.blockButton:
+                /** Code to block the user **/
+                picMenuBackground.startAnimation(profilePictureAnimation2());
+                profilePicture.startAnimation(profilePictureAnimation());
+                Toast.makeText(ProfileActivity.this, "This feature is not ready yet.", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    /** Sync user's preferences only if user is signed in **/
+//    private void syncPinnedUsers() {
+//        // sync only if user is signed in
+//        if (AWSMobileClient.defaultMobileClient().getIdentityManager().isUserSignedIn()) {
+//            final UserPinned userPinned = UserPinned.getInstance(getApplicationContext());
+//            userPinned.getDataset().synchronize(new DefaultSyncCallback() {
+//                @Override
+//                public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
+//                    super.onSuccess(dataset, updatedRecords);
+//                    Log.d(LOG_TAG, "successfully synced user settings");
+//
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//
+////                            loadPinnedUsers();
+//                            final UserPinned userPinned = UserPinned.getInstance(context);
+//                            pinTheUser(userPinned);
+//                        }
+//                    });
+//                }
+//            });
+//        }
+//    }
+
+    /** userPermissions.loadFromDataset(); get called here **/
+    private void loadPinnedUsers() {
+        final UserPinned userPinned = UserPinned.getInstance(getApplicationContext());
+        final Dataset dataset = userPinned.getDataset();
+        final ProgressDialog dialog = ProgressDialog.show(this,
+                getString(R.string.settings_fragment_dialog_title),
+                getString(R.string.settings_fragment_dialog_message));
+        Log.d(LOG_TAG, "Loading user settings from remote");
+        dataset.synchronize(new DefaultSyncCallback() {
+            @Override
+            public void onSuccess(final Dataset dataset, final List<Record> updatedRecords) {
+                super.onSuccess(dataset, updatedRecords);
+                userPinned.loadFromDataset();
+                pinTheUser(userPinned, dialog);
+
+            }
+
+            @Override
+            public void onFailure(final DataStorageException dse) {
+                Log.w(LOG_TAG, "Failed to load user settings from remote, using default.", dse);
+                updateUI(dialog);
+            }
+
+            @Override
+            public boolean onDatasetsMerged(final Dataset dataset,
+                                            final List<String> datasetNames) {
+                // Handle dataset merge. One can selectively copy records from merged datasets
+                // if needed. Here, simply discard merged datasets
+                for (String name : datasetNames) {
+                    Log.d(LOG_TAG, "found merged datasets: " + name);
+                    AWSMobileClient.defaultMobileClient().getSyncManager().openOrCreateDataset(name).delete();
+                }
+                return true;
+            }
+        });
+    }
+
+    private void pinTheUser(final UserPinned userPinned, final ProgressDialog dialog) {
+        /** Method to sync the user's privacy settings with Cognito Sync **/
+        boolean removedUser = false;
+
+
+        String pinnedUser1 = userPinned.getPinnedUser1();
+        String pinnedUser2 = userPinned.getPinnedUser2();
+        String pinnedUser3 = userPinned.getPinnedUser3();
+        String pinnedUser4 = userPinned.getPinnedUser4();
+        String pinnedUser5 = userPinned.getPinnedUser5();
+
+        //Create temporary list of ids
+        ArrayList<String> listOfIds = new ArrayList<String>();
+        for(int i = 0; i < Fragment_Main.userList.size(); i++){
+            listOfIds.add(Fragment_Main.userList.get(i).getFacebookId());
+        }
+
+        /** Check if the user is already a pinned user **/
+        if(isPinned){
+            if(facebookId.equals(pinnedUser1)){
+                userPinned.setPinnedUser1("empty");
+                removedUser = true;
+                Fragment_Main.userList.remove(listOfIds.indexOf(facebookId));
+            } else if(facebookId.equals(pinnedUser2)){
+                userPinned.setPinnedUser2("empty");
+                removedUser = true;
+                Fragment_Main.userList.remove(listOfIds.indexOf(facebookId));
+
+            } else if(facebookId.equals(pinnedUser3)){
+                userPinned.setPinnedUser3("empty");
+                removedUser = true;
+                Fragment_Main.userList.remove(listOfIds.indexOf(facebookId));
+
+            } else if(facebookId.equals(pinnedUser4)){
+                userPinned.setPinnedUser4("empty");
+                removedUser = true;
+                Fragment_Main.userList.remove(listOfIds.indexOf(facebookId));
+
+            } else if(facebookId.equals(pinnedUser5)){
+                userPinned.setPinnedUser5("empty");
+                removedUser = true;
+                Fragment_Main.userList.remove(listOfIds.indexOf(facebookId));
+            }
+
+        } else {
+            /** Check if we have an available pinned space **/
+            if(pinnedUser1.equals("empty")) {
+                userPinned.setPinnedUser1(facebookId);
+                Fragment_Main.userList.remove(listOfIds.indexOf(facebookId));
+                Fragment_Main.userList.add(3, new UserItem(context, facebookId, 0, true));
+
+            } else if(pinnedUser2.equals("empty")) {
+                userPinned.setPinnedUser2(facebookId);
+                Fragment_Main.userList.remove(listOfIds.indexOf(facebookId));
+                Fragment_Main.userList.add(4, new UserItem(context, facebookId, 0, true));
+
+            } else if(pinnedUser3.equals("empty")) {
+                userPinned.setPinnedUser3(facebookId);
+                Fragment_Main.userList.remove(listOfIds.indexOf(facebookId));
+                Fragment_Main.userList.add(5, new UserItem(context, facebookId, 0, true));
+
+            } else if(pinnedUser4.equals("empty")) {
+                userPinned.setPinnedUser4(facebookId);
+                Fragment_Main.userList.remove(listOfIds.indexOf(facebookId));
+                Fragment_Main.userList.add(6, new UserItem(context, facebookId, 0, true));
+
+            } else if(pinnedUser5.equals("empty")) {
+                userPinned.setPinnedUser5(facebookId);
+                Fragment_Main.userList.remove(listOfIds.indexOf(facebookId));
+                Fragment_Main.userList.add(7, new UserItem(context, facebookId, 0, true));
+
+            } else {
+                this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(ProfileActivity.this, "Sorry, you already have 5 people pinned", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+        }
+
+
+
+
+
+        final boolean removed_user = removedUser;
+
+
+            new AsyncTask<Void, Void, Void>() {
+                @Override
+                protected Void doInBackground(final Void... params) {
+                    userPinned.saveToDataset();
+                    return null;
+                }
+
+                @Override
+                protected void onPostExecute(final Void aVoid) {
+                    // save user settings to remote on background thread
+                    userPinned.getDataset().synchronize(new Dataset.SyncCallback() {
+                        @Override
+                        public void onSuccess(Dataset dataset, List<Record> updatedRecords) {
+                            //Get the info from facebook based on the privacy settings
+                            runOnUI(dialog, removed_user);
+                        }
+
+                        @Override
+                        public boolean onConflict(Dataset dataset, List<SyncConflict> conflicts) {
+                            Log.d(LOG_TAG, "onConflict - dataset conflict");
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onDatasetDeleted(Dataset dataset, String datasetName) {
+                            Log.d(LOG_TAG, "onDatasetDeleted - dataset deleted");
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onDatasetsMerged(Dataset dataset, List<String> datasetNames) {
+                            Log.d(LOG_TAG, "onDatasetsMerged - datasets merged");
+                            return false;
+                        }
+
+                        @Override
+                        public void onFailure(DataStorageException dse) {
+                            Log.e(LOG_TAG, "onFailure - " + dse.getMessage(), dse);
+                        }
+                    });
+                }
+            }.execute();
+    }
+
+    public void runOnUI(final ProgressDialog dialog, final boolean removedUser){
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+                if(removedUser){
+                    Toast.makeText(ProfileActivity.this, "Removed a pinned user", Toast.LENGTH_SHORT).show();
+                    int color = Color.parseColor("#000000");
+                    pinButtonImage.setColorFilter(color);
+                } else {
+                    Toast.makeText(ProfileActivity.this, "Successfully updated your pinned users", Toast.LENGTH_SHORT).show();
+                    int color = Color.parseColor("#55C1AD");
+                    pinButtonImage.setColorFilter(color);
+                }
+
+                picMenuBackground.startAnimation(profilePictureAnimation2());
+                profilePicture.startAnimation(profilePictureAnimation());
+                Fragment_Main.adapter.notifyDataSetChanged();
+            }
+        });
+    }
+
+    private Animation profilePictureAnimation() {
+
+        float topFloat = 1;
+        float bottomFloat = 0.35f;
+
+        Animation animation = new ScaleAnimation(
+                expanded ? bottomFloat : topFloat, //from X
+                expanded ? topFloat : bottomFloat, //to X
+                expanded ? bottomFloat : topFloat, //form Y
+                expanded ? topFloat : bottomFloat, //to Y
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f);
+        animation.setStartOffset(0);
+        animation.setDuration(180);
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.setFillAfter(true);
+
+        if(!expanded){
+            pinButton.setVisibility(View.VISIBLE);
+            uploadButton.setVisibility(View.VISIBLE);
+            blockButton.setVisibility(View.VISIBLE);
+
+            expanded = true;
+            ProfileFragment.mListView.setActivated(false);
+        } else {
+            pinButton.setVisibility(View.GONE);
+            uploadButton.setVisibility(View.GONE);
+            blockButton.setVisibility(View.GONE);
+
+            expanded = false;
+            ProfileFragment.mListView.setActivated(true);
+        }
+
+        return animation;
+    }
+
+    private Animation profilePictureAnimation2() {
+
+        float topFloat = 1;
+        float bottomFloat = 0.35f;
+
+        Animation animation = new ScaleAnimation(
+                expanded ? topFloat : bottomFloat,//from X
+                expanded ? bottomFloat : topFloat,//to X
+                expanded ? topFloat : bottomFloat,//form Y
+                expanded ? bottomFloat : topFloat,//to Y
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f);
+        animation.setStartOffset(0);
+        animation.setDuration(180);
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.setFillAfter(true);
+
+        return animation;
+    }
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+
+
+        return true;
     }
 
     @Override
@@ -554,33 +1144,26 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
     }
 
 
-    //Assign user info variables to info stored in SharedPreferences
-    private void setUserInfoVariables() {
-        email = "email";
-        firstName = "firstName";
-        lastName = "last_name";
-        gender = "gender";
-        birthday = "birthday";
-        user_status = "user_status";
-        usingFacebookPic = "yes";
-        pageViews = "0";
-    }
+
 
 
 
     //Method to update the user profile picture and background after it is retrieved from the database
-    public void updateProfileAndBackgroundImage(String profilePic) {
+    public void updateProfileAndBackgroundImage() {
+
+        //Set background image to be profile image and adda blur and
+//        blurTransformation = new BlurTransformation(ProfileActivity.this, BLUR_RADIUS);
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.profileBackground);
+        activity.getWindow().setBackgroundDrawable(new BitmapDrawable(activity.getResources(), MainActivity.image));
+        relativeLayout.setVisibility(View.VISIBLE);
+
+        //Facebook ProfilePic URL
+        imageURL = "https://graph.facebook.com/" + facebookId + "/picture?width=700&height=700";
 
         //Load profile picture
-//        profilePicture = (ImageView) findViewById(R.id.profile_picture);
-//        Picasso.with(context).load(profilePic).into(profilePicture);
-
-        profilePicture = (FacebookPictureViewRound) findViewById(R.id.profile_picture);
-        profilePicture.setPresetSize(FacebookPictureViewRound.LARGE);
-        profilePicture.setProfileId(facebookId);
-        //Set background image to be profile image and adda blur and
-        blurTransformation = new BlurTransformation(ProfileActivity.this, BLUR_RADIUS);
-
+        /** Benchmark these two libraries to see which one is faster **/
+//        imageLoader.DisplayImage(imageURL, profilePicture);
+        Picasso.with(context).load(imageURL).into(profilePicture);
     }
 
 
@@ -594,7 +1177,7 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
         // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
         input.setInputType(InputType.TYPE_CLASS_TEXT);
         statusUpdateBuilder.setView(input);
-        input.setText(user_status);
+        input.setText(status);
 
         // Set up the buttons
         statusUpdateBuilder.setPositiveButton("Say it!", new DialogInterface.OnClickListener() {
@@ -604,13 +1187,13 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
 
                 //Check if the status is null or empty
                 if (!(input.getText().toString().trim()).equals("")) {
-                    user_status = input.getText().toString().trim();
-                    mStatus.setText(user_status);
+                    status = input.getText().toString().trim();
+                    mStatus.setText(status);
                     /**Send updated user status to the server here*/
 //                    new UpdateUserStatus(context).execute(user.facebookId, user_status);
                 } else {
-                    user_status = "Hey everyone! I will update my status soon.";
-                    mStatus.setText(user_status);
+                    status = "Hey everyone! I will update my status soon.";
+                    mStatus.setText(status);
                     /**Send updated user status to the server here*/
 //                    new UpdateUserStatus(context).execute(user.facebookId, user_status);
                 }
@@ -623,88 +1206,6 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
             }
         });
         statusUpdateBuilder.show();
-    }
-
-    //AsyncTask to get profile pic url string from server
-    public class GetProfilePicUrl extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-            try {
-                URL url = new URL(params[0]);
-                HttpURLConnection LucasHttpURLConnection = (HttpURLConnection) url.openConnection();
-                LucasHttpURLConnection.setRequestMethod("POST");
-                LucasHttpURLConnection.setDoOutput(true);
-                LucasHttpURLConnection.setDoInput(true);
-                LucasHttpURLConnection.setConnectTimeout(1000 * 6);
-                LucasHttpURLConnection.setReadTimeout(1000 * 6);
-                //OutputStream to get response
-                OutputStream outputStream = LucasHttpURLConnection.getOutputStream();
-                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-
-                String data =
-                        URLEncoder.encode("facebook_id", "UTF-8") + "=" + URLEncoder.encode(params[1], "UTF-8");
-
-                bufferedWriter.write(data);
-                bufferedWriter.flush();
-                bufferedWriter.close();
-                outputStream.close();
-                //InputStream to get response
-                InputStream IS = LucasHttpURLConnection.getInputStream();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(IS, "iso-8859-1"));
-                StringBuilder response = new StringBuilder();
-                String json;
-                while ((json = bufferedReader.readLine()) != null) {
-                    response.append(json + "\n");
-                    break;
-                }
-                bufferedReader.close();
-                IS.close();
-                LucasHttpURLConnection.disconnect();
-                return response.toString().trim();
-            } catch (MalformedInputException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-
-            //Print server AsyncTask response
-            System.out.println("Resulted Value: " + result);
-
-            //If null Response
-            if (result != null && !result.equals("")) {
-                profilePic = returnParsedJsonObject(result);
-                updateProfileAndBackgroundImage(profilePic);
-                Toast.makeText(ProfileActivity.this, "ProfilePic Url: " + profilePic, Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(ProfileActivity.this, "Sorry, there was an error. Please try again", Toast.LENGTH_LONG).show();
-            }
-        }
-
-
-        //Method to parse json result and get the value of the key "image"
-        private String returnParsedJsonObject(String result) {
-            JSONObject resultObject = null;
-            String returnedResult = "";
-            try {
-                resultObject = new JSONObject(result);
-                returnedResult = resultObject.getString("image");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return returnedResult;
-        }
     }
 
     public class PagerAdapter extends FragmentPagerAdapter {
@@ -736,11 +1237,11 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
 
 
         @Override
-        public Fragment getItem(int position) {
+        public Fragment getItem(int pos) {
 
-            fragment = (ScrollTabHolderFragment) ProfileFragment.newInstance(context, position, toolbar, facebookId);
+            fragment = (ScrollTabHolderFragment) ProfileFragment.newInstance(context, pos, toolbar, facebookId, userProfile, mapper, position);
 
-            mScrollTabHolders.put(position, fragment);
+            mScrollTabHolders.put(pos, fragment);
             if (mListener != null) {
                 fragment.setScrollTabHolder(mListener);
 

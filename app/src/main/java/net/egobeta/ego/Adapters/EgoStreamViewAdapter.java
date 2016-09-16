@@ -8,11 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
 
 import net.egobeta.ego.InstagramClasses.ImageLoader;
 import net.egobeta.ego.R;
@@ -73,8 +69,10 @@ public class EgoStreamViewAdapter extends BaseAdapter {
         RoundedImageView userProfilePic;
         ImageView badgeBackground;
         ImageView badge;
-        TextView textOverlay;
-        ImageView overlay;
+        TextView youTextOverlay;
+        ImageView youOverlay;
+        ImageView nearbyOverlay;
+
     }
 
 
@@ -125,63 +123,82 @@ public class EgoStreamViewAdapter extends BaseAdapter {
             holder.userProfilePic = (RoundedImageView) convertView.findViewById(R.id.img);
             holder.badgeBackground = (ImageView) convertView.findViewById(R.id.badge_background);
             holder.badge = (ImageView) convertView.findViewById(R.id.friend_badge);
-            holder.textOverlay = (TextView) convertView.findViewById(R.id.text_overlay);
-            holder.overlay = (ImageView) convertView.findViewById(R.id.overlay);
+            holder.youTextOverlay = (TextView) convertView.findViewById(R.id.text_overlay);
+            holder.youOverlay = (ImageView) convertView.findViewById(R.id.overlay);
+            holder.nearbyOverlay = (ImageView) convertView.findViewById(R.id.nearby_overlay);
 
 
             convertView.setTag(holder);
             convertView.setTag(R.id.friend_badge, holder.badge);
             convertView.setTag(R.id.img, holder.userProfilePic);
-            convertView.setTag(R.id.overlay, holder.overlay);
-            convertView.setTag(R.id.text_overlay, holder.textOverlay);
+            convertView.setTag(R.id.overlay, holder.youOverlay);
+            convertView.setTag(R.id.nearby_overlay, holder.nearbyOverlay);
+            convertView.setTag(R.id.text_overlay, holder.youTextOverlay);
         } else {
             holder = (UserViewHolder) convertView.getTag();
         }
 
         holder.badge.setTag(position);
         holder.userProfilePic.setTag(position);
-        holder.overlay.setTag(position);
-        holder.textOverlay.setTag(position);
+        holder.youOverlay.setTag(position);
+        holder.nearbyOverlay.setTag(position);
+        holder.youTextOverlay.setTag(position);
 
         UserItem userItem = userList.get(position);
 
         //Detect if the person is a friend or not
         boolean isFriend = friends_Ids.contains(userItem.getFacebookId());
+        boolean isPinned = userItem.isPinned();
 
-        if(isFriend){
+
+
+        if(isPinned){
+            holder.nearbyOverlay.setVisibility(View.INVISIBLE);
+            holder.userProfilePic.setVisibility(View.VISIBLE);
+            holder.badgeBackground.setVisibility(View.VISIBLE);
+            holder.badge.setImageResource(R.drawable.pinned_to_the_stream);
+            holder.badge.setVisibility(View.VISIBLE);
+            holder.youTextOverlay.setVisibility(View.INVISIBLE);
+            holder.youOverlay.setVisibility(View.INVISIBLE);
+            System.out.println("EgoStreamViewAdapter: friend");
+        } else if(isFriend) {
+            holder.nearbyOverlay.setVisibility(View.INVISIBLE);
             holder.userProfilePic.setVisibility(View.VISIBLE);
             holder.badgeBackground.setVisibility(View.VISIBLE);
             holder.badge.setImageResource(R.drawable.friend);
             holder.badge.setVisibility(View.VISIBLE);
-            holder.textOverlay.setVisibility(View.INVISIBLE);
-            holder.overlay.setVisibility(View.INVISIBLE);
+            holder.youTextOverlay.setVisibility(View.INVISIBLE);
+            holder.youOverlay.setVisibility(View.INVISIBLE);
             System.out.println("EgoStreamViewAdapter: friend");
         } else {
             //Check what badge we need to display.
             int badge = userItem.getBadge();
             if(facebookId.equals(userItem.getFacebookId())){
+                holder.nearbyOverlay.setVisibility(View.INVISIBLE);
                 holder.userProfilePic.setVisibility(View.VISIBLE);
                 holder.badgeBackground.setVisibility(View.INVISIBLE);
                 holder.badge.setVisibility(View.INVISIBLE);
-                holder.textOverlay.setVisibility(View.VISIBLE);
-                holder.overlay.setVisibility(View.VISIBLE);
+                holder.youTextOverlay.setVisibility(View.VISIBLE);
+                holder.youOverlay.setVisibility(View.VISIBLE);
 
-                holder.textOverlay.setTypeface(typeface);
+                holder.youTextOverlay.setTypeface(typeface);
             }else if(badge == 0){
+                holder.nearbyOverlay.setVisibility(View.INVISIBLE);
                 System.out.println("badge is 0");
                 holder.userProfilePic.setVisibility(View.VISIBLE);
                 holder.badgeBackground.setVisibility(View.INVISIBLE);
                 holder.badge.setVisibility(View.INVISIBLE);
-                holder.textOverlay.setVisibility(View.INVISIBLE);
-                holder.overlay.setVisibility(View.INVISIBLE);
+                holder.youTextOverlay.setVisibility(View.INVISIBLE);
+                holder.youOverlay.setVisibility(View.INVISIBLE);
             } else {
+                holder.nearbyOverlay.setVisibility(View.INVISIBLE);
                 System.out.println("badge is " + badge);
                 holder.userProfilePic.setVisibility(View.VISIBLE);
                 holder.badgeBackground.setVisibility(View.VISIBLE);
                 holder.badge.setImageResource(badgeImages.get(badge - 1));
                 holder.badge.setVisibility(View.VISIBLE);
-                holder.textOverlay.setVisibility(View.INVISIBLE);
-                holder.overlay.setVisibility(View.INVISIBLE);
+                holder.youTextOverlay.setVisibility(View.INVISIBLE);
+                holder.youOverlay.setVisibility(View.INVISIBLE);
             }
         }
 
@@ -189,11 +206,18 @@ public class EgoStreamViewAdapter extends BaseAdapter {
             imageLoader.DisplayImage("https://graph.facebook.com/" + userItem.getFacebookId() + "/picture?width=500&height=500"
                     , holder.userProfilePic);
         } else {
+            holder.nearbyOverlay.setVisibility(View.INVISIBLE);
             holder.userProfilePic.setVisibility(View.INVISIBLE);
             holder.badgeBackground.setVisibility(View.INVISIBLE);
             holder.badge.setVisibility(View.INVISIBLE);
-            holder.textOverlay.setVisibility(View.INVISIBLE);
-            holder.overlay.setVisibility(View.INVISIBLE);
+            holder.youTextOverlay.setVisibility(View.INVISIBLE);
+            holder.youOverlay.setVisibility(View.INVISIBLE);
+        }
+
+        if(userItem.isNearby){
+            holder.nearbyOverlay.setVisibility(View.VISIBLE);
+        } else {
+            holder.nearbyOverlay.setVisibility(View.INVISIBLE);
         }
 
 

@@ -10,11 +10,12 @@
 
 
     <ImageView
-        android:layout_width="75dp"
-        android:layout_height="40dp"
+        android:layout_width="65dp"
+        android:layout_height="30dp"
         android:id="@+id/viewing_you_image"
-        android:src="@drawable/glasses_viewing_you"
+        android:src="@drawable/viewing_you_icon"
         android:tint="#444444"
+        android:scaleType="centerInside"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -25,16 +26,26 @@
     <TextView
         android:id="@+id/viewing_you_text"
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:text="viewing you now"
+        android:layout_height="30dp"
+        android:text="viewing you"
         android:textColor="#444444"
-        android:textSize="15sp"
+        android:textSize="24sp"
         android:gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:layout_alignBottom="@+id/viewing_you_image"
         android:layout_toRightOf="@+id/viewing_you_image"
         android:layout_toEndOf="@+id/viewing_you_image" />
+
+    <ProgressBar
+        android:id="@+id/viewingYouProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/viewingYouList"
+        android:layout_marginLeft="20dp"
+        android:layout_centerVertical="true"
+        />
 
     <ListView
         android:layout_width="wrap_content"
@@ -45,28 +56,101 @@
         >
     </ListView>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/settingsButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_centerHorizontal="true">
 
-    <ImageButton
-    android:layout_width="160dp"
-    android:layout_height="50dp"
-    android:id="@+id/settingsButton"
-    android:src="@drawable/settings_button"
-    android:background="@null"
-    android:scaleType="centerInside"
-    android:layout_above="@+id/egoLogo1"
-    android:layout_alignLeft="@+id/viewing_you_image"
-    android:layout_alignStart="@+id/viewing_you_image"
-    android:layout_marginBottom="35dp"/>
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:id="@+id/settings_Button"
+            android:src="@drawable/long_button_bg"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            />
 
-    <Button
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:id="@+id/blankActivity_Button"
-        android:text="Blank Activity"
-        android:layout_above="@+id/logout_Button"
-        android:layout_alignLeft="@+id/viewing_you_image"
-        android:layout_alignStart="@+id/viewing_you_image"
-        android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/settingsButtonText"
+            android:text="Logout"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            android:textColor="#fff"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/noViewersHolder"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/noOneViewingYouImage"
+            android:src="@drawable/default_face_icon"
+            android:scaleType="fitCenter"
+            android:layout_alignLeft="@+id/viewersHolderText1"
+            android:layout_alignStart="@+id/viewersHolderText1"
+            android:layout_above="@+id/viewersHolderText1"
+            android:layout_marginBottom="30dp"
+            />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewersHolderText1"
+            android:text="No one is viewing your profile right now!"
+            android:gravity="left"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="#fff"
+            android:paddingBottom="12dp"
+            android:layout_marginLeft="30dp"
+            />
+
+        <TextView
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewersHolderText2"
+            android:text="People who have their profiles filled out get more views"
+            android:gravity="left"
+            android:textSize="18sp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/viewersHolderText1"
+            android:textColor="#555555"
+            android:layout_marginLeft="30dp"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+
+    <!--<Button-->
+        <!--android:layout_width="160dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:id="@+id/blankActivity_Button"-->
+        <!--android:text="Blank Activity"-->
+        <!--android:layout_above="@+id/logout_Button"-->
+        <!--android:layout_alignLeft="@+id/viewing_you_image"-->
+        <!--android:layout_alignStart="@+id/viewing_you_image"-->
+        <!--android:layout_marginBottom="10dp"/>-->
 
     <Button
         android:layout_width="160dp"
@@ -76,42 +160,14 @@
         android:layout_above="@+id/settingsButton"
         android:layout_alignLeft="@+id/viewing_you_image"
         android:layout_alignStart="@+id/viewing_you_image"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:visibility="invisible"/>
 
-    <ImageView
-        android:layout_width="55dp"
-        android:layout_height="30dp"
-        android:id="@+id/egoLogo1"
-        android:src="@drawable/n_ego_logo"
-        android:tint="#8e8d89"
-        android:layout_above="@+id/version"
-        android:layout_alignLeft="@+id/version"
-        android:layout_alignStart="@+id/version" />
 
-    <TextView
-        android:id="@+id/version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sliding_menu_version"
-        android:textColor="#444444"
-        android:textSize="20sp"
-        android:layout_above="@+id/year"
-        android:layout_alignLeft="@+id/year"
-        android:layout_alignStart="@+id/year" />
 
-    <TextView
-        android:id="@+id/year"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="©2015 - 2016"
-        android:textColor="#444444"
-        android:textSize="10sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="35dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginBottom="25dp"/>
+
+
+
 
 
 
