@@ -9,7 +9,7 @@
                     "startOffset": 55,
                     "endLine": 6,
                     "endColumn": 12,
-                    "endOffset": 311
+                    "endOffset": 318
                 },
                 "from": {
                     "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values-v19\\styles.xml",
@@ -19,7 +19,7 @@
                         "startOffset": 59,
                         "endLine": 7,
                         "endColumn": 12,
-                        "endOffset": 319
+                        "endOffset": 326
                     }
                 }
             },
@@ -27,63 +27,39 @@
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 316,
+                    "startOffset": 323,
                     "endLine": 15,
                     "endColumn": 12,
-                    "endOffset": 920
+                    "endOffset": 927
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\leanback-v17\\24.1.1\\res\\values-v19\\values-v19.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endLine": 10,
-                        "endColumn": 12,
-                        "endOffset": 659
-                    }
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\build\\intermediates\\exploded-aar\\com.android.support\\leanback-v17\\24.1.1\\res\\values-v19\\values-v19.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 925,
+                    "startOffset": 932,
                     "endLine": 24,
                     "endColumn": 12,
-                    "endOffset": 1437
+                    "endOffset": 1444
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values-v19\\styles.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 327,
-                        "endLine": 17,
-                        "endColumn": 12,
-                        "endOffset": 847
-                    }
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values-v19\\styles.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 1442,
+                    "startOffset": 1449,
                     "endLine": 27,
                     "endColumn": 12,
-                    "endOffset": 1539
+                    "endOffset": 1546
                 },
                 "from": {
-                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values-v19\\styles.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 855,
-                        "endLine": 21,
-                        "endColumn": 12,
-                        "endOffset": 954
-                    }
+                    "file": "C:\\Users\\Lucas\\Desktop\\Ego_Test\\ego\\app\\src\\main\\res\\values-v19\\styles.xml"
                 }
             }
         ]

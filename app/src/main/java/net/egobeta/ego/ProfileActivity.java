@@ -294,8 +294,9 @@ public class ProfileActivity extends AppCompatActivity implements ScrollTabHolde
                 /** Sets the profile image and blur **/
                 updateProfileAndBackgroundImage();
 
+                /** NEXT RELEASE VERSION: Sliding Menu Feature **/
                 /**Create the pull out Sliding menu*/
-                createMenuDrawer();
+//                createMenuDrawer();
 
                 /**Method to set view item fonts*/
                 setViewFonts();

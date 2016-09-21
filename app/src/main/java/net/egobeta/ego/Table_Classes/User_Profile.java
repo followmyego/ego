@@ -22,10 +22,22 @@ public class User_Profile {
     private String instagram_id;
     private String instagram_username;
     private String twitter_id;
+    private String twitter_username;
     private String google_plus_id;
     private String linkedIn_id;
 
     private String instagram_photos_connected;
+
+    private String facebookConnected;
+    private String google_plusConnected;
+    private String twitterConnected;
+    private String instagramConnected;
+    private String vineConnected;
+    private String pinterestConnected;
+    private String snapchatConnected;
+    private String linkedInConnected;
+
+
 
     @DynamoDBHashKey(attributeName = "facebook_id")
     public String getFacebookId() {
@@ -108,8 +120,6 @@ public class User_Profile {
         this.instagram_username = instagram_username;
     }
 
-
-
     @DynamoDBAttribute(attributeName = "twitter_id")
     public String getTwitter_id() {
         return twitter_id;
@@ -117,6 +127,15 @@ public class User_Profile {
 
     public void setTwitter_id(String twitter_id) {
         this.twitter_id = twitter_id;
+    }
+
+    @DynamoDBAttribute(attributeName = "twitter_username")
+    public String getTwitter_username() {
+        return twitter_id;
+    }
+
+    public void setTwitter_username(String twitter_username) {
+        this.twitter_username = twitter_username;
     }
 
     @DynamoDBAttribute(attributeName = "googlePlus_id")
@@ -153,6 +172,81 @@ public class User_Profile {
 
     public void setInstagram_photos_connected(String instagram_photos_connected) {
         this.instagram_photos_connected = instagram_photos_connected;
+    }
+
+
+
+
+    @DynamoDBAttribute(attributeName = "facebook_connected")
+    public String getFacebookConnected() {
+        return facebookConnected;
+    }
+
+    public void setFacebookConnected(String facebookConnected) {
+        this.facebookConnected = facebookConnected;
+    }
+
+    @DynamoDBAttribute(attributeName = "google_plus_connected")
+    public String getGoogle_plusConnected() {
+        return google_plusConnected;
+    }
+
+    public void setGoogle_plusConnected(String google_plusConnected) {
+        this.google_plusConnected = google_plusConnected;
+    }
+
+    @DynamoDBAttribute(attributeName = "twitter_connected")
+    public String getTwitterConnected() {
+        return twitterConnected;
+    }
+
+    public void setTwitterConnected(String twitterConnected) {
+        this.twitterConnected = twitterConnected;
+    }
+
+    @DynamoDBAttribute(attributeName = "instagram_connected")
+    public String getInstagramConnected() {
+        return instagramConnected;
+    }
+
+    public void setInstagramConnected(String instagramConnected) {
+        this.instagramConnected = instagramConnected;
+    }
+
+    @DynamoDBAttribute(attributeName = "vine_connected")
+    public String getVineConnected() {
+        return vineConnected;
+    }
+
+    public void setVineConnected(String vineConnected) {
+        this.vineConnected = vineConnected;
+    }
+
+    @DynamoDBAttribute(attributeName = "pinterest_connected")
+    public String getPinterestConnected() {
+        return pinterestConnected;
+    }
+
+    public void setPinterestConnected(String pinterestConnected) {
+        this.pinterestConnected = pinterestConnected;
+    }
+
+    @DynamoDBAttribute(attributeName = "snapchat_connected")
+    public String getSnapchatConnected() {
+        return snapchatConnected;
+    }
+
+    public void setSnapchatConnected(String snapchatConnected) {
+        this.snapchatConnected = snapchatConnected;
+    }
+
+    @DynamoDBAttribute(attributeName = "linkedIn_connected")
+    public String getLinkedInConnected() {
+        return linkedInConnected;
+    }
+
+    public void setLinkedInConnected(String linkedInConnected) {
+        this.linkedInConnected = linkedInConnected;
     }
 }
 

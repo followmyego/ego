@@ -27,9 +27,11 @@ import android.view.ViewGroup;
 
 import android.widget.AbsListView;
 
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -40,6 +42,8 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
 import com.jess.ui.TwoWayGridView;
 
+import net.egobeta.ego.Adapters.SocialMediaGridAdapter;
+import net.egobeta.ego.Adapters.SocialMediaGridClickHandler;
 import net.egobeta.ego.ImportedClasses.NonScrollableGridView;
 import net.egobeta.ego.InstagramClasses.ApplicationData;
 import net.egobeta.ego.InstagramClasses.ImageViewAdapterInstagram;
@@ -85,6 +89,7 @@ public class ProfileFragment extends ScrollTabHolderFragment implements AbsListV
 	private static TextView connectButtonText;
 	private static ImageButton connectButton;
 	private static TwoWayGridView  gridView;
+	SocialMediaGridAdapter socialMediaGridAdapter;
 
 	public static View v;
 	private static Toolbar toolbar;
@@ -94,6 +99,17 @@ public class ProfileFragment extends ScrollTabHolderFragment implements AbsListV
 	boolean instagramIsConnected = false;
 	static DynamoDBMapper mapper = null;
 	static int streamPosition;
+	//Array to hold image references for the social media logos
+	Integer[] socialMediaImageLogos = {
+			R.drawable.facebook_icon,
+			R.drawable.google_plus_icon,
+			R.drawable.twitter_icon,
+			R.drawable.instagram_icon,
+			R.drawable.vine_icon,
+			R.drawable.pintrest_icon,
+			R.drawable.linkedin_icon,
+			R.drawable.snapchat_icon
+	};
 
 
 	//Instagram stuffs
@@ -226,7 +242,7 @@ public class ProfileFragment extends ScrollTabHolderFragment implements AbsListV
 
 		MyCustomAdapterSlide3And4 myCustomAdapter = new MyCustomAdapterSlide3And4();
 		for(int i = 0; i < 10; i++){
-			myCustomAdapter.addItem("item " + i);
+            myCustomAdapter.addItem("item " + i);
 		}
 		mListView.setAdapter(myCustomAdapter);
 		mListView.setOnScrollListener(this);
@@ -261,6 +277,313 @@ public class ProfileFragment extends ScrollTabHolderFragment implements AbsListV
 	public void onScrollStateChanged(AbsListView view, int scrollState) {
 		// nothing
 	}
+
+
+
+
+
+
+
+
+	/**Method to check if user is currently logged into instagram
+	 What state should the connect button be in?*/
+	public void connectOrDisconnectUser() {
+//		Toast.makeText(getActivity(), "Click worked :)", Toast.LENGTH_LONG).show();
+		if (instagramApp.hasAccessToken()) {
+
+			if(instagramPicsConnected.equals("yes")){
+				final AlertDialog alert = builder.create();
+				alert.show();
+			} else {
+				//If logged in user
+				if(streamPosition == 2){
+					//Save userProfile item on server to reflect new instagram variable changes
+					userProfile.setInstagram_photos_connected("yes");
+					/** Run method to save userProfile item to the database **/
+					new SaveUserProfile().execute();
+				}
+
+
+				//Get logged in users instagram image links
+				if(isNetworkAvailable()){
+					getAllMediaImages(getContext());
+				} else {
+					Toast.makeText(getActivity(), "No internet connection detected", Toast.LENGTH_SHORT).show();
+				}
+
+			}
+
+		} else {
+			instagramApp.authorize();
+		}
+	}
+
+
+	private boolean isNetworkAvailable() {
+		ConnectivityManager connectivityManager
+				= (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+		return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+	}
+
+	//Gets instagram image links from url with user info and stores them in StringArray imageThumbList
+	private void getAllMediaImages(Context context) {
+//		pd = ProgressDialog.show(context, "", "Loading images...");
+
+
+		try {
+
+			new GetInstagramPhotosViaURL().execute("https://api.instagram.com/v1/users/" + instagramId
+					+ "/media/recent/?access_token=" + instagramApp.getTOken()
+					+ "&count=" + instagramUserInfoHashmap.get(InstagramApp.TAG_COUNTS));
+
+			System.out.println("MY INSTAGRAM LINK = " + "https://api.instagram.com/v1/users/" + instagramUserInfoHashmap.get(InstagramApp.TAG_ID)
+					+ "/media/recent/?access_token=" + instagramApp.getTOken()
+					+ "&count=" + 6);
+
+			JSONObject jsonObject = jObj;
+		} catch (Exception exception) {
+			exception.printStackTrace();
+
+		}
+		handler.sendEmptyMessage(1);
+	}
+
+	//Gets instagram image links for other user from url with user info and stores them in StringArray imageThumbList
+	private void getAllMediaImages2(Context context) {
+//		pd = ProgressDialog.show(context, "", "Loading images...");
+
+		try {
+			new GetInstagramPhotosViaURL2().execute("https://www.instagram.com/" + userProfile.getInstagram_username() + "/media");
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+		handler.sendEmptyMessage(1);
+	}
+
+	//Method to hit a REST api and get json response of user's instagram photos
+	public class GetInstagramPhotosViaURL extends AsyncTask<String, Void, String> {
+
+		@Override
+		protected String doInBackground(String... params) {
+			BufferedReader bufferedReader = null;
+			HttpsURLConnection LucasHttpURLConnection = null;
+			InputStream IS;
+			try {
+				URL url = new URL(params[0]);
+				LucasHttpURLConnection = (HttpsURLConnection) url.openConnection();
+				LucasHttpURLConnection.connect();
+				IS = LucasHttpURLConnection.getInputStream();
+				bufferedReader = new BufferedReader(new InputStreamReader(IS));
+				StringBuffer buffer = new StringBuffer();
+				String json;
+				while ((json = bufferedReader.readLine()) != null) {
+					buffer.append(json);
+				}
+
+				return buffer.toString().trim();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				if (LucasHttpURLConnection != null) {
+					LucasHttpURLConnection.disconnect();
+				}
+				try {
+
+					if (bufferedReader != null)
+						bufferedReader.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			super.onPostExecute(result);
+			int what1 = 1;
+
+			//Print server AsyncTask response
+			System.out.println("GetInstagramPhotosViaURL Resulted Value: " + result);
+
+			//Check if null Response
+			if (result != null && !result.equals("")) {
+				try {
+					jObj = new JSONObject(result);
+					JSONArray data = jObj.getJSONArray("data");
+					int count = 0;
+
+					//Loop through json object populating imageThumbList String array with links from json response
+					for (int data_i = 0; data_i < data.length(); data_i++) {
+						JSONObject data_obj = data.getJSONObject(data_i);
+						JSONObject images_obj = data_obj
+								.getJSONObject("images");
+						JSONObject thumbnail_obj = images_obj
+								.getJSONObject("standard_resolution");
+						String str_url = thumbnail_obj.getString("url");
+						imageThumbList.add(str_url);
+						Log.i("INSTAGRAM PHOTOS", str_url);
+						if(count < 10){
+							web[count] = str_url;
+							imageId[count] = 1;
+						}
+						count++;
+					}
+
+				} catch (JSONException e) {
+					e.printStackTrace();
+					what1 = WHAT_ERROR;
+				}
+				handler.sendEmptyMessage(what1);
+				displayInstagramImageList();
+			} else {
+				Toast.makeText(context, "Error in getting Instagram images", Toast.LENGTH_LONG).show();
+//				pd.dismiss();
+			}
+		}
+	}
+
+	//Method to hit a REST api and get json response of user's instagram photos
+	public class GetInstagramPhotosViaURL2 extends AsyncTask<String, Void, String> {
+
+		@Override
+		protected String doInBackground(String... params) {
+			BufferedReader bufferedReader = null;
+			HttpsURLConnection LucasHttpURLConnection = null;
+			InputStream IS;
+			try {
+				URL url = new URL(params[0]);
+				LucasHttpURLConnection = (HttpsURLConnection) url.openConnection();
+				LucasHttpURLConnection.connect();
+				IS = LucasHttpURLConnection.getInputStream();
+				bufferedReader = new BufferedReader(new InputStreamReader(IS));
+				StringBuffer buffer = new StringBuffer();
+				String json;
+				while ((json = bufferedReader.readLine()) != null) {
+					buffer.append(json);
+				}
+
+				return buffer.toString().trim();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				if (LucasHttpURLConnection != null) {
+					LucasHttpURLConnection.disconnect();
+				}
+				try {
+
+					if (bufferedReader != null)
+						bufferedReader.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			super.onPostExecute(result);
+			int what1 = 1;
+
+			//Print server AsyncTask response
+			System.out.println("GetInstagramPhotosViaURL Resulted Value: " + result);
+
+			//Check if null Response
+			if (result != null && !result.equals("")) {
+				try {
+					jObj = new JSONObject(result);
+					JSONArray data = jObj.getJSONArray("items");
+
+
+					//Loop through json object populating imageThumbList String array with links from json response
+					for (int data_i = 0; data_i < data.length(); data_i++) {
+						JSONObject data_obj = data.getJSONObject(data_i);
+						JSONObject images_obj = data_obj
+								.getJSONObject("images");
+						JSONObject thumbnail_obj = images_obj
+								.getJSONObject("standard_resolution");
+						String str_url = thumbnail_obj.getString("url");
+						imageThumbList.add(str_url);
+						Log.i("INSTAGRAM PHOTOS", str_url);
+					}
+
+				} catch (JSONException e) {
+					e.printStackTrace();
+					what1 = WHAT_ERROR;
+				}
+				handler.sendEmptyMessage(what1);
+				displayInstagramImageList();
+			} else {
+				Toast.makeText(context, "Error in getting Instagram images", Toast.LENGTH_LONG).show();
+//				pd.dismiss();
+			}
+		}
+	}
+
+	//Method to show users instagram photos
+	public void displayInstagramImageList(){
+		//Initialize the adapter for the horizontal image sliding view
+//		twoWayView = (TwoWayView) rootView.findViewById(R.id.lvItems);
+
+		//Create adapter for instagram images and horizontal image sliding view
+		adapter = new ImageViewAdapterInstagram(getActivity(), imageThumbList);
+
+		//Set the adapter for the horizontal image sliding view
+		if(gridView != null){
+			gridView.setVisibility(View.VISIBLE);
+			gridView.setAdapter(adapter);
+		}
+
+//		pd.dismiss();
+
+		//If logged in user
+		if(streamPosition == 2){
+			//Update on images linked on local database
+			userProfile.setInstagram_photos_connected("yes");
+			/** Run method to save userProfile item to the database **/
+			new SaveUserProfile().execute();
+		}
+	}
+
+	public class SaveUserProfile extends AsyncTask<Void, Void, Void> {
+
+
+		public SaveUserProfile() {
+
+		}
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			try{
+				mapper.save(userProfile);
+			} catch (AmazonClientException ex){
+				ex.printStackTrace();
+			}
+
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(Void aVoid) {
+			super.onPostExecute(aVoid);
+//            Toast.makeText(MainActivity.this, "Successfully saved user's info to db", Toast.LENGTH_SHORT).show();
+
+		}
+
+	}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -422,6 +745,27 @@ public class ProfileFragment extends ScrollTabHolderFragment implements AbsListV
 				connectButton = holder.connectButton;
 				connectButtonText = holder.connectButtonText;
 				gridView = holder.gridView;
+				/** If 3rd position, return the Social Media GridView as the list item **/
+//			} else if(position == 2){
+//				convertView = mInflater.inflate(R.layout.profile_social_media_section, null);
+//				holder = new ViewHolder();
+//
+//				/** Initialize View item variables **/
+//				holder.gridViewSocialMedias = (GridView) convertView.findViewById(R.id.socialMediaGridView);
+//
+//				//set up the gridview adapter
+//				socialMediaGridAdapter = new SocialMediaGridAdapter(getContext(), socialMediaImageLogos, getActivity());
+//				holder.gridViewSocialMedias.setAdapter(socialMediaGridAdapter);
+//
+//				/** Handle the Social Media gridview clicks **/
+//				holder.gridViewSocialMedias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//					@Override
+//					public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//						new SocialMediaGridClickHandler(getActivity(), userProfile, mapper).handleTheSocialMediaPressed(position);
+//					}
+//				});
+//
+
 			} else {
 				convertView = mInflater.inflate(R.layout.list_item, null);
 				TextView textView = (TextView) convertView.findViewById(R.id.text1);
@@ -431,319 +775,13 @@ public class ProfileFragment extends ScrollTabHolderFragment implements AbsListV
 		}
 
 		public class ViewHolder{
-			TextView aboutHeader;
-			TextView ageHeader;
-			TextView age;
-			TextView livesInHeader;
-			TextView livesIn;
-			TextView worksAtHeader;
-			TextView worksAt;
 
 			TextView connectButtonText;
 			ImageButton connectButton;
 
 			TwoWayGridView gridView;
-		}
 
-	}
-
-
-
-	/**Method to check if user is currently logged into instagram
-	 What state should the connect button be in?*/
-	public void connectOrDisconnectUser() {
-//		Toast.makeText(getActivity(), "Click worked :)", Toast.LENGTH_LONG).show();
-		if (instagramApp.hasAccessToken()) {
-
-			if(instagramPicsConnected.equals("yes")){
-				final AlertDialog alert = builder.create();
-				alert.show();
-			} else {
-				//If logged in user
-				if(streamPosition == 2){
-					//Save userProfile item on server to reflect new instagram variable changes
-					userProfile.setInstagram_photos_connected("yes");
-					/** Run method to save userProfile item to the database **/
-					new SaveUserProfile().execute();
-				}
-
-
-				//Get logged in users instagram image links
-				if(isNetworkAvailable()){
-					getAllMediaImages(getContext());
-				} else {
-					Toast.makeText(getActivity(), "No internet connection detected", Toast.LENGTH_SHORT).show();
-				}
-
-			}
-
-		} else {
-			instagramApp.authorize();
-		}
-	}
-
-
-	private boolean isNetworkAvailable() {
-		ConnectivityManager connectivityManager
-				= (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-		NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-		return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-	}
-
-	//Gets instagram image links from url with user info and stores them in StringArray imageThumbList
-	private void getAllMediaImages(Context context) {
-//		pd = ProgressDialog.show(context, "", "Loading images...");
-
-
-		try {
-
-			new GetInstagramPhotosViaURL().execute("https://api.instagram.com/v1/users/" + instagramId
-					+ "/media/recent/?access_token=" + instagramApp.getTOken()
-					+ "&count=" + instagramUserInfoHashmap.get(InstagramApp.TAG_COUNTS));
-
-			System.out.println("MY INSTAGRAM LINK = " + "https://api.instagram.com/v1/users/" + instagramUserInfoHashmap.get(InstagramApp.TAG_ID)
-					+ "/media/recent/?access_token=" + instagramApp.getTOken()
-					+ "&count=" + 6);
-
-			JSONObject jsonObject = jObj;
-		} catch (Exception exception) {
-			exception.printStackTrace();
-
-		}
-		handler.sendEmptyMessage(1);
-	}
-
-	//Gets instagram image links for other user from url with user info and stores them in StringArray imageThumbList
-	private void getAllMediaImages2(Context context) {
-//		pd = ProgressDialog.show(context, "", "Loading images...");
-
-		try {
-			new GetInstagramPhotosViaURL2().execute("https://www.instagram.com/" + userProfile.getInstagram_username() + "/media");
-		} catch (Exception exception) {
-			exception.printStackTrace();
-		}
-		handler.sendEmptyMessage(1);
-	}
-
-
-
-	//Method to hit a REST api and get json response of user's instagram photos
-	public class GetInstagramPhotosViaURL extends AsyncTask<String, Void, String> {
-
-		@Override
-		protected String doInBackground(String... params) {
-			BufferedReader bufferedReader = null;
-			HttpsURLConnection LucasHttpURLConnection = null;
-			InputStream IS;
-			try {
-				URL url = new URL(params[0]);
-				LucasHttpURLConnection = (HttpsURLConnection) url.openConnection();
-				LucasHttpURLConnection.connect();
-				IS = LucasHttpURLConnection.getInputStream();
-				bufferedReader = new BufferedReader(new InputStreamReader(IS));
-				StringBuffer buffer = new StringBuffer();
-				String json;
-				while ((json = bufferedReader.readLine()) != null) {
-					buffer.append(json);
-				}
-
-				return buffer.toString().trim();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} finally {
-				if (LucasHttpURLConnection != null) {
-					LucasHttpURLConnection.disconnect();
-				}
-				try {
-
-					if (bufferedReader != null)
-						bufferedReader.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-
-			}
-			return null;
-		}
-
-		@Override
-		protected void onPostExecute(String result) {
-			super.onPostExecute(result);
-			int what1 = 1;
-
-			//Print server AsyncTask response
-			System.out.println("GetInstagramPhotosViaURL Resulted Value: " + result);
-
-			//Check if null Response
-			if (result != null && !result.equals("")) {
-				try {
-					jObj = new JSONObject(result);
-					JSONArray data = jObj.getJSONArray("data");
-					int count = 0;
-
-					//Loop through json object populating imageThumbList String array with links from json response
-					for (int data_i = 0; data_i < data.length(); data_i++) {
-						JSONObject data_obj = data.getJSONObject(data_i);
-						JSONObject images_obj = data_obj
-								.getJSONObject("images");
-						JSONObject thumbnail_obj = images_obj
-								.getJSONObject("standard_resolution");
-						String str_url = thumbnail_obj.getString("url");
-						imageThumbList.add(str_url);
-						Log.i("INSTAGRAM PHOTOS", str_url);
-						if(count < 10){
-							web[count] = str_url;
-							imageId[count] = 1;
-						}
-						count++;
-					}
-
-				} catch (JSONException e) {
-					e.printStackTrace();
-					what1 = WHAT_ERROR;
-				}
-				handler.sendEmptyMessage(what1);
-				displayInstagramImageList();
-			} else {
-				Toast.makeText(context, "Error in getting Instagram images", Toast.LENGTH_LONG).show();
-//				pd.dismiss();
-			}
-		}
-	}
-
-
-	//Method to hit a REST api and get json response of user's instagram photos
-	public class GetInstagramPhotosViaURL2 extends AsyncTask<String, Void, String> {
-
-		@Override
-		protected String doInBackground(String... params) {
-			BufferedReader bufferedReader = null;
-			HttpsURLConnection LucasHttpURLConnection = null;
-			InputStream IS;
-			try {
-				URL url = new URL(params[0]);
-				LucasHttpURLConnection = (HttpsURLConnection) url.openConnection();
-				LucasHttpURLConnection.connect();
-				IS = LucasHttpURLConnection.getInputStream();
-				bufferedReader = new BufferedReader(new InputStreamReader(IS));
-				StringBuffer buffer = new StringBuffer();
-				String json;
-				while ((json = bufferedReader.readLine()) != null) {
-					buffer.append(json);
-				}
-
-				return buffer.toString().trim();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} finally {
-				if (LucasHttpURLConnection != null) {
-					LucasHttpURLConnection.disconnect();
-				}
-				try {
-
-					if (bufferedReader != null)
-						bufferedReader.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-
-			}
-			return null;
-		}
-
-		@Override
-		protected void onPostExecute(String result) {
-			super.onPostExecute(result);
-			int what1 = 1;
-
-			//Print server AsyncTask response
-			System.out.println("GetInstagramPhotosViaURL Resulted Value: " + result);
-
-			//Check if null Response
-			if (result != null && !result.equals("")) {
-				try {
-					jObj = new JSONObject(result);
-					JSONArray data = jObj.getJSONArray("items");
-
-
-					//Loop through json object populating imageThumbList String array with links from json response
-					for (int data_i = 0; data_i < data.length(); data_i++) {
-						JSONObject data_obj = data.getJSONObject(data_i);
-						JSONObject images_obj = data_obj
-								.getJSONObject("images");
-						JSONObject thumbnail_obj = images_obj
-								.getJSONObject("standard_resolution");
-						String str_url = thumbnail_obj.getString("url");
-						imageThumbList.add(str_url);
-						Log.i("INSTAGRAM PHOTOS", str_url);
-					}
-
-				} catch (JSONException e) {
-					e.printStackTrace();
-					what1 = WHAT_ERROR;
-				}
-				handler.sendEmptyMessage(what1);
-				displayInstagramImageList();
-			} else {
-				Toast.makeText(context, "Error in getting Instagram images", Toast.LENGTH_LONG).show();
-//				pd.dismiss();
-			}
-		}
-	}
-
-
-	//Method to show users instagram photos
-	public void displayInstagramImageList(){
-		//Initialize the adapter for the horizontal image sliding view
-//		twoWayView = (TwoWayView) rootView.findViewById(R.id.lvItems);
-
-		//Create adapter for instagram images and horizontal image sliding view
-		adapter = new ImageViewAdapterInstagram(getActivity(), imageThumbList);
-
-		//Set the adapter for the horizontal image sliding view
-		if(gridView != null){
-			gridView.setVisibility(View.VISIBLE);
-			gridView.setAdapter(adapter);
-		}
-
-//		pd.dismiss();
-
-		//If logged in user
-		if(streamPosition == 2){
-			//Update on images linked on local database
-			userProfile.setInstagram_photos_connected("yes");
-			/** Run method to save userProfile item to the database **/
-			new SaveUserProfile().execute();
-		}
-	}
-
-
-
-
-
-	public class SaveUserProfile extends AsyncTask<Void, Void, Void> {
-
-
-		public SaveUserProfile() {
-
-		}
-
-		@Override
-		protected Void doInBackground(Void... params) {
-			try{
-				mapper.save(userProfile);
-			} catch (AmazonClientException ex){
-				ex.printStackTrace();
-			}
-
-			return null;
-		}
-
-		@Override
-		protected void onPostExecute(Void aVoid) {
-			super.onPostExecute(aVoid);
-//            Toast.makeText(MainActivity.this, "Successfully saved user's info to db", Toast.LENGTH_SHORT).show();
-
+			GridView gridViewSocialMedias;
 		}
 
 	}
