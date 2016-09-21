@@ -33,7 +33,6 @@ android/support/v4/app/FragmentManager$OnBackStackChangedListener.class
 android/support/v7/widget/RecyclerView$State.class
 android/support/v7/widget/MenuItemHoverListener.class
 net/egobeta/ego/MainActivity$1.class
-net/egobeta/ego/MainActivity$9.class
 android/support/v4/widget/ViewDragHelper$Callback.class
 android/support/design/widget/ViewOffsetBehavior.class
 android/support/design/widget/FloatingActionButton$Size.class
@@ -209,7 +208,6 @@ android/support/v7/app/ActionBarDrawerToggle$DelegateProvider.class
 com/amazonaws/mobileconnectors/dynamodbv2/dynamodbmapper/ItemConverter.class
 com/google/android/gms/common/zze.class
 android/support/design/widget/ThemeUtils.class
-net/egobeta/ego/MainActivity$13.class
 android/support/v7/widget/StaggeredGridLayoutManager.class
 com/amazonaws/services/sqs/AmazonSQSAsyncClient.class
 com/google/android/gms/maps/SupportStreetViewPanoramaFragment.class
@@ -425,7 +423,6 @@ android/support/v4/view/accessibility/AccessibilityNodeProviderCompat.class
 com/google/android/gms/gcm/GcmReceiver.class
 com/squareup/picasso/Picasso.class
 com/jeremyfeinstein/slidingmenu/lib/SlidingMenu$OnClosedListener.class
-net/egobeta/ego/MainActivity$10.class
 android/support/v7/appcompat/R$layout.class
 android/support/design/R.class
 android/support/v8/renderscript/ScriptGroup.class
@@ -596,7 +593,6 @@ android/support/v4/widget/ScrollerCompat.class
 android/support/v7/widget/RecyclerView$RecycledViewPool.class
 com/amazonaws/services/s3/AmazonS3Client.class
 com/google/android/gms/common/util/DynamiteApi.class
-net/egobeta/ego/MainActivity$12.class
 android/support/v4/app/TaskStackBuilder$SupportParentable.class
 android/support/v4/app/ActivityCompatApi23.class
 com/google/android/gms/auth/api/signin/internal/SignInHubActivity$1.class
@@ -974,7 +970,6 @@ android/support/v7/graphics/drawable/DrawerArrowDrawable.class
 net/egobeta/ego/SplashActivity$SignInResultsHandler.class
 android/support/v7/app/ActionBar$LayoutParams.class
 android/support/v4/view/ViewCompatHC.class
-net/egobeta/ego/MainActivity$11.class
 android/support/design/widget/BottomSheetBehavior$SettleRunnable.class
 android/support/v4/media/MediaBrowserCompat$ServiceBinderWrapper.class
 com/facebook/FacebookSdk.class

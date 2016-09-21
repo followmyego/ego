@@ -18,8 +18,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,17 +39,6 @@ import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-//import com.dobmob.doblist.DobList;
-//import com.dobmob.doblist.events.OnLoadMoreListener;
-//import com.dobmob.doblist.exceptions.EmptyViewNotAttachedException;
-//import com.dobmob.doblist.exceptions.ListViewNotAttachedException;
-//import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-//import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayout;
-//import com.orangegangsters.github.swipyrefreshlayout.library.SwipyRefreshLayoutDirection;
-
-
-//import net.egobeta.ego.databinding.FragmentListBinding;
 
 import net.amazonaws.mobile.user.IdentityManager;
 import net.egobeta.ego.Adapters.BadgeItem;

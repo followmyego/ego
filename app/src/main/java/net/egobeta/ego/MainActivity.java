@@ -105,11 +105,9 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     Typeface typeface;
     private TypedValue mTypedValue = new TypedValue();
     Context context;
-
     EgoMap egoMap = null;
     public static Activity activity = null;
     private static String facebookId;
-
     private int mActionBarHeight;
     public int mMinHeaderHeight;
     private int mHeaderHeight;
@@ -117,21 +115,20 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     //View item variables
     private static View mHeader;
     ImageView mHeaderPicture;
-    public Drawable upArrow;
+
     public static ImageView egoLogo;
     public static ScrollView scrollView;
-    private static SlidingMenu slidingMenu;
+
     private ViewPager mViewPager = null;
-    private static Toolbar toolbar;
+//    private static Toolbar toolbar;
     public PagerSlidingTabStrip mPagerSlidingTabStrip;
     static AbsListView absListView;
-    static CirclePageIndicator pageIndicator;
+//    static CirclePageIndicator pageIndicator;
     private static User_Badges userBadges;
     private static User_Profile userProfile;
     private GraphResponse response;
     ArrayList<String> friends_Ids = new ArrayList<String>(); //list to pass through to friends fragment
     boolean isCreated = false;
-
     private LocalDataBase mLocalDataBase;
     UserPinned mUserPinned;
     ArrayList<String> pinnedUsers = new ArrayList<String>();
@@ -169,8 +166,8 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 //                restart(context, 1);
 //            }
 //        });
-
     }
+
 
     public static void restart(Context context, int delay) {
         if (delay == 0) {
@@ -211,26 +208,26 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         mapper = awsMobileClient.getDynamoDBMapper();
     }
 
-    private void setUpPageIndicator() {
-        pageIndicator = (CirclePageIndicator)findViewById(R.id.titles);
-        int tabPageColor = Color.parseColor("#5055C1AD");
-        int tabFillColor = Color.parseColor("#55C1AD");
-        pageIndicator.setStrokeColor(tabPageColor);
-        pageIndicator.setFillColor(tabFillColor);
-        pageIndicator.setPageColor(tabPageColor);
-        pageIndicator.setExtraSpacing(25f);
-        pageIndicator.setViewPager(mViewPager);
-    }
+//    private void setUpPageIndicator() {
+//        pageIndicator = (CirclePageIndicator)findViewById(R.id.titles);
+//        int tabPageColor = Color.parseColor("#5055C1AD");
+//        int tabFillColor = Color.parseColor("#55C1AD");
+//        pageIndicator.setStrokeColor(tabPageColor);
+//        pageIndicator.setFillColor(tabFillColor);
+//        pageIndicator.setPageColor(tabPageColor);
+//        pageIndicator.setExtraSpacing(25f);
+//        pageIndicator.setViewPager(mViewPager);
+//    }
 
-    private void setUpToolBar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        assert getSupportActionBar() != null;
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setOnClickListener(this);
-        toolbar.setTitle(" ");
-        toolbar.setAlpha(1);
-    }
+//    private void setUpToolBar() {
+//        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        assert getSupportActionBar() != null;
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        toolbar.setOnClickListener(this);
+//        toolbar.setTitle(" ");
+//        toolbar.setAlpha(1);
+//    }
 
     private void setUpViewPager() {
         mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -784,8 +781,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 /**Initialize view item variables*/
                 initializeViewItems();
 
-                /**Create the pull out Sliding menu*/
-                createSlidingMenu();
+
 
                 /**Set up the ViewPager and PagerAdapter*/
                 setUpViewPager();
@@ -794,13 +790,13 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 initializeSlidingTabStrip();
 
                 /**Create top toolbar/menu bar*/
-                setUpToolBar();
+//                setUpToolBar();
 
                 /**Get rid of the default arrow image*/
-                removeDefaultMenuButton();
+//                removeDefaultMenuButton();
 
-                /**Bind the Page indicator to the adapter*/
-                setUpPageIndicator();
+//                /**Bind the Page indicator to the adapter*/
+//                setUpPageIndicator();
 
 
                 theMapOnCreateMethod();
@@ -826,112 +822,13 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
 
 
-    //Create the pull out Sliding menu
-    private void createSlidingMenu() {
-        if(slidingMenu == null){
-            System.out.println("MAINACTIVITY: createSlidingMenu");
 
-            slidingMenu = new SlidingMenu(MainActivity.this);
-            slidingMenu.attachToActivity(MainActivity.this, SlidingMenu.SLIDING_CONTENT, true);
-            slidingMenu.setFadeDegree(0f);
-            slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
-            slidingMenu.setBehindOffsetRes(R.dimen.behindOffSetRes);
-            slidingMenu.setMenu(R.layout.sliding_menu_frame);
-
-            final View view = slidingMenu.getRootView();
-
-
-
-            final ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.viewingYouProgressBar);
-            final ImageView eyeballImage = (ImageView) view.findViewById(R.id.viewing_you_image);
-            final TextView viewingYouText = (TextView) view.findViewById(R.id.viewing_you_text);
-            TextView noViewersText1 = (TextView) view.findViewById(R.id.viewersHolderText1);
-            TextView noViewersText2 = (TextView) view.findViewById(R.id.viewersHolderText2);
-            TextView settingsText = (TextView) view.findViewById(R.id.settingsButtonText);
-            ImageView settingsButton = (ImageView) view.findViewById(R.id.settings_Button);
-            final RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.noViewersHolder);
-
-            settingsButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-//                    settings();
-                    logout(); // I have the settings button logging the user out for now
-                }
-            });
-            relativeLayout.setVisibility(View.GONE);
-            eyeballImage.setVisibility(View.VISIBLE);
-            viewingYouText.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.VISIBLE);
-
-            Button logoutButton = (Button) view.findViewById(R.id.logout_Button);
-            logoutButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    logout();
-                }
-            });
-
-            /** This method gets called when the menu has finished opening **/
-            slidingMenu.setOnOpenedListener(new SlidingMenu.OnOpenedListener() {
-                @Override
-                public void onOpened() {
-                    /** check to see who is viewing your profile **/
-                    Thread thread = new Thread() {
-                        @Override
-                        public void run() {
-                            try {
-                                sleep(1400);
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        //If no one is viewing you, show these graphics
-                                        eyeballImage.setVisibility(View.INVISIBLE);
-                                        viewingYouText.setVisibility(View.INVISIBLE);
-                                        relativeLayout.setVisibility(View.VISIBLE);
-                                        progressBar.setVisibility(View.GONE);
-                                    }
-                                });
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    };
-                    thread.start();
-                }
-            });
-
-            /** This method gets called when the menu has finished closing **/
-            slidingMenu.setOnClosedListener(new SlidingMenu.OnClosedListener() {
-                @Override
-                public void onClosed() {
-                    //If no one is viewing you, show these graphics
-                    eyeballImage.setVisibility(View.VISIBLE);
-                    viewingYouText.setVisibility(View.VISIBLE);
-                    relativeLayout.setVisibility(View.INVISIBLE);
-                    progressBar.setVisibility(View.VISIBLE);
-                }
-            });
-
-//            Button blankActivityButton = (Button) view.findViewById(R.id.blankActivity_Button);
-//            blankActivityButton.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    blankActivity();
-//                }
-//            });
-
-            noViewersText1.setTypeface(typeface);
-            noViewersText2.setTypeface(typeface);
-            viewingYouText.setTypeface(typeface);
-            settingsText.setTypeface(typeface);
-        }
-    }
 
     //Method to go to user settings
     public void settings() {
         System.out.println("MAINACTIVITY: settings");
 
-        slidingMenu.toggle();
+
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
@@ -979,13 +876,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         ImageView sideMenuArrow = (ImageView) findViewById(R.id.sidemenu_arrow); /**sideMenu arrow**/
         mHeaderPicture = (ImageView) findViewById(R.id.header_picture); /**HEADER - BLURRED BACKGROUND**/
         egoLogo = (ImageView) findViewById(R.id.ego_logo); /**HEADER - PROFILE PICTURE**/
-        ImageButton button = (ImageButton) findViewById(R.id.sidemenu_arrow_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                slidingMenu.toggle();
-            }
-        });
+
 
 
 
@@ -1015,19 +906,19 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     }
 
     //Using custom image view as home as up indicator, this gets rid of the default arrow image
-    private void removeDefaultMenuButton(){
-        System.out.println("MAINACTIVITY: removeDefaultMenuButton");
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            upArrow = getDrawable(R.drawable.back_arrow_transparent);
-        } else {
-            upArrow = getResources().getDrawable(R.drawable.back_arrow_transparent);
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            upArrow.setColorFilter(getColor(R.color.transparentBackground), PorterDuff.Mode.SRC_ATOP);
-        }
-        getSupportActionBar().setHomeAsUpIndicator(upArrow);
-    }
+//    private void removeDefaultMenuButton(){
+//        System.out.println("MAINACTIVITY: removeDefaultMenuButton");
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            upArrow = getDrawable(R.drawable.back_arrow_transparent);
+//        } else {
+//            upArrow = getResources().getDrawable(R.drawable.back_arrow_transparent);
+//        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            upArrow.setColorFilter(getColor(R.color.transparentBackground), PorterDuff.Mode.SRC_ATOP);
+//        }
+//        getSupportActionBar().setHomeAsUpIndicator(upArrow);
+//    }
 
     //Method to detect the scroll value of the Y axis
     public int getScrollY(AbsListView view) {
@@ -1050,6 +941,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     public static float clamp(float value, float max, float min) {
         System.out.println("MAINACTIVITY: clamp");
 
+
         return Math.max(Math.min(value, min), max);
     }
 
@@ -1059,7 +951,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
 //        mAlphaForegroundColorSpan.setAlpha(alpha);
 //        mSpannableString.setSpan(mAlphaForegroundColorSpan, 0, mSpannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        toolbar.setTitle(" ");
+//        toolbar.setTitle(" ");
 //        egoLogo.setAlpha(alpha * 1);
     }
 
@@ -1067,9 +959,9 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     private static void setHomeAsUpAlpha(float alpha) {
         System.out.println("MAINACTIVITY: setHomeAsUpAlpha");
 
-        toolbar.setAlpha(alpha * 1);
+//        toolbar.setAlpha(alpha * 1);
         egoLogo.setAlpha(alpha * 1);
-        pageIndicator.setAlpha(alpha * 1);
+//        pageIndicator.setAlpha(alpha * 1);
         mHeader.setAlpha(alpha * 1);
     }
 
@@ -1133,10 +1025,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
             theMapOnResumeMethod();
         }
 
-        if(isCreated){
-            createSlidingMenu();
 
-        }
     }
 
     @Override
@@ -1177,9 +1066,6 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
                 });
 //                Toast.makeText(this, "toolbar clicked mainActivity", Toast.LENGTH_SHORT).show();
 
-            case R.id.sidemenu_arrow:
-                slidingMenu.toggle();
-                break;
         }
 
     }
@@ -1240,7 +1126,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
         // Handle action bar item clicks here excluding the home button.
         switch (item.getItemId()) {
             case android.R.id.home:
-                slidingMenu.toggle();
+
                 return true;
         }
 
@@ -1304,7 +1190,7 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
     public class PagerAdapter extends FragmentPagerAdapter {
 
         private SparseArrayCompat<ScrollTabHolder> mScrollTabHolders;
-        private final String[] TITLES = {" ", " "};
+        private final String[] TITLES = {" "};
         private ScrollTabHolder mListener;
 
         public PagerAdapter(FragmentManager fm) {
@@ -1330,26 +1216,17 @@ public class MainActivity extends AppCompatActivity implements ScrollTabHolder, 
 
         @Override
         public Fragment getItem(int position) {
-            if(position == 0){
-                Fragment_Main fragment;
-                fragment = (Fragment_Main) Fragment_Main.newInstance(egoMap, identityManager, position, friends_Ids, mUserPinned);
 
-                if (mListener != null) {
-                    fragment.setScrollTabHolder(mListener);
+            Fragment_Main fragment;
+            fragment = (Fragment_Main) Fragment_Main.newInstance(egoMap, identityManager, position, friends_Ids, mUserPinned);
 
-                }
+            if (mListener != null) {
+                fragment.setScrollTabHolder(mListener);
 
-                return fragment;
-            } else {
-                Fragment_Main_Friends fragment2;
-                fragment2 = (Fragment_Main_Friends) Fragment_Main_Friends.newInstance(identityManager, position, friends_Ids);
-
-                if (mListener != null) {
-                    fragment2.setScrollTabHolder(mListener);
-
-                }
-                return fragment2;
             }
+
+            return fragment;
+
         }
 
         public SparseArrayCompat<ScrollTabHolder> getScrollTabHolders() {
